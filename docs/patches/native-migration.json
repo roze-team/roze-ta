@@ -1,0 +1,560 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "5030e2349cedde60b0e367a9de9400d466ff644f",
+  "upstream_manifest_sha256": "84d327db06434161982696d508f5e96339860c7922e44f14564c7c3059489fbc",
+  "baseline_project_commit": "aa8fba81448c88ff73dff705e7d33869bf2aae01",
+  "note": "Original hashes are immutable. Native hashes and the reviewable patch record the maintained derivative; every patch must reconstruct its target from the original.",
+  "patch": {
+    "path": "docs/patches/yata-native.patch",
+    "sha256": "52659ae5bcd872c4c7ffb009f14f528f539ac09abb3ceacc52a60ce71b49e6f8"
+  },
+  "files": [
+    {
+      "source": "vendor/yata/src/core/action.rs",
+      "source_sha256": "8f2d06e6674108c489f0d18221b061d43519ae44a909235b8c47872bcf02ea3b",
+      "target": "crates/roze-ta/src/core/action.rs",
+      "target_sha256": "1bf0961ca57504a777fccef0e7dd9feddefa5082147a7e7e03219ffdf2791e67"
+    },
+    {
+      "source": "vendor/yata/src/core/candles.rs",
+      "source_sha256": "54104f4b3d945f115d8f1e0346dd846e334b444e47d29177ca45fee9563c9b6b",
+      "target": "crates/roze-ta/src/core/candles.rs",
+      "target_sha256": "bb99e7b956c38c7b8d4187096683ee2878cb2641c80713b9748b555f907ba918"
+    },
+    {
+      "source": "vendor/yata/src/core/errors.rs",
+      "source_sha256": "7af7b88dd941ccc2e1c00e2622f5aa308d99ccf0b46134c5f33352facb7a54e2",
+      "target": "crates/roze-ta/src/core/errors.rs",
+      "target_sha256": "2e3d52e4b5242ce00eef4b5a0f03ce1bc4c70278ad834a57d82205142cd2ee9d"
+    },
+    {
+      "source": "vendor/yata/src/core/indicator/config.rs",
+      "source_sha256": "83abee9a68eef709fd17cf66cd8411eca97816c9e2d0a13cf3c67efa2a978749",
+      "target": "crates/roze-ta/src/core/indicator/config.rs",
+      "target_sha256": "4de9b7e54fe6c9596fdfdcdf2a91b6e014dbb0fb9247d962e66e9b5169c40cf1"
+    },
+    {
+      "source": "vendor/yata/src/core/indicator/dd.rs",
+      "source_sha256": "63adc74de2d6e4fe0d950ca3afd0dff591d08d7355b305ab7cc8af7feb853774",
+      "target": "crates/roze-ta/src/core/indicator/dd.rs",
+      "target_sha256": "eceebcb1670eb83fff02aafa7d8cf0d38c9001e263a4aa2218285c0136c78412"
+    },
+    {
+      "source": "vendor/yata/src/core/indicator/instance.rs",
+      "source_sha256": "23b48e5c9939de042152e720f74d6141112dc3a2e1c38260d85ee4796107094e",
+      "target": "crates/roze-ta/src/core/indicator/instance.rs",
+      "target_sha256": "22767148e25e1af372c7ca8630b349b13009791661a4c677c3bb5175159817bc"
+    },
+    {
+      "source": "vendor/yata/src/core/indicator/mod.rs",
+      "source_sha256": "0a546d02e816b2f64693d0fa978a2ef8b41abb4e251651c9ef82b7b0720d579b",
+      "target": "crates/roze-ta/src/core/indicator/mod.rs",
+      "target_sha256": "1fd4a2413cb7b4668b2acb077e3a4d82c64128c816698408606885690e5ec55d"
+    },
+    {
+      "source": "vendor/yata/src/core/indicator/result.rs",
+      "source_sha256": "0c4a33a935884bc3a824c3f19880da19348c6397b7d06567bff955cde9bda3c3",
+      "target": "crates/roze-ta/src/core/indicator/result.rs",
+      "target_sha256": "5c718bc4d0d780c4c83f2d73c1689272dd82136ddc10a5e482746ddea8ac247e"
+    },
+    {
+      "source": "vendor/yata/src/core/method.rs",
+      "source_sha256": "cda2bdb27de522b1ec2c4be4cb22b5d8974d2125ec44db82379ee3bd54c5b152",
+      "target": "crates/roze-ta/src/core/method.rs",
+      "target_sha256": "84abf5a8897ee6d77da072142fdeaa89c00fd0cf2d5d48dbc51cecf10504234f"
+    },
+    {
+      "source": "vendor/yata/src/core/mod.rs",
+      "source_sha256": "a6ec142f613525a4c0064384167e3bcf26c1f9635abb9d91582757e804f6c512",
+      "target": "crates/roze-ta/src/core/mod.rs",
+      "target_sha256": "228ef7c04d163e31bbb3c75a1af2802c5cdd77fdd2eed0b32694af477782749f"
+    },
+    {
+      "source": "vendor/yata/src/core/moving_average.rs",
+      "source_sha256": "6782b844284b0c226576badfee1cf6224a5b9ceae88b98f94737ee81079240db",
+      "target": "crates/roze-ta/src/core/moving_average.rs",
+      "target_sha256": "b1f2081b926cee1009ab1308d2158ea65a7e34581145b689958b2dad87b0a365"
+    },
+    {
+      "source": "vendor/yata/src/core/ohlcv.rs",
+      "source_sha256": "9699c592a5202461ca039d3698cadba582ba65627280936c6cf87476f7f37e40",
+      "target": "crates/roze-ta/src/core/ohlcv.rs",
+      "target_sha256": "4b56d8ccae190f49c0f8bf8ceb3013b7c1a8893108fe00fb7bb6e1f229844c55"
+    },
+    {
+      "source": "vendor/yata/src/core/sequence.rs",
+      "source_sha256": "caf6d6a077baa3ab2101030a326fc198236c57e9476c3d49b98d29614d329b40",
+      "target": "crates/roze-ta/src/core/sequence.rs",
+      "target_sha256": "15dfce8abb9fb041673ed61a17a9a081a140643445001f76ef011591207ca7b9"
+    },
+    {
+      "source": "vendor/yata/src/core/window.rs",
+      "source_sha256": "1da78ba265f8e8fe570d14ab7f0cf21284f02b9f81b7758763413d1e8a31b56f",
+      "target": "crates/roze-ta/src/core/window.rs",
+      "target_sha256": "cfa38456d12d9abd0404f87bfeeadf40fbfd138bd42e205a19ad7b8eb2412dc6"
+    },
+    {
+      "source": "vendor/yata/src/helpers/history.rs",
+      "source_sha256": "aac329ab65fde24447cfc7c07a458309c8e98bd31ad547816234e4bf76f09ecc",
+      "target": "crates/roze-ta/src/helpers/history.rs",
+      "target_sha256": "18c599d2dbcfbe8838d1f25ab395af4675c98b7a788a1328d2caa80e6c80b2ca"
+    },
+    {
+      "source": "vendor/yata/src/helpers/methods.rs",
+      "source_sha256": "b5733532da506d56744e365d6fa09f116f5259fb82a0af158fec0559443f147b",
+      "target": "crates/roze-ta/src/helpers/methods.rs",
+      "target_sha256": "96542d5510440e096fe93b15d91a239d87ce737a7605cbc1da96b6a292fb3668"
+    },
+    {
+      "source": "vendor/yata/src/helpers/mod.rs",
+      "source_sha256": "36ee548f25e35c981029116a874e0b68afc303e118ae166d8e9d91c969c09ca0",
+      "target": "crates/roze-ta/src/helpers/mod.rs",
+      "target_sha256": "72fc482a643bfff18b55ceb1c4fb34d3c0fc45d805c1c7761237d4c070917dcf"
+    },
+    {
+      "source": "vendor/yata/src/indicators/aroon.rs",
+      "source_sha256": "ad4e19cc5c0659045b03d673e37ca33d67a6f2f29de419a3bda0793727021c87",
+      "target": "crates/roze-ta/src/indicators/aroon.rs",
+      "target_sha256": "64307539c880a316b9bc155c933549eaa121430e0555ab9c8ac2cdb2a3dfd7d3"
+    },
+    {
+      "source": "vendor/yata/src/indicators/average_directional_index.rs",
+      "source_sha256": "cf4f4063923b82521962b35c23e2a0be90c42c020bdc024e1968065afed8140e",
+      "target": "crates/roze-ta/src/indicators/average_directional_index.rs",
+      "target_sha256": "1c6260a0a604e58cc8b5036f1b72107866f707786a7c1285963735bec6993770"
+    },
+    {
+      "source": "vendor/yata/src/indicators/awesome_oscillator.rs",
+      "source_sha256": "a0a2225c55b7f27807e98202a042362ed9523d6114af10ed2a73180641c50b52",
+      "target": "crates/roze-ta/src/indicators/awesome_oscillator.rs",
+      "target_sha256": "6070d1b8369767251ea7901a708c99f4aaa2d5a13243ec90939cf4fe9d3b9473"
+    },
+    {
+      "source": "vendor/yata/src/indicators/bollinger_bands.rs",
+      "source_sha256": "584aeb7093275ec61bc61a6a485e7fb030a1be0836a68f7e7ef891aec0262570",
+      "target": "crates/roze-ta/src/indicators/bollinger_bands.rs",
+      "target_sha256": "ea7299ca364904e480eebee067b1bec0130b399d0923e6383647ea46f3ae8c69"
+    },
+    {
+      "source": "vendor/yata/src/indicators/chaikin_money_flow.rs",
+      "source_sha256": "964f1184636892e56b0ff534e8d23b847420b6d8a744d1077a153670650fc4bc",
+      "target": "crates/roze-ta/src/indicators/chaikin_money_flow.rs",
+      "target_sha256": "bd34f5b7f0a6a8b98790eda1eec877df53fceb5a04652970cc830d4a1d81a0bf"
+    },
+    {
+      "source": "vendor/yata/src/indicators/chaikin_oscillator.rs",
+      "source_sha256": "5541085e05338cd95b989a83aa3929f5fe81a1f2ce4b3a8a86491138139fc8e8",
+      "target": "crates/roze-ta/src/indicators/chaikin_oscillator.rs",
+      "target_sha256": "bc44bd190c592b46397220f1fd5e622894d117c7c6e3a78c78a5db98c64dd9c4"
+    },
+    {
+      "source": "vendor/yata/src/indicators/chande_kroll_stop.rs",
+      "source_sha256": "f3d9f5ef14d2a157bee3113f68202334db42b1e51115dd83d17674f345917de6",
+      "target": "crates/roze-ta/src/indicators/chande_kroll_stop.rs",
+      "target_sha256": "99fcb0dfa8c7a390c0d04277f6ce9ef4247e88826a75d1c92782369311fde2b5"
+    },
+    {
+      "source": "vendor/yata/src/indicators/chande_momentum_oscillator.rs",
+      "source_sha256": "715eac0b14ba9296f700a8083adb3089c58688622ce23810efb82b4463dba913",
+      "target": "crates/roze-ta/src/indicators/chande_momentum_oscillator.rs",
+      "target_sha256": "2a668ad18073e6bfba23617611c9b22f87c41aadbe396e9c61d968e838e6e305"
+    },
+    {
+      "source": "vendor/yata/src/indicators/commodity_channel_index.rs",
+      "source_sha256": "8157b6cabcf902e58a5d4ccb20699c11b9f440d17d99b1278551d3018701b229",
+      "target": "crates/roze-ta/src/indicators/commodity_channel_index.rs",
+      "target_sha256": "4744742c802a34a222d6778bbb71598d91d0f16fee7876e88d8a8a117ee2959a"
+    },
+    {
+      "source": "vendor/yata/src/indicators/coppock_curve.rs",
+      "source_sha256": "9d053d930db03e5a69f1ad0f6ad207fe5e511959917903685e0041a2b93e1959",
+      "target": "crates/roze-ta/src/indicators/coppock_curve.rs",
+      "target_sha256": "c93cfabf0fb41fc42eec9953ca5d67933409c908068e9a0fab05210d9df72aa1"
+    },
+    {
+      "source": "vendor/yata/src/indicators/detrended_price_oscillator.rs",
+      "source_sha256": "7ff353d0d0dd285027e76061feb4624933044b378fc723352b22e9289021dae2",
+      "target": "crates/roze-ta/src/indicators/detrended_price_oscillator.rs",
+      "target_sha256": "d3450a8b993d8ca5ae2b7b3e608540b676b97d2e611e242a7b28564426bf27cc"
+    },
+    {
+      "source": "vendor/yata/src/indicators/donchian_channel.rs",
+      "source_sha256": "fea04415f267e07c14a233138cdfc653aac7738b39f869d3330c7480440fa5e6",
+      "target": "crates/roze-ta/src/indicators/donchian_channel.rs",
+      "target_sha256": "b095f39cda07166d28be1db61476db7ce1515b5d8b9fb3e0fb22ce23f9d559ee"
+    },
+    {
+      "source": "vendor/yata/src/indicators/ease_of_movement.rs",
+      "source_sha256": "9346aeee70fd96989e36571c8060f1a2aae83d2b27f9b0145a0b4f59224985bd",
+      "target": "crates/roze-ta/src/indicators/ease_of_movement.rs",
+      "target_sha256": "7960dba90803b23908fc4c2d97d4cf7362734fb5bc83cf67678a0093c47f440c"
+    },
+    {
+      "source": "vendor/yata/src/indicators/elders_force_index.rs",
+      "source_sha256": "6a8103861bc30c5da5ac88c7797215df8f4fd702efcdc95ec7d3dbdf3db8012a",
+      "target": "crates/roze-ta/src/indicators/elders_force_index.rs",
+      "target_sha256": "7ca63c5c7d8dbeaad6d72c1dacb5e4e2d9598e94c53cf696cb7be71221f18748"
+    },
+    {
+      "source": "vendor/yata/src/indicators/envelopes.rs",
+      "source_sha256": "4fb6fd85a311655c6ae2579516fe7dd46c296d42baf9fd04b0a452cf7519f507",
+      "target": "crates/roze-ta/src/indicators/envelopes.rs",
+      "target_sha256": "47376643cce581036a6a8ea6e5e4a1be52480ae9e34eeb70a3edeea301678095"
+    },
+    {
+      "source": "vendor/yata/src/indicators/example.rs",
+      "source_sha256": "0200aa4b3124ad4a67186f3535a9ee800e91dc579408615ef7d77fea3e4de8c5",
+      "target": "crates/roze-ta/src/indicators/example.rs",
+      "target_sha256": "cf37a39617f203dc5308c9865df0a95db4bc48619dc832b7885cbed01655af1c"
+    },
+    {
+      "source": "vendor/yata/src/indicators/fisher_transform.rs",
+      "source_sha256": "df536b932dfebf5852e218c202792526195243567dafd47f52523eefefbfd945",
+      "target": "crates/roze-ta/src/indicators/fisher_transform.rs",
+      "target_sha256": "750ca9cb8d5f31acee8774d98b577841a02880e2d45c6c14b7a8c8f360b7c7b1"
+    },
+    {
+      "source": "vendor/yata/src/indicators/hull_moving_average.rs",
+      "source_sha256": "0170f6b40cbe3c6371794067aa7cb0947dfb036fe777c693cf2715996af3c84a",
+      "target": "crates/roze-ta/src/indicators/hull_moving_average.rs",
+      "target_sha256": "61f37223fa2e1c8822f4c171a7cc8040f0125cf4487977a9031b7b0cdedd350c"
+    },
+    {
+      "source": "vendor/yata/src/indicators/ichimoku_cloud.rs",
+      "source_sha256": "63889d624dffc81ccd8b2b5c2a938d020dbaea818dffea8b84317611ea7a4a33",
+      "target": "crates/roze-ta/src/indicators/ichimoku_cloud.rs",
+      "target_sha256": "6022d8ec40beee5f3ce35fc1040e0dbbcc0c018cbcce6a74e3b6d33c1ec56548"
+    },
+    {
+      "source": "vendor/yata/src/indicators/kaufman.rs",
+      "source_sha256": "5651d21db166ac9ec56f12789f3f65ae2123da405930e2e492657ba3aa81a0c5",
+      "target": "crates/roze-ta/src/indicators/kaufman.rs",
+      "target_sha256": "4c0e6668298d57a877ed1d765ec0e1dd68569ae2f1102eff030ba91c6857da0c"
+    },
+    {
+      "source": "vendor/yata/src/indicators/keltner_channel.rs",
+      "source_sha256": "0894bebae8dd4fb2ecea3eb4dc9a38b8fa7b8ee66e556fd30ad9b8d3185b64e3",
+      "target": "crates/roze-ta/src/indicators/keltner_channel.rs",
+      "target_sha256": "c55e6f0b2387d06e2b9c061f17105bafe062d438bec72aebe5abe5ddad9ccd27"
+    },
+    {
+      "source": "vendor/yata/src/indicators/klinger_volume_oscillator.rs",
+      "source_sha256": "8f5c03e74efc91ae269f64171a2743bfc685b8e8ec4d3ea6c2d7ef5c69cfa261",
+      "target": "crates/roze-ta/src/indicators/klinger_volume_oscillator.rs",
+      "target_sha256": "cfbda870fbdaff153e5e28310a807d29aedc15556f5fc481e7b1fb759786abcc"
+    },
+    {
+      "source": "vendor/yata/src/indicators/know_sure_thing.rs",
+      "source_sha256": "5bb862284083a77437a0cef1f3820bae2d31f9fcdbbc50e506c1ea0dfd3d2b3c",
+      "target": "crates/roze-ta/src/indicators/know_sure_thing.rs",
+      "target_sha256": "2b7f8d8f0f420e7be73a3306d23dec665548e9f681389e1ae63a1731819eb782"
+    },
+    {
+      "source": "vendor/yata/src/indicators/macd.rs",
+      "source_sha256": "bbd219aa3849e57245d3f2069e76dfd77bf794634a17d53c798856d0b4bedcfd",
+      "target": "crates/roze-ta/src/indicators/macd.rs",
+      "target_sha256": "695f9ce4de4285fbf0372aa7c8d470fe8ed9489c504c4ee48b4c41e09b75b0c3"
+    },
+    {
+      "source": "vendor/yata/src/indicators/mod.rs",
+      "source_sha256": "ad9511435fc0d5d5bc2ac83d516a65d8b84f46003e20417dcaa9720708fdd1f6",
+      "target": "crates/roze-ta/src/indicators/mod.rs",
+      "target_sha256": "5bf2612579eeacda1050d5ad807625032d658a52c2d30676f62e697399a94473"
+    },
+    {
+      "source": "vendor/yata/src/indicators/momentum_index.rs",
+      "source_sha256": "6962be15fb4bfbf09c64dab0337e0dd2c7311d6de96c43632d0c42696a2fdc28",
+      "target": "crates/roze-ta/src/indicators/momentum_index.rs",
+      "target_sha256": "2777bb2b1e03b502ba9197d4dedff098ba0dfdf26f99c2e5df5e3469b384af1b"
+    },
+    {
+      "source": "vendor/yata/src/indicators/money_flow_index.rs",
+      "source_sha256": "32f8a1903bc35322f4f76e255377e5f4925ec07614def227d19d29a9ab8622f7",
+      "target": "crates/roze-ta/src/indicators/money_flow_index.rs",
+      "target_sha256": "02ff96a6141f74af0b98af9820c84d61484dfd2ff30a4c51f56253fab4825277"
+    },
+    {
+      "source": "vendor/yata/src/indicators/parabolic_sar.rs",
+      "source_sha256": "bec5f3551f7c1fa1a8731deed9d8b326968d5bba0b24f04da2c42b6389644775",
+      "target": "crates/roze-ta/src/indicators/parabolic_sar.rs",
+      "target_sha256": "94331442d32d9f46e7badfa27f3a245ff9c788f0a46091e77df9c233fc9adf09"
+    },
+    {
+      "source": "vendor/yata/src/indicators/pivot_reversal_strategy.rs",
+      "source_sha256": "107d87b2cfd1521f52702462b28303c400ca6c586748917c0bb5404a3896cdae",
+      "target": "crates/roze-ta/src/indicators/pivot_reversal_strategy.rs",
+      "target_sha256": "e0375195e05d79f1e3e39b4d29abb35195efbaa131cbf891f8106e6988d09ccb"
+    },
+    {
+      "source": "vendor/yata/src/indicators/price_channel_strategy.rs",
+      "source_sha256": "ae3a6604630f514ab3b9d280d0e5bc6ce544b7ffeda50d5ea54e912f71a84c79",
+      "target": "crates/roze-ta/src/indicators/price_channel_strategy.rs",
+      "target_sha256": "7d52ad31359e36cc5081391c54bf3a63f8b59a31d804c78d7ca88d801a785737"
+    },
+    {
+      "source": "vendor/yata/src/indicators/relative_strength_index.rs",
+      "source_sha256": "508d1b54fea77b0f294401018ebf57e7e9a67e6dfea2f8c3ed731a960ece89d0",
+      "target": "crates/roze-ta/src/indicators/relative_strength_index.rs",
+      "target_sha256": "ed90370ffd1f31fa62e68c2ad634c458fa671ffa3dd1bad754d522ea08b77713"
+    },
+    {
+      "source": "vendor/yata/src/indicators/relative_vigor_index.rs",
+      "source_sha256": "01b81b7229fd6ab7527284b3fa8720f19ab3580546db05676a998ad2b8502adf",
+      "target": "crates/roze-ta/src/indicators/relative_vigor_index.rs",
+      "target_sha256": "5284718ea0d977bbf34ee05853b034ec6f339549e7bcfac34dfbde6ac6064f10"
+    },
+    {
+      "source": "vendor/yata/src/indicators/smi_ergodic_indicator.rs",
+      "source_sha256": "367712ca40eb9ce2edceb51e622f5e78abfdc147d9fd20f877462980f2df8095",
+      "target": "crates/roze-ta/src/indicators/smi_ergodic_indicator.rs",
+      "target_sha256": "140a130187fb64f04d97197c2d4a9b4633040bc913d672864e916110276ffe74"
+    },
+    {
+      "source": "vendor/yata/src/indicators/stochastic_oscillator.rs",
+      "source_sha256": "a5ef778a4ac83ce2c40185488d6bad326243e6aea2d3bb6c4b34999443094ada",
+      "target": "crates/roze-ta/src/indicators/stochastic_oscillator.rs",
+      "target_sha256": "70fb1f460bcd6a5bb61b4c713803eaa31465e13cd4af827f8c5d4ef8d1efce45"
+    },
+    {
+      "source": "vendor/yata/src/indicators/trend_strength_index.rs",
+      "source_sha256": "780749739e5f2537df77e07fdd7d76636b5177576fab577fb7e4b05d3f6a4a7b",
+      "target": "crates/roze-ta/src/indicators/trend_strength_index.rs",
+      "target_sha256": "7caaf1b804134af17bbf64a60c2aaa484e1eb786cbdcaa7adac4c124fae290cf"
+    },
+    {
+      "source": "vendor/yata/src/indicators/trix.rs",
+      "source_sha256": "297391d29f3adf091e89f10fdb56e73eba2a3acc2f94714e686f459bd48c100a",
+      "target": "crates/roze-ta/src/indicators/trix.rs",
+      "target_sha256": "699a52d5cca0d407e14c4c255ae6811bf449f3870bd7e429f58efadd08541e0a"
+    },
+    {
+      "source": "vendor/yata/src/indicators/true_strength_index.rs",
+      "source_sha256": "9da8674895890d1cea03481d529bc2ddb5dcef3b9715d2d31f5471be7bd335e0",
+      "target": "crates/roze-ta/src/indicators/true_strength_index.rs",
+      "target_sha256": "91b167b6e5e53e0fa15fd42a8df66bf31c47c25ecba77002630ad5bb37321039"
+    },
+    {
+      "source": "vendor/yata/src/indicators/woodies_cci.rs",
+      "source_sha256": "63e357879e93da303a0dca24ce5e5293f415d89dd90a1d7104e42eea41292fa7",
+      "target": "crates/roze-ta/src/indicators/woodies_cci.rs",
+      "target_sha256": "22db57dbc722ba01a0be43c3511a536e38058f8d6e704d49bef4810d632c6e26"
+    },
+    {
+      "source": "vendor/yata/src/lib.rs",
+      "source_sha256": "65b2bc542c9345ed121be0b15ade11309fb8074024d5beb3f77b277485dae24e",
+      "target": "crates/roze-ta/src/prelude.rs",
+      "target_sha256": "28a6d5d281156f350873fed2862afea27defc09f96b108a7a87c297fa7b12cac"
+    },
+    {
+      "source": "vendor/yata/src/methods/adi.rs",
+      "source_sha256": "429163af10d5b4a3de5b3b45ae6b6e613fa4b89cadf67ff9fb71b443e85c7691",
+      "target": "crates/roze-ta/src/methods/adi.rs",
+      "target_sha256": "7a121ef4aabe4c20d808052e94ced9ed4f2039d972ab30892af167ae9c956fb1"
+    },
+    {
+      "source": "vendor/yata/src/methods/cci.rs",
+      "source_sha256": "665b0f0912680a1efd7a2bf1c9ed39df3867194315edc2122851d5fcb4c0efcd",
+      "target": "crates/roze-ta/src/methods/cci.rs",
+      "target_sha256": "581a6f601929a64574a7c71cd357c465ed657ea2698153f928a262a0a4bd334e"
+    },
+    {
+      "source": "vendor/yata/src/methods/collapse_timeframe.rs",
+      "source_sha256": "467a5a3b9ced42062bf8c81e35ce44e21367506ad1c065ae616c3590fd5ef81d",
+      "target": "crates/roze-ta/src/methods/collapse_timeframe.rs",
+      "target_sha256": "f6410d2b8280763251b6816aa6622ee60c931ddc042b7d438c04e48d78fe234c"
+    },
+    {
+      "source": "vendor/yata/src/methods/conv.rs",
+      "source_sha256": "23ba8f4c4399a529e4dfc7f622359285603d20371129c00d87b9effc30f28a95",
+      "target": "crates/roze-ta/src/methods/conv.rs",
+      "target_sha256": "f877617b2ba418520ffe266c56143fd1fc0143635ae8e68b1864e2de81c9cb44"
+    },
+    {
+      "source": "vendor/yata/src/methods/cross.rs",
+      "source_sha256": "eca9624730be28584f081e4dd310fd3c5990ffced945c406f7eeed22a0f4f748",
+      "target": "crates/roze-ta/src/methods/cross.rs",
+      "target_sha256": "3515bdde8841da03501820b4b754aff5d5f6347807c7eeb64d6ee6da808ed7ca"
+    },
+    {
+      "source": "vendor/yata/src/methods/derivative.rs",
+      "source_sha256": "fcd15022d281501821738d40da6ec9962a49d6fe79d1a6077c6332e82957e647",
+      "target": "crates/roze-ta/src/methods/derivative.rs",
+      "target_sha256": "ebe02a7ed014af6152859357d54cf06aa1d44e55b671451c4808ba06640500bc"
+    },
+    {
+      "source": "vendor/yata/src/methods/ema.rs",
+      "source_sha256": "dc68d2e8d47d816ee5aebb9d6111b3de6497ac184527a9b0e81737d9f53764ee",
+      "target": "crates/roze-ta/src/methods/ema.rs",
+      "target_sha256": "47946c4aab465fde8c4c44991aa4a862bfea32e33074c7d0332be45745e64135"
+    },
+    {
+      "source": "vendor/yata/src/methods/heikin_ashi.rs",
+      "source_sha256": "71d7602c5d3f0b0b717a3ae148d2ef2657e0c63586ee3edcd9e245f9fd0f6bcd",
+      "target": "crates/roze-ta/src/methods/heikin_ashi.rs",
+      "target_sha256": "169e8240036c09940b91b3bbeed151587e3308f6fbeccc3a95ebf3d668e9d864"
+    },
+    {
+      "source": "vendor/yata/src/methods/highest_lowest.rs",
+      "source_sha256": "11f744d0d4471646746eb4c18eb4db0d7ddf734fdeeb010516f3898c0651bd9a",
+      "target": "crates/roze-ta/src/methods/highest_lowest.rs",
+      "target_sha256": "7cd70fc51faf02038f39fc24a01c752431170b7b23b143cc8f0263de6ece60dd"
+    },
+    {
+      "source": "vendor/yata/src/methods/highest_lowest_index.rs",
+      "source_sha256": "ad552ea29d1504e1ca0621e5a3171a738776638feb262f38173d13f61d834ca8",
+      "target": "crates/roze-ta/src/methods/highest_lowest_index.rs",
+      "target_sha256": "9a37fd351ff0b0a7e7bffc7305e4f9fb7d1d0d02a9867ca16be343dd023fe320"
+    },
+    {
+      "source": "vendor/yata/src/methods/hma.rs",
+      "source_sha256": "0f461c05e37d769f378317ea806f9e3006d98401be3dd873fb536203bd8e81f8",
+      "target": "crates/roze-ta/src/methods/hma.rs",
+      "target_sha256": "43d91576cc7b1e5ca114e00720ea4fd2a9c3f33eff3f5ae5e158478ed62c604e"
+    },
+    {
+      "source": "vendor/yata/src/methods/integral.rs",
+      "source_sha256": "817d924bf323404498f038725e28fe4f198782108f473563ef71bcac305e2e56",
+      "target": "crates/roze-ta/src/methods/integral.rs",
+      "target_sha256": "d8daba546a00040e8d3612daad52c1af95b7e2c118ae45f0cb422e848bff3520"
+    },
+    {
+      "source": "vendor/yata/src/methods/lin_reg.rs",
+      "source_sha256": "db1e243539cdf84e25c565da1a396349502dee381e50a91d4a7cdc485b335230",
+      "target": "crates/roze-ta/src/methods/lin_reg.rs",
+      "target_sha256": "0cd6e36bcc8e6070483c7785e58206ac2023e8d517df8ff5f4e3c257784f1403"
+    },
+    {
+      "source": "vendor/yata/src/methods/mean_abs_dev.rs",
+      "source_sha256": "8ef9413aa486947e6493f6b974d4a6c1f03558055dcf12af5de2d67098c71447",
+      "target": "crates/roze-ta/src/methods/mean_abs_dev.rs",
+      "target_sha256": "53ee45490c8289655a3d2136e3dd1d77efdd626b02ab3856542d4f6e75b5b9de"
+    },
+    {
+      "source": "vendor/yata/src/methods/median_abs_dev.rs",
+      "source_sha256": "1e8afbdd6bdac4b167e2772bf3d0fa0bd539e6a4fcb35963ba2484974139ab02",
+      "target": "crates/roze-ta/src/methods/median_abs_dev.rs",
+      "target_sha256": "cbc076a8eb30f8d80f42b93df0c6fececb2c83ae37f0ae478c18956b02d3ae86"
+    },
+    {
+      "source": "vendor/yata/src/methods/mod.rs",
+      "source_sha256": "13011641fc1943f538e99219fecf3cfa99f1a2cc41131bacad1a2074885fedc7",
+      "target": "crates/roze-ta/src/methods/mod.rs",
+      "target_sha256": "900c62289494f04284b76421d2607252519de8babd1999252c6b999d906d6f4d"
+    },
+    {
+      "source": "vendor/yata/src/methods/momentum.rs",
+      "source_sha256": "cf6f3ef833f2870a60a9457ab48f64cf1bea6cec01a5daaa5661eb57cdbb40d7",
+      "target": "crates/roze-ta/src/methods/momentum.rs",
+      "target_sha256": "33cdd0adb2d9a365a271396a6636d49b62ecb9cb54d77e7d68539b2e63e1ee45"
+    },
+    {
+      "source": "vendor/yata/src/methods/past.rs",
+      "source_sha256": "323471c41baddab5bcf266e42dc4fd4e24bd674edf2786487db9d86a78c3a138",
+      "target": "crates/roze-ta/src/methods/past.rs",
+      "target_sha256": "7fb6f76f084387b25b7f500e6e0e23991945bbf5643c764b929181b24f043edd"
+    },
+    {
+      "source": "vendor/yata/src/methods/rate_of_change.rs",
+      "source_sha256": "91ebeba3b301a088f10e7fa5a6a7fed8ab3d8eddccfdb0295d01dbf0370395c2",
+      "target": "crates/roze-ta/src/methods/rate_of_change.rs",
+      "target_sha256": "90a4eb73ffe8f3ea998fc55a9db797f0b65af7ca485a022008547c314734d255"
+    },
+    {
+      "source": "vendor/yata/src/methods/renko.rs",
+      "source_sha256": "99896b0ea6486e3a871c6712c3c2d9c484846dcbbf7626c22a47412301e20c56",
+      "target": "crates/roze-ta/src/methods/renko.rs",
+      "target_sha256": "3c5d30c99ea9603a0bc4b1482f92adb30c2810f4952a5c4086f19911030f863e"
+    },
+    {
+      "source": "vendor/yata/src/methods/reversal.rs",
+      "source_sha256": "ee8707a75be9cbb15f0408ddfbc1fb33d8aa26d56168f8d4beba1cb96583c8cd",
+      "target": "crates/roze-ta/src/methods/reversal.rs",
+      "target_sha256": "0754e6ac0ab57c43dd9872761854c03b1e74d72563a35291f334ca2f147bccfc"
+    },
+    {
+      "source": "vendor/yata/src/methods/rma.rs",
+      "source_sha256": "54cb07f51a7ce1e9f9803d87687e9bed9212ad3a0a99446cbf7a7cb3cb1214f8",
+      "target": "crates/roze-ta/src/methods/rma.rs",
+      "target_sha256": "264555ee2bf4002a15843c335102bf0eda5e2d9ec522a1c805f8c647b8f6a8f5"
+    },
+    {
+      "source": "vendor/yata/src/methods/sma.rs",
+      "source_sha256": "bbc77d7eaaf5ec6fa79de462fbc0d6d2369314d4c9ce254f30e259786d238c2c",
+      "target": "crates/roze-ta/src/methods/sma.rs",
+      "target_sha256": "606225aa999395cd0882c914709605b6be77deaeff5d806eeef5bda9202f5bcd"
+    },
+    {
+      "source": "vendor/yata/src/methods/smm.rs",
+      "source_sha256": "1359ee72f7b0ffcc5f2bfca3bcf78d33121f2b8c8416f7c632c5d7b9d5e910e5",
+      "target": "crates/roze-ta/src/methods/smm.rs",
+      "target_sha256": "ad284371196ca596bf86c0b2a6d59f17b839cce401ac59bed82c476d359c43fc"
+    },
+    {
+      "source": "vendor/yata/src/methods/st_dev.rs",
+      "source_sha256": "ebd5f21d7cef0fc6296dfb9a41934747d400b98380d20808b9fb557419a68b6a",
+      "target": "crates/roze-ta/src/methods/st_dev.rs",
+      "target_sha256": "787ef29699cee000ac09ca11a46d07eda316000df2eda55f54b204f34e6782f5"
+    },
+    {
+      "source": "vendor/yata/src/methods/swma.rs",
+      "source_sha256": "36ed63a722de86f9c2e7638202d9b87603023fcf60a1e27c8219acb10b9e2ed3",
+      "target": "crates/roze-ta/src/methods/swma.rs",
+      "target_sha256": "713d070aa4e303e1e71c8a05afdbb096a43fe40f9f579112fdd8d3381594a8d3"
+    },
+    {
+      "source": "vendor/yata/src/methods/tr.rs",
+      "source_sha256": "edad03cd4fd7b187a81a76514bd495092e6dd017f186d0b08fc17ff2a90c50f5",
+      "target": "crates/roze-ta/src/methods/tr.rs",
+      "target_sha256": "e38dc3bedbf40ba6de7730d9653d6e9e55870e034dd6fd9324af6c2c0c23644b"
+    },
+    {
+      "source": "vendor/yata/src/methods/trima.rs",
+      "source_sha256": "c072a5df78e0286018492331c234d2d7f9a2c9e41a92d68b462986866e8ad092",
+      "target": "crates/roze-ta/src/methods/trima.rs",
+      "target_sha256": "dfce68daee5e008a96659f56523e39325af1a6954c89c3a3a052b7d94b069d86"
+    },
+    {
+      "source": "vendor/yata/src/methods/tsi.rs",
+      "source_sha256": "943d51f5746407903357e3b25feb187a0eed2be9e1e3030bf9c5c8c63d476698",
+      "target": "crates/roze-ta/src/methods/tsi.rs",
+      "target_sha256": "b69114963d57a87437b1e6b076e61db97428240605996b4c0dbcca269e9096bf"
+    },
+    {
+      "source": "vendor/yata/src/methods/vidya.rs",
+      "source_sha256": "76e96809b6ee675dfda1012cbef625b54f127240b3832f539cecca37de7d7d8f",
+      "target": "crates/roze-ta/src/methods/vidya.rs",
+      "target_sha256": "d010521c3d6f2038bdad3e378ab80da96bebd2d38410758a891828cadcec4f81"
+    },
+    {
+      "source": "vendor/yata/src/methods/volatility.rs",
+      "source_sha256": "b4dea79a838efcd887c1375e4659a149782ed57074f7a09a9b0847781c03eb5d",
+      "target": "crates/roze-ta/src/methods/volatility.rs",
+      "target_sha256": "699b40b26f0e73c645bceeaf6bbf6888bf26d08d8fbd9d260be59beb55d0de09"
+    },
+    {
+      "source": "vendor/yata/src/methods/vwma.rs",
+      "source_sha256": "f973847a9f932fbf98130d7e469e82e706a60521151835e6d05bd402e94a07e4",
+      "target": "crates/roze-ta/src/methods/vwma.rs",
+      "target_sha256": "851398fd25b8b769957fdcad8e0e29f26f9d81877bfc7ccb837c34b1a5999c6b"
+    },
+    {
+      "source": "vendor/yata/src/methods/wma.rs",
+      "source_sha256": "28feab1977cf69610e2cc88e7bd95444cdfa59086cb89a28f8c28421dfa0643e",
+      "target": "crates/roze-ta/src/methods/wma.rs",
+      "target_sha256": "bd5ede7b42f791ac15906e1d4deeca18c0b2e7b82f7e2424567cfb66d3d49591"
+    },
+    {
+      "source": "vendor/yata/src/methods/wsma.rs",
+      "source_sha256": "61a76c7026a4728043d035064c3df39493782a687036269763f347b47410baec",
+      "target": "crates/roze-ta/src/methods/wsma.rs",
+      "target_sha256": "81c35bf06c925a1013041b7af3366251af0f2f8d658eb9fd73d90b1821db9d78"
+    }
+  ],
+  "support_files": {
+    "crates/roze-ta/LICENSE-APACHE": "49bbe9114e49214df2ccc324cb3ac8d1d1aa1c3a0947f94c286765e86647b32e",
+    "crates/roze-ta/LICENSE-MIT": "57415999f908d3638c40a5d049e07630597191f3cd1c6e9361bee649a08b5a4b",
+    "crates/roze-ta/THIRD-PARTY-NOTICES.md": "ef835d4c394c5f6494861e94ba805f83949f39d5a332aee4e322046127bf0181",
+    "THIRD-PARTY-NOTICES.md": "ef835d4c394c5f6494861e94ba805f83949f39d5a332aee4e322046127bf0181",
+    "docs/evidence/native-migration-baseline.json": "d6d84734e778780fe4434f616fbae5b33029f570778770590270b1e64287540a"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "baseline_commit": "aa8fba81448c88ff73dff705e7d33869bf2aae01",
+  "upstream_commit": "5030e2349cedde60b0e367a9de9400d466ff644f",
+  "toolchain": "Rust 1.98.0, Windows x86_64-pc-windows-msvc",
+  "profiles": 45,
+  "command": "rtk cargo run -p roze-ta --example native_baseline --locked --offline",
+  "note": "Generator copied to examples/native_baseline.rs in the baseline checkout before migration; fixture must not be regenerated from native modules.",
+  "files": {
+    "crates/roze-ta/tests/fixtures/pre-native-snapshots.json": "3246d19d5e7d1865d194bbb27acb3edeed686d5b8715e2f82c7723a1572adba7",
+    "crates/roze-ta/tests/fixtures/pre-native-generator.rs.txt": "a30e87b59e00580cd6ef05f9a783a2c2dc9cd7ae48a0d2e69b29cc87c42f7713"
+  }
+}

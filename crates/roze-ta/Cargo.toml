@@ -2,12 +2,11 @@
 name = "roze-ta"
 version.workspace = true
 edition.workspace = true
-license.workspace = true
-description = "Rust technical analysis with a vendored Yata engine and reproducible indicator profiles"
+license = "MIT AND Apache-2.0"
+description = "Native Rust technical analysis with reproducible indicator profiles"
 publish = false
 
 [dependencies]
-yata = { path = "../../vendor/yata", version = "=0.7.0", features = ["serde"] }
 serde.workspace = true
 serde_json.workspace = true
 sha2 = "0.10"

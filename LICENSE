@@ -20,4 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Vendored Yata is separately licensed under vendor/yata/LICENSE (Apache-2.0).
+The MIT terms above apply to original roze-ta contributions. Yata-derived
+native modules retain Apache-2.0; see THIRD-PARTY-NOTICES.md and
+crates/roze-ta/LICENSE-APACHE. The combined roze-ta crate is MIT AND Apache-2.0.
+The original archive remains under vendor/yata/LICENSE (Apache-2.0).

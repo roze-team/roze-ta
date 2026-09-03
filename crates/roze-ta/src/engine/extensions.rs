@@ -1,11 +1,11 @@
 //! A1 fixed-profile kernels. Existing Kernel variants stay in their original order.
 use super::*;
-use std::collections::VecDeque;
-use yata::{
+use crate::{
     core::OHLCV,
     methods::{Momentum, DEMA, RMA, ROC, TEMA, WMA},
     prelude::Method,
 };
+use std::collections::VecDeque;
 
 const PERIOD: usize = 14;
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]

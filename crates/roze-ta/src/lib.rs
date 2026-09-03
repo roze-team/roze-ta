@@ -1,4 +1,5 @@
-//! Streaming technical indicators backed by `yata`.
+//! Native streaming technical indicators and reproducible analysis.
+//! Algorithm provenance and Apache-2.0 notices are retained from Yata v0.7.0.
 //!
 //! The versioned [engine] validates completed bars and provides streaming,
 //! batch replay and lossless snapshots for every registered profile.
@@ -12,15 +13,23 @@ pub mod engine;
 pub mod error;
 pub mod fingerprint;
 
-/// Access all upstream indicators and methods, including those not yet registered in MCP.
-pub use yata;
-pub use yata::{core, helpers, indicators, methods, prelude};
+pub mod core;
+pub mod helpers;
+pub mod indicators;
+pub mod methods;
+pub mod prelude;
 
-use serde::{Deserialize, Serialize};
-use yata::{
+/// Compatibility paths for callers of the former Yata re-export.
+/// These names refer to the native modules; there is no Yata dependency.
+pub mod yata {
+    pub use crate::{core, helpers, indicators, methods, prelude};
+}
+
+use crate::{
     methods::{EMA, RMA, TR},
     prelude::Method,
 };
+use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Bar {
@@ -43,7 +52,7 @@ impl Bar {
             && self.close <= self.high
             && self.volume >= 0.0
     }
-    fn yata(self) -> [f64; 5] {
+    fn ohlcv(self) -> [f64; 5] {
         [self.open, self.high, self.low, self.close, self.volume]
     }
 }
@@ -73,7 +82,7 @@ impl AtrState {
         if !bar.valid() {
             return None;
         }
-        let candle = bar.yata();
+        let candle = bar.ohlcv();
         let tr = match &mut self.true_range {
             Some(method) => method.next(&candle),
             None => {

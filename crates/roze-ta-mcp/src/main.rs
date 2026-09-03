@@ -13,6 +13,9 @@ use std::{
 };
 use tokio::sync::Semaphore;
 mod bounded;
+#[cfg(test)]
+mod coverage_tests;
+mod stream;
 
 const MAX_RESPONSE_BYTES: usize = 8 * 1024 * 1024;
 const COMPUTE_TIMEOUT: Duration = Duration::from_secs(10);
@@ -73,9 +76,13 @@ impl IndicatorGateway {
         CallToolResult::structured(
             serde_json::json!({"version":catalog::VERSION,"profiles":profiles,"analysis":analysis::catalog(),
                 "engine_schema_version":engine::SCHEMA_VERSION,"engine_version":engine::IMPLEMENTATION,
-                "capabilities":{"streaming":true,"snapshot_restore":true,"full_series":true,"v2_tool":"indicator_batch_calculate_v2"},
+                "capabilities":{"streaming":true,"snapshot_restore":true,"full_series":true,"v2_tool":"indicator_batch_calculate_v2",
+                    "stream_tool":"indicator_stream","stream_schema_version":stream::SCHEMA_VERSION,
+                    "stream_actions":["create","advance","inspect","reset"],"stream_state":"caller_owned_snapshot",
+                    "analysis_tool":"analysis_batch_calculate","parameter_schema":"tools/list.inputSchema"},
                 "limits":{"bars":catalog::MAX_BARS,"profiles":catalog::MAX_PROFILES,"result_rows":engine::MAX_RESULT_ROWS,
-                    "request_bytes":bounded::MAX_REQUEST_BYTES,"response_bytes":MAX_RESPONSE_BYTES,"concurrent_calculations":2,"compute_timeout_seconds":10}}),
+                    "request_bytes":bounded::MAX_REQUEST_BYTES,"response_bytes":MAX_RESPONSE_BYTES,
+                    "stream_snapshot_json_bytes":stream::MAX_STATE_JSON_BYTES,"concurrent_calculations":2,"compute_timeout_seconds":10}}),
         )
     }
 
@@ -178,6 +185,61 @@ impl IndicatorGateway {
     }
 
     #[tool(
+        description = "Stateless streaming for any registered indicator profile. Create, advance, inspect or reset caller-owned snapshots using the native engine. Returns latest, optional new series rows and a resumable snapshot. No server sessions, persistent writes, market fetching or trading.",
+        annotations(
+            read_only_hint = true,
+            destructive_hint = false,
+            idempotent_hint = true,
+            open_world_hint = false
+        )
+    )]
+    async fn indicator_stream(
+        &self,
+        Parameters(request): Parameters<stream::Request>,
+        context: RequestContext<RoleServer>,
+    ) -> CallToolResult {
+        let Ok(permit) = self.permits.clone().try_acquire_owned() else {
+            return tool_result(Err(TaError::new(
+                ErrorCode::LimitExceeded,
+                "calculation concurrency limit exceeded",
+            )));
+        };
+        let token = context.ct.child_token();
+        let _cancel_on_drop = token.clone().drop_guard();
+        let deadline = Instant::now() + COMPUTE_TIMEOUT;
+        tokio::task::spawn_blocking(move || {
+            let _permit = permit;
+            let result = stream::calculate_controlled(&request, || {
+                if token.is_cancelled() {
+                    Err(TaError::new(
+                        ErrorCode::Cancelled,
+                        "stream calculation cancelled",
+                    ))
+                } else if Instant::now() >= deadline {
+                    Err(TaError::new(
+                        ErrorCode::TimedOut,
+                        "stream calculation deadline exceeded",
+                    ))
+                } else {
+                    Ok(())
+                }
+            });
+            tool_result(result.and_then(|value| {
+                serde_json::to_value(value).map_err(|_| {
+                    TaError::new(ErrorCode::EncodingFailed, "stream result encoding failed")
+                })
+            }))
+        })
+        .await
+        .unwrap_or_else(|_| {
+            tool_result(Err(TaError::new(
+                ErrorCode::UpstreamFailure,
+                "stream worker failed",
+            )))
+        })
+    }
+
+    #[tool(
         description = "Bounded versioned analysis: statistics, probability, net-return risk, trade/factor evaluation, frozen-forecast calibration scores, seeded IID/block bootstrap of the mean, and chronological label-purged partitions. Select methods from indicator_catalog analysis capabilities. No data fetching or persistent writes.",
         annotations(
             read_only_hint = true,
@@ -255,7 +317,7 @@ mod tests {
         });
         let client = ().serve(client_transport).await?;
         let tools = client.list_all_tools().await?;
-        assert_eq!(tools.len(), 4);
+        assert_eq!(tools.len(), 5);
         assert!(tools
             .iter()
             .all(|t| t.annotations.as_ref().and_then(|a| a.read_only_hint) == Some(true)));

@@ -17,4 +17,5 @@
 - 核心库保持纯 Rust、无隐式 I/O；MCP 使用官方 Rust SDK 并调用核心库，不复制公式。
 - 可恢复错误采用结构化 Result；生产逻辑不使用无依据的 unwrap 或 panic，默认 safe Rust。
 - 指标新增遵循规格卡、实现、独立参考值、边界测试、目录注册、文档六个步骤。
-- 自有代码执行 fmt、针对性测试与 clippy；核验上游完整性，文档与实际行为同步。
+- 自有代码及 crates/roze-ta 内的派生算法执行 fmt、针对性测试与 clippy；vendor/yata 仅作不参与构建的原始基线。
+- 派生模块保留 Apache-2.0 文件头；同时运行 verify-upstream.ps1 与 verify-native.ps1，文档与实际行为同步。

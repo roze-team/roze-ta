@@ -1,6 +1,7 @@
 # 本轮依赖与许可证
 
-- Yata：固定 0.7.0 和上游 commit，Apache-2.0；vendor/yata 原文与许可证保持完整。
+- Yata：已移除 Cargo 依赖。源于 0.7.0 的算法在 roze-ta 内部编译；vendor/yata 原文作为审计基线保持完整。
+- 派生模块保留 Apache-2.0，自有代码 MIT；组合 crate 为 `MIT AND Apache-2.0`，见 [第三方声明](../THIRD-PARTY-NOTICES.md)。
 - 自有扩展：沿用根目录 MIT。
 - 新增 bincode =2.0.1：MIT，仅启用 std、serde；用于完整 f64 位模式的内部快照，禁用默认 derive。
   新增传递依赖 unty 0.0.4：MIT。版本与校验和固定于 Cargo.lock。

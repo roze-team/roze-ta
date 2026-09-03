@@ -512,17 +512,17 @@ fn validate_window(x: usize) -> Result<(), TaError> {
 pub fn catalog() -> serde_json::Value {
     serde_json::json!({"schema_version":1,"method_version":VERSION,"tool":"analysis_batch_calculate",
         "capabilities":[
-            {"id":"stat_describe","capability_kind":"statistics","reuses":["stat_stddev","stat_percentile","stat_skew","stat_kurt"],"data":"timed_scalar","fits":false,"random":false,"online_update":false},
-            {"id":"stat_transform","capability_kind":"statistics","data":"timed_scalar","fits":false,"random":false,"online_update":false},
-            {"id":"stat_zscore","capability_kind":"statistics","data":"timed_scalar","fits":false,"random":false,"online_update":false},
-            {"id":"stat_pair","capability_kind":"statistics","reuses":["stat_corr","stat_beta","stat_linreg"],"data":"aligned_timed_pair","fits":true,"random":false,"online_update":false},
-            {"id":"prob_distribution","capability_kind":"probability","data":"explicit_parameters_or_timed_scalar","fits":false,"random":"only_when_sampling_requested","online_update":false},
-            {"id":"prob_beta_binomial","capability_kind":"probability","data":"mature_event_intervals","fits":true,"random":false,"online_update":false},
-            {"id":"eval_performance","capability_kind":"evaluation","data":"consecutive_net_simple_returns_and_optional_benchmark","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
-            {"id":"eval_trades","capability_kind":"evaluation","data":"closed_gross_pnl_and_explicit_costs","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
-            {"id":"eval_factor","capability_kind":"evaluation","data":"cross_sectional_scores_and_mature_forward_labels","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
-            {"id":"eval_calibration","capability_kind":"evaluation","data":"frozen_binary_forecasts_and_mature_labels","method_version":calibration::VERSION,"fits":false,"random":false,"online_update":false},
-            {"id":"prob_bootstrap_mean","capability_kind":"simulation","data":"timed_scalar_with_explicit_sampling_assumption","method_version":bootstrap::VERSION,"fits":false,"random":true,"online_update":false},
-            {"id":"stat_temporal_split","capability_kind":"statistics","data":"label_intervals_and_explicit_chronological_windows","method_version":temporal::VERSION,"fits":false,"random":false,"online_update":false}
+            {"id":"stat_describe","methods":["describe"],"capability_kind":"statistics","reuses":["stat_stddev","stat_percentile","stat_skew","stat_kurt"],"data":"timed_scalar","fits":false,"random":false,"online_update":false},
+            {"id":"stat_transform","methods":["transform"],"capability_kind":"statistics","data":"timed_scalar","fits":false,"random":false,"online_update":false},
+            {"id":"stat_zscore","methods":["rolling_zscore"],"capability_kind":"statistics","data":"timed_scalar","fits":false,"random":false,"online_update":false},
+            {"id":"stat_pair","methods":["pair"],"capability_kind":"statistics","reuses":["stat_corr","stat_beta","stat_linreg"],"data":"aligned_timed_pair","fits":true,"random":false,"online_update":false},
+            {"id":"prob_distribution","methods":["distribution"],"capability_kind":"probability","data":"explicit_parameters_or_timed_scalar","fits":false,"random":"only_when_sampling_requested","online_update":false},
+            {"id":"prob_beta_binomial","methods":["probability","infer_beta"],"inference_data":"frozen_beta_artifact","capability_kind":"probability","data":"mature_event_intervals","fits":true,"random":false,"online_update":false},
+            {"id":"eval_performance","methods":["performance"],"capability_kind":"evaluation","data":"consecutive_net_simple_returns_and_optional_benchmark","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
+            {"id":"eval_trades","methods":["trade_summary"],"capability_kind":"evaluation","data":"closed_gross_pnl_and_explicit_costs","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
+            {"id":"eval_factor","methods":["factor_evaluation"],"capability_kind":"evaluation","data":"cross_sectional_scores_and_mature_forward_labels","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
+            {"id":"eval_calibration","methods":["calibration_evaluation"],"capability_kind":"evaluation","data":"frozen_binary_forecasts_and_mature_labels","method_version":calibration::VERSION,"fits":false,"random":false,"online_update":false},
+            {"id":"prob_bootstrap_mean","methods":["bootstrap_mean"],"capability_kind":"simulation","data":"timed_scalar_with_explicit_sampling_assumption","method_version":bootstrap::VERSION,"fits":false,"random":true,"online_update":false},
+            {"id":"stat_temporal_split","methods":["temporal_split"],"capability_kind":"statistics","data":"label_intervals_and_explicit_chronological_windows","method_version":temporal::VERSION,"fits":false,"random":false,"online_update":false}
         ],"limits":{"samples":MAX_SAMPLES,"operations":MAX_OPERATIONS,"work_units":MAX_WORK,"output_values":MAX_OUTPUT_VALUES,"distribution_samples":4096}})
 }

@@ -5,13 +5,15 @@
 
 ## 目录与所有权
 
-- `vendor/yata/`：Yata v0.7.0 原始源码，保留包名、API、README、benches、许可证和构建文件。
+- `vendor/yata/`：Yata v0.7.0 原始审计基线，保留包名、API、README、benches、许可证和构建文件；排除在 workspace 外，不作依赖。
+- `crates/roze-ta/src/{core,helpers,indicators,methods}` 与 `prelude.rs`：项目维护的原生派生算法，保留逐文件 Apache-2.0 来源声明。
 - `crates/roze-ta/`：自有 Rust 技术分析 API、目录、批量/流式计算及状态契约。
 - `crates/roze-ta-mcp/`：调用核心库的 MCP 适配器。
 - `docs/requirements.md`：目标需求；`docs/contracts/`：版本化语义；`docs/evidence/`：验证记录。
 - `scripts/`：可重复运行的验证工具；`UPSTREAM.json`：上游来源及完整性记录。
 
-不为目录命名统一而搬迁既有代码。上游 Apache-2.0 与外层 MIT 许可证分别适用，不改标上游版权。
+原生模块迁移依据用户明确要求及 FR-ENG-006；后续不单纯为命名统一搬迁代码。
+上游及派生模块 Apache-2.0、自有代码 MIT 分别适用，组合 crate 为 `MIT AND Apache-2.0`，不改标上游版权。
 上游修复必须单独记录原始摘要、本地补丁、原因、测试与升级影响。
 
 ## Rust 与依赖
@@ -53,9 +55,11 @@ rtk cargo fmt -p roze-ta -p roze-ta-mcp -- --check
 rtk cargo test --workspace --locked
 rtk cargo clippy -p roze-ta -p roze-ta-mcp --all-targets --no-deps -- -D warnings
 rtk proxy powershell -NoProfile -File scripts/verify-upstream.ps1
+rtk proxy powershell -NoProfile -File scripts/verify-native.ps1
 ```
 
-第三方源码不执行自动格式化与批量 lint 修复。其新编译器警告独立记录，不混同自有代码门禁。
+vendor/yata 原始基线不执行自动格式化与批量 lint 修复。
+迁入 crates/roze-ta 的维护副本遵循本项目 fmt/clippy 与 forbid(unsafe_code)；变更必须保留原始摘要、派生摘要及可审查补丁。
 参考值不能仅来自同一个封装的自我对照；需独立公式、手工小样本或明示变体的参考实现。
 验证记录明确提交、工具链、平台、命令、结果和未验证范围；Windows 测试不能表示 Linux 或生产验收通过。
 变更先在临时目录验证再落地，避免覆盖已有工作；回滚只恢复本次修改或移除本次新增文件。

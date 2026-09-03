@@ -1,7 +1,7 @@
 use super::*;
-use yata::core::OHLCV;
-use yata::methods::SMA;
-use yata::{
+use crate::core::OHLCV;
+use crate::methods::SMA;
+use crate::{
     indicators::*,
     prelude::{IndicatorConfig, IndicatorInstance, Method},
 };
@@ -12,14 +12,14 @@ use yata::{
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub(super) struct ChaikinState {
     sum: f64,
-    short: Option<yata::methods::EMA>,
-    long: Option<yata::methods::EMA>,
+    short: Option<crate::methods::EMA>,
+    long: Option<crate::methods::EMA>,
 }
 impl ChaikinState {
     fn step(&mut self, candle: &[f64; 5]) -> Result<Vec<f64>, TaError> {
         if self.short.is_none() {
-            self.short = Some(yata::methods::EMA::new(3, &0.0).map_err(|_| upstream_error())?);
-            self.long = Some(yata::methods::EMA::new(10, &0.0).map_err(|_| upstream_error())?);
+            self.short = Some(crate::methods::EMA::new(3, &0.0).map_err(|_| upstream_error())?);
+            self.long = Some(crate::methods::EMA::new(10, &0.0).map_err(|_| upstream_error())?);
         }
         self.sum += candle.clv() * candle.volume();
         let short = self

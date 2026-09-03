@@ -1,10 +1,10 @@
 //! Shared, read-only indicator profiles for Native Tools and MCP. No IO or orders.
+#[cfg(test)]
+use crate::prelude::{IndicatorInstance, Method};
+use crate::{indicators::*, prelude::IndicatorConfig};
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, BTreeSet};
-#[cfg(test)]
-use yata::prelude::{IndicatorInstance, Method};
-use yata::{indicators::*, prelude::IndicatorConfig};
 
 pub const VERSION: &str = "roze-ta-catalog-v1/yata-0.7.0@5030e2349cedde60b0e367a9de9400d466ff644f";
 pub const MAX_BARS: usize = 4096;
@@ -383,7 +383,7 @@ fn compute_legacy(id: &str, bars: &[Candle]) -> Result<Vec<f64>, String> {
             .ok_or_else(|| "EMA failed".into());
     }
     if let Some(period) = id.strip_prefix("sma.").and_then(|s| s.parse::<u8>().ok()) {
-        let mut state = yata::methods::SMA::new(period, &closes[0]).map_err(|_| "SMA failed")?;
+        let mut state = crate::methods::SMA::new(period, &closes[0]).map_err(|_| "SMA failed")?;
         return Ok(vec![closes.iter().fold(closes[0], |_, v| state.next(v))]);
     }
     if id == "rsi.14" {

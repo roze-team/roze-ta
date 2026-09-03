@@ -1,6 +1,6 @@
 # roze-ta
 
-独立的纯 Rust 技术分析项目。基于固定版本 Yata，提供指标目录、可复现批量计算与只读 MCP。
+独立的纯 Rust 技术分析项目。算法已迁入本项目的原生模块，提供指标目录、可复现批量计算与只读 MCP；保留 Yata 来源和许可证。
 
 **项目需求与验收标准：[docs/requirements.md](docs/requirements.md)。**
 
@@ -10,15 +10,22 @@
 
 ## 当前原型
 
+MCP 现有 **5 个只读工具**，覆盖当前目录的 45 个 Profile 与 13 类分析操作；
+新增 `indicator_stream`，支持调用方携带快照的创建、续算、查看和重置。
+[完整接口、配置与示例](docs/usage/mcp.md)；[验证记录](docs/evidence/2026-09-03-mcp-coverage.md)。
+
 新增 **S2A 分析**：冻结预测的 Brier/Log Loss 与可靠性分桶、均值 IID/移动块 Bootstrap、
 带真实标签时间清除的训练/校准/验证切分。[用法](docs/usage/validation-v1.md)；概率校准模型拟合仍待实现。
 
 新增 **E1 分析**：绩效与回撤、Sharpe/Sortino、VaR/ES、HAC、交易统计、因子 IC/RankIC/ICIR。
 使用同一个只读分析 MCP；[用法与示例](docs/usage/evaluation-v1.md)、[公式覆盖范围](docs/formula-coverage.md)。
 
-- Yata v0.7.0 完整源码位于 `vendor/yata`，保留 Apache-2.0 许可证。
+- 算法代码由 `crates/roze-ta/src/{core,helpers,indicators,methods}` 和 `prelude.rs` 直接编译维护，Cargo 不再依赖 `yata`。
+- `vendor/yata` 保留 Yata v0.7.0 原始审计基线，不参与 workspace 构建。
+- 原生 API 使用 `roze_ta::methods` / `roze_ta::indicators`；旧 `roze_ta::yata::*` 保留为同一原生类型的兼容路径。
+- 迁移范围、许可证及快照兼容证据见 [原生迁移说明](docs/patches/yata-native-migration.md)。
 - `crates/roze-ta`：统一计算封装，33 类指标、45 个固定参数 Profile；A1 新增 10 类，A 批尚未整体交付。
-- `crates/roze-ta-mcp`：stdio 服务，提供 `indicator_catalog` 和 `indicator_batch_calculate`。
+- `crates/roze-ta-mcp`：stdio 服务，提供目录、V1/V2 批量、流式和分析五个 MCP 工具。
 - `roze_ta::indicators` / `roze_ta::methods` 可访问未纳入统一目录的上游能力。
 - 已登记的全部 45 个 Profile 支持统一流式更新、版本化无损状态快照及恢复；[A1 规格卡](docs/contracts/expansion-a1.md)明确新指标的公式、种子和逐项预热。
 - V2 提供 latest/series、可知时间校验、结构化状态及规范哈希；新增 MCP 工具 `indicator_batch_calculate_v2`。
@@ -30,6 +37,7 @@
 rtk cargo test --workspace --locked
 rtk cargo build -p roze-ta-mcp --locked
 rtk proxy powershell -NoProfile -File scripts/verify-upstream.ps1
+rtk proxy powershell -NoProfile -File scripts/verify-native.ps1
 ```
 
 MCP 客户端直接启动 `D:\Alion\roze-ta\target\debug\roze-ta-mcp.exe`，参数为空；
@@ -40,7 +48,8 @@ V2 使用方式见 [使用说明](docs/usage/engine-v2.md)，版本、快照与�
 
 所有复杂默认 Profile 暂用保守的 256 根预热限制。上游 Yata 的单位和初始化可能不同于其他平台；
 例如 ADX/MFI 使用 0～1，TRIX 是绝对差分变体，不能直接套用其他平台的阈值。
-版本戳包含上游 commit。上游原始代码在当前编译器有风格和生命周期提示，暂保留以便核对来源。
+版本戳保留公式来源的上游 commit；原生迁移的源码身份由迁移清单与 Git 提交记录。
+内部算法固定 f64/u8，序列化始终启用，全 crate 禁止 unsafe；原始审计基线保持不变。
 
 项目仓库：[roze-team/roze-ta](https://github.com/roze-team/roze-ta)。
 本项目未发布到 crates.io、未自动替换 roze-quant 的依赖。
@@ -51,7 +60,8 @@ V2 使用方式见 [使用说明](docs/usage/engine-v2.md)，版本、快照与�
 上游：<https://github.com/amv-dev/yata>，tag `v0.7.0`，
 commit `5030e2349cedde60b0e367a9de9400d466ff644f`。
 原始代码由上游 `git archive` 导出；`UPSTREAM.json` 保存文件 SHA-256 清单。
-`vendor/yata/LICENSE` 适用于上游代码；外层 roze-ta 扩展使用根目录 MIT 许可证。
+上游原件与迁入的派生模块保留 Apache-2.0；自有扩展使用 MIT。组合 crate 标注 `MIT AND Apache-2.0`，
+详见 [第三方声明](THIRD-PARTY-NOTICES.md)。
 
 ## 后续顺序
 
