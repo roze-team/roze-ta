@@ -1,0 +1,9 @@
+use roze_ta::{catalog::{catalog,Candle},engine::{Stream,SeriesIdentity,ClosedBar}};
+fn bar(i:i64)->ClosedBar {let close=100.+(i as f64*0.2).sin()*4.+i as f64/100.;ClosedBar{candle:Candle{closed_at_ms:i*1000,open:close,high:close+2.,low:close-1.,close,volume:100.+(i%7) as f64},available_at_ms:i*1000+1}}
+fn main()->Result<(),Box<dyn std::error::Error>> {
+    let identity=SeriesIdentity{series_id:"legacy-a1".into(),instrument:"TEST".into(),timeframe:"1s".into(),source:"fixture".into(),data_version:"1".into()};
+    let mut records=Vec::new();
+    for p in catalog(){let mut s=Stream::new(identity.clone(),&p.id)?;for i in 1..=280{s.update(&bar(i),1_000_000)?;}let snapshot=s.snapshot()?;let expected=s.update(&bar(281),1_000_000)?;
+        records.push(serde_json::json!({"profile_id":p.id,"identity":identity,"snapshot":snapshot,"next_bar":bar(281),"expected":expected}));}
+    println!("{}",serde_json::to_string(&records)?);Ok(())
+}

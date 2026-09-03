@@ -1,0 +1,110 @@
+[
+    {
+        "path":  "AGENTS.md",
+        "sha256":  "70ba68796b275485ad88c043f6b592d8876468d02e1cf122f5d65fac8f271053"
+    },
+    {
+        "path":  "Cargo.lock",
+        "sha256":  "bdbaf00797552fd848bf21111c8ca4d8ff8a9661ae8015eea84d8f95affb4e65"
+    },
+    {
+        "path":  "Cargo.toml",
+        "sha256":  "fbcda359072eb0fa45a9529cdb2e07d7d3104706162bcd78794163eb1c371afd"
+    },
+    {
+        "path":  "crates/roze-ta/Cargo.toml",
+        "sha256":  "1c0536973a808972da2bc95425948a8bcbf595479dfc282437094d82e3e17c21"
+    },
+    {
+        "path":  "crates/roze-ta/examples/export_schema.rs",
+        "sha256":  "92a814768cf62a20cd10e9cc248b9427026b27be6e1b103d2543621154b746de"
+    },
+    {
+        "path":  "crates/roze-ta/examples/stream.rs",
+        "sha256":  "0d66ee7ea3ea7db13d9b1131b7d70b60c5fe86fb8f8353f3650ae3c4e654b0c8"
+    },
+    {
+        "path":  "crates/roze-ta/src/catalog.rs",
+        "sha256":  "b7354c302100c9731a7e44ea66022737efb6bd08257d00384f3e4a6c375cf246"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/kernel.rs",
+        "sha256":  "f222c99419c7d524862803afb30c5c53ed28986d1948b559cb374ee9f4e1e013"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/mod.rs",
+        "sha256":  "3b0b6e5e40d81d87ef4c9e60687cc6215f6149145aab75bee48b7661f17eb329"
+    },
+    {
+        "path":  "crates/roze-ta/src/error.rs",
+        "sha256":  "80ccab124727ff1efb1acfa4b1753f0186c87618716f5eac663d94787ddc3cc2"
+    },
+    {
+        "path":  "crates/roze-ta/src/fingerprint.rs",
+        "sha256":  "5dc2c5de69ca350583f444f6525e20c5882cda3c062d29bbdc4820264c78494c"
+    },
+    {
+        "path":  "crates/roze-ta/src/lib.rs",
+        "sha256":  "32d0b15085e828000cf0f845e9e5e871cc5b3e154a7b2603400b1b91eda99272"
+    },
+    {
+        "path":  "crates/roze-ta/tests/engine.rs",
+        "sha256":  "ee6ee63f62859bc4934a3489cf494c50f90417be2dc34539db65e06f275df73a"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/Cargo.toml",
+        "sha256":  "595c85efc0d4ba70cb3b67fe8a339db038c8ca82d05cf6778eabb252d95add1f"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/src/bounded.rs",
+        "sha256":  "20db411f85c4c42282f5a28abe92857e52325492a0d384eeb056f025da6742fd"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/src/main.rs",
+        "sha256":  "b116309ae4b010d8d78ddc2ceef13919f86df889ac554346f9e0b85f15887ea7"
+    },
+    {
+        "path":  "docs/contracts/base-profiles.md",
+        "sha256":  "ba92319708dde802f2a76be877fb93fceb724927d5c2989d358a666d515ae1de"
+    },
+    {
+        "path":  "docs/contracts/engine-v2.md",
+        "sha256":  "a62a9d9c7507a0e71bdedaafbc868529b0ff64c6cdc91715a55d2d2f70016935"
+    },
+    {
+        "path":  "docs/contracts/schema/batch-request-v1.json",
+        "sha256":  "04ab08ba4f709c1bfa6534b5305513c895fc0538a572ab4387cc8acb9e750a27"
+    },
+    {
+        "path":  "docs/contracts/schema/batch-request-v2.json",
+        "sha256":  "253af162192424b0aac0769c795bc38f69b2ebc569cdcaf3c1a7f643b8f2aba0"
+    },
+    {
+        "path":  "docs/contracts/schema/batch-result-v2.json",
+        "sha256":  "abd0da8994986b0bf9140ecf5530bf8f1a942e0effa58554dc12335db3fd8634"
+    },
+    {
+        "path":  "docs/contracts/schema/error-v2.json",
+        "sha256":  "1f84eaac3107f13440ee48ab5c9aa8437220693b1b5e2bfeaafa362ed08f3737"
+    },
+    {
+        "path":  "docs/contracts/schema/snapshot-v1.json",
+        "sha256":  "4496292abbfb168d9165ece73dace23a6c419cb954e76f775c7f0af77124a9d3"
+    },
+    {
+        "path":  "docs/dependencies.md",
+        "sha256":  "52bd89cb531ef9541ba00bbb8c8b225aa9e57caa521f15cd87c9c9d5c67affb1"
+    },
+    {
+        "path":  "docs/implementation-status.md",
+        "sha256":  "093343a0223fb413f476b3d44725c8a7f262642b457ebac34ce8f248f09afc42"
+    },
+    {
+        "path":  "docs/usage/engine-v2.md",
+        "sha256":  "683e13e013341b9d1fce3e3ad7e28024766a06445a2ac974d095ac4ed4bd062c"
+    },
+    {
+        "path":  "README.md",
+        "sha256":  "8df225d17ac1bf5ddb382c5cac91e51f903c7a5ce7c3978a8198eacd8b0778d5"
+    }
+]

@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "method_version": "roze-ta-analysis-v1.0/statrs-0.19.1/chacha8-rand_chacha-0.9.0",
+  "hash_protocol": "roze-ta-canonical-v1",
+  "identity": {
+    "series_id": "evaluation-demo",
+    "instrument": "DEMO",
+    "timeframe": "1d",
+    "source": "synthetic",
+    "data_version": "1"
+  },
+  "input_kind": "simple_return",
+  "units": "ratio",
+  "as_of_ms": 10000,
+  "fit_cutoff_ms": 10000,
+  "input_hash": "c6433e6201bf805d859ec985fc7800182c0f797a94e288c353e5e4693843778a",
+  "output_hash": "1a887e0542876ff3301218f347bcee487a98bb3dc90ae2594c41fab6f54282f4",
+  "supplied_points": 3,
+  "selected_points": 3,
+  "selected_range_ms": [
+    1000,
+    3000
+  ],
+  "selection_hash": "80f4704bc696f2672190324bebb94c6c9c01b42eed6a39f890e7866021dc06ef",
+  "specifications": [
+    {
+      "method": "performance",
+      "spec": {
+        "periods_per_year": 3.0,
+        "risk_free_per_period": 0.01,
+        "mar_per_period": 0.02,
+        "ddof": 1,
+        "tail_level": 0.5,
+        "include_gaussian_tail": true,
+        "hac_lags": 1,
+        "benchmark_id": "synthetic-benchmark",
+        "return_basis": "net_of_costs",
+        "spacing": "consecutive_trading_periods"
+      }
+    },
+    {
+      "method": "trade_summary",
+      "spec": {
+        "currency": "CNY",
+        "cost_definition": "commission and slippage in CNY, excluded from gross_pnl",
+        "trades": [
+          {
+            "id": "t1",
+            "closed_at_ms": 1000,
+            "available_at_ms": 1000,
+            "gross_pnl": 110.0,
+            "costs": 10.0
+          },
+          {
+            "id": "t2",
+            "closed_at_ms": 2000,
+            "available_at_ms": 2000,
+            "gross_pnl": -40.0,
+            "costs": 10.0
+          },
+          {
+            "id": "t3",
+            "closed_at_ms": 3000,
+            "available_at_ms": 3000,
+            "gross_pnl": 10.0,
+            "costs": 10.0
+          }
+        ]
+      }
+    },
+    {
+      "method": "factor_evaluation",
+      "spec": {
+        "factor_id": "demo-score",
+        "universe_id": "frozen-four-assets",
+        "universe_size": 4,
+        "label_definition": "synthetic two-millisecond forward return",
+        "horizon_ms": 2,
+        "minimum_cross_section": 2,
+        "ddof": 1,
+        "observations": [
+          {
+            "asset_id": "a",
+            "at_ms": 1,
+            "factor_available_at_ms": 1,
+            "label_end_ms": 3,
+            "label_available_at_ms": 3,
+            "score": -1.0,
+            "future_return": -0.2
+          },
+          {
+            "asset_id": "b",
+            "at_ms": 1,
+            "factor_available_at_ms": 1,
+            "label_end_ms": 3,
+            "label_available_at_ms": 3,
+            "score": 0.0,
+            "future_return": 0.0
+          },
+          {
+            "asset_id": "c",
+            "at_ms": 1,
+            "factor_available_at_ms": 1,
+            "label_end_ms": 3,
+            "label_available_at_ms": 3,
+            "score": 1.0,
+            "future_return": 0.2
+          },
+          {
+            "asset_id": "a",
+            "at_ms": 3,
+            "factor_available_at_ms": 3,
+            "label_end_ms": 5,
+            "label_available_at_ms": 5,
+            "score": -1.0,
+            "future_return": 0.2
+          },
+          {
+            "asset_id": "b",
+            "at_ms": 3,
+            "factor_available_at_ms": 3,
+            "label_end_ms": 5,
+            "label_available_at_ms": 5,
+            "score": 0.0,
+            "future_return": 0.0
+          },
+          {
+            "asset_id": "c",
+            "at_ms": 3,
+            "factor_available_at_ms": 3,
+            "label_end_ms": 5,
+            "label_available_at_ms": 5,
+            "score": 1.0,
+            "future_return": -0.2
+          }
+        ]
+      }
+    }
+  ],
+  "assumptions": [
+    "caller supplies units, data identity and truthful availability; no imputation",
+    "statistics summarize selected history; correlation and OLS do not establish causation"
+  ],
+  "results": [
+    {
+      "analysis_kind": "performance",
+      "result": {
+        "method_version": "roze-ta-evaluation-v1",
+        "sample_count": 3,
+        "spec": {
+          "periods_per_year": 3.0,
+          "risk_free_per_period": 0.01,
+          "mar_per_period": 0.02,
+          "ddof": 1,
+          "tail_level": 0.5,
+          "include_gaussian_tail": true,
+          "hac_lags": 1,
+          "benchmark_id": "synthetic-benchmark",
+          "return_basis": "net_of_costs",
+          "spacing": "consecutive_trading_periods"
+        },
+        "arithmetic_mean_return": 0.049999999999999996,
+        "cumulative_return": {
+          "status": "ready",
+          "value": 0.10000000000000003
+        },
+        "annualized_return": {
+          "status": "ready",
+          "value": 0.10000000000000003
+        },
+        "annualized_volatility": 0.3968626966596886,
+        "annualized_sharpe": {
+          "status": "ready",
+          "value": 0.3023715784073817
+        },
+        "annualized_sortino": {
+          "status": "ready",
+          "value": 0.409090909090909
+        },
+        "annualized_information_ratio": {
+          "status": "ready",
+          "value": 0.654653670707977
+        },
+        "annualized_tracking_error": 0.229128784747792,
+        "maximum_drawdown": 0.19999999999999998,
+        "maximum_underwater_periods": 1,
+        "calmar": {
+          "status": "ready",
+          "value": 0.5000000000000002
+        },
+        "historical_tail": {
+          "method": "empirical_inverse_cdf_fractional_upper_tail",
+          "level": 0.5,
+          "loss_definition": "negative_one_period_net_simple_return; no_zero_floor",
+          "value_at_risk": -0.1,
+          "expected_shortfall": 0.10000000000000002
+        },
+        "gaussian_tail": {
+          "method": "gaussian_explicit_assumption",
+          "level": 0.5,
+          "loss_definition": "negative_one_period_net_simple_return; no_zero_floor",
+          "value_at_risk": -0.049999999999999996,
+          "expected_shortfall": 0.13281831978578632
+        },
+        "hac": {
+          "method": "newey_west_mean_bartlett_divisor_n_no_small_sample_correction",
+          "lags": 1,
+          "autocorrelations": [
+            {
+              "status": "ready",
+              "value": -0.5952380952380951
+            }
+          ],
+          "mean_excess_standard_error": {
+            "status": "ready",
+            "value": 0.06871842709362769
+          },
+          "mean_excess_t_statistic": {
+            "status": "ready",
+            "value": 0.582085500087199
+          },
+          "effective_sample_count": {
+            "status": "ready",
+            "value": 7.4117647058823515
+          }
+        },
+        "equity_curve": [
+          {
+            "at_ms": 1000,
+            "available_at_ms": 1000,
+            "cumulative_return": {
+              "status": "ready",
+              "value": 0.10000000000000002
+            },
+            "drawdown": 0.0,
+            "underwater_periods": 0
+          },
+          {
+            "at_ms": 2000,
+            "available_at_ms": 2000,
+            "cumulative_return": {
+              "status": "ready",
+              "value": -0.11999999999999998
+            },
+            "drawdown": 0.19999999999999998,
+            "underwater_periods": 1
+          },
+          {
+            "at_ms": 3000,
+            "available_at_ms": 3000,
+            "cumulative_return": {
+              "status": "ready",
+              "value": 0.10000000000000003
+            },
+            "drawdown": 0.0,
+            "underwater_periods": 0
+          }
+        ],
+        "assumptions": [
+          "caller supplies consecutive trading-period net simple returns; no cash-flow adjustment or calendar inference",
+          "sqrt(A) ratio/volatility annualization assumes suitable stationary dependence structure; HAC is reported separately",
+          "tail estimates describe one-period loss; Gaussian model only when explicitly requested",
+          "HAC effective n is an approximation for the mean and may exceed n with negative dependence; no p-value or significance decision"
+        ]
+      }
+    },
+    {
+      "analysis_kind": "trade_summary",
+      "result": {
+        "method_version": "roze-ta-evaluation-v1",
+        "currency": "CNY",
+        "cost_definition": "commission and slippage in CNY, excluded from gross_pnl",
+        "selection_hash": "ba91fd3cb62de87bd2106616434d1583749ba0c50c880bad88744624e384a0b6",
+        "selected_ids": [
+          "t1",
+          "t2",
+          "t3"
+        ],
+        "selected_range_ms": [
+          1000,
+          3000
+        ],
+        "excluded_unavailable": 0,
+        "trade_count": 3,
+        "wins": 1,
+        "losses": 1,
+        "breakeven": 1,
+        "gross_pnl": 80.0,
+        "costs": 30.0,
+        "net_pnl": 50.0,
+        "win_rate": 0.3333333333333333,
+        "mean_net_pnl": 16.666666666666668,
+        "average_win": {
+          "status": "ready",
+          "value": 100.0
+        },
+        "average_loss_magnitude": {
+          "status": "ready",
+          "value": 50.0
+        },
+        "payoff_ratio": {
+          "status": "ready",
+          "value": 2.0
+        },
+        "profit_factor": {
+          "status": "ready",
+          "value": 2.0
+        },
+        "maximum_consecutive_wins": 1,
+        "maximum_consecutive_losses": 1,
+        "assumptions": [
+          "gross PnL excludes the explicitly supplied total costs; costs deducted exactly once",
+          "wins/losses classified by net PnL; breakeven trades remain in win-rate denominator and interrupt streaks",
+          "currency conversion and overlapping position equity are not inferred from trade records"
+        ]
+      }
+    },
+    {
+      "analysis_kind": "factor_evaluation",
+      "result": {
+        "method_version": "roze-ta-evaluation-v1",
+        "factor_id": "demo-score",
+        "universe_id": "frozen-four-assets",
+        "label_definition": "synthetic two-millisecond forward return",
+        "horizon_ms": 2,
+        "selection_hash": "342e745d4bca4c62c43c2eb6523559594eb98e19005ac93df1d57bc973044b45",
+        "excluded_immature_groups": 0,
+        "excluded_small_groups": 0,
+        "excluded_overlapping_groups": 0,
+        "ic": {
+          "valid_groups": 2,
+          "mean": {
+            "status": "ready",
+            "value": 0.0
+          },
+          "standard_deviation": {
+            "status": "ready",
+            "value": 1.4142135623730947
+          },
+          "information_ratio": {
+            "status": "ready",
+            "value": 0.0
+          }
+        },
+        "rank_ic": {
+          "valid_groups": 2,
+          "mean": {
+            "status": "ready",
+            "value": 0.0
+          },
+          "standard_deviation": {
+            "status": "ready",
+            "value": 1.414213562373095
+          },
+          "information_ratio": {
+            "status": "ready",
+            "value": 0.0
+          }
+        },
+        "rows": [
+          {
+            "at_ms": 1,
+            "available_at_ms": 3,
+            "sample_count": 3,
+            "coverage": 0.75,
+            "information_coefficient": {
+              "status": "ready",
+              "value": 0.9999999999999998
+            },
+            "rank_information_coefficient": {
+              "status": "ready",
+              "value": 0.9999999999999999
+            },
+            "direction_hit_rate": {
+              "status": "ready",
+              "value": 1.0
+            },
+            "direction_count": 2,
+            "zero_direction_count": 1
+          },
+          {
+            "at_ms": 3,
+            "available_at_ms": 5,
+            "sample_count": 3,
+            "coverage": 0.75,
+            "information_coefficient": {
+              "status": "ready",
+              "value": -0.9999999999999998
+            },
+            "rank_information_coefficient": {
+              "status": "ready",
+              "value": -0.9999999999999999
+            },
+            "direction_hit_rate": {
+              "status": "ready",
+              "value": 0.0
+            },
+            "direction_count": 2,
+            "zero_direction_count": 1
+          }
+        ],
+        "assumptions": [
+          "cross-sectional IC per observation time; average ranks for ties; no pooled time-series correlation",
+          "entire cross section waits for all supplied labels; chronological nonoverlapping label intervals selected",
+          "coverage uses caller-declared universe size; universe membership and survivorship bias require caller provenance",
+          "ICIR is unannualized mean/std across valid groups; constant groups remain undefined and valid group counts are reported",
+          "direction hit rate excludes zero scores/returns and is descriptive, not a calibrated probability"
+        ]
+      }
+    }
+  ]
+}

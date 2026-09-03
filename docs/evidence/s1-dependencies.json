@@ -1,0 +1,140 @@
+[
+    {
+        "name":  "approx",
+        "version":  "0.5.1",
+        "license":  "Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "getrandom",
+        "version":  "0.3.4",
+        "license":  "MIT OR Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "std"
+                     ]
+    },
+    {
+        "name":  "getrandom",
+        "version":  "0.4.3",
+        "license":  "MIT OR Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "libm",
+        "version":  "0.2.16",
+        "license":  "MIT",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "arch",
+                         "default"
+                     ]
+    },
+    {
+        "name":  "ppv-lite86",
+        "version":  "0.2.21",
+        "license":  "MIT OR Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "simd",
+                         "std"
+                     ]
+    },
+    {
+        "name":  "r-efi",
+        "version":  "5.3.0",
+        "license":  "MIT OR Apache-2.0 OR LGPL-2.1-or-later",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "r-efi",
+        "version":  "6.0.0",
+        "license":  "MIT OR Apache-2.0 OR LGPL-2.1-or-later",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "rand",
+        "version":  "0.9.5",
+        "license":  "MIT OR Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "alloc",
+                         "std"
+                     ]
+    },
+    {
+        "name":  "rand_chacha",
+        "version":  "0.9.0",
+        "license":  "MIT OR Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "std"
+                     ]
+    },
+    {
+        "name":  "rand_core",
+        "version":  "0.9.5",
+        "license":  "MIT OR Apache-2.0",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "std"
+                     ]
+    },
+    {
+        "name":  "statrs",
+        "version":  "0.19.1",
+        "license":  "MIT",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "wasip2",
+        "version":  "1.0.4+wasi-0.2.12",
+        "license":  "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "wit-bindgen",
+        "version":  "0.57.1",
+        "license":  "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    },
+    {
+        "name":  "zerocopy",
+        "version":  "0.8.56",
+        "license":  "BSD-2-Clause OR Apache-2.0 OR MIT",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+                         "simd"
+                     ]
+    },
+    {
+        "name":  "zerocopy-derive",
+        "version":  "0.8.56",
+        "license":  "BSD-2-Clause OR Apache-2.0 OR MIT",
+        "source":  "registry+https://github.com/rust-lang/crates.io-index",
+        "features":  [
+
+                     ]
+    }
+]

@@ -1,0 +1,16 @@
+[workspace]
+members = ["crates/roze-ta", "crates/roze-ta-mcp", "vendor/yata"]
+default-members = ["crates/roze-ta", "crates/roze-ta-mcp"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+anyhow = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "io-util"] }
+roze-ta = { path = "crates/roze-ta" }

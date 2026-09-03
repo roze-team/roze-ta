@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BatchRequest",
+  "type": "object",
+  "properties": {
+    "as_of_ms": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "bars": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ClosedBar"
+      }
+    },
+    "identity": {
+      "$ref": "#/$defs/SeriesIdentity"
+    },
+    "output": {
+      "$ref": "#/$defs/OutputMode",
+      "default": "latest"
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "require_all_ready": {
+      "type": "boolean",
+      "default": false
+    },
+    "schema_version": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0
+    },
+    "snapshot_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "identity",
+    "as_of_ms",
+    "bars",
+    "profiles"
+  ],
+  "$defs": {
+    "Candle": {
+      "type": "object",
+      "properties": {
+        "close": {
+          "type": "number",
+          "format": "double"
+        },
+        "closed_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "high": {
+          "type": "number",
+          "format": "double"
+        },
+        "low": {
+          "type": "number",
+          "format": "double"
+        },
+        "open": {
+          "type": "number",
+          "format": "double"
+        },
+        "volume": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "closed_at_ms",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ]
+    },
+    "ClosedBar": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "description": "Earliest instant the caller says this completed candle was knowable.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "candle": {
+          "$ref": "#/$defs/Candle"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "candle",
+        "available_at_ms"
+      ]
+    },
+    "OutputMode": {
+      "type": "string",
+      "enum": [
+        "latest",
+        "series"
+      ]
+    },
+    "SeriesIdentity": {
+      "type": "object",
+      "properties": {
+        "data_version": {
+          "type": "string"
+        },
+        "instrument": {
+          "type": "string"
+        },
+        "series_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "series_id",
+        "instrument",
+        "timeframe",
+        "source",
+        "data_version"
+      ]
+    }
+  }
+}

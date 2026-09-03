@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "identity": {"series_id":"evaluation-demo","instrument":"DEMO","timeframe":"1d","source":"synthetic","data_version":"1"},
+  "input_kind": "simple_return",
+  "units": "ratio",
+  "as_of_ms": 10000,
+  "fit_cutoff_ms": 10000,
+  "points": [
+    {"at_ms":1000,"available_at_ms":1000,"x":0.1,"y":0.0},
+    {"at_ms":2000,"available_at_ms":2000,"x":-0.2,"y":-0.1},
+    {"at_ms":3000,"available_at_ms":3000,"x":0.25,"y":0.1}
+  ],
+  "events": [],
+  "operations": [
+    {"method":"performance","spec":{
+      "periods_per_year":3.0,"risk_free_per_period":0.01,"mar_per_period":0.02,
+      "ddof":1,"tail_level":0.5,"include_gaussian_tail":true,"hac_lags":1,
+      "benchmark_id":"synthetic-benchmark","return_basis":"net_of_costs","spacing":"consecutive_trading_periods"
+    }},
+    {"method":"trade_summary","spec":{
+      "currency":"CNY","cost_definition":"commission and slippage in CNY, excluded from gross_pnl",
+      "trades":[
+        {"id":"t1","closed_at_ms":1000,"available_at_ms":1000,"gross_pnl":110.0,"costs":10.0},
+        {"id":"t2","closed_at_ms":2000,"available_at_ms":2000,"gross_pnl":-40.0,"costs":10.0},
+        {"id":"t3","closed_at_ms":3000,"available_at_ms":3000,"gross_pnl":10.0,"costs":10.0}
+      ]
+    }},
+    {"method":"factor_evaluation","spec":{
+      "factor_id":"demo-score","universe_id":"frozen-four-assets","universe_size":4,
+      "label_definition":"synthetic two-millisecond forward return","horizon_ms":2,"minimum_cross_section":2,"ddof":1,
+      "observations":[
+        {"asset_id":"a","at_ms":1,"factor_available_at_ms":1,"label_end_ms":3,"label_available_at_ms":3,"score":-1.0,"future_return":-0.2},
+        {"asset_id":"b","at_ms":1,"factor_available_at_ms":1,"label_end_ms":3,"label_available_at_ms":3,"score":0.0,"future_return":0.0},
+        {"asset_id":"c","at_ms":1,"factor_available_at_ms":1,"label_end_ms":3,"label_available_at_ms":3,"score":1.0,"future_return":0.2},
+        {"asset_id":"a","at_ms":3,"factor_available_at_ms":3,"label_end_ms":5,"label_available_at_ms":5,"score":-1.0,"future_return":0.2},
+        {"asset_id":"b","at_ms":3,"factor_available_at_ms":3,"label_end_ms":5,"label_available_at_ms":5,"score":0.0,"future_return":0.0},
+        {"asset_id":"c","at_ms":3,"factor_available_at_ms":3,"label_end_ms":5,"label_available_at_ms":5,"score":1.0,"future_return":-0.2}
+      ]
+    }}
+  ]
+}

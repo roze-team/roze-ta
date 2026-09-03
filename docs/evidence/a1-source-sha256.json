@@ -1,0 +1,82 @@
+[
+    {
+        "path":  "README.md",
+        "after":  "4873aa6d8d0f44eeb5dc52ffd1345b83983e8c3d451a3aedd8044d3ab47055d7"
+    },
+    {
+        "path":  "crates/roze-ta/src/catalog.rs",
+        "after":  "6d86592ea51dea491c01d240f53b944a22d3c13d46c9cae4a59735fb1fe0e408"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/mod.rs",
+        "after":  "b912467cb7fc056f8fca3591743a29227944f04a23f1a89464384a3a3af0a95f"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/kernel.rs",
+        "after":  "92bfd830ac4c2592d51d6d080005c74f8fd986ef4d1ba8d4cf5647a343405ad3"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/extensions.rs",
+        "after":  "7093c9ac4cede271ee5e4455df7dad36810ce440979d136eb6aa6c6af693820a"
+    },
+    {
+        "path":  "crates/roze-ta/tests/expansion_a1.rs",
+        "after":  "107e1cb0fd8688b8eccdaf221c87896b7c6cd37f30826507685dea7b01abd021"
+    },
+    {
+        "path":  "crates/roze-ta/tests/fixtures/pre-a1-snapshots.json",
+        "after":  "d5e1fb62318b6c01e72c98c28fd406b56c42e4b78e42f24effc0680082dbd7f7"
+    },
+    {
+        "path":  "crates/roze-ta/tests/fixtures/pre-a1-generator.rs.txt",
+        "after":  "c06531a956dc4fcb089e0efada2c59f2341b97224025a6b4d1c3d890376f1421"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/src/main.rs",
+        "after":  "d274d6cf5195ac7572bd17685e77c43ae1abd68d883756c74c548737229ed857"
+    },
+    {
+        "path":  "docs/contracts/expansion-a1.md",
+        "after":  "7cdbac260854116b464983825c47493ee42516d2fa9b5e8ee96fe1eedf613f22"
+    },
+    {
+        "path":  "docs/indicator-expansion.md",
+        "after":  "f0166a5b0ec30c6669c000c05b90dd9f9cda2270dcc2847b6bee6dfdc3e3cca7"
+    },
+    {
+        "path":  "docs/indicator-backlog.csv",
+        "after":  "b92325975f5e07f3775d03709f104bf7916cde4174b067817dc5647d49b1671f"
+    },
+    {
+        "path":  "docs/upstream-indicator-coverage.csv",
+        "after":  "a09912566b2ae2095bd31d5ade84634b9cb4c653b35f6e3c5d863603078252fa"
+    },
+    {
+        "path":  "docs/upstream-method-coverage.md",
+        "after":  "ad5f4b9348643a8ee029b4266053694474365186379d5531f3628d034e9acb6d"
+    },
+    {
+        "path":  "docs/implementation-status.md",
+        "after":  "1ac505fe3dca51dcb271bad37257cbde64be48adb76212a206406fda5368bccc"
+    },
+    {
+        "path":  "docs/evidence/2026-09-03-expansion-a1.md",
+        "after":  "3abad7bd9b0646cb88370845e8a7699ae93f5b19b9636c1217709952bb4165dd"
+    },
+    {
+        "path":  "docs/evidence/a1-cargo-test.log",
+        "after":  "435e5dce11150cedb54007b399590130a44a74c5274859fd21d35d0f47ff0601"
+    },
+    {
+        "path":  "docs/evidence/a1-clippy.log",
+        "after":  "095b7e9460cff81e3c5c016d1d63748f21213c10abe4047cbca2edd9bc31a06b"
+    },
+    {
+        "path":  "docs/evidence/a1-baseline-source.json",
+        "after":  "ab5fbe776dfd739917a0677452e0c211565c0e3e34cd79e31d68c60334d53e6b"
+    },
+    {
+        "path":  "scripts/verify-expansion.ps1",
+        "after":  "1059a02c765f6cf466b713c75d7b421855282d7c180330386b30d815edeca64f"
+    }
+]

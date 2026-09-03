@@ -1,0 +1,82 @@
+[
+    {
+        "path":  "README.md",
+        "sha256":  "50a53aa20ae048b0d1aa572abe2ad245b0c01aef5c4e050e35c31b94edcb2e9b"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/mod.rs",
+        "sha256":  "b4b488024e6e2f1b881a042fa0b5aa1668631b9bc8b448c9aa3d2629675b97b7"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/statistics.rs",
+        "sha256":  "2590646871f284abce2ec44914c43ebc2325eccdb255fc922dfe69c3c4cdf687"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/evaluation.rs",
+        "sha256":  "2d6deb96eeb0b9ac3cb5e53651e352a7bc83c91323893efd4276ba98c7c22a6e"
+    },
+    {
+        "path":  "crates/roze-ta/tests/evaluation.rs",
+        "sha256":  "74fa7e96b6c39674118d29af114e94e3640a739776c4b6aa3257f2ddfa06cd74"
+    },
+    {
+        "path":  "crates/roze-ta/examples/evaluation.rs",
+        "sha256":  "b66b35fe708ec0b1fd921f27c6e9876435926727ff0f0f223adb1e52ef18ff50"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/src/main.rs",
+        "sha256":  "2f8d27b732d87defb00f8807d75bd935893fd6fe8f74c592d37bd1866cf7b911"
+    },
+    {
+        "path":  "docs/contracts/evaluation-v1.md",
+        "sha256":  "f4c7b8ad113b362696fcb9f357dac0270665fc54edfa6c154bc56d40c0541de5"
+    },
+    {
+        "path":  "docs/contracts/schema/analysis-request-v1.json",
+        "sha256":  "fe9d1c24abdc0f784358f84d3769b882fd0a35077f70b351df95d59fab12b2bb"
+    },
+    {
+        "path":  "docs/contracts/schema/analysis-result-v1.json",
+        "sha256":  "957c257c4c33eb8b8d1ace67c9afdb3055f136a7303ae608842f8cf2103c40ec"
+    },
+    {
+        "path":  "docs/contracts/schema/batch-result-v2.json",
+        "sha256":  "40de2687f3cba2191fe7cd0c693350f3ec82a92191a8deeff620ee6edbaeaf89"
+    },
+    {
+        "path":  "docs/usage/evaluation-v1.md",
+        "sha256":  "ccced21bf20724c184c64cad0cb3adeefb994495e678480f7c8e19a1f2aca463"
+    },
+    {
+        "path":  "docs/usage/evaluation-request-v1.json",
+        "sha256":  "a435866aeea2f813ac95ddf1b29a5b5bcb57bab6297befb06939729877ff18f3"
+    },
+    {
+        "path":  "docs/formula-coverage.md",
+        "sha256":  "e72ee3b0c9e34fbc0629e47eb638d5a1f9f68c7b71e9a92cb72ea13c811badeb"
+    },
+    {
+        "path":  "docs/implementation-status.md",
+        "sha256":  "ad1487c5a374a51c210f2741e4eb945f1648993e8021746b304996fc03b3f315"
+    },
+    {
+        "path":  "docs/probability-statistics.md",
+        "sha256":  "956e694801a465355c7c382ce12541a259c5b58efb4641818635e8b74a96be70"
+    },
+    {
+        "path":  "docs/evidence/2026-09-03-evaluation-e1.md",
+        "sha256":  "3dbf58d72628250b28699967881e7db01fe28329cf89e9c867a673c98f21c338"
+    },
+    {
+        "path":  "docs/evidence/eval1-cargo-test.log",
+        "sha256":  "253c5b9d1d05cfa0ae9efd1e5ce559a4adf2ec687ce0886df7aa122e8bc8988c"
+    },
+    {
+        "path":  "docs/evidence/eval1-clippy.log",
+        "sha256":  "6b387e67da6ed27d4757257b29ec4e4f54fb068a2a175126838880136f7941a9"
+    },
+    {
+        "path":  "docs/evidence/eval1-example-output.json",
+        "sha256":  "55f1522f0145dd1f93f6eb27c601d8a4801c6e3b5afc2dc88ef87153b1da8811"
+    }
+]

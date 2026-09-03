@@ -1,0 +1,18 @@
+[
+    {
+        "path":  "crates/roze-ta/src/catalog.rs",
+        "sha256":  "b7354c302100c9731a7e44ea66022737efb6bd08257d00384f3e4a6c375cf246"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/kernel.rs",
+        "sha256":  "f222c99419c7d524862803afb30c5c53ed28986d1948b559cb374ee9f4e1e013"
+    },
+    {
+        "path":  "crates/roze-ta/src/engine/mod.rs",
+        "sha256":  "3b0b6e5e40d81d87ef4c9e60687cc6215f6149145aab75bee48b7661f17eb329"
+    },
+    {
+        "path":  "Cargo.lock",
+        "sha256":  "76712788a84a426f01666b0b929966c68d23acd22fa4c0cb9a14513064e74380"
+    }
+]

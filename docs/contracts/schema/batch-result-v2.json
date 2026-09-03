@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BatchResult",
+  "type": "object",
+  "properties": {
+    "as_of_ms": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "hash_protocol": {
+      "type": "string"
+    },
+    "identity": {
+      "$ref": "#/$defs/SeriesIdentity"
+    },
+    "implementation_version": {
+      "type": "string"
+    },
+    "input_hash": {
+      "type": "string"
+    },
+    "output_hash": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0
+    },
+    "series": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ProfileSeries"
+      }
+    },
+    "snapshot_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "implementation_version",
+    "hash_protocol",
+    "snapshot_id",
+    "identity",
+    "as_of_ms",
+    "input_hash",
+    "output_hash",
+    "series"
+  ],
+  "$defs": {
+    "ErrorCode": {
+      "type": "string",
+      "enum": [
+        "invalid_identity",
+        "invalid_bar",
+        "invalid_time",
+        "duplicate_or_unordered_bar",
+        "limit_exceeded",
+        "unsupported_profile",
+        "duplicate_profile",
+        "incompatible_snapshot",
+        "corrupt_snapshot",
+        "encoding_failed",
+        "upstream_failure",
+        "not_ready",
+        "undefined_result",
+        "cancelled",
+        "timed_out",
+        "invalid_parameter",
+        "invalid_sample",
+        "duplicate_sample",
+        "insufficient_data",
+        "numerical_failure",
+        "incompatible_artifact"
+      ]
+    },
+    "Measurement": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ErrorCode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "last_bar_closed_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "minimum_samples": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "parameter_hash": {
+          "type": "string"
+        },
+        "profile_id": {
+          "type": "string"
+        },
+        "profile_version": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "quality_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "samples_seen": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0
+        },
+        "schema_version": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "status": {
+          "$ref": "#/$defs/Status"
+        },
+        "units": {
+          "type": "string"
+        },
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "profile_version",
+        "profile_id",
+        "parameter_hash",
+        "status",
+        "values",
+        "units",
+        "samples_seen",
+        "minimum_samples",
+        "last_bar_closed_at_ms",
+        "available_at_ms",
+        "quality_flags"
+      ]
+    },
+    "ProfileSeries": {
+      "type": "object",
+      "properties": {
+        "profile_id": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Measurement"
+          }
+        }
+      },
+      "required": [
+        "profile_id",
+        "rows"
+      ]
+    },
+    "SeriesIdentity": {
+      "type": "object",
+      "properties": {
+        "data_version": {
+          "type": "string"
+        },
+        "instrument": {
+          "type": "string"
+        },
+        "series_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "series_id",
+        "instrument",
+        "timeframe",
+        "source",
+        "data_version"
+      ]
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "warming_up",
+        "undefined_result"
+      ]
+    }
+  }
+}

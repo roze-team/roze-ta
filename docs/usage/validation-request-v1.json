@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "identity": {"series_id":"validation-demo","instrument":"SYNTHETIC","timeframe":"event","source":"manual","data_version":"1"},
+  "input_kind": "scalar",
+  "units": "unit",
+  "as_of_ms": 100,
+  "fit_cutoff_ms": 100,
+  "points": [{"at_ms":1,"available_at_ms":1,"x":1.0,"y":null},{"at_ms":2,"available_at_ms":2,"x":3.0,"y":null}],
+  "events": [],
+  "operations": [
+    {"method":"calibration_evaluation","spec":{
+      "model_id":"frozen-model-v1","model_fit_cutoff_ms":1,
+      "event_definition":"synthetic positive terminal return","label_definition_version":"demo-v1","horizon_ms":5,
+      "evaluation_start_ms":10,"evaluation_end_ms":60,"baseline_probability":0.5,"baseline_fit_cutoff_ms":1,
+      "bin_edges":[0.0,0.5,1.0],"log_loss_clip":null,
+      "forecasts":[
+        {"id":"p1","at_ms":10,"prediction_available_at_ms":10,"label_end_ms":15,"label_available_at_ms":15,"probability":0.0,"outcome":false},
+        {"id":"p2","at_ms":20,"prediction_available_at_ms":20,"label_end_ms":25,"label_available_at_ms":25,"probability":0.25,"outcome":true},
+        {"id":"p3","at_ms":30,"prediction_available_at_ms":30,"label_end_ms":35,"label_available_at_ms":35,"probability":0.5,"outcome":false},
+        {"id":"p4","at_ms":40,"prediction_available_at_ms":40,"label_end_ms":45,"label_available_at_ms":45,"probability":0.75,"outcome":true},
+        {"id":"p5","at_ms":50,"prediction_available_at_ms":50,"label_end_ms":55,"label_available_at_ms":55,"probability":1.0,"outcome":true}
+      ]
+    }},
+    {"method":"bootstrap_mean","spec":{
+      "scheme":{"scheme":"iid","assume_independent":true},"seed":42,"replicates":100,"interval_level":0.95
+    }},
+    {"method":"temporal_split","spec":{
+      "dataset_id":"synthetic-labels","label_definition":"explicit event end","purge_gap_ms":2,"minimum_partition_samples":1,
+      "folds":[{"train_start_ms":1,"train_end_ms":20,"calibration_end_ms":40,"validation_end_ms":60}],
+      "observations":[
+        {"id":"train","at_ms":2,"features_available_at_ms":2,"label_end_ms":4,"label_available_at_ms":4},
+        {"id":"cross_train","at_ms":15,"features_available_at_ms":15,"label_end_ms":22,"label_available_at_ms":22},
+        {"id":"calibration","at_ms":21,"features_available_at_ms":21,"label_end_ms":25,"label_available_at_ms":25},
+        {"id":"delayed_calibration","at_ms":30,"features_available_at_ms":30,"label_end_ms":35,"label_available_at_ms":40},
+        {"id":"validation","at_ms":41,"features_available_at_ms":41,"label_end_ms":45,"label_available_at_ms":45}
+      ]
+    }}
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BetaArtifact",
+  "type": "object",
+  "properties": {
+    "artifact_hash": {
+      "type": "string"
+    },
+    "artifact_version": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0
+    },
+    "definition": {
+      "$ref": "#/$defs/ProbabilityTask"
+    },
+    "fit_cutoff_ms": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "hits": {
+      "type": "integer",
+      "format": "uint",
+      "minimum": 0
+    },
+    "identity": {
+      "$ref": "#/$defs/SeriesIdentity"
+    },
+    "input_hash": {
+      "type": "string"
+    },
+    "input_schema": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    },
+    "posterior": {
+      "$ref": "#/$defs/BetaPrior"
+    },
+    "sample_count": {
+      "type": "integer",
+      "format": "uint",
+      "minimum": 0
+    },
+    "selection_hash": {
+      "type": "string"
+    },
+    "training_range_ms": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "maxItems": 2,
+      "minItems": 2
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "artifact_version",
+    "method_version",
+    "input_schema",
+    "identity",
+    "definition",
+    "fit_cutoff_ms",
+    "training_range_ms",
+    "input_hash",
+    "selection_hash",
+    "sample_count",
+    "hits",
+    "posterior",
+    "artifact_hash"
+  ],
+  "$defs": {
+    "BernoulliAssumption": {
+      "type": "string",
+      "enum": [
+        "iid_after_nonoverlap_selection"
+      ]
+    },
+    "BetaPrior": {
+      "type": "object",
+      "properties": {
+        "alpha": {
+          "type": "number",
+          "format": "double"
+        },
+        "beta": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "alpha",
+        "beta"
+      ]
+    },
+    "ProbabilityTask": {
+      "type": "object",
+      "properties": {
+        "assumption": {
+          "$ref": "#/$defs/BernoulliAssumption"
+        },
+        "conditioning": {
+          "type": "string"
+        },
+        "event_definition": {
+          "type": "string"
+        },
+        "horizon_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "interval_level": {
+          "type": "number",
+          "format": "double"
+        },
+        "label_definition_version": {
+          "type": "string"
+        },
+        "prior": {
+          "$ref": "#/$defs/BetaPrior"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "event_definition",
+        "conditioning",
+        "horizon_ms",
+        "label_definition_version",
+        "interval_level",
+        "prior",
+        "assumption"
+      ]
+    },
+    "SeriesIdentity": {
+      "type": "object",
+      "properties": {
+        "data_version": {
+          "type": "string"
+        },
+        "instrument": {
+          "type": "string"
+        },
+        "series_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "series_id",
+        "instrument",
+        "timeframe",
+        "source",
+        "data_version"
+      ]
+    }
+  }
+}

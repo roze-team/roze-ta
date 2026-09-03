@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot",
+  "type": "object",
+  "properties": {
+    "checksum": {
+      "type": "string"
+    },
+    "implementation_version": {
+      "type": "string"
+    },
+    "parameter_hash": {
+      "type": "string"
+    },
+    "payload_hex": {
+      "description": "bincode 2.0.1 serde, standard little-endian/variable integers, lowercase hex.",
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "implementation_version",
+    "parameter_hash",
+    "payload_hex",
+    "checksum"
+  ]
+}

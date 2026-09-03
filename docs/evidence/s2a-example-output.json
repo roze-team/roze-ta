@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "method_version": "roze-ta-analysis-v1.0/statrs-0.19.1/chacha8-rand_chacha-0.9.0",
+  "hash_protocol": "roze-ta-canonical-v1",
+  "identity": {
+    "series_id": "validation-demo",
+    "instrument": "SYNTHETIC",
+    "timeframe": "event",
+    "source": "manual",
+    "data_version": "1"
+  },
+  "input_kind": "scalar",
+  "units": "unit",
+  "as_of_ms": 100,
+  "fit_cutoff_ms": 100,
+  "input_hash": "e5fab90eee653e8bcfdc25683e337e85ece03475696d690d00f0f9e1d558bfdd",
+  "output_hash": "1bd815c4e0b05c745b26a1d78a6f16d52d553847345eaac38a397bcf17993994",
+  "supplied_points": 2,
+  "selected_points": 2,
+  "selected_range_ms": [
+    1,
+    2
+  ],
+  "selection_hash": "7dc7301c31e75fc5d527887cce31a963ff53204400f2f3e490b78c87a1875ba6",
+  "specifications": [
+    {
+      "method": "calibration_evaluation",
+      "spec": {
+        "model_id": "frozen-model-v1",
+        "model_fit_cutoff_ms": 1,
+        "event_definition": "synthetic positive terminal return",
+        "label_definition_version": "demo-v1",
+        "horizon_ms": 5,
+        "evaluation_start_ms": 10,
+        "evaluation_end_ms": 60,
+        "baseline_probability": 0.5,
+        "baseline_fit_cutoff_ms": 1,
+        "bin_edges": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "log_loss_clip": null,
+        "forecasts": [
+          {
+            "id": "p1",
+            "at_ms": 10,
+            "prediction_available_at_ms": 10,
+            "label_end_ms": 15,
+            "label_available_at_ms": 15,
+            "probability": 0.0,
+            "outcome": false
+          },
+          {
+            "id": "p2",
+            "at_ms": 20,
+            "prediction_available_at_ms": 20,
+            "label_end_ms": 25,
+            "label_available_at_ms": 25,
+            "probability": 0.25,
+            "outcome": true
+          },
+          {
+            "id": "p3",
+            "at_ms": 30,
+            "prediction_available_at_ms": 30,
+            "label_end_ms": 35,
+            "label_available_at_ms": 35,
+            "probability": 0.5,
+            "outcome": false
+          },
+          {
+            "id": "p4",
+            "at_ms": 40,
+            "prediction_available_at_ms": 40,
+            "label_end_ms": 45,
+            "label_available_at_ms": 45,
+            "probability": 0.75,
+            "outcome": true
+          },
+          {
+            "id": "p5",
+            "at_ms": 50,
+            "prediction_available_at_ms": 50,
+            "label_end_ms": 55,
+            "label_available_at_ms": 55,
+            "probability": 1.0,
+            "outcome": true
+          }
+        ]
+      }
+    },
+    {
+      "method": "bootstrap_mean",
+      "spec": {
+        "scheme": {
+          "scheme": "iid",
+          "assume_independent": true
+        },
+        "seed": 42,
+        "replicates": 100,
+        "interval_level": 0.95
+      }
+    },
+    {
+      "method": "temporal_split",
+      "spec": {
+        "dataset_id": "synthetic-labels",
+        "label_definition": "explicit event end",
+        "purge_gap_ms": 2,
+        "minimum_partition_samples": 1,
+        "folds": [
+          {
+            "train_start_ms": 1,
+            "train_end_ms": 20,
+            "calibration_end_ms": 40,
+            "validation_end_ms": 60
+          }
+        ],
+        "observations": [
+          {
+            "id": "train",
+            "at_ms": 2,
+            "features_available_at_ms": 2,
+            "label_end_ms": 4,
+            "label_available_at_ms": 4
+          },
+          {
+            "id": "cross_train",
+            "at_ms": 15,
+            "features_available_at_ms": 15,
+            "label_end_ms": 22,
+            "label_available_at_ms": 22
+          },
+          {
+            "id": "calibration",
+            "at_ms": 21,
+            "features_available_at_ms": 21,
+            "label_end_ms": 25,
+            "label_available_at_ms": 25
+          },
+          {
+            "id": "delayed_calibration",
+            "at_ms": 30,
+            "features_available_at_ms": 30,
+            "label_end_ms": 35,
+            "label_available_at_ms": 40
+          },
+          {
+            "id": "validation",
+            "at_ms": 41,
+            "features_available_at_ms": 41,
+            "label_end_ms": 45,
+            "label_available_at_ms": 45
+          }
+        ]
+      }
+    }
+  ],
+  "assumptions": [
+    "caller supplies units, data identity and truthful availability; no imputation",
+    "statistics summarize selected history; correlation and OLS do not establish causation"
+  ],
+  "results": [
+    {
+      "analysis_kind": "calibration_evaluation",
+      "result": {
+        "method_version": "roze-ta-calibration-evaluation-v1",
+        "model_id": "frozen-model-v1",
+        "model_fit_cutoff_ms": 1,
+        "event_definition": "synthetic positive terminal return",
+        "label_definition_version": "demo-v1",
+        "horizon_ms": 5,
+        "evaluation_window_ms": [
+          10,
+          60
+        ],
+        "baseline_probability": 0.5,
+        "baseline_fit_cutoff_ms": 1,
+        "log_loss_clip": null,
+        "selected_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5"
+        ],
+        "selected_range_ms": [
+          10,
+          50
+        ],
+        "available_at_ms": 55,
+        "selection_hash": "02fcf7349e6f26cb8868b041f1cceed928429c83864e1b802fa0fefdcb531079",
+        "excluded_outside_window": 0,
+        "excluded_immature": 0,
+        "excluded_overlap": 0,
+        "sample_count": 5,
+        "hits": 3,
+        "model": {
+          "brier_score": 0.175,
+          "log_loss": {
+            "status": "ready",
+            "value": 0.4734247228263233
+          },
+          "impossible_outcomes": 0,
+          "clipped_probabilities": 0
+        },
+        "baseline": {
+          "brier_score": 0.25,
+          "log_loss": {
+            "status": "ready",
+            "value": 0.6931471805599453
+          },
+          "impossible_outcomes": 0,
+          "clipped_probabilities": 0
+        },
+        "brier_skill_score": {
+          "status": "ready",
+          "value": 0.30000000000000004
+        },
+        "expected_calibration_error": 0.2,
+        "maximum_calibration_error": 0.375,
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false,
+            "count": 2,
+            "hits": 1,
+            "mean_probability": {
+              "status": "ready",
+              "value": 0.125
+            },
+            "observed_frequency": {
+              "status": "ready",
+              "value": 0.5
+            },
+            "absolute_gap": {
+              "status": "ready",
+              "value": 0.375
+            }
+          },
+          {
+            "lower": 0.5,
+            "upper": 1.0,
+            "upper_inclusive": true,
+            "count": 3,
+            "hits": 2,
+            "mean_probability": {
+              "status": "ready",
+              "value": 0.75
+            },
+            "observed_frequency": {
+              "status": "ready",
+              "value": 0.6666666666666666
+            },
+            "absolute_gap": {
+              "status": "ready",
+              "value": 0.08333333333333337
+            }
+          }
+        ],
+        "assumptions": [
+          "frozen binary forecasts; no calibrator is fitted; baseline is supplied from pre-evaluation data",
+          "bin edges are caller-fixed; reliability bins are [lower,upper), final bin includes 1",
+          "Brier/log loss combine calibration and resolution; ECE depends on bins and is not a significance test",
+          "chronological nonoverlapping label intervals selected; availability and model provenance are caller assertions"
+        ]
+      }
+    },
+    {
+      "analysis_kind": "bootstrap_mean",
+      "result": {
+        "method_version": "roze-ta-bootstrap-mean-v1/chacha8-rand_chacha-0.9.0/rand-0.9.5",
+        "rng_algorithm": "ChaCha8Rng::seed_from_u64 + rand-0.9.5 uniform u64 indices",
+        "spec": {
+          "scheme": {
+            "scheme": "iid",
+            "assume_independent": true
+          },
+          "seed": 42,
+          "replicates": 100,
+          "interval_level": 0.95
+        },
+        "sample_count": 2,
+        "completed_replicates": 100,
+        "original_mean": 2.0,
+        "bootstrap_mean": 1.99,
+        "estimated_bias": -0.010000000000000009,
+        "standard_error": 0.7316095442601375,
+        "monte_carlo_standard_error_of_bootstrap_mean": 0.07316095442601375,
+        "interval": {
+          "interval_type": "frequentist_bootstrap_percentile",
+          "method": "type_7_quantiles_of_resampled_means",
+          "level": 0.95,
+          "lower": 1.0,
+          "upper": 3.0,
+          "assumptions": [
+            "percentile interval; no BCa/studentization or finite-sample coverage guarantee"
+          ]
+        },
+        "replicate_means": [
+          3.0,
+          2.0,
+          1.0,
+          2.0,
+          2.0,
+          3.0,
+          3.0,
+          2.0,
+          2.0,
+          1.0,
+          1.0,
+          2.0,
+          1.0,
+          3.0,
+          3.0,
+          2.0,
+          1.0,
+          3.0,
+          1.0,
+          3.0,
+          3.0,
+          2.0,
+          3.0,
+          2.0,
+          3.0,
+          2.0,
+          1.0,
+          1.0,
+          3.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          1.0,
+          1.0,
+          1.0,
+          3.0,
+          2.0,
+          3.0,
+          2.0,
+          1.0,
+          2.0,
+          2.0,
+          1.0,
+          3.0,
+          1.0,
+          3.0,
+          2.0,
+          3.0,
+          1.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          1.0,
+          2.0,
+          2.0,
+          3.0,
+          3.0,
+          1.0,
+          1.0,
+          1.0,
+          3.0,
+          2.0,
+          2.0,
+          1.0,
+          3.0,
+          3.0,
+          3.0,
+          3.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          1.0,
+          1.0,
+          2.0,
+          2.0,
+          2.0,
+          2.0,
+          1.0,
+          2.0,
+          1.0,
+          2.0,
+          3.0,
+          2.0,
+          2.0,
+          2.0,
+          3.0,
+          2.0,
+          2.0,
+          2.0,
+          3.0,
+          2.0,
+          2.0
+        ],
+        "assumptions": [
+          "IID explicitly assumes independent observations; moving blocks assume stationary consecutive observations supplied by caller",
+          "moving blocks: uniform start among n-L+1 overlapping non-circular blocks, concatenate and truncate final block to length n",
+          "bootstrap standard error estimates sampling uncertainty; Monte Carlo standard error describes simulation mean precision, not confidence-interval endpoint error",
+          "L=n or constant data yields a degenerate resampling distribution; not proof of zero real-world uncertainty",
+          "same request/seed/version is reproducible on verified platform; no cross-platform floating-point promise"
+        ]
+      }
+    },
+    {
+      "analysis_kind": "temporal_split",
+      "result": {
+        "method_version": "roze-ta-temporal-split-v1",
+        "dataset_id": "synthetic-labels",
+        "label_definition": "explicit event end",
+        "purge_gap_ms": 2,
+        "folds": [
+          {
+            "window": {
+              "train_start_ms": 1,
+              "train_end_ms": 20,
+              "calibration_end_ms": 40,
+              "validation_end_ms": 60
+            },
+            "train": {
+              "feature_window_ms": [
+                1,
+                20
+              ],
+              "labels_known_before_ms": 18,
+              "selected_ids": [
+                "train"
+              ],
+              "selection_hash": "ac2e4e172f5e35f64509c9c11b0eab3e962786dbe3586b21778f358312f794a0",
+              "sufficient_samples": true
+            },
+            "calibration": {
+              "feature_window_ms": [
+                20,
+                40
+              ],
+              "labels_known_before_ms": 38,
+              "selected_ids": [
+                "calibration"
+              ],
+              "selection_hash": "6420e77275d9cf525a12a4365579fa439cbd19a560e98f98056fc76cb0e0460f",
+              "sufficient_samples": true
+            },
+            "validation": {
+              "feature_window_ms": [
+                40,
+                60
+              ],
+              "labels_known_before_ms": 60,
+              "selected_ids": [
+                "validation"
+              ],
+              "selection_hash": "f940e71fd344d6dc19ba025cf805e86f67426fc74e20f4f503fdd8bbe3f4e4e9",
+              "sufficient_samples": true
+            },
+            "excluded_outside": 0,
+            "excluded_unavailable": 0,
+            "excluded_boundary": 2,
+            "usable": true
+          }
+        ],
+        "assumptions": [
+          "explicit chronological windows support rolling or expanding training; no random split and no fitting",
+          "purge uses actual label end/availability before next role boundary minus the declared gap; not a general combinatorial purged-CV or post-test embargo implementation",
+          "labels within a partition or across different folds may overlap; fold metrics cannot be treated as independent replicates",
+          "IDs and times are caller-provided; feature computation leakage and data provenance are not detectable from metadata"
+        ]
+      }
+    }
+  ]
+}

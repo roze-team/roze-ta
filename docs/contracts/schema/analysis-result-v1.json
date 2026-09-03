@@ -1,0 +1,2899 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResultSet",
+  "type": "object",
+  "properties": {
+    "as_of_ms": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fit_cutoff_ms": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "hash_protocol": {
+      "type": "string"
+    },
+    "identity": {
+      "$ref": "#/$defs/SeriesIdentity"
+    },
+    "input_hash": {
+      "type": "string"
+    },
+    "input_kind": {
+      "type": "string"
+    },
+    "method_version": {
+      "type": "string"
+    },
+    "output_hash": {
+      "type": "string"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Output"
+      }
+    },
+    "schema_version": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0
+    },
+    "selected_points": {
+      "type": "integer",
+      "format": "uint",
+      "minimum": 0
+    },
+    "selected_range_ms": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "selection_hash": {
+      "type": "string"
+    },
+    "specifications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Operation"
+      }
+    },
+    "supplied_points": {
+      "type": "integer",
+      "format": "uint",
+      "minimum": 0
+    },
+    "units": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "method_version",
+    "hash_protocol",
+    "identity",
+    "input_kind",
+    "units",
+    "as_of_ms",
+    "fit_cutoff_ms",
+    "input_hash",
+    "output_hash",
+    "supplied_points",
+    "selected_points",
+    "selection_hash",
+    "specifications",
+    "assumptions",
+    "results"
+  ],
+  "$defs": {
+    "BernoulliAssumption": {
+      "type": "string",
+      "enum": [
+        "iid_after_nonoverlap_selection"
+      ]
+    },
+    "BetaArtifact": {
+      "type": "object",
+      "properties": {
+        "artifact_hash": {
+          "type": "string"
+        },
+        "artifact_version": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0
+        },
+        "definition": {
+          "$ref": "#/$defs/ProbabilityTask"
+        },
+        "fit_cutoff_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hits": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "identity": {
+          "$ref": "#/$defs/SeriesIdentity"
+        },
+        "input_hash": {
+          "type": "string"
+        },
+        "input_schema": {
+          "type": "string"
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "posterior": {
+          "$ref": "#/$defs/BetaPrior"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "selection_hash": {
+          "type": "string"
+        },
+        "training_range_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxItems": 2,
+          "minItems": 2
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "artifact_version",
+        "method_version",
+        "input_schema",
+        "identity",
+        "definition",
+        "fit_cutoff_ms",
+        "training_range_ms",
+        "input_hash",
+        "selection_hash",
+        "sample_count",
+        "hits",
+        "posterior",
+        "artifact_hash"
+      ]
+    },
+    "BetaInference": {
+      "type": "object",
+      "properties": {
+        "artifact_hash": {
+          "type": "string"
+        },
+        "as_of_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "parameter_credible_interval": {
+          "description": "Equal-tail credible interval for the latent Bernoulli parameter, not the next label.",
+          "$ref": "#/$defs/Interval"
+        },
+        "probability": {
+          "description": "Posterior predictive mean for a single exchangeable Bernoulli event.",
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "as_of_ms",
+        "artifact_hash",
+        "probability",
+        "parameter_credible_interval"
+      ]
+    },
+    "BetaPrior": {
+      "type": "object",
+      "properties": {
+        "alpha": {
+          "type": "number",
+          "format": "double"
+        },
+        "beta": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "alpha",
+        "beta"
+      ]
+    },
+    "BootstrapResult": {
+      "type": "object",
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bootstrap_mean": {
+          "type": "number",
+          "format": "double"
+        },
+        "completed_replicates": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "estimated_bias": {
+          "type": "number",
+          "format": "double"
+        },
+        "interval": {
+          "$ref": "#/$defs/Interval"
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "monte_carlo_standard_error_of_bootstrap_mean": {
+          "type": "number",
+          "format": "double"
+        },
+        "original_mean": {
+          "type": "number",
+          "format": "double"
+        },
+        "replicate_means": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "rng_algorithm": {
+          "type": "string"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "spec": {
+          "$ref": "#/$defs/BootstrapSpec"
+        },
+        "standard_error": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "method_version",
+        "rng_algorithm",
+        "spec",
+        "sample_count",
+        "completed_replicates",
+        "original_mean",
+        "bootstrap_mean",
+        "estimated_bias",
+        "standard_error",
+        "monte_carlo_standard_error_of_bootstrap_mean",
+        "interval",
+        "replicate_means",
+        "assumptions"
+      ]
+    },
+    "BootstrapScheme": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "assume_independent": {
+              "type": "boolean"
+            },
+            "scheme": {
+              "type": "string",
+              "const": "iid"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "scheme",
+            "assume_independent"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "assume_stationary": {
+              "type": "boolean"
+            },
+            "block_length": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "scheme": {
+              "type": "string",
+              "const": "moving_block"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "scheme",
+            "block_length",
+            "assume_stationary"
+          ]
+        }
+      ]
+    },
+    "BootstrapSpec": {
+      "type": "object",
+      "properties": {
+        "interval_level": {
+          "type": "number",
+          "format": "double"
+        },
+        "replicates": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "scheme": {
+          "$ref": "#/$defs/BootstrapScheme"
+        },
+        "seed": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "scheme",
+        "seed",
+        "replicates",
+        "interval_level"
+      ]
+    },
+    "CalibrationResult": {
+      "type": "object",
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "baseline": {
+          "$ref": "#/$defs/Scores"
+        },
+        "baseline_fit_cutoff_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "baseline_probability": {
+          "type": "number",
+          "format": "double"
+        },
+        "bins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReliabilityBin"
+          }
+        },
+        "brier_skill_score": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "evaluation_window_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxItems": 2,
+          "minItems": 2
+        },
+        "event_definition": {
+          "type": "string"
+        },
+        "excluded_immature": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_outside_window": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_overlap": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "expected_calibration_error": {
+          "type": "number",
+          "format": "double"
+        },
+        "hits": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "horizon_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "label_definition_version": {
+          "type": "string"
+        },
+        "log_loss_clip": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "maximum_calibration_error": {
+          "type": "number",
+          "format": "double"
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "model": {
+          "$ref": "#/$defs/Scores"
+        },
+        "model_fit_cutoff_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "model_id": {
+          "type": "string"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "selected_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selected_range_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxItems": 2,
+          "minItems": 2
+        },
+        "selection_hash": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "method_version",
+        "model_id",
+        "model_fit_cutoff_ms",
+        "event_definition",
+        "label_definition_version",
+        "horizon_ms",
+        "evaluation_window_ms",
+        "baseline_probability",
+        "baseline_fit_cutoff_ms",
+        "selected_ids",
+        "selected_range_ms",
+        "available_at_ms",
+        "selection_hash",
+        "excluded_outside_window",
+        "excluded_immature",
+        "excluded_overlap",
+        "sample_count",
+        "hits",
+        "model",
+        "baseline",
+        "brier_skill_score",
+        "expected_calibration_error",
+        "maximum_calibration_error",
+        "bins",
+        "assumptions"
+      ]
+    },
+    "CalibrationSpec": {
+      "type": "object",
+      "properties": {
+        "baseline_fit_cutoff_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "baseline_probability": {
+          "type": "number",
+          "format": "double"
+        },
+        "bin_edges": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "evaluation_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "evaluation_start_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "event_definition": {
+          "type": "string"
+        },
+        "forecasts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Forecast"
+          }
+        },
+        "horizon_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "label_definition_version": {
+          "type": "string"
+        },
+        "log_loss_clip": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "model_fit_cutoff_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "model_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "model_id",
+        "model_fit_cutoff_ms",
+        "event_definition",
+        "label_definition_version",
+        "horizon_ms",
+        "evaluation_start_ms",
+        "evaluation_end_ms",
+        "baseline_probability",
+        "baseline_fit_cutoff_ms",
+        "bin_edges",
+        "forecasts"
+      ]
+    },
+    "Description": {
+      "type": "object",
+      "properties": {
+        "ddof": {
+          "type": "integer",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "ecdf": {
+          "description": "[observed value, fraction <= value], with ties collapsed.",
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "maxItems": 2,
+            "minItems": 2
+          }
+        },
+        "excess_moment_kurtosis": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "iqr": {
+          "type": "number",
+          "format": "double"
+        },
+        "mad_unscaled": {
+          "type": "number",
+          "format": "double"
+        },
+        "maximum": {
+          "type": "number",
+          "format": "double"
+        },
+        "mean": {
+          "type": "number",
+          "format": "double"
+        },
+        "mean_confidence_interval": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Interval"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mean_interval_unavailable_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "median": {
+          "type": "number",
+          "format": "double"
+        },
+        "minimum": {
+          "type": "number",
+          "format": "double"
+        },
+        "moment_skewness": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "quantile_method": {
+          "type": "string"
+        },
+        "quantiles": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "maxItems": 2,
+            "minItems": 2
+          }
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "standard_deviation": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "trimmed_mean": {
+          "type": "number",
+          "format": "double"
+        },
+        "trimmed_sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "variance": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "winsorized_sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "winsorized_values": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "required": [
+        "sample_count",
+        "ddof",
+        "mean",
+        "median",
+        "minimum",
+        "maximum",
+        "variance",
+        "standard_deviation",
+        "moment_skewness",
+        "excess_moment_kurtosis",
+        "quantile_method",
+        "quantiles",
+        "ecdf",
+        "mad_unscaled",
+        "iqr",
+        "trimmed_mean",
+        "trimmed_sample_count",
+        "winsorized_values",
+        "winsorized_sample_count"
+      ]
+    },
+    "Distribution": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "const": "normal"
+            },
+            "mean": {
+              "type": "number",
+              "format": "double"
+            },
+            "standard_deviation": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "mean",
+            "standard_deviation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "degrees_of_freedom": {
+              "type": "number",
+              "format": "double"
+            },
+            "family": {
+              "type": "string",
+              "const": "student_t"
+            },
+            "location": {
+              "type": "number",
+              "format": "double"
+            },
+            "scale": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "location",
+            "scale",
+            "degrees_of_freedom"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alpha": {
+              "type": "number",
+              "format": "double"
+            },
+            "beta": {
+              "type": "number",
+              "format": "double"
+            },
+            "family": {
+              "type": "string",
+              "const": "beta"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "alpha",
+            "beta"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "const": "binomial"
+            },
+            "probability": {
+              "type": "number",
+              "format": "double"
+            },
+            "trials": {
+              "type": "integer",
+              "format": "uint32",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "trials",
+            "probability"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "const": "empirical"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family"
+          ]
+        }
+      ]
+    },
+    "DistributionResult": {
+      "type": "object",
+      "properties": {
+        "completed_samples": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "density_kind": {
+          "type": "string"
+        },
+        "distribution": {
+          "$ref": "#/$defs/Distribution"
+        },
+        "empirical_sample_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint",
+          "minimum": 0
+        },
+        "evaluations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Evaluation"
+          }
+        },
+        "quantiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Scalar"
+          }
+        },
+        "rng_algorithm": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "samples": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "sampling": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Sampling"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "distribution",
+        "density_kind",
+        "evaluations",
+        "quantiles",
+        "completed_samples",
+        "samples"
+      ]
+    },
+    "DistributionTask": {
+      "type": "object",
+      "properties": {
+        "distribution": {
+          "$ref": "#/$defs/Distribution"
+        },
+        "evaluate_at": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "quantiles": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "sampling": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Sampling"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "distribution",
+        "evaluate_at",
+        "quantiles"
+      ]
+    },
+    "EquityPoint": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "cumulative_return": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "drawdown": {
+          "type": "number",
+          "format": "double"
+        },
+        "underwater_periods": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "at_ms",
+        "available_at_ms",
+        "cumulative_return",
+        "drawdown",
+        "underwater_periods"
+      ]
+    },
+    "Evaluation": {
+      "type": "object",
+      "properties": {
+        "cdf": {
+          "type": "number",
+          "format": "double"
+        },
+        "pdf_or_pmf": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "x": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "x",
+        "pdf_or_pmf",
+        "cdf"
+      ]
+    },
+    "FactorObservation": {
+      "type": "object",
+      "properties": {
+        "asset_id": {
+          "type": "string"
+        },
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "factor_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "future_return": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "label_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "label_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "asset_id",
+        "at_ms",
+        "factor_available_at_ms",
+        "label_end_ms",
+        "label_available_at_ms",
+        "score"
+      ]
+    },
+    "FactorResult": {
+      "type": "object",
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded_immature_groups": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_overlapping_groups": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_small_groups": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "factor_id": {
+          "type": "string"
+        },
+        "horizon_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ic": {
+          "$ref": "#/$defs/FactorSummary"
+        },
+        "label_definition": {
+          "type": "string"
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "rank_ic": {
+          "$ref": "#/$defs/FactorSummary"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FactorRow"
+          }
+        },
+        "selection_hash": {
+          "type": "string"
+        },
+        "universe_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "method_version",
+        "factor_id",
+        "universe_id",
+        "label_definition",
+        "horizon_ms",
+        "selection_hash",
+        "excluded_immature_groups",
+        "excluded_small_groups",
+        "excluded_overlapping_groups",
+        "ic",
+        "rank_ic",
+        "rows",
+        "assumptions"
+      ]
+    },
+    "FactorRow": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "coverage": {
+          "type": "number",
+          "format": "double"
+        },
+        "direction_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "direction_hit_rate": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "information_coefficient": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "rank_information_coefficient": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "zero_direction_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "at_ms",
+        "available_at_ms",
+        "sample_count",
+        "coverage",
+        "information_coefficient",
+        "rank_information_coefficient",
+        "direction_hit_rate",
+        "direction_count",
+        "zero_direction_count"
+      ]
+    },
+    "FactorSpec": {
+      "type": "object",
+      "properties": {
+        "ddof": {
+          "type": "integer",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "factor_id": {
+          "type": "string"
+        },
+        "horizon_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "label_definition": {
+          "type": "string"
+        },
+        "minimum_cross_section": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FactorObservation"
+          }
+        },
+        "universe_id": {
+          "type": "string"
+        },
+        "universe_size": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "factor_id",
+        "universe_id",
+        "universe_size",
+        "label_definition",
+        "horizon_ms",
+        "minimum_cross_section",
+        "ddof",
+        "observations"
+      ]
+    },
+    "FactorSummary": {
+      "type": "object",
+      "properties": {
+        "information_ratio": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "mean": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "standard_deviation": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "valid_groups": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "valid_groups",
+        "mean",
+        "standard_deviation",
+        "information_ratio"
+      ]
+    },
+    "FoldResult": {
+      "type": "object",
+      "properties": {
+        "calibration": {
+          "$ref": "#/$defs/Partition"
+        },
+        "excluded_boundary": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_outside": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_unavailable": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "train": {
+          "$ref": "#/$defs/Partition"
+        },
+        "usable": {
+          "type": "boolean"
+        },
+        "validation": {
+          "$ref": "#/$defs/Partition"
+        },
+        "window": {
+          "$ref": "#/$defs/FoldWindow"
+        }
+      },
+      "required": [
+        "window",
+        "train",
+        "calibration",
+        "validation",
+        "excluded_outside",
+        "excluded_unavailable",
+        "excluded_boundary",
+        "usable"
+      ]
+    },
+    "FoldWindow": {
+      "type": "object",
+      "properties": {
+        "calibration_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "train_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "train_start_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "validation_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "train_start_ms",
+        "train_end_ms",
+        "calibration_end_ms",
+        "validation_end_ms"
+      ]
+    },
+    "Forecast": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "id": {
+          "type": "string"
+        },
+        "label_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "label_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "outcome": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "prediction_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "probability": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "at_ms",
+        "prediction_available_at_ms",
+        "label_end_ms",
+        "label_available_at_ms",
+        "probability"
+      ]
+    },
+    "HacEstimate": {
+      "type": "object",
+      "properties": {
+        "autocorrelations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Scalar"
+          }
+        },
+        "effective_sample_count": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "lags": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "mean_excess_standard_error": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "mean_excess_t_statistic": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "method",
+        "lags",
+        "autocorrelations",
+        "mean_excess_standard_error",
+        "mean_excess_t_statistic",
+        "effective_sample_count"
+      ]
+    },
+    "Interval": {
+      "type": "object",
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interval_type": {
+          "type": "string"
+        },
+        "level": {
+          "type": "number",
+          "format": "double"
+        },
+        "lower": {
+          "type": "number",
+          "format": "double"
+        },
+        "method": {
+          "type": "string"
+        },
+        "upper": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "interval_type",
+        "method",
+        "level",
+        "lower",
+        "upper",
+        "assumptions"
+      ]
+    },
+    "Operation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "ddof": {
+              "type": "integer",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0
+            },
+            "interval_level": {
+              "type": "number",
+              "format": "double"
+            },
+            "method": {
+              "type": "string",
+              "const": "describe"
+            },
+            "quantiles": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "trim_fraction": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "ddof",
+            "quantiles",
+            "trim_fraction",
+            "interval_level"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "$ref": "#/$defs/Transform"
+            },
+            "lag": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "method": {
+              "type": "string",
+              "const": "transform"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "kind",
+            "lag"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ddof": {
+              "type": "integer",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0
+            },
+            "method": {
+              "type": "string",
+              "const": "rolling_zscore"
+            },
+            "robust": {
+              "type": "boolean"
+            },
+            "window": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "window",
+            "ddof",
+            "robust"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ddof": {
+              "type": "integer",
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0
+            },
+            "method": {
+              "type": "string",
+              "const": "pair"
+            },
+            "window": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "ddof"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "distribution"
+            },
+            "task": {
+              "$ref": "#/$defs/DistributionTask"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "task"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "probability"
+            },
+            "task": {
+              "$ref": "#/$defs/ProbabilityTask"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "task"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "artifact": {
+              "$ref": "#/$defs/BetaArtifact"
+            },
+            "method": {
+              "type": "string",
+              "const": "infer_beta"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "artifact"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "performance"
+            },
+            "spec": {
+              "$ref": "#/$defs/PerformanceSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "trade_summary"
+            },
+            "spec": {
+              "$ref": "#/$defs/TradeSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "factor_evaluation"
+            },
+            "spec": {
+              "$ref": "#/$defs/FactorSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "calibration_evaluation"
+            },
+            "spec": {
+              "$ref": "#/$defs/CalibrationSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "bootstrap_mean"
+            },
+            "spec": {
+              "$ref": "#/$defs/BootstrapSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "temporal_split"
+            },
+            "spec": {
+              "$ref": "#/$defs/TemporalSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        }
+      ]
+    },
+    "Output": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "description"
+            },
+            "result": {
+              "$ref": "#/$defs/Description"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "transform"
+            },
+            "result": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/SeriesValue"
+              }
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "zscore"
+            },
+            "result": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/SeriesValue"
+              }
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "pair"
+            },
+            "result": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/PairEstimate"
+              }
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "distribution"
+            },
+            "result": {
+              "$ref": "#/$defs/DistributionResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "probability"
+            },
+            "result": {
+              "$ref": "#/$defs/ProbabilityResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "beta_inference"
+            },
+            "result": {
+              "$ref": "#/$defs/BetaInference"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "performance"
+            },
+            "result": {
+              "$ref": "#/$defs/PerformanceResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "trade_summary"
+            },
+            "result": {
+              "$ref": "#/$defs/TradeResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "factor_evaluation"
+            },
+            "result": {
+              "$ref": "#/$defs/FactorResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "calibration_evaluation"
+            },
+            "result": {
+              "$ref": "#/$defs/CalibrationResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "bootstrap_mean"
+            },
+            "result": {
+              "$ref": "#/$defs/BootstrapResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "analysis_kind": {
+              "type": "string",
+              "const": "temporal_split"
+            },
+            "result": {
+              "$ref": "#/$defs/TemporalResult"
+            }
+          },
+          "required": [
+            "analysis_kind",
+            "result"
+          ]
+        }
+      ]
+    },
+    "PairEstimate": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "covariance_matrix": {
+          "description": "Row/column order x,y. OLS is y = intercept + slope*x.",
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Scalar"
+            },
+            "maxItems": 2,
+            "minItems": 2
+          },
+          "maxItems": 2,
+          "minItems": 2
+        },
+        "ddof": {
+          "type": "integer",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "degrees_of_freedom": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint",
+          "minimum": 0
+        },
+        "intercept": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "pearson": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "r_squared": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "residuals": {
+          "description": "Full fit: one residual per input; rolling fit: only last residual.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Scalar"
+          }
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "slope_beta_y_on_x": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "spearman": {
+          "$ref": "#/$defs/Scalar"
+        }
+      },
+      "required": [
+        "at_ms",
+        "available_at_ms",
+        "sample_count",
+        "ddof",
+        "pearson",
+        "spearman",
+        "covariance_matrix",
+        "slope_beta_y_on_x",
+        "intercept",
+        "r_squared",
+        "residuals"
+      ]
+    },
+    "Partition": {
+      "type": "object",
+      "properties": {
+        "feature_window_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxItems": 2,
+          "minItems": 2
+        },
+        "labels_known_before_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "selected_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selection_hash": {
+          "type": "string"
+        },
+        "sufficient_samples": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "feature_window_ms",
+        "labels_known_before_ms",
+        "selected_ids",
+        "selection_hash",
+        "sufficient_samples"
+      ]
+    },
+    "PerformanceResult": {
+      "type": "object",
+      "properties": {
+        "annualized_information_ratio": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Scalar"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "annualized_return": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "annualized_sharpe": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "annualized_sortino": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "annualized_tracking_error": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "annualized_volatility": {
+          "type": "number",
+          "format": "double"
+        },
+        "arithmetic_mean_return": {
+          "type": "number",
+          "format": "double"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "calmar": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "cumulative_return": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "equity_curve": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EquityPoint"
+          }
+        },
+        "gaussian_tail": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TailRisk"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hac": {
+          "$ref": "#/$defs/HacEstimate"
+        },
+        "historical_tail": {
+          "$ref": "#/$defs/TailRisk"
+        },
+        "maximum_drawdown": {
+          "type": "number",
+          "format": "double"
+        },
+        "maximum_underwater_periods": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "spec": {
+          "$ref": "#/$defs/PerformanceSpec"
+        }
+      },
+      "required": [
+        "method_version",
+        "sample_count",
+        "spec",
+        "arithmetic_mean_return",
+        "cumulative_return",
+        "annualized_return",
+        "annualized_volatility",
+        "annualized_sharpe",
+        "annualized_sortino",
+        "maximum_drawdown",
+        "maximum_underwater_periods",
+        "calmar",
+        "historical_tail",
+        "hac",
+        "equity_curve",
+        "assumptions"
+      ]
+    },
+    "PerformanceSpec": {
+      "type": "object",
+      "properties": {
+        "benchmark_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ddof": {
+          "type": "integer",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "hac_lags": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "include_gaussian_tail": {
+          "type": "boolean"
+        },
+        "mar_per_period": {
+          "type": "number",
+          "format": "double"
+        },
+        "periods_per_year": {
+          "type": "number",
+          "format": "double"
+        },
+        "return_basis": {
+          "$ref": "#/$defs/ReturnBasis"
+        },
+        "risk_free_per_period": {
+          "type": "number",
+          "format": "double"
+        },
+        "spacing": {
+          "$ref": "#/$defs/ReturnSpacing"
+        },
+        "tail_level": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "periods_per_year",
+        "risk_free_per_period",
+        "mar_per_period",
+        "ddof",
+        "tail_level",
+        "include_gaussian_tail",
+        "hac_lags",
+        "return_basis",
+        "spacing"
+      ]
+    },
+    "ProbabilityResult": {
+      "type": "object",
+      "properties": {
+        "artifact": {
+          "$ref": "#/$defs/BetaArtifact"
+        },
+        "confidence_interval": {
+          "$ref": "#/$defs/Interval"
+        },
+        "definition": {
+          "$ref": "#/$defs/ProbabilityTask"
+        },
+        "effective_sample_count": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "effective_sample_method": {
+          "type": "string"
+        },
+        "empirical_probability": {
+          "type": "number",
+          "format": "double"
+        },
+        "excluded_condition": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_immature": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "excluded_overlap": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "hits": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "inference": {
+          "$ref": "#/$defs/BetaInference"
+        },
+        "method": {
+          "type": "string"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "selected_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supplied_events": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "method",
+        "definition",
+        "supplied_events",
+        "excluded_immature",
+        "excluded_condition",
+        "excluded_overlap",
+        "selected_ids",
+        "sample_count",
+        "effective_sample_method",
+        "hits",
+        "empirical_probability",
+        "confidence_interval",
+        "artifact",
+        "inference"
+      ]
+    },
+    "ProbabilityTask": {
+      "type": "object",
+      "properties": {
+        "assumption": {
+          "$ref": "#/$defs/BernoulliAssumption"
+        },
+        "conditioning": {
+          "type": "string"
+        },
+        "event_definition": {
+          "type": "string"
+        },
+        "horizon_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "interval_level": {
+          "type": "number",
+          "format": "double"
+        },
+        "label_definition_version": {
+          "type": "string"
+        },
+        "prior": {
+          "$ref": "#/$defs/BetaPrior"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "event_definition",
+        "conditioning",
+        "horizon_ms",
+        "label_definition_version",
+        "interval_level",
+        "prior",
+        "assumption"
+      ]
+    },
+    "ReliabilityBin": {
+      "type": "object",
+      "properties": {
+        "absolute_gap": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "hits": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "lower": {
+          "type": "number",
+          "format": "double"
+        },
+        "mean_probability": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "observed_frequency": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "upper": {
+          "type": "number",
+          "format": "double"
+        },
+        "upper_inclusive": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "lower",
+        "upper",
+        "upper_inclusive",
+        "count",
+        "hits",
+        "mean_probability",
+        "observed_frequency",
+        "absolute_gap"
+      ]
+    },
+    "ReturnBasis": {
+      "type": "string",
+      "enum": [
+        "net_of_costs"
+      ]
+    },
+    "ReturnSpacing": {
+      "type": "string",
+      "enum": [
+        "consecutive_trading_periods"
+      ]
+    },
+    "Sampling": {
+      "type": "object",
+      "properties": {
+        "samples": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "seed": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "seed",
+        "samples"
+      ]
+    },
+    "Scalar": {
+      "description": "Unavailable and mathematically undefined values never masquerade as zero.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "const": "ready"
+            },
+            "value": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "required": [
+            "status",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "const": "insufficient_data"
+            }
+          },
+          "required": [
+            "status"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "const": "undefined"
+            }
+          },
+          "required": [
+            "status",
+            "reason"
+          ]
+        }
+      ]
+    },
+    "Scores": {
+      "type": "object",
+      "properties": {
+        "brier_score": {
+          "type": "number",
+          "format": "double"
+        },
+        "clipped_probabilities": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "impossible_outcomes": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "log_loss": {
+          "$ref": "#/$defs/Scalar"
+        }
+      },
+      "required": [
+        "brier_score",
+        "log_loss",
+        "impossible_outcomes",
+        "clipped_probabilities"
+      ]
+    },
+    "SeriesIdentity": {
+      "type": "object",
+      "properties": {
+        "data_version": {
+          "type": "string"
+        },
+        "instrument": {
+          "type": "string"
+        },
+        "series_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "series_id",
+        "instrument",
+        "timeframe",
+        "source",
+        "data_version"
+      ]
+    },
+    "SeriesValue": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "sample_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "value": {
+          "$ref": "#/$defs/Scalar"
+        }
+      },
+      "required": [
+        "at_ms",
+        "available_at_ms",
+        "sample_count",
+        "value"
+      ]
+    },
+    "TailRisk": {
+      "type": "object",
+      "properties": {
+        "expected_shortfall": {
+          "type": "number",
+          "format": "double"
+        },
+        "level": {
+          "type": "number",
+          "format": "double"
+        },
+        "loss_definition": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "value_at_risk": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "method",
+        "level",
+        "loss_definition",
+        "value_at_risk",
+        "expected_shortfall"
+      ]
+    },
+    "TemporalResult": {
+      "type": "object",
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dataset_id": {
+          "type": "string"
+        },
+        "folds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FoldResult"
+          }
+        },
+        "label_definition": {
+          "type": "string"
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "purge_gap_ms": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "required": [
+        "method_version",
+        "dataset_id",
+        "label_definition",
+        "purge_gap_ms",
+        "folds",
+        "assumptions"
+      ]
+    },
+    "TemporalSpec": {
+      "type": "object",
+      "properties": {
+        "dataset_id": {
+          "type": "string"
+        },
+        "folds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FoldWindow"
+          }
+        },
+        "label_definition": {
+          "type": "string"
+        },
+        "minimum_partition_samples": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TimedLabel"
+          }
+        },
+        "purge_gap_ms": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "dataset_id",
+        "label_definition",
+        "purge_gap_ms",
+        "minimum_partition_samples",
+        "folds",
+        "observations"
+      ]
+    },
+    "TimedLabel": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "features_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "id": {
+          "type": "string"
+        },
+        "label_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "label_end_ms": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "at_ms",
+        "features_available_at_ms",
+        "label_end_ms",
+        "label_available_at_ms"
+      ]
+    },
+    "Trade": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "closed_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "costs": {
+          "type": "number",
+          "format": "double"
+        },
+        "gross_pnl": {
+          "type": "number",
+          "format": "double"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "closed_at_ms",
+        "available_at_ms",
+        "gross_pnl",
+        "costs"
+      ]
+    },
+    "TradeResult": {
+      "type": "object",
+      "properties": {
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "average_loss_magnitude": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "average_win": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "breakeven": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "cost_definition": {
+          "type": "string"
+        },
+        "costs": {
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "excluded_unavailable": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "gross_pnl": {
+          "type": "number",
+          "format": "double"
+        },
+        "losses": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "maximum_consecutive_losses": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "maximum_consecutive_wins": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "mean_net_pnl": {
+          "type": "number",
+          "format": "double"
+        },
+        "method_version": {
+          "type": "string"
+        },
+        "net_pnl": {
+          "type": "number",
+          "format": "double"
+        },
+        "payoff_ratio": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "profit_factor": {
+          "$ref": "#/$defs/Scalar"
+        },
+        "selected_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "selected_range_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxItems": 2,
+          "minItems": 2
+        },
+        "selection_hash": {
+          "type": "string"
+        },
+        "trade_count": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "win_rate": {
+          "type": "number",
+          "format": "double"
+        },
+        "wins": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "method_version",
+        "currency",
+        "cost_definition",
+        "selection_hash",
+        "selected_ids",
+        "selected_range_ms",
+        "excluded_unavailable",
+        "trade_count",
+        "wins",
+        "losses",
+        "breakeven",
+        "gross_pnl",
+        "costs",
+        "net_pnl",
+        "win_rate",
+        "mean_net_pnl",
+        "average_win",
+        "average_loss_magnitude",
+        "payoff_ratio",
+        "profit_factor",
+        "maximum_consecutive_wins",
+        "maximum_consecutive_losses",
+        "assumptions"
+      ]
+    },
+    "TradeSpec": {
+      "type": "object",
+      "properties": {
+        "cost_definition": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "trades": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Trade"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "cost_definition",
+        "trades"
+      ]
+    },
+    "Transform": {
+      "type": "string",
+      "enum": [
+        "simple_return",
+        "log_return",
+        "cumulative_return",
+        "lag",
+        "difference"
+      ]
+    }
+  }
+}

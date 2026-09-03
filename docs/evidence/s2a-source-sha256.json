@@ -1,0 +1,82 @@
+[
+    {
+        "path":  "README.md",
+        "sha256":  "f5cbe514886d1d758ec9f00c4e00b60c4a8410594526185a5d442ae1b3e12a58"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/mod.rs",
+        "sha256":  "66975d973325af25e89d155b30c772a1d8d1591f48e6d90daad5dca218cfb430"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/calibration.rs",
+        "sha256":  "3b7ec7e206e0a840baa441ecf48dd697dde731f9bbb5d77288fc72a362b85462"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/bootstrap.rs",
+        "sha256":  "98d9a6dac1bf021bc6a78bee7683a4eae5a02fd7d6764c97a997beb0c1f9d1a8"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/temporal.rs",
+        "sha256":  "3b2c5ebaf04c44ffb26af1ccaed79259d3182e1fce54edb74912478fafa6a5fe"
+    },
+    {
+        "path":  "crates/roze-ta/tests/validation.rs",
+        "sha256":  "1384d16292f63a0cc8837e2e4a4061ea6546aeac488b6eb52e70a2fb3fb7be11"
+    },
+    {
+        "path":  "crates/roze-ta/examples/validation.rs",
+        "sha256":  "79bb37829b7bbbaf7d4865bbf02012b68586e8aa96ce3ddffccb39197142338b"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/src/main.rs",
+        "sha256":  "b6653e6ea362c545412a0ee8547976c36dc9437ebbfc8b3315c65ffdca38fc4d"
+    },
+    {
+        "path":  "docs/contracts/validation-v1.md",
+        "sha256":  "da9eb097fe784218226944d6eae46f16da132a117185746af5ac7f8dc2ebb3b1"
+    },
+    {
+        "path":  "docs/contracts/schema/analysis-request-v1.json",
+        "sha256":  "63ef8ce8f4193febc101c8261f452bbc376e0fbcd432f95c9366c9fa42096d37"
+    },
+    {
+        "path":  "docs/contracts/schema/analysis-result-v1.json",
+        "sha256":  "4e0c84eeaebb8fd3b4603530b18808c4a250167ec33b886684bb3a1c1768cbf4"
+    },
+    {
+        "path":  "docs/usage/validation-v1.md",
+        "sha256":  "8cc4e6a7d9f0686c2fb38848bcb951f8d3e1610fbf46f212c122acda59e53547"
+    },
+    {
+        "path":  "docs/usage/validation-request-v1.json",
+        "sha256":  "e4105add1e0c79ca1cc4c1db914443496cf49c4ececa0d630301d8a064cb890e"
+    },
+    {
+        "path":  "docs/formula-coverage.md",
+        "sha256":  "ddbc324e59a68bf12e84a282a9d8d8f0074b1a13834c62c8344d10c0232b79e7"
+    },
+    {
+        "path":  "docs/implementation-status.md",
+        "sha256":  "5f4ff26e981c6bf48c369bb45e3ba36889c275a08ca28506200ef94d2438bb96"
+    },
+    {
+        "path":  "docs/probability-statistics.md",
+        "sha256":  "d4855b8b97e2f60e458352813b66828d1600d0290e5ef538ba9a960b9a6ee0c0"
+    },
+    {
+        "path":  "docs/evidence/2026-09-03-validation-s2a.md",
+        "sha256":  "3c3353e552fde78867c7a2a1819385871f625800bf5980e4b87712dc788c8ccc"
+    },
+    {
+        "path":  "docs/evidence/s2a-cargo-test.log",
+        "sha256":  "3dc835f2ca2b598fa567ba2d325f4884b899488cc83068a54ebbc08276a77d29"
+    },
+    {
+        "path":  "docs/evidence/s2a-clippy.log",
+        "sha256":  "dbcd05dd7370889c6f9ae3cf2daa6a32e430f6d9c2f6476c94edbe5ce8de9b5f"
+    },
+    {
+        "path":  "docs/evidence/s2a-example-output.json",
+        "sha256":  "3a6a2da20ad22a5eaaf24dfaf2b9edafb3f2044ada6b83b5bb0ea248867328a0"
+    }
+]

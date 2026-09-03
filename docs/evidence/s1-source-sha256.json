@@ -1,0 +1,110 @@
+[
+    {
+        "path":  "Cargo.lock",
+        "after":  "76712788a84a426f01666b0b929966c68d23acd22fa4c0cb9a14513064e74380"
+    },
+    {
+        "path":  "README.md",
+        "after":  "e96636f23ec112e0bb80f0e3299c2d3708b08a1aeb8f4c532f1c4b1caca96faa"
+    },
+    {
+        "path":  "crates/roze-ta/Cargo.toml",
+        "after":  "c47753960e75f8c45194ab2011e5c426ad5af9977e4e7c6f9f1c747fab003806"
+    },
+    {
+        "path":  "crates/roze-ta/src/lib.rs",
+        "after":  "50833c9b1aaca7d338290fc80b68e278f3cea7ec51f96bc5931f5db7c2755027"
+    },
+    {
+        "path":  "crates/roze-ta/src/error.rs",
+        "after":  "888c2a303156df234f269e14bf174f48a7fe904afe1a3df30303cb01838982d9"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/mod.rs",
+        "after":  "3c2046da45cbeb84186c31e5903f123c4d040ec434067a7ebef65dca4cbb7a29"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/statistics.rs",
+        "after":  "d2df6ae3be096c1b159bd04a008e009984c10bbb2fd7cc3e3fa1804b37115d35"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/distribution.rs",
+        "after":  "03615a33b831532ecb559812da6bbbee0d84aabc41413c96de0825efefff604e"
+    },
+    {
+        "path":  "crates/roze-ta/src/analysis/probability.rs",
+        "after":  "60439626c631257c0134db1cc0aa0c36e5c56415992c5a3954ad3cd996374612"
+    },
+    {
+        "path":  "crates/roze-ta/tests/analysis.rs",
+        "after":  "0b26290a9e4407ece34f03e80109bdc5c5069ab8740ce2cedd4b3ccaa36aa070"
+    },
+    {
+        "path":  "crates/roze-ta/examples/analysis.rs",
+        "after":  "d2680295f0300064209f44274d9e0da0d919e8a776d66318c014215144ac8578"
+    },
+    {
+        "path":  "crates/roze-ta/examples/analysis_budget.rs",
+        "after":  "377abd381518ce08aaeef56cd231803f39f5a73d933aa652c42aa86dece37ae9"
+    },
+    {
+        "path":  "crates/roze-ta/examples/export_schema.rs",
+        "after":  "a6f19559ac46d03be0611c31c0fe49a349082125bc6eef827eca20683fc12816"
+    },
+    {
+        "path":  "crates/roze-ta-mcp/src/main.rs",
+        "after":  "b9e5893f5226c4573af06864eb0d0e50fb33b780fa41f451b85cdf2614d5a08b"
+    },
+    {
+        "path":  "docs/contracts/analysis-v1.md",
+        "after":  "9ef68cb20a2970392164c1582fed095c37d283a1975a8997e1d94bc0a631dead"
+    },
+    {
+        "path":  "docs/contracts/schema/analysis-request-v1.json",
+        "after":  "435f69fecfcb693812e2045e575a4bb563b3c2f12e4d4dc56fe9309a6762bf94"
+    },
+    {
+        "path":  "docs/contracts/schema/analysis-result-v1.json",
+        "after":  "cbb9502bb3e5606755e1a9e159d811046836b192fb86a26ca129f753e86fa88b"
+    },
+    {
+        "path":  "docs/contracts/schema/beta-artifact-v1.json",
+        "after":  "5c3f54d8e7c0109bb175bcffffe92039131969b79a479c56e59c50075bd4a148"
+    },
+    {
+        "path":  "docs/contracts/schema/error-v2.json",
+        "after":  "09b6102d028c225acbaf096803fcbe034c67c5400989a3b42e732c11c7d1a7c5"
+    },
+    {
+        "path":  "docs/usage/analysis-v1.md",
+        "after":  "04125cd90d1859ebe50aa974560c1deaab809a059fab15ceb4b3b2de82ade757"
+    },
+    {
+        "path":  "docs/dependencies.md",
+        "after":  "065c67be851e3f9617d97bd3396a888fc4ff056b5b46bc5f1dbfbd3adf5f15ef"
+    },
+    {
+        "path":  "docs/implementation-status.md",
+        "after":  "f861a015923aa056e8dd4b3ee2dcafa4ab8279449f2d179aa1c04a44e838f6f5"
+    },
+    {
+        "path":  "docs/evidence/2026-09-03-s1-analysis.md",
+        "after":  "0fb79dcc594d7357eb7ce176c333d73a74820c2f8c19a20996260f8a3a65a6de"
+    },
+    {
+        "path":  "docs/evidence/s1-dependencies.json",
+        "after":  "1301f2a0b1d6cbbba8ef1d8582dcbeea3ed9d68cd2823e2cf86fb3e873cf5d50"
+    },
+    {
+        "path":  "docs/evidence/s1-cargo-test.log",
+        "after":  "05a8dc2389f59d58657d17ba61aaf51b1273f83c80af82b9d68f0f632e3cf736"
+    },
+    {
+        "path":  "docs/evidence/s1-clippy.log",
+        "after":  "ba111c2d65a123b96de91ca37ed21ee2a72413c0443f0d9ab510397e2eb2dc55"
+    },
+    {
+        "path":  "docs/evidence/s1-release-timing.log",
+        "after":  "851d195664881d2f6eac2b7777e4f5f781ce113d836084b76428f03f260863f9"
+    }
+]

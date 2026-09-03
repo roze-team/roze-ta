@@ -1,0 +1,35 @@
+[package]
+authors = ["AMvDev <amv-dev@protonmail.com>"]
+categories = ["mathematics", "science"]
+description = "Yet another Technical Analysis library. For rust now."
+edition = "2021"
+keywords = ["technical", "analysis", "trading", "indicators"]
+license = "Apache-2.0"
+name = "yata"
+readme = "README.md"
+repository = "https://github.com/amv-dev/yata"
+version = "0.7.0"
+include = [
+    "/benches",
+    "/src/*.rs",
+    "/src/core",
+    "/src/helpers",
+    "/src/indicators",
+    "/src/methods",
+    "/README.md",
+    "/LICENSE",
+    "/rustfmt.toml",
+    "/.gitignore",
+    "/.editorconfig",
+]
+
+[dependencies]
+serde = { version = "1", features = ["derive"], optional = true }
+
+[features]
+default = ["serde"]
+period_type_u16 = []
+period_type_u32 = []
+period_type_u64 = []
+unsafe_performance = []
+value_type_f32 = []

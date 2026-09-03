@@ -1,0 +1,37 @@
+module,target_id,status,reason
+aroon,aroon,prototype,Registered default; formula and warmup audit pending
+average_directional_index,adx,prototype,Registered default; DI and normalization audit pending
+awesome_oscillator,ao,prototype,Registered default; smoothing and warmup audit pending
+bollinger_bands,bollinger,prototype,Registered default; percent-B and bandwidth variants pending
+chaikin_money_flow,cmf,prototype,Registered default; zero volume audit pending
+chaikin_oscillator,chaikin,adapted_prototype,Outer accumulator preserves default arithmetic and supports restore
+chande_kroll_stop,,candidate_deferred,Not in 60 core families; stop-rule semantics need separate specification
+chande_momentum_oscillator,cmo,prototype,Registered default; normalized range and warmup audit pending
+commodity_channel_index,cci,prototype,Registered default; Yata scaling variant needs reference audit
+coppock_curve,,candidate_deferred,Not in 60 core families; long-horizon weighted ROC candidate
+detrended_price_oscillator,,candidate_deferred,Not in 60 core families; displacement and availability require review
+donchian_channel,donchian,prototype,Registered default; window and output map audit pending
+ease_of_movement,emv,B_pending,Requires volume units and division-domain specification
+elders_force_index,efi,prototype,Registered default; smoothing and units audit pending
+envelopes,,candidate_deferred,Not in 60 core families; percentage envelope distinct from Bollinger
+fisher_transform,fisher,B_pending,Requires clipping and signal variant audit
+hull_moving_average,hma,prototype,Registered default; integer window rounding audit pending
+ichimoku_cloud,ichimoku,prototype,Registered default; delayed output semantics and multiperiod audit pending
+kaufman,kama,prototype,Registered default; efficiency ratio initialization audit pending
+keltner_channel,keltner,prototype,Registered source-upper-lower order; formula audit pending
+klinger_volume_oscillator,kvo,B_pending,Requires trend and volume force variant specification
+know_sure_thing,kst,B_pending,Requires four ROC windows and signal specification
+macd,macd,prototype,Registered macd and signal; histogram profile pending
+momentum_index,,candidate_deferred,Smoothed MomentumIndex is not the raw Momentum Method family; avoid conflation
+money_flow_index,mfi,prototype,Registered threshold-mfi-threshold outputs; normalized scale audit pending
+parabolic_sar,sar,prototype,Registered default; direction and reversal initialization audit pending
+pivot_reversal_strategy,feature_01,C_candidate,Strategy signals are not confirmed peak/trough evidence; confirmation contract required
+price_channel_strategy,feature_04,C_candidate,Strategy entries are not a formally specified breakout feature
+relative_strength_index,rsi,outer_variant,Core RSI uses RMA gains-losses with 0..100 scale; not direct default-instance wrapper
+relative_vigor_index,relative_vigor,A_pending,Requires weighted price-spread formula and signal warmup audit
+smi_ergodic_indicator,,candidate_deferred,Not in 60 core families; distinct ergodic signal candidate
+stochastic_oscillator,stochastic,prototype,Registered normalized K-D; KDJ J variant pending
+trix,trix,prototype,Preserve Yata absolute change; percentage TRIX variant pending
+trend_strength_index,,candidate_deferred,Not TrueStrengthIndex; distinct family outside the 60 target list
+true_strength_index,true_strength,A_pending,Double-smoothed momentum ratio and signal specification pending
+woodies_cci,,candidate_deferred,Rule-system variant; not a new classic family for counting

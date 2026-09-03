@@ -1,0 +1,25 @@
+[package]
+name = "roze-ta"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Rust technical analysis with a vendored Yata engine and reproducible indicator profiles"
+publish = false
+
+[dependencies]
+yata = { path = "../../vendor/yata", version = "=0.7.0", features = ["serde"] }
+serde.workspace = true
+serde_json.workspace = true
+sha2 = "0.10"
+statrs = { version = "=0.19.1", default-features = false }
+rand = { version = "=0.9.5", default-features = false, features = ["std"] }
+rand_chacha = { version = "=0.9.0", default-features = false, features = ["std"] }
+bincode = { version = "=2.0.1", default-features = false, features = ["std", "serde"] }
+schemars = { version = "1", optional = true }
+
+[features]
+schema = ["dep:schemars"]
+
+[[example]]
+name = "export_schema"
+required-features = ["schema"]

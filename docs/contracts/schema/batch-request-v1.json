@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BatchRequest",
+  "type": "object",
+  "properties": {
+    "as_of_ms": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "bars": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Candle"
+      }
+    },
+    "profiles": {
+      "description": "Select IDs from indicator_catalog. No arbitrary code or parameters accepted.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "snapshot_id": {
+      "description": "Caller-provided snapshot reference. The gateway does not certify its origin.",
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "timeframe": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "snapshot_id",
+    "symbol",
+    "timeframe",
+    "as_of_ms",
+    "bars",
+    "profiles"
+  ],
+  "$defs": {
+    "Candle": {
+      "type": "object",
+      "properties": {
+        "close": {
+          "type": "number",
+          "format": "double"
+        },
+        "closed_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "high": {
+          "type": "number",
+          "format": "double"
+        },
+        "low": {
+          "type": "number",
+          "format": "double"
+        },
+        "open": {
+          "type": "number",
+          "format": "double"
+        },
+        "volume": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "closed_at_ms",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ]
+    }
+  }
+}

@@ -42,7 +42,8 @@ V2 使用方式见 [使用说明](docs/usage/engine-v2.md)，版本、快照与�
 例如 ADX/MFI 使用 0～1，TRIX 是绝对差分变体，不能直接套用其他平台的阈值。
 版本戳包含上游 commit。上游原始代码在当前编译器有风格和生命周期提示，暂保留以便核对来源。
 
-本项目未发布到 crates.io、未创建远程仓库、未自动替换 roze-quant 的依赖。
+项目仓库：[roze-team/roze-ta](https://github.com/roze-team/roze-ta)。
+本项目未发布到 crates.io、未自动替换 roze-quant 的依赖。
 独立库不依赖 Roze 服务运行时；后续服务层应复用 Roze 原生能力。
 
 ## 来源
