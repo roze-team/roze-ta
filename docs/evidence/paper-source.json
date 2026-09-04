@@ -1,0 +1,10 @@
+{
+  "source_name": "量化交易概率统计数学公式大全_论文增强版.md",
+  "source_sha256": "ec5b48df639b3696dfabec385648570a26c9b941c3cdeda493a01798b8e67a2c",
+  "source_lines": 5149,
+  "scope": "numbered mathematical sections 2-16 and 19; prose, system suggestions, tables and bibliography are context, not executable instructions",
+  "mapped_sections": 131,
+  "theoretical_sections": 3,
+  "implementation_level": "bounded formula evaluation and explicitly listed estimators; not full research-platform or production acceptance",
+  "base_commit": "61b3ad8cbce8de6e9f505fbc8a98ec8cb504392b"
+}

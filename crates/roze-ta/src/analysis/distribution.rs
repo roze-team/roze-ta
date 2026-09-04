@@ -2,13 +2,27 @@ use super::*;
 use rand::{distr::Open01, Rng, SeedableRng};
 use rand_chacha::ChaCha8Rng;
 use statrs::distribution::{
-    Beta, Binomial, Continuous, ContinuousCDF, Discrete, DiscreteCDF, Normal, StudentsT,
+    Beta, Binomial, Continuous, ContinuousCDF, Discrete, DiscreteCDF, Exp, LogNormal, Normal,
+    Poisson, StudentsT,
 };
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[cfg_attr(feature = "schema", derive(schemars::JsonSchema))]
 #[serde(tag = "family", rename_all = "snake_case", deny_unknown_fields)]
 pub enum Distribution {
+    Bernoulli {
+        probability: f64,
+    },
+    Poisson {
+        rate: f64,
+    },
+    Exponential {
+        rate: f64,
+    },
+    LogNormal {
+        log_mean: f64,
+        log_standard_deviation: f64,
+    },
     Normal {
         mean: f64,
         standard_deviation: f64,
@@ -95,6 +109,22 @@ impl DistributionTask {
         let shape = |x: f64| x.is_finite() && (0.05..=10_000.0).contains(&x);
         let location = |x: f64| x.is_finite() && x.abs() <= 1e12;
         let valid = match self.distribution {
+            Distribution::Bernoulli { probability } => {
+                probability.is_finite() && (0.0..=1.0).contains(&probability)
+            }
+            Distribution::Poisson { rate } => {
+                rate.is_finite() && (1e-12..=10_000.0).contains(&rate)
+            }
+            Distribution::Exponential { rate } => positive(rate),
+            Distribution::LogNormal {
+                log_mean,
+                log_standard_deviation,
+            } => {
+                log_mean.is_finite()
+                    && log_mean.abs() <= 100.0
+                    && log_standard_deviation.is_finite()
+                    && (0.05..=10.0).contains(&log_standard_deviation)
+            }
             Distribution::Normal {
                 mean,
                 standard_deviation,
@@ -132,6 +162,9 @@ impl DistributionTask {
     }
 }
 enum Model {
+    Poisson(Poisson),
+    Exponential(Exp),
+    LogNormal(LogNormal),
     Normal(Normal),
     StudentT(StudentsT),
     Beta(Beta),
@@ -147,6 +180,21 @@ impl Model {
             )
         };
         Ok(match *distribution {
+            Distribution::Bernoulli { probability } => {
+                Self::Binomial(Binomial::new(probability, 1).map_err(|_| failure())?)
+            }
+            Distribution::Poisson { rate } => {
+                Self::Poisson(Poisson::new(rate).map_err(|_| failure())?)
+            }
+            Distribution::Exponential { rate } => {
+                Self::Exponential(Exp::new(rate).map_err(|_| failure())?)
+            }
+            Distribution::LogNormal {
+                log_mean,
+                log_standard_deviation,
+            } => Self::LogNormal(
+                LogNormal::new(log_mean, log_standard_deviation).map_err(|_| failure())?,
+            ),
             Distribution::Normal {
                 mean,
                 standard_deviation,
@@ -178,6 +226,23 @@ impl Model {
     }
     fn evaluate(&self, x: f64) -> (f64, f64) {
         match self {
+            Self::Exponential(d) => (d.pdf(x), d.cdf(x)),
+            Self::LogNormal(d) => (d.pdf(x), d.cdf(x)),
+            Self::Poisson(d) => {
+                let pmf = if (0.0..=1_000_000.0).contains(&x) && x.fract() == 0.0 {
+                    d.pmf(x as u64)
+                } else {
+                    0.0
+                };
+                let cdf = if x < 0.0 {
+                    0.0
+                } else if x > 1_000_000.0 {
+                    1.0
+                } else {
+                    d.cdf(x.floor() as u64)
+                };
+                (pmf, cdf)
+            }
             Self::Normal(d) => (d.pdf(x), d.cdf(x)),
             Self::StudentT(d) => (d.pdf(x), d.cdf(x)),
             Self::Beta(d) => (d.pdf(x), d.cdf(x)),
@@ -212,6 +277,25 @@ impl Model {
         checkpoint: &mut impl FnMut() -> Result<(), TaError>,
     ) -> Result<f64, TaError> {
         Ok(match self {
+            Self::Exponential(d) => d.inverse_cdf(p),
+            Self::LogNormal(d) => d.inverse_cdf(p),
+            Self::Poisson(d) => {
+                if p == 1.0 {
+                    f64::INFINITY
+                } else {
+                    let (mut lo, mut hi) = (0u64, 1_000_000u64);
+                    while lo < hi {
+                        checkpoint()?;
+                        let mid = lo + (hi - lo) / 2;
+                        if d.cdf(mid) >= p {
+                            hi = mid;
+                        } else {
+                            lo = mid + 1;
+                        }
+                    }
+                    lo as f64
+                }
+            }
             Self::Normal(d) => d.inverse_cdf(p),
             Self::StudentT(d) => student_quantile(d, p, checkpoint)?,
             Self::Beta(d) => bounded_quantile(|x| d.cdf(x), p, 0.0, 1.0, checkpoint)?,
@@ -269,7 +353,10 @@ pub(super) fn calculate(
         distribution: task.distribution.clone(),
         density_kind: if matches!(
             task.distribution,
-            Distribution::Binomial { .. } | Distribution::Empirical
+            Distribution::Bernoulli { .. }
+                | Distribution::Poisson { .. }
+                | Distribution::Binomial { .. }
+                | Distribution::Empirical
         ) {
             "probability_mass"
         } else {

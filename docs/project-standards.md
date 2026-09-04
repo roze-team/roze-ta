@@ -13,7 +13,7 @@
 - `scripts/`：可重复运行的验证工具；`UPSTREAM.json`：上游来源及完整性记录。
 
 原生模块迁移依据用户明确要求及 FR-ENG-006；后续不单纯为命名统一搬迁代码。
-上游及派生模块 Apache-2.0、自有代码 MIT 分别适用，组合 crate 为 `MIT AND Apache-2.0`，不改标上游版权。
+上游及派生模块 Apache-2.0、自有代码 MIT 分别适用，统计系数子集保留 BSD-3-Clause；组合 crate 为 `MIT AND Apache-2.0 AND BSD-3-Clause`，不改标上游版权。
 上游修复必须单独记录原始摘要、本地补丁、原因、测试与升级影响。
 
 ## Rust 与依赖

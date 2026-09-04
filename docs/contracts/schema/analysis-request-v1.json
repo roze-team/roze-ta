@@ -58,6 +58,397 @@
     "operations"
   ],
   "$defs": {
+    "AllocationSpec": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "task": {
+          "$ref": "#/$defs/AllocationTask"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "available_at_ms",
+        "task"
+      ]
+    },
+    "AllocationTask": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "risk_parity"
+            },
+            "max_iterations": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "covariance",
+            "max_iterations",
+            "tolerance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "minimum_variance"
+            },
+            "means": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "target_return": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "covariance",
+            "means"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "mean_variance"
+            },
+            "means": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "risk_aversion": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "covariance",
+            "means",
+            "risk_aversion"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "maximum_sharpe"
+            },
+            "means": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "risk_free": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "covariance",
+            "means",
+            "risk_free"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "inverse_volatility"
+            },
+            "volatilities": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "volatilities"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "current_volatility": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "target_volatility"
+            },
+            "maximum_leverage": {
+              "type": "number",
+              "format": "double"
+            },
+            "target_volatility": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "current_volatility",
+            "target_volatility",
+            "maximum_leverage"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "ledoit_wolf"
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "observations"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "black_litterman"
+            },
+            "market_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "risk_aversion": {
+              "type": "number",
+              "format": "double"
+            },
+            "tau": {
+              "type": "number",
+              "format": "double"
+            },
+            "view_covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "view_returns": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "views": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "covariance",
+            "market_weights",
+            "risk_aversion",
+            "tau",
+            "views",
+            "view_returns",
+            "view_covariance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "confidence": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "cvar_optimize"
+            },
+            "max_iterations": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "returns": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "tolerance": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "returns",
+            "confidence",
+            "max_iterations",
+            "tolerance"
+          ]
+        }
+      ]
+    },
+    "Arrival": {
+      "type": "object",
+      "properties": {
+        "channel": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "time": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "time",
+        "channel"
+      ]
+    },
+    "Asset": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "weight": {
+          "description": "Signed linear exposure / positive portfolio equity, in a common currency.",
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "weight"
+      ]
+    },
     "BernoulliAssumption": {
       "type": "string",
       "enum": [
@@ -307,6 +698,83 @@
           "properties": {
             "family": {
               "type": "string",
+              "const": "bernoulli"
+            },
+            "probability": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "probability"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "const": "poisson"
+            },
+            "rate": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "rate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "const": "exponential"
+            },
+            "rate": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "rate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
+              "const": "log_normal"
+            },
+            "log_mean": {
+              "type": "number",
+              "format": "double"
+            },
+            "log_standard_deviation": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "family",
+            "log_mean",
+            "log_standard_deviation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "type": "string",
               "const": "normal"
             },
             "mean": {
@@ -453,6 +921,524 @@
         "quantiles"
       ]
     },
+    "DynamicsSpec": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "task": {
+          "$ref": "#/$defs/DynamicsTask"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "available_at_ms",
+        "task"
+      ]
+    },
+    "DynamicsTask": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "innovation_variance": {
+              "type": "number",
+              "format": "double"
+            },
+            "intercept": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "ar1_moments"
+            },
+            "phi": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "intercept",
+            "phi",
+            "innovation_variance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "decay": {
+              "type": "number",
+              "format": "double"
+            },
+            "initial_variance": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "ewma"
+            },
+            "returns": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "returns",
+            "initial_variance",
+            "decay"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alpha": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "beta": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "initial_squared_residuals": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "initial_variances": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "garch"
+            },
+            "omega": {
+              "type": "number",
+              "format": "double"
+            },
+            "residuals": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "residuals",
+            "omega",
+            "alpha",
+            "beta",
+            "initial_squared_residuals",
+            "initial_variances"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "a": {
+              "type": "number",
+              "format": "double"
+            },
+            "b": {
+              "type": "number",
+              "format": "double"
+            },
+            "initial_q": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "dcc"
+            },
+            "long_run_q": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "standardized_residuals": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "standardized_residuals",
+            "a",
+            "b",
+            "long_run_q",
+            "initial_q"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "daily": {
+              "type": "number",
+              "format": "double"
+            },
+            "intercept": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "har_rv"
+            },
+            "monthly": {
+              "type": "number",
+              "format": "double"
+            },
+            "realized_variances": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "weekly": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "realized_variances",
+            "intercept",
+            "daily",
+            "weekly",
+            "monthly"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "realized_variance"
+            },
+            "log_returns": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "log_returns"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "high": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "parkinson"
+            },
+            "low": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "periods_per_year": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "high",
+            "low",
+            "periods_per_year"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "current": {
+              "type": "number",
+              "format": "double"
+            },
+            "diffusion": {
+              "type": "number",
+              "format": "double"
+            },
+            "elapsed": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "ornstein_uhlenbeck"
+            },
+            "long_run_mean": {
+              "type": "number",
+              "format": "double"
+            },
+            "reversion": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "current",
+            "long_run_mean",
+            "reversion",
+            "diffusion",
+            "elapsed"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ar": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "differences": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "intercept": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "arima"
+            },
+            "ma": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "observations",
+            "ar",
+            "ma",
+            "intercept",
+            "differences"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "initial_covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "initial_state": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "kalman"
+            },
+            "observation": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "observation_covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "process_covariance": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "transition": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "observations",
+            "transition",
+            "observation",
+            "process_covariance",
+            "observation_covariance",
+            "initial_state",
+            "initial_covariance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alpha": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "arrivals": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Arrival"
+              }
+            },
+            "baseline": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "beta": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "horizon": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "hawkes"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "baseline",
+            "alpha",
+            "beta",
+            "arrivals",
+            "horizon"
+          ]
+        }
+      ]
+    },
     "Event": {
       "type": "object",
       "properties": {
@@ -591,6 +1577,29 @@
         "observations"
       ]
     },
+    "Fill": {
+      "type": "object",
+      "properties": {
+        "fee": {
+          "type": "number",
+          "format": "double"
+        },
+        "price": {
+          "type": "number",
+          "format": "double"
+        },
+        "quantity": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "quantity",
+        "price",
+        "fee"
+      ]
+    },
     "FoldWindow": {
       "type": "object",
       "properties": {
@@ -662,8 +1671,1621 @@
         "probability"
       ]
     },
+    "FormulaSpec": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "description": "All parameters and data in this task were available at this time.",
+          "type": "integer",
+          "format": "int64"
+        },
+        "task": {
+          "$ref": "#/$defs/FormulaTask"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "available_at_ms",
+        "task"
+      ]
+    },
+    "FormulaTask": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "current_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "turnover"
+            },
+            "previous_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "previous_weights",
+            "current_weights"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "fraction": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "continuous_kelly"
+            },
+            "mean": {
+              "type": "number",
+              "format": "double"
+            },
+            "risk_free": {
+              "type": "number",
+              "format": "double"
+            },
+            "variance": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "mean",
+            "risk_free",
+            "variance",
+            "fraction"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "average_loss": {
+              "type": "number",
+              "format": "double"
+            },
+            "average_win": {
+              "type": "number",
+              "format": "double"
+            },
+            "cost": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "trade_expectancy"
+            },
+            "win_probability": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "win_probability",
+            "average_win",
+            "average_loss",
+            "cost"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cashflow": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "cashflow_return"
+            },
+            "previous_price": {
+              "type": "number",
+              "format": "double"
+            },
+            "price": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "previous_price",
+            "price",
+            "cashflow"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "far": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "roll_yield"
+            },
+            "near": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "near",
+            "far"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "fraction": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "kelly"
+            },
+            "payoff_ratio": {
+              "type": "number",
+              "format": "double"
+            },
+            "win_probability": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "win_probability",
+            "payoff_ratio",
+            "fraction"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "contracts": {
+              "type": "number",
+              "format": "double"
+            },
+            "costs": {
+              "type": "number",
+              "format": "double"
+            },
+            "entry": {
+              "type": "number",
+              "format": "double"
+            },
+            "equity": {
+              "type": "number",
+              "format": "double"
+            },
+            "exit": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "futures"
+            },
+            "margin_rate": {
+              "type": "number",
+              "format": "double"
+            },
+            "multiplier": {
+              "type": "number",
+              "format": "double"
+            },
+            "side": {
+              "$ref": "#/$defs/Side"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "entry",
+            "exit",
+            "multiplier",
+            "contracts",
+            "side",
+            "margin_rate",
+            "equity",
+            "costs"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cost_per_contract": {
+              "type": "number",
+              "format": "double"
+            },
+            "entry": {
+              "type": "number",
+              "format": "double"
+            },
+            "equity": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "stop_sizing"
+            },
+            "multiplier": {
+              "type": "number",
+              "format": "double"
+            },
+            "risk_fraction": {
+              "type": "number",
+              "format": "double"
+            },
+            "stop": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "equity",
+            "risk_fraction",
+            "entry",
+            "stop",
+            "multiplier",
+            "cost_per_contract"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "convenience_yield": {
+              "type": "number",
+              "format": "double"
+            },
+            "futures": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "carry"
+            },
+            "rate": {
+              "type": "number",
+              "format": "double"
+            },
+            "spot": {
+              "type": "number",
+              "format": "double"
+            },
+            "storage_rate": {
+              "type": "number",
+              "format": "double"
+            },
+            "years": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "spot",
+            "futures",
+            "rate",
+            "storage_rate",
+            "convenience_yield",
+            "years"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "contract_value": {
+              "type": "number",
+              "format": "double"
+            },
+            "correlation": {
+              "type": "number",
+              "format": "double"
+            },
+            "exposure_value": {
+              "type": "number",
+              "format": "double"
+            },
+            "futures_volatility": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "hedge"
+            },
+            "spot_volatility": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "correlation",
+            "spot_volatility",
+            "futures_volatility",
+            "exposure_value",
+            "contract_value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "arrival_price": {
+              "type": "number",
+              "format": "double"
+            },
+            "decision_price": {
+              "type": "number",
+              "format": "double"
+            },
+            "fills": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Fill"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "execution_quality"
+            },
+            "multiplier": {
+              "type": "number",
+              "format": "double"
+            },
+            "requested_quantity": {
+              "type": "number",
+              "format": "double"
+            },
+            "side": {
+              "$ref": "#/$defs/Side"
+            },
+            "terminal_price": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "side",
+            "requested_quantity",
+            "decision_price",
+            "arrival_price",
+            "terminal_price",
+            "multiplier",
+            "fills"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "commission_bps": {
+              "type": "number",
+              "format": "double"
+            },
+            "gross_return": {
+              "type": "number",
+              "format": "double"
+            },
+            "half_spread_bps": {
+              "type": "number",
+              "format": "double"
+            },
+            "impact_bps": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "cost_model"
+            },
+            "slippage_bps": {
+              "type": "number",
+              "format": "double"
+            },
+            "turnover": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "gross_return",
+            "turnover",
+            "commission_bps",
+            "half_spread_bps",
+            "slippage_bps",
+            "impact_bps"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "horizon": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "almgren_chriss"
+            },
+            "quantity": {
+              "type": "number",
+              "format": "double"
+            },
+            "risk_aversion": {
+              "type": "number",
+              "format": "double"
+            },
+            "steps": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "temporary_impact": {
+              "type": "number",
+              "format": "double"
+            },
+            "volatility": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "quantity",
+            "horizon",
+            "volatility",
+            "risk_aversion",
+            "temporary_impact",
+            "steps"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "intensity_decay": {
+              "type": "number",
+              "format": "double"
+            },
+            "inventory": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "avellaneda_stoikov"
+            },
+            "mid": {
+              "type": "number",
+              "format": "double"
+            },
+            "remaining_time": {
+              "type": "number",
+              "format": "double"
+            },
+            "risk_aversion": {
+              "type": "number",
+              "format": "double"
+            },
+            "volatility": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "mid",
+            "inventory",
+            "volatility",
+            "remaining_time",
+            "risk_aversion",
+            "intensity_decay"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "order_flow_imbalance"
+            },
+            "quotes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/Quote"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "quotes"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dividend_yield": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "black_scholes"
+            },
+            "rate": {
+              "type": "number",
+              "format": "double"
+            },
+            "spot": {
+              "type": "number",
+              "format": "double"
+            },
+            "strike": {
+              "type": "number",
+              "format": "double"
+            },
+            "volatility": {
+              "type": "number",
+              "format": "double"
+            },
+            "years": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "spot",
+            "strike",
+            "years",
+            "rate",
+            "dividend_yield",
+            "volatility"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "conditional_variances": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "discrete_probability"
+            },
+            "probabilities": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "probabilities",
+            "values",
+            "conditional_variances"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "bayes"
+            },
+            "likelihood_if_false": {
+              "type": "number",
+              "format": "double"
+            },
+            "likelihood_if_true": {
+              "type": "number",
+              "format": "double"
+            },
+            "prior": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "prior",
+            "likelihood_if_true",
+            "likelihood_if_false"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "actual": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "huber_delta": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "losses"
+            },
+            "predicted": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "actual",
+            "predicted",
+            "huber_delta"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "information"
+            },
+            "p": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "q": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "p",
+            "q"
+          ]
+        }
+      ]
+    },
+    "HestonModel": {
+      "type": "object",
+      "properties": {
+        "correlation": {
+          "type": "number",
+          "format": "double"
+        },
+        "initial_variance": {
+          "type": "number",
+          "format": "double"
+        },
+        "long_run_variance": {
+          "type": "number",
+          "format": "double"
+        },
+        "reversion": {
+          "type": "number",
+          "format": "double"
+        },
+        "vol_of_variance": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "initial_variance",
+        "reversion",
+        "long_run_variance",
+        "vol_of_variance",
+        "correlation"
+      ]
+    },
+    "HestonParameter": {
+      "type": "string",
+      "enum": [
+        "initial_variance",
+        "reversion",
+        "long_run_variance",
+        "vol_of_variance",
+        "correlation"
+      ]
+    },
+    "HestonParameters": {
+      "type": "object",
+      "properties": {
+        "correlation": {
+          "type": "number",
+          "format": "double"
+        },
+        "dividend_yield": {
+          "type": "number",
+          "format": "double"
+        },
+        "initial_variance": {
+          "type": "number",
+          "format": "double"
+        },
+        "long_run_variance": {
+          "type": "number",
+          "format": "double"
+        },
+        "rate": {
+          "type": "number",
+          "format": "double"
+        },
+        "reversion": {
+          "type": "number",
+          "format": "double"
+        },
+        "spot": {
+          "type": "number",
+          "format": "double"
+        },
+        "strike": {
+          "type": "number",
+          "format": "double"
+        },
+        "vol_of_variance": {
+          "type": "number",
+          "format": "double"
+        },
+        "years": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "spot",
+        "strike",
+        "years",
+        "rate",
+        "dividend_yield",
+        "initial_variance",
+        "reversion",
+        "long_run_variance",
+        "vol_of_variance",
+        "correlation"
+      ]
+    },
+    "HestonQuote": {
+      "type": "object",
+      "properties": {
+        "dividend_yield": {
+          "type": "number",
+          "format": "double"
+        },
+        "kind": {
+          "$ref": "#/$defs/OptionKind"
+        },
+        "price": {
+          "type": "number",
+          "format": "double"
+        },
+        "rate": {
+          "type": "number",
+          "format": "double"
+        },
+        "spot": {
+          "type": "number",
+          "format": "double"
+        },
+        "strike": {
+          "type": "number",
+          "format": "double"
+        },
+        "weight": {
+          "type": "number",
+          "format": "double"
+        },
+        "years": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "spot",
+        "strike",
+        "years",
+        "rate",
+        "dividend_yield",
+        "kind",
+        "price",
+        "weight"
+      ]
+    },
+    "InferenceSpec": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "task": {
+          "$ref": "#/$defs/InferenceTask"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "available_at_ms",
+        "task"
+      ]
+    },
+    "InferenceTask": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "adf_mac_kinnon"
+            },
+            "lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "trend": {
+              "$ref": "#/$defs/Trend"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "samples",
+            "lags",
+            "trend"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dependent": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "independent": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "engle_granger_mac_kinnon"
+            },
+            "lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "dependent",
+            "independent",
+            "lags"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "forecast_steps": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "uint",
+              "minimum": 0
+            },
+            "include_constant": {
+              "type": "boolean"
+            },
+            "kind": {
+              "type": "string",
+              "const": "johansen_rank"
+            },
+            "lagged_differences": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "significance": {
+              "$ref": "#/$defs/Significance"
+            },
+            "test": {
+              "$ref": "#/$defs/RankTest"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "observations",
+            "lagged_differences",
+            "include_constant",
+            "significance",
+            "test"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "dynamics_fit"
+            },
+            "lower": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "max_iterations": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "model": {
+              "$ref": "#/$defs/DynamicsTask"
+            },
+            "tolerance": {
+              "type": "number",
+              "format": "double"
+            },
+            "upper": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "model",
+            "lower",
+            "upper",
+            "max_iterations",
+            "tolerance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "adf_gaussian_calibration"
+            },
+            "lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "replicates": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "seed": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0
+            },
+            "trend": {
+              "$ref": "#/$defs/Trend"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "samples",
+            "lags",
+            "trend",
+            "replicates",
+            "seed"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dependent": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "independent": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "engle_granger_gaussian_calibration"
+            },
+            "lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "replicates": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "seed": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "dependent",
+            "independent",
+            "lags",
+            "replicates",
+            "seed"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "include_constant": {
+              "type": "boolean"
+            },
+            "kind": {
+              "type": "string",
+              "const": "vecm"
+            },
+            "lagged_differences": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "rank": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "steps": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "observations",
+            "lagged_differences",
+            "include_constant",
+            "rank",
+            "steps"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dependent": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "independent": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "engle_granger"
+            },
+            "lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "dependent",
+            "independent",
+            "lags"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "one_sample_t"
+            },
+            "null_mean": {
+              "type": "number",
+              "format": "double"
+            },
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "samples",
+            "null_mean"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "first": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "welch"
+            },
+            "second": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "first",
+            "second"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "first": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "correlation_test"
+            },
+            "second": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "first",
+            "second"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "family": {
+              "$ref": "#/$defs/MleFamily"
+            },
+            "kind": {
+              "type": "string",
+              "const": "maximum_likelihood"
+            },
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "samples",
+            "family"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "normal_mean_posterior"
+            },
+            "known_variance": {
+              "type": "number",
+              "format": "double"
+            },
+            "prior_mean": {
+              "type": "number",
+              "format": "double"
+            },
+            "prior_variance": {
+              "type": "number",
+              "format": "double"
+            },
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "samples",
+            "known_variance",
+            "prior_mean",
+            "prior_variance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "adf"
+            },
+            "lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "trend": {
+              "$ref": "#/$defs/Trend"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "samples",
+            "lags",
+            "trend"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "include_constant": {
+              "type": "boolean"
+            },
+            "kind": {
+              "type": "string",
+              "const": "johansen"
+            },
+            "lagged_differences": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "rank": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "observations",
+            "lagged_differences",
+            "include_constant",
+            "rank"
+          ]
+        }
+      ]
+    },
+    "MleFamily": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "log_normal",
+        "poisson",
+        "exponential"
+      ]
+    },
+    "Observation": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "returns": {
+          "description": "Simple total returns in asset order; common currency and period.",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "at_ms",
+        "available_at_ms",
+        "returns"
+      ]
+    },
     "Operation": {
       "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "inference"
+            },
+            "spec": {
+              "$ref": "#/$defs/InferenceSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "stochastic"
+            },
+            "spec": {
+              "$ref": "#/$defs/StochasticSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "dynamics"
+            },
+            "spec": {
+              "$ref": "#/$defs/DynamicsSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "allocation"
+            },
+            "spec": {
+              "$ref": "#/$defs/AllocationSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "regression"
+            },
+            "spec": {
+              "$ref": "#/$defs/RegressionSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "formula"
+            },
+            "spec": {
+              "$ref": "#/$defs/FormulaSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "const": "research"
+            },
+            "task": {
+              "$ref": "#/$defs/ResearchTask"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "task"
+          ]
+        },
         {
           "type": "object",
           "properties": {
@@ -839,6 +3461,23 @@
           "properties": {
             "method": {
               "type": "string",
+              "const": "portfolio_risk"
+            },
+            "spec": {
+              "$ref": "#/$defs/PortfolioSpec"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "spec"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
               "const": "performance"
             },
             "spec": {
@@ -938,6 +3577,20 @@
         }
       ]
     },
+    "OptionKind": {
+      "type": "string",
+      "enum": [
+        "call",
+        "put"
+      ]
+    },
+    "PboMetric": {
+      "type": "string",
+      "enum": [
+        "mean",
+        "sharpe"
+      ]
+    },
     "PerformanceSpec": {
       "type": "object",
       "properties": {
@@ -1028,6 +3681,61 @@
         "x"
       ]
     },
+    "PortfolioSpec": {
+      "type": "object",
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Asset"
+          }
+        },
+        "currency": {
+          "type": "string"
+        },
+        "ddof": {
+          "type": "integer",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "equity": {
+          "type": "number",
+          "format": "double"
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Observation"
+          }
+        },
+        "periods_per_year": {
+          "type": "number",
+          "format": "double"
+        },
+        "scenarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Scenario"
+          }
+        },
+        "weights_available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "assets",
+        "equity",
+        "currency",
+        "weights_available_at_ms",
+        "periods_per_year",
+        "ddof",
+        "observations",
+        "scenarios"
+      ]
+    },
     "ProbabilityTask": {
       "type": "object",
       "properties": {
@@ -1066,6 +3774,451 @@
         "assumption"
       ]
     },
+    "Process": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "diffusion": {
+              "type": "number",
+              "format": "double"
+            },
+            "drift": {
+              "type": "number",
+              "format": "double"
+            },
+            "initial": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "brownian"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "initial",
+            "drift",
+            "diffusion"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "drift": {
+              "type": "number",
+              "format": "double"
+            },
+            "initial": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "geometric_brownian"
+            },
+            "volatility": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "initial",
+            "drift",
+            "volatility"
+          ]
+        }
+      ]
+    },
+    "Quote": {
+      "type": "object",
+      "properties": {
+        "ask": {
+          "type": "number",
+          "format": "double"
+        },
+        "ask_size": {
+          "type": "number",
+          "format": "double"
+        },
+        "bid": {
+          "type": "number",
+          "format": "double"
+        },
+        "bid_size": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "bid",
+        "bid_size",
+        "ask",
+        "ask_size"
+      ]
+    },
+    "RankTest": {
+      "type": "string",
+      "enum": [
+        "trace",
+        "max_eigenvalue"
+      ]
+    },
+    "RegressionMethod": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "ols"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "ridge"
+            },
+            "lambda": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "lambda"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "lasso"
+            },
+            "lambda": {
+              "type": "number",
+              "format": "double"
+            },
+            "max_iterations": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "lambda",
+            "max_iterations",
+            "tolerance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "logistic"
+            },
+            "l2": {
+              "type": "number",
+              "format": "double"
+            },
+            "max_iterations": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "l2",
+            "max_iterations",
+            "tolerance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "components": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "kind": {
+              "type": "string",
+              "const": "pca"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "components"
+          ]
+        }
+      ]
+    },
+    "RegressionSpec": {
+      "type": "object",
+      "properties": {
+        "intercept": {
+          "type": "boolean"
+        },
+        "method": {
+          "$ref": "#/$defs/RegressionMethod"
+        },
+        "rows": {
+          "description": "First value is the target for regressions, all columns are features for PCA.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ResearchRow"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "intercept",
+        "method"
+      ]
+    },
+    "ResearchRow": {
+      "type": "object",
+      "properties": {
+        "at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "at_ms",
+        "available_at_ms",
+        "values"
+      ]
+    },
+    "ResearchTask": {
+      "oneOf": [
+        {
+          "description": "Points contain period excess returns, without annualization.",
+          "type": "object",
+          "properties": {
+            "aggregation_periods": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "assume_iid_for_psr": {
+              "type": "boolean"
+            },
+            "assume_stationary": {
+              "type": "boolean"
+            },
+            "benchmark_sharpe": {
+              "type": "number",
+              "format": "double"
+            },
+            "confidence": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "sharpe_inference"
+            },
+            "trials": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TrialSummary"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "aggregation_periods",
+            "benchmark_sharpe",
+            "confidence",
+            "assume_stationary",
+            "assume_iid_for_psr"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alpha": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "multiple_testing"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "alpha"
+          ]
+        },
+        {
+          "description": "Points contain loss_1 - loss_2; positive means model 2 is better.",
+          "type": "object",
+          "properties": {
+            "assume_stationary": {
+              "type": "boolean"
+            },
+            "hac_lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "kind": {
+              "type": "string",
+              "const": "diebold_mariano"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "hac_lags",
+            "assume_stationary"
+          ]
+        },
+        {
+          "description": "Aligned period scores/returns; columns are candidates, higher is better.",
+          "type": "object",
+          "properties": {
+            "blocks": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "kind": {
+              "type": "string",
+              "const": "pbo"
+            },
+            "metric": {
+              "$ref": "#/$defs/PboMetric"
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ResearchRow"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "candidates",
+            "rows",
+            "blocks",
+            "metric"
+          ]
+        },
+        {
+          "description": "Aligned benchmark loss minus candidate loss; positive is better.",
+          "type": "object",
+          "properties": {
+            "assume_stationary": {
+              "type": "boolean"
+            },
+            "block_length": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hac_lags": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "kind": {
+              "type": "string",
+              "const": "reality_check_spa"
+            },
+            "replicates": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ResearchRow"
+              }
+            },
+            "seed": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "candidates",
+            "rows",
+            "block_length",
+            "replicates",
+            "seed",
+            "hac_lags",
+            "assume_stationary"
+          ]
+        }
+      ]
+    },
     "ReturnBasis": {
       "type": "string",
       "enum": [
@@ -1098,6 +4251,32 @@
         "samples"
       ]
     },
+    "Scenario": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "id": {
+          "type": "string"
+        },
+        "shocks": {
+          "description": "Full vector of price shocks in asset order. No inferred missing shocks.",
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "available_at_ms",
+        "shocks"
+      ]
+    },
     "SeriesIdentity": {
       "type": "object",
       "properties": {
@@ -1124,6 +4303,227 @@
         "timeframe",
         "source",
         "data_version"
+      ]
+    },
+    "Side": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell"
+      ]
+    },
+    "Significance": {
+      "type": "string",
+      "enum": [
+        "ten_percent",
+        "five_percent",
+        "one_percent"
+      ]
+    },
+    "StochasticSpec": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "task": {
+          "$ref": "#/$defs/StochasticTask"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "available_at_ms",
+        "task"
+      ]
+    },
+    "StochasticTask": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "fit_tolerance": {
+              "type": "number",
+              "format": "double"
+            },
+            "initial": {
+              "$ref": "#/$defs/HestonModel"
+            },
+            "integration_limit": {
+              "type": "number",
+              "format": "double"
+            },
+            "intervals": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "kind": {
+              "type": "string",
+              "const": "heston_calibrate"
+            },
+            "lower": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "max_iterations": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "parameters": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/HestonParameter"
+              }
+            },
+            "pricing_tolerance": {
+              "type": "number",
+              "format": "double"
+            },
+            "quotes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/HestonQuote"
+              }
+            },
+            "upper": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "quotes",
+            "initial",
+            "parameters",
+            "lower",
+            "upper",
+            "max_iterations",
+            "fit_tolerance",
+            "integration_limit",
+            "intervals",
+            "pricing_tolerance"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "horizon": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "paths"
+            },
+            "paths": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "process": {
+              "$ref": "#/$defs/Process"
+            },
+            "seed": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0
+            },
+            "steps": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "process",
+            "horizon",
+            "steps",
+            "paths",
+            "seed"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "diffusion": {
+              "type": "number",
+              "format": "double"
+            },
+            "drift": {
+              "type": "number",
+              "format": "double"
+            },
+            "kind": {
+              "type": "string",
+              "const": "ito"
+            },
+            "second_space_derivative": {
+              "type": "number",
+              "format": "double"
+            },
+            "space_derivative": {
+              "type": "number",
+              "format": "double"
+            },
+            "time_derivative": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "time_derivative",
+            "space_derivative",
+            "second_space_derivative",
+            "drift",
+            "diffusion"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "integration_limit": {
+              "type": "number",
+              "format": "double"
+            },
+            "intervals": {
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            },
+            "kind": {
+              "type": "string",
+              "const": "heston"
+            },
+            "parameters": {
+              "$ref": "#/$defs/HestonParameters"
+            },
+            "tolerance": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "parameters",
+            "integration_limit",
+            "intervals",
+            "tolerance"
+          ]
+        }
       ]
     },
     "TemporalSpec": {
@@ -1262,6 +4662,53 @@
         "cumulative_return",
         "lag",
         "difference"
+      ]
+    },
+    "Trend": {
+      "type": "string",
+      "enum": [
+        "none",
+        "constant",
+        "linear"
+      ]
+    },
+    "TrialSummary": {
+      "type": "object",
+      "properties": {
+        "available_at_ms": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "effective_independent_trials": {
+          "type": "number",
+          "format": "double"
+        },
+        "experiment_id": {
+          "type": "string"
+        },
+        "sharpe_mean": {
+          "description": "Mean and sample standard deviation of unannualized trial Sharpe ratios.",
+          "type": "number",
+          "format": "double"
+        },
+        "sharpe_stddev": {
+          "type": "number",
+          "format": "double"
+        },
+        "total_trials": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "experiment_id",
+        "available_at_ms",
+        "total_trials",
+        "effective_independent_trials",
+        "sharpe_mean",
+        "sharpe_stddev"
       ]
     }
   }

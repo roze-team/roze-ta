@@ -1,0 +1,132 @@
+section,title,source_line,status,api,limits,evidence
+2.1,简单收益率,60,formula_evaluator,formula.cashflow_return / transform,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+2.2,对数收益率,87,formula_evaluator,transform.log_return,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+2.3,净值曲线,123,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+2.4,年化收益率,143,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+2.5,年化波动率,169,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+3.1,条件概率,193,formula_evaluator,probability,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+3.2,贝叶斯公式,211,formula_evaluator,formula.bayes,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+3.3,全概率公式,238,formula_evaluator,formula.bayes / formula.discrete_probability,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+3.4,数学期望,261,formula_evaluator,formula.discrete_probability,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+3.5,方差与标准差,302,formula_evaluator,describe / formula.discrete_probability,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+3.6,协方差,332,formula_evaluator,pair,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+3.7,相关系数,356,formula_evaluator,pair,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+3.8,全期望与全方差,381,formula_evaluator,formula.discrete_probability,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+4.1,伯努利分布,410,formula_evaluator,distribution.bernoulli,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+4.2,二项分布,443,formula_evaluator,distribution.binomial,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+4.3,正态分布,479,formula_evaluator,distribution.normal,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+4.4,对数正态分布,500,formula_evaluator,distribution.log_normal,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+4.5,泊松分布,522,formula_evaluator,distribution.poisson,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+4.6,指数分布,557,formula_evaluator,distribution.exponential,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+5.1,样本均值,590,formula_evaluator,describe,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+5.2,样本方差,601,formula_evaluator,describe,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+5.3,Z-Score 标准分数,622,formula_evaluator,rolling_zscore,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+5.4,中位数绝对偏差 MAD,667,formula_evaluator,describe,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+5.5,偏度,692,formula_evaluator,describe / research.sharpe_inference,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+5.6,峰度,708,formula_evaluator,describe / research.sharpe_inference,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+6.1,大数定律,730,theory,theory: sample mean consistency,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+6.2,中心极限定理,747,theory,theory: central limit assumptions,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+6.3,均值标准误,759,formula_evaluator,describe,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+6.4,均值置信区间,771,formula_evaluator,describe / probability,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+6.5,单样本 t 检验,790,formula_evaluator,inference.one_sample_t,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+6.6,两组均值差异检验,817,formula_evaluator,inference.welch,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+6.7,相关系数显著性检验,837,formula_evaluator,inference.correlation_test,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+6.8,最大似然估计 MLE,857,formula_evaluator,inference.maximum_likelihood,IID normal/lognormal/Poisson/exponential closed-form MLE; no arbitrary-likelihood optimizer,paper_catalog + module reference tests
+6.9,贝叶斯后验,890,formula_evaluator,inference.normal_mean_posterior / probability,normal-mean MAP and Beta-Binomial posterior; no arbitrary prior/likelihood optimizer,paper_catalog + module reference tests
+6.10,多重检验修正,920,formula_evaluator,research.multiple_testing,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+7.1,线性回归,946,formula_evaluator,regression.ols,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+7.2,决定系数 $R^2$,980,formula_evaluator,regression.ols,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+7.3,Alpha 与 Beta,1011,formula_evaluator,pair / regression.ols,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+7.4,多因子模型,1046,formula_evaluator,regression.ols,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+7.5,Logistic 概率模型,1084,formula_evaluator,regression.logistic,bounded L2 logistic fit; check converged; no automatic scaling,paper_catalog + module reference tests
+7.6,Ridge 回归,1117,formula_evaluator,regression.ridge,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+7.7,Lasso 回归,1142,formula_evaluator,regression.lasso,SSE/(2n)+lambda*L1 convention; check converged,paper_catalog + module reference tests
+7.8,主成分分析 PCA,1157,formula_evaluator,regression.pca,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.1,自协方差与自相关,1204,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+8.2,AR(1) 模型,1231,formula_evaluator,dynamics.arima / dynamics.ar1_moments,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.3,AR(p) 模型,1266,formula_evaluator,dynamics.arima,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.4,MA(q) 模型,1279,formula_evaluator,dynamics.arima,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.5,ARIMA 模型,1293,formula_evaluator,dynamics.arima / inference.dynamics_fit,"bounded conditional SSE fit with explicit p,d,q/bounds/initial residual convention; no automatic order selection or global optimum guarantee",inference_workflows + paper_catalog + MCP coverage
+8.6,单位根检验 ADF,1310,formula_evaluator,inference.adf / inference.adf_gaussian_calibration / inference.adf_mac_kinnon,fixed lags/trend; separate Gaussian-null simulation or MacKinnon 1994 p and 2010 critical response surface; no structural-break/selection correction,standard_calibration + paper_catalog + MCP coverage
+8.7,协整关系,1332,formula_evaluator,inference.engle_granger_mac_kinnon / inference.engle_granger_gaussian_calibration / inference.johansen_rank,intercept EG N=2 calibration; sequential Johansen trace/max-eigen rank selection at 10/5/1 percent; asymptotic tables only,standard_calibration + paper_catalog + MCP coverage
+8.8,OU 均值回归过程,1357,formula_evaluator,dynamics.ornstein_uhlenbeck,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.9,EWMA 波动率,1391,formula_evaluator,dynamics.ewma,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.10,"GARCH(1,1)",1423,formula_evaluator,dynamics.garch / inference.dynamics_fit,conditional Gaussian likelihood fit with explicit initial states and bounds; stationary parameters; local convergence diagnostic,inference_workflows + paper_catalog + MCP coverage
+8.11,已实现波动率,1463,formula_evaluator,dynamics.realized_variance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.12,Parkinson 高低价波动率,1483,formula_evaluator,dynamics.parkinson,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+8.13,Kalman Filter,1499,formula_evaluator,dynamics.kalman,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+9.1,Sharpe Ratio,1572,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.2,Sortino Ratio,1595,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.3,最大回撤,1620,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.4,Calmar Ratio,1648,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.5,Information Ratio,1661,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.6,Profit Factor,1690,formula_evaluator,trade_summary,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.7,盈亏比,1709,formula_evaluator,trade_summary / formula.trade_expectancy,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.8,盈亏平衡胜率,1722,formula_evaluator,formula.trade_expectancy,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+9.9,Kelly 公式,1753,formula_evaluator,formula.kelly / formula.continuous_kelly,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+9.10,参数化 VaR,1789,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+9.11,Expected Shortfall / CVaR,1823,formula_evaluator,performance / allocation.cvar_optimize,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+10.1,组合期望收益,1842,formula_evaluator,portfolio_risk,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+10.2,组合方差,1860,formula_evaluator,portfolio_risk,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+10.3,最小方差组合,1890,formula_evaluator,allocation.minimum_variance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+10.4,最大 Sharpe 组合,1919,formula_evaluator,allocation.maximum_sharpe,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+10.5,均值—方差优化,1936,formula_evaluator,allocation.mean_variance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+10.6,风险贡献,1955,formula_evaluator,portfolio_risk / allocation.risk_parity,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+10.7,协方差收缩,2005,formula_evaluator,allocation.ledoit_wolf,scaled-identity Ledoit-Wolf estimator only; other shrinkage targets not included,paper_catalog + module reference tests
+10.8,逆波动率配置,2023,formula_evaluator,allocation.inverse_volatility,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+10.9,波动率目标,2036,formula_evaluator,allocation.target_volatility,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.1,合约名义价值,2065,formula_evaluator,formula.futures,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.2,多头与空头盈亏,2081,formula_evaluator,formula.futures,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.3,保证金,2105,formula_evaluator,formula.futures,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.4,实际杠杆,2117,formula_evaluator,formula.futures / portfolio_risk,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.5,按止损计算开仓数量,2130,formula_evaluator,formula.stop_sizing,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.6,基差,2163,formula_evaluator,formula.carry,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.7,期货理论价格,2195,formula_evaluator,formula.carry,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.8,最优套期保值比率,2225,formula_evaluator,formula.hedge,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+11.9,展期收益,2259,formula_evaluator,formula.roll_yield,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+12.1,简单移动平均 SMA,2282,formula_evaluator,native.method.SMA,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+12.2,指数移动平均 EMA,2293,formula_evaluator,native.method.EMA,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+12.3,动量,2313,formula_evaluator,native.method.Momentum,native absolute Momentum; percentage return is transform.simple_return; units differ,existing baseline tests
+12.4,布林带,2335,formula_evaluator,native.indicator.bollinger_bands,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+12.5,RSI,2363,formula_evaluator,native.indicator.relative_strength_index,native RSI is 0..1; document 0..100 requires multiplying by 100; initialization follows existing profile contract,existing baseline tests
+12.6,MACD,2380,formula_evaluator,native.indicator.macd,"native MACD exposes line and signal; document histogram is a derived subtraction/scaling, not an extra native output",existing baseline tests
+12.7,ATR,2404,formula_evaluator,native.method.TR / fixed-profile ATR,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+13.1,Information Coefficient,2439,formula_evaluator,factor_evaluation,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+13.2,ICIR,2461,formula_evaluator,factor_evaluation,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+13.3,方向命中率,2484,formula_evaluator,factor_evaluation,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+13.4,换手率,2509,formula_evaluator,formula.turnover,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+14.1,有效样本量近似,2545,formula_evaluator,performance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+14.2,Newey-West 均值方差,2573,formula_evaluator,performance / research.diebold_mariano,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+15.1,布朗运动,2611,formula_evaluator,stochastic.paths.brownian,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+15.2,几何布朗运动,2633,formula_evaluator,stochastic.paths.geometric_brownian,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+15.3,伊藤公式,2661,formula_evaluator,stochastic.ito,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+15.4,Black-Scholes 期权定价,2694,formula_evaluator,formula.black_scholes,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+16.1,均方误差 MSE,2738,formula_evaluator,formula.losses,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+16.2,平均绝对误差 MAE,2752,formula_evaluator,formula.losses,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+16.3,Huber Loss,2766,formula_evaluator,formula.losses,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+16.4,二分类交叉熵,2797,formula_evaluator,calibration_evaluation,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+16.5,Brier Score,2815,formula_evaluator,calibration_evaluation,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+16.6,熵,2829,formula_evaluator,formula.information,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+16.7,KL 散度,2841,formula_evaluator,formula.information,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+19.1,论文公式与普通指标的区别,3151,theory,theory: model and inference distinctions,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,existing baseline tests
+19.2,Markowitz 均值—方差有效前沿,3173,formula_evaluator,allocation.minimum_variance / allocation.mean_variance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+19.3,Black–Litterman 后验收益模型,3248,formula_evaluator,allocation.black_litterman,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+19.4,Ledoit–Wolf 协方差收缩,3341,formula_evaluator,allocation.ledoit_wolf,"scaled-identity 2004 JMA variant, not constant-correlation Honey estimator",paper_catalog + module reference tests
+19.5,ARCH、GARCH 与 DCC 动态相关模型,3400,formula_evaluator,dynamics.garch / dynamics.dcc / inference.dynamics_fit,separate bounded GARCH and DCC conditional likelihood fits; DCC requires supplied standardized innovations and Qbar/Q0; no joint estimator,inference_workflows + paper_catalog + MCP coverage
+19.6,HAR-RV 已实现波动率模型,3559,formula_evaluator,dynamics.har_rv,"explicit coefficients, 1/5/22 day variances; fitting can use regression.ols",paper_catalog + module reference tests
+19.7,Johansen 协整与 VECM,3648,formula_evaluator,inference.johansen / inference.johansen_rank / inference.vecm,sequential table-based rank selection and optional conditional VECM forecasts; no parameter/rank-selection uncertainty in covariance,standard_calibration + paper_catalog + MCP coverage
+19.8,Fama–French 三因子模型,3727,formula_evaluator,regression.ols,"multifactor OLS; IID coefficient tests, no HAC coefficient covariance",paper_catalog + module reference tests
+19.9,Lo 自相关修正 Sharpe Ratio,3784,formula_evaluator,research.sharpe_inference,Lo stationary aggregation; IID assumption required separately for PSR,paper_catalog + module reference tests
+19.10,Probabilistic Sharpe Ratio,3849,formula_evaluator,research.sharpe_inference,"IID asymptotic PSR and MinTRL, raw-moment skewness/non-excess kurtosis",paper_catalog + module reference tests
+19.11,Deflated Sharpe Ratio,3941,formula_evaluator,research.sharpe_inference,"complete trial summary and effective trial count supplied, not estimated",paper_catalog + module reference tests
+19.12,White Reality Check,4032,formula_evaluator,research.reality_check_spa,joint circular-block bootstrap and plus-one Monte Carlo p-value,paper_catalog + module reference tests
+19.13,Hansen SPA 检验,4088,formula_evaluator,research.reality_check_spa,"fixed Bartlett HAC studentization, consistent negative-mean recentering",paper_catalog + module reference tests
+19.14,Probability of Backtest Overfitting,4130,formula_evaluator,research.pbo,"frozen candidates, equal blocks, mean/Sharpe score; deterministic tie handling",paper_catalog + module reference tests
+19.15,Benjamini–Hochberg FDR,4205,formula_evaluator,research.multiple_testing,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+19.16,Diebold–Mariano 预测能力检验,4267,formula_evaluator,research.diebold_mariano,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+19.17,Rockafellar–Uryasev CVaR 优化,4357,formula_evaluator,allocation.cvar_optimize,"long-only fully-invested simplex, bounded optimizer; inspect optimality_gap and converged",paper_catalog + module reference tests
+19.18,Almgren–Chriss 最优执行,4440,formula_evaluator,formula.almgren_chriss,continuous linear temporary-impact solution; no fitted liquidity or live execution,paper_catalog + module reference tests
+19.19,Avellaneda–Stoikov 做市模型,4543,formula_evaluator,formula.avellaneda_stoikov,approximate unconstrained quotes; no tick rounding or fill simulation,paper_catalog + module reference tests
+19.20,Order Flow Imbalance,4624,formula_evaluator,formula.order_flow_imbalance,explicit formula variant and bounds: docs/contracts/paper-models-v1.md,paper_catalog + module reference tests
+19.21,Hawkes 自激点过程,4686,formula_evaluator,dynamics.hawkes / inference.dynamics_fit,"bounded finite-horizon exponential-kernel likelihood fit, empty initial history; stationarity diagnostic may be inconclusive",inference_workflows + paper_catalog + MCP coverage
+19.22,Heston 随机波动率模型,4787,formula_evaluator,stochastic.heston / stochastic.heston_calibrate,bounded weighted European quote calibration with 1..5 active parameters; joint quote/quadrature/iteration work budget; empirical integration check and local convergence only,standard_calibration + paper_catalog + MCP coverage

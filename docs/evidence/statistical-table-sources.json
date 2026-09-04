@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/statsmodels/statsmodels/v0.14.6/statsmodels/tsa/adfvalues.py",
+    "sha256": "b3656d1ac45022219550ea20337bc0480ea8688b4acd30a342b1dd2515658803"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/statsmodels/statsmodels/v0.14.6/statsmodels/tsa/coint_tables.py",
+    "sha256": "e53745b12f50cf7e20e1f4076aa182aa905ff231d1dfadfd409412f1fb9b9ae8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/statsmodels/statsmodels/v0.14.6/LICENSE.txt",
+    "sha256": "1ca78e1dec9dcebc55f3b96a862317f23e76422c5fc943568d955aad1f6b5fad"
+  }
+]

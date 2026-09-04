@@ -13,7 +13,11 @@
 MCP 现有 **7 个只读工具**：全部 **36 个原生指标模块、44 个独立 Method** 已通过
 `native_catalog` / `native_batch_calculate` 开放，包括 Renko、Heikin-Ashi、聚合、交叉和反转。
 [全量原生调用说明](docs/usage/native-mcp.md)、[80 项覆盖清单](docs/native-mcp-coverage.csv)。
-已有 45 个固定 Profile、14 类分析操作和 `indicator_stream` 的快照功能保持兼容；各类计数有重叠，不直接相加。
+已有 45 个固定 Profile、21 类分析操作和 `indicator_stream` 的快照功能；各类计数有重叠，不直接相加。
+
+新增论文公式计算层：七类操作内的 69 个任务变体，覆盖研究检验、金融/执行公式、回归、组合、时序、随机模型及统计推断；另增加四类分布。
+[逐节覆盖与剩余边界](docs/formula-coverage.md)、[公式契约](docs/contracts/paper-models-v1.md)、[72 个请求](docs/usage/paper-requests-v1.json)。
+已新增显式有界 ARIMA/GARCH/DCC/Hawkes 参数拟合、VECM 多步预测和 ADF/EG 高斯零假设模拟校准；限制见[工作流契约](docs/contracts/inference-workflows-v1.md)。
 [完整接口、配置与示例](docs/usage/mcp.md)；[验证记录](docs/evidence/2026-09-03-mcp-coverage.md)。
 
 新增 **S2A 分析**：冻结预测的 Brier/Log Loss 与可靠性分桶、均值 IID/移动块 Bootstrap、
@@ -71,3 +75,7 @@ P0 独立项目和计算/MCP 原型 → P1 统一可靠引擎与指标审核 →
 完整需求是目标规格，不是全部功能已完成的声明。
 
 新增组合风险分析 `portfolio_risk`：敞口、集中度、协方差/相关性、波动风险贡献和显式压力情景。通过现有分析 MCP 调用；[公式与边界](docs/contracts/portfolio-risk-v1.md)、[请求示例](docs/usage/portfolio-request-v1.json)。不含账户执行风控。
+
+标准校准新增 MacKinnon ADF/EG、Johansen 自动选秩及 Heston 多报价校准。[契约与限制](docs/contracts/standard-calibration-v1.md)。
+统计系数子集保留 statsmodels BSD-3-Clause；组合 crate 许可证为 `MIT AND Apache-2.0 AND BSD-3-Clause`。
+[统计表来源与许可证](crates/roze-ta/STATISTICAL-TABLE-NOTICES.md)；原 Yata 迁移记录保持不变。

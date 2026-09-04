@@ -3,6 +3,7 @@
 状态：首批实现，2026-09-03。对应 FR-STAT-001～009 基础部分、FR-PROB-001～004。
 Rust API 为 `roze_ta::analysis::{calculate, calculate_controlled, infer_beta}`；
 MCP 为 `analysis_batch_calculate`。共享公式、校验、错误类型和版本。
+后续新增的七类操作、九类分布当前总范围与边界见 [论文公式契约](paper-models-v1.md)。
 JSON Schema 见 `schema/analysis-request-v1.json`、`analysis-result-v1.json`、`beta-artifact-v1.json`。
 
 ## 数据、时间及哈希
@@ -101,7 +102,7 @@ Beta-Binomial 后验为 alpha'=alpha+k，beta'=beta+n−k。返回显式先验�
 
 本批提供 2 序列协方差矩阵，不支持任意维矩阵；OLS 只有基础描述诊断，无参数区间/异方差修正。
 分析窗口为批量历史窗口，未提供 S1 统计流式快照、拟合 Z-score/Winsorize 产物和通用 walk-forward 切分器。
-S2 检验、Bootstrap/蒙特卡洛、校准、VaR/ES 和 S3 模型未实施。
+以上是 S1 批次历史边界；后续检验、Bootstrap、VaR/ES 及模型实现以[当前覆盖](../formula-coverage.md)和[工作流契约](inference-workflows-v1.md)为准。完整 S2/S3 验收仍未完成。
 
 参考来源：[R quantile](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html)、
 [NIST Wilson interval](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm)、

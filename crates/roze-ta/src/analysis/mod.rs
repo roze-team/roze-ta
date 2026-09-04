@@ -1,12 +1,20 @@
 //! Bounded, deterministic S1 analysis. No I/O, implicit fitting or hidden seed.
 //! See docs/contracts/analysis-v1.md for formulas and sample selection semantics.
+pub mod allocation;
 pub mod bootstrap;
 pub mod calibration;
 mod distribution;
+pub mod dynamics;
 pub mod evaluation;
+pub mod formulas;
+pub mod inference;
+mod linalg;
 pub mod portfolio;
 mod probability;
+pub mod regression;
+pub mod research;
 mod statistics;
+pub mod stochastic;
 pub mod temporal;
 use crate::{
     engine::SeriesIdentity,
@@ -58,6 +66,27 @@ pub struct Request {
 #[cfg_attr(feature = "schema", derive(schemars::JsonSchema))]
 #[serde(tag = "method", rename_all = "snake_case", deny_unknown_fields)]
 pub enum Operation {
+    Inference {
+        spec: inference::InferenceSpec,
+    },
+    Stochastic {
+        spec: stochastic::StochasticSpec,
+    },
+    Dynamics {
+        spec: dynamics::DynamicsSpec,
+    },
+    Allocation {
+        spec: allocation::AllocationSpec,
+    },
+    Regression {
+        spec: regression::RegressionSpec,
+    },
+    Formula {
+        spec: formulas::FormulaSpec,
+    },
+    Research {
+        task: research::ResearchTask,
+    },
     Describe {
         ddof: u8,
         quantiles: Vec<f64>,
@@ -150,6 +179,13 @@ pub struct Interval {
 #[cfg_attr(feature = "schema", derive(schemars::JsonSchema))]
 #[serde(tag = "analysis_kind", content = "result", rename_all = "snake_case")]
 pub enum Output {
+    Inference(Box<inference::InferenceResult>),
+    Stochastic(Box<stochastic::StochasticResult>),
+    Dynamics(Box<dynamics::DynamicsResult>),
+    Allocation(Box<allocation::AllocationResult>),
+    Regression(Box<regression::RegressionResult>),
+    Formula(Box<formulas::FormulaResult>),
+    Research(Box<research::ResearchResult>),
     Description(Description),
     Transform(Vec<SeriesValue>),
     Zscore(Vec<SeriesValue>),
@@ -249,6 +285,13 @@ pub fn calculate_controlled(
     // Validate every operation before allocating expensive output or hashing caller numbers.
     for op in &request.operations {
         let (w, out) = match op {
+            Operation::Inference { spec } => spec.validate(request)?,
+            Operation::Stochastic { spec } => spec.validate(request)?,
+            Operation::Dynamics { spec } => spec.validate(request)?,
+            Operation::Allocation { spec } => spec.validate(request)?,
+            Operation::Regression { spec } => spec.validate(request)?,
+            Operation::Formula { spec } => spec.validate(request)?,
+            Operation::Research { task } => task.validate(request, &points)?,
             Operation::Describe {
                 ddof,
                 quantiles,
@@ -377,6 +420,32 @@ pub fn calculate_controlled(
     for op in &request.operations {
         checkpoint()?;
         results.push(match op {
+            Operation::Inference { spec } => {
+                Output::Inference(Box::new(inference::calculate(spec, &mut checkpoint)?))
+            }
+            Operation::Stochastic { spec } => {
+                Output::Stochastic(Box::new(stochastic::calculate(spec, &mut checkpoint)?))
+            }
+            Operation::Dynamics { spec } => {
+                Output::Dynamics(Box::new(dynamics::calculate(spec, &mut checkpoint)?))
+            }
+            Operation::Allocation { spec } => {
+                Output::Allocation(Box::new(allocation::calculate(spec, &mut checkpoint)?))
+            }
+            Operation::Regression { spec } => Output::Regression(Box::new(regression::calculate(
+                spec,
+                request.fit_cutoff_ms,
+                &mut checkpoint,
+            )?)),
+            Operation::Formula { spec } => {
+                Output::Formula(Box::new(formulas::calculate(spec, &mut checkpoint)?))
+            }
+            Operation::Research { task } => Output::Research(Box::new(research::calculate(
+                task,
+                request,
+                &points,
+                &mut checkpoint,
+            )?)),
             Operation::Describe {
                 ddof,
                 quantiles,
@@ -528,6 +597,13 @@ fn validate_window(x: usize) -> Result<(), TaError> {
 pub fn catalog() -> serde_json::Value {
     serde_json::json!({"schema_version":1,"method_version":VERSION,"tool":"analysis_batch_calculate",
         "capabilities":[
+            {"id":"statistical_inference","methods":["inference"],"tasks":["adf_mac_kinnon","engle_granger_mac_kinnon","johansen_rank","adf","adf_gaussian_calibration","correlation_test","dynamics_fit","engle_granger","engle_granger_gaussian_calibration","johansen","maximum_likelihood","normal_mean_posterior","one_sample_t","vecm","welch"],"capability_kind":"statistics","method_version":inference::VERSION,"data":"explicit_frozen_samples","fits":true,"random":"only_gaussian_calibration","online_update":false},
+            {"id":"stochastic_models","methods":["stochastic"],"tasks":["heston","heston_calibrate","ito","paths"],"capability_kind":"simulation","method_version":stochastic::VERSION,"data":"explicit_frozen_parameters_or_quotes","fits":true,"fitting_tasks":["heston_calibrate"],"random":"only_paths","online_update":false},
+            {"id":"dynamic_models","methods":["dynamics"],"tasks":["ar1_moments","arima","dcc","ewma","garch","har_rv","hawkes","kalman","ornstein_uhlenbeck","parkinson","realized_variance"],"capability_kind":"time_series","method_version":dynamics::VERSION,"data":"explicit_frozen_parameters_and_state","fits":false,"random":false,"online_update":false},
+            {"id":"portfolio_allocation","methods":["allocation"],"tasks":["black_litterman","cvar_optimize","inverse_volatility","ledoit_wolf","maximum_sharpe","mean_variance","minimum_variance","risk_parity","target_volatility"],"capability_kind":"portfolio","method_version":allocation::VERSION,"data":"explicit_frozen_parameters","fits":true,"random":false,"online_update":false},
+            {"id":"regression_models","methods":["regression"],"tasks":["lasso","logistic","ols","pca","ridge"],"capability_kind":"statistics","method_version":regression::VERSION,"data":"timed_regression_matrix","fits":true,"random":false,"online_update":false},
+            {"id":"financial_formulas","methods":["formula"],"tasks":["almgren_chriss","avellaneda_stoikov","bayes","black_scholes","carry","cashflow_return","continuous_kelly","cost_model","discrete_probability","execution_quality","futures","hedge","information","kelly","losses","order_flow_imbalance","roll_yield","stop_sizing","trade_expectancy","turnover"],"capability_kind":"formula","method_version":formulas::VERSION,"data":"explicit_frozen_parameters","fits":false,"random":false,"online_update":false},
+            {"id":"research_diagnostics","methods":["research"],"tasks":["diebold_mariano","multiple_testing","pbo","reality_check_spa","sharpe_inference"],"capability_kind":"research","method_version":research::VERSION,"data":"timed_excess_returns_pvalues_loss_differences_or_aligned_candidate_matrix","fits":false,"random":"only_reality_check_spa","online_update":false},
             {"id":"stat_describe","methods":["describe"],"capability_kind":"statistics","reuses":["stat_stddev","stat_percentile","stat_skew","stat_kurt"],"data":"timed_scalar","fits":false,"random":false,"online_update":false},
             {"id":"stat_transform","methods":["transform"],"capability_kind":"statistics","data":"timed_scalar","fits":false,"random":false,"online_update":false},
             {"id":"stat_zscore","methods":["rolling_zscore"],"capability_kind":"statistics","data":"timed_scalar","fits":false,"random":false,"online_update":false},

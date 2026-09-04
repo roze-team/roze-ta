@@ -1,26 +1,32 @@
 # 概率统计公式实现映射
 
-2026-09-03。参考用户提供的 `C:\Users\xFc\Downloads\量化交易概率统计数学公式大全.md`。
-该文档是公式候选资料，公式须固定参数、单位、数据与时间条件后才能作为接口契约。
-以下是能力级范围映射，不宣称整份文档逐公式验收完成。
+2026-09-04，依据用户提供的《量化交易概率统计数学公式大全_论文增强版.md》。
+[来源 SHA-256](evidence/paper-source.json) 固定本次核对版本。
 
-| 范围 | 当前实现 | 尚待实现/审核 |
-| --- | --- | --- |
-| 收益和基础统计 | S1 收益/差分、描述统计、分位数、偏峰度、MAD/IQR、滚动 Z-score | 统计流式恢复、训练/推理缩放产物 |
-| 概率和基础推断 | S1 五类分布、显式种子抽样、Wilson、Beta-Binomial、IID t 均值区间 | 通用假设检验、校准、多重检验 |
-| 线性关系 | S1 Pearson/Spearman、成对 OLS、滚动 Beta | 多元/稳健回归、正则化、模型产物 |
-| 策略绩效 | E1 复利/年化、波动、Sharpe、Sortino、IR、TE、最大回撤、持续期、Calmar | 现金流调整、负权益/破产、滚动窗口绩效、PSR/DSR |
-| 交易统计 | E1 胜率、净收益期望、平均盈亏、赔率、利润因子、连续盈亏 | 并列平仓时间排序、跨币种转换、重叠仓位净值 |
-| 尾部风险 | E1 历史 VaR/ES、显式正态 VaR/ES | EVT、带不确定性的尾部拟合、多周期风险、回测检验 |
-| 序列依赖 | E1 指定滞后的自相关、Bartlett HAC 均值标准误/t、近似有效样本量 | ADF/KPSS、AR/ARIMA/GARCH、Kalman、HMM |
-| 因子评估与时间验证 | E1 截面 IC/RankIC/ICIR、覆盖率、方向命中率；S2A 显式 rolling/expanding 时间分区及标签清除 | 分层组合收益、换手成本、多空组合、完整 Purged CV、拟合/验证执行器 |
-| 组合与资金管理 | 未实施 | 协方差矩阵、组合优化、风险贡献、Kelly 与参数不确定性 |
-| 随机模拟 | S1 基础分布抽样；S2A 样本均值 IID/非环绕移动块 Bootstrap、percentile 区间 | 任意统计量/BCa/平稳 Bootstrap、路径 Monte Carlo、随机过程 |
-| 衍生品/交易微观结构 | 未实施 | Black-Scholes/Greeks、合约乘数/保证金、资金费率、盘口专用数据 |
-| 预测与机器学习诊断 | S2A 冻结概率 Brier/Log Loss、可靠性分桶/ECE、独立基准对照 | Logistic、Platt/isotonic 校准器拟合、可靠性区间、一般损失函数 |
+建立了 **131 个数学章节条目的映射**：128 个公式求值条目、3 个理论说明条目。
+同一算法可能对应多个章节，不能将这些条目计作新增算法数。
+新增七类分析操作、69 个任务变体，以及四类分布；分析操作合计 21 类。
 
-E1 是分析功能增量，和 60 核心指标 +12 形态 +12 结构清单分别计数。
-它不等同于全部 S1/S2/S3 验收；已交付范围见 [E1 契约](contracts/evaluation-v1.md)。
-S2A 已加入概率评估、时间分区与均值重采样，见 [validation-v1](contracts/validation-v1.md)。
-后续补独立校准模型、统计检验与一般重采样，再实现依赖拟合与状态产物的时序模型、组合分析。
-所有新增模型均需要独立参考值、数值稳定性、预算/取消与固定 cutoff 证据。
+| 范围 | 入口 | 实现层级 |
+|---|---|---|
+| 收益、描述统计、相关 | describe / transform / rolling_zscore / pair | 既有 S1 与含现金流收益扩展 |
+| 概率、分布、贝叶斯 | distribution / probability / inference | 九类分布、闭式 MLE/正态均值后验、Beta-Binomial |
+| 回归、正则化、PCA | regression | OLS/Ridge/Lasso/Logistic/PCA，显式收敛状态 |
+| 绩效、交易、尾部风险 | performance / trade_summary / formula | 既有 E1 与期货、成本、执行质量 |
+| 回测可信度 | research | Lo/PSR/DSR/MinTRL/PBO/RC/SPA/BH/Bonferroni/DM |
+| 组合 | portfolio_risk / allocation | 固定风险、解析优化、风险平价、LW、BL、受限 CVaR |
+| 时序 | dynamics / inference | 显式参数递推与有界拟合、Kalman、ADF/EG 校准、Johansen、VECM 多步预测 |
+| 随机与期权 | stochastic / formula | Brownian/GBM、Itô、Black–Scholes、Heston Fourier |
+| 微观结构 | formula / dynamics | AC、AS、OFI、Hawkes 显式模型求值 |
+| 因子与预测诊断 | factor_evaluation / calibration_evaluation / formula | IC/ICIR、方向命中、换手、损失和信息量 |
+
+完整清单：[逐节 CSV](paper-formula-coverage.csv)，含源行号、API、限制和证据分类。
+参数、单位、变体、时间、限额与错误见 [契约](contracts/paper-models-v1.md)，
+可运行参数见 [72 个请求](usage/paper-requests-v1.json)。
+
+新增[统计工作流](contracts/inference-workflows-v1.md)：ARIMA/GARCH/DCC/Hawkes 显式有界拟合、
+VECM 拟合与多步预测、ADF/EG 高斯零假设有限样本模拟校准。
+又新增[标准校准](contracts/standard-calibration-v1.md)：MacKinnon 响应面、Johansen 选秩与 Heston 多报价参数校准。
+**公式求值覆盖不等于完整模型训练或生产验收。** 尚未提供
+任意组合约束优化、交易平台数据库或实盘执行。CSV 对相关条目逐项标注边界。
+原 S1/E1/S2A 契约继续适用，不宣称所有概率统计 S2/S3 需求已完成。

@@ -1,0 +1,3735 @@
+[
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "excess_simple_return",
+    "units": "ratio",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [
+      {
+        "at_ms": 1,
+        "available_at_ms": 1,
+        "x": 0.01,
+        "y": null
+      },
+      {
+        "at_ms": 2,
+        "available_at_ms": 2,
+        "x": 0.02,
+        "y": null
+      },
+      {
+        "at_ms": 3,
+        "available_at_ms": 3,
+        "x": -0.01,
+        "y": null
+      },
+      {
+        "at_ms": 4,
+        "available_at_ms": 4,
+        "x": 0.03,
+        "y": null
+      }
+    ],
+    "events": [],
+    "operations": [
+      {
+        "method": "research",
+        "task": {
+          "kind": "sharpe_inference",
+          "aggregation_periods": 2,
+          "benchmark_sharpe": 0.0,
+          "confidence": 0.95,
+          "assume_stationary": true,
+          "assume_iid_for_psr": true,
+          "trials": null
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "p_value",
+    "units": "probability",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [
+      {
+        "at_ms": 1,
+        "available_at_ms": 1,
+        "x": 0.01,
+        "y": null
+      },
+      {
+        "at_ms": 2,
+        "available_at_ms": 2,
+        "x": 0.04,
+        "y": null
+      },
+      {
+        "at_ms": 3,
+        "available_at_ms": 3,
+        "x": 0.5,
+        "y": null
+      }
+    ],
+    "events": [],
+    "operations": [
+      {
+        "method": "research",
+        "task": {
+          "kind": "multiple_testing",
+          "alpha": 0.05
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "loss_difference",
+    "units": "loss",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [
+      {
+        "at_ms": 1,
+        "available_at_ms": 1,
+        "x": 1.0,
+        "y": null
+      },
+      {
+        "at_ms": 2,
+        "available_at_ms": 2,
+        "x": 2.0,
+        "y": null
+      },
+      {
+        "at_ms": 3,
+        "available_at_ms": 3,
+        "x": 0.0,
+        "y": null
+      },
+      {
+        "at_ms": 4,
+        "available_at_ms": 4,
+        "x": 3.0,
+        "y": null
+      }
+    ],
+    "events": [],
+    "operations": [
+      {
+        "method": "research",
+        "task": {
+          "kind": "diebold_mariano",
+          "hac_lags": 1,
+          "assume_stationary": true
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "candidate_performance",
+    "units": "ratio",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "research",
+        "task": {
+          "kind": "pbo",
+          "candidates": [
+            "a",
+            "b"
+          ],
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                3.0,
+                1.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                4.0,
+                2.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                1.0,
+                3.0
+              ]
+            },
+            {
+              "at_ms": 4,
+              "available_at_ms": 4,
+              "values": [
+                2.0,
+                4.0
+              ]
+            }
+          ],
+          "blocks": 2,
+          "metric": "mean"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "benchmark_loss_advantage",
+    "units": "loss",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "research",
+        "task": {
+          "kind": "reality_check_spa",
+          "candidates": [
+            "a",
+            "b"
+          ],
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                3.0,
+                -2.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                2.0,
+                -1.0
+              ]
+            }
+          ],
+          "block_length": 3,
+          "replicates": 99,
+          "seed": 42,
+          "hac_lags": 0,
+          "assume_stationary": true
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "cashflow_return",
+            "previous_price": 100.0,
+            "price": 101.0,
+            "cashflow": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "roll_yield",
+            "near": 100.0,
+            "far": 102.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "kelly",
+            "win_probability": 0.6,
+            "payoff_ratio": 2.0,
+            "fraction": 0.5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "futures",
+            "entry": 100.0,
+            "exit": 102.0,
+            "multiplier": 10.0,
+            "contracts": 2.0,
+            "side": "buy",
+            "margin_rate": 0.1,
+            "equity": 10000.0,
+            "costs": 1.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "stop_sizing",
+            "equity": 10000.0,
+            "risk_fraction": 0.01,
+            "entry": 10.0,
+            "stop": 7.0,
+            "multiplier": 10.0,
+            "cost_per_contract": 5.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "carry",
+            "spot": 100.0,
+            "futures": 101.0,
+            "rate": 0.02,
+            "storage_rate": 0.01,
+            "convenience_yield": 0.005,
+            "years": 1.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "hedge",
+            "correlation": 0.8,
+            "spot_volatility": 0.2,
+            "futures_volatility": 0.4,
+            "exposure_value": 10000.0,
+            "contract_value": 100.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "execution_quality",
+            "side": "buy",
+            "requested_quantity": 10.0,
+            "decision_price": 100.0,
+            "arrival_price": 101.0,
+            "terminal_price": 103.0,
+            "multiplier": 1.0,
+            "fills": [
+              {
+                "quantity": 6.0,
+                "price": 102.0,
+                "fee": 1.0
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "cost_model",
+            "gross_return": 0.1,
+            "turnover": 2.0,
+            "commission_bps": 3.0,
+            "half_spread_bps": 2.0,
+            "slippage_bps": 4.0,
+            "impact_bps": 1.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "almgren_chriss",
+            "quantity": 100.0,
+            "horizon": 10.0,
+            "volatility": 2.0,
+            "risk_aversion": 0.1,
+            "temporary_impact": 0.5,
+            "steps": 10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "avellaneda_stoikov",
+            "mid": 100.0,
+            "inventory": 3.0,
+            "volatility": 2.0,
+            "remaining_time": 1.0,
+            "risk_aversion": 0.1,
+            "intensity_decay": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "order_flow_imbalance",
+            "quotes": [
+              {
+                "bid": 99.0,
+                "ask": 101.0,
+                "bid_size": 10.0,
+                "ask_size": 8.0
+              },
+              {
+                "bid": 99.0,
+                "ask": 101.0,
+                "bid_size": 12.0,
+                "ask_size": 5.0
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "black_scholes",
+            "spot": 100.0,
+            "strike": 100.0,
+            "years": 1.0,
+            "rate": 0.05,
+            "dividend_yield": 0.0,
+            "volatility": 0.2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "discrete_probability",
+            "probabilities": [
+              0.25,
+              0.75
+            ],
+            "values": [
+              1.0,
+              3.0
+            ],
+            "conditional_variances": [
+              4.0,
+              0.0
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "bayes",
+            "prior": 0.1,
+            "likelihood_if_true": 0.9,
+            "likelihood_if_false": 0.2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "losses",
+            "actual": [
+              0.0,
+              0.0
+            ],
+            "predicted": [
+              1.0,
+              3.0
+            ],
+            "huber_delta": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "information",
+            "p": [
+              0.5,
+              0.5
+            ],
+            "q": [
+              0.25,
+              0.75
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "regression_matrix",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "regression",
+        "spec": {
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                0.0,
+                2.0
+              ]
+            },
+            {
+              "at_ms": 4,
+              "available_at_ms": 4,
+              "values": [
+                1.0,
+                3.0
+              ]
+            },
+            {
+              "at_ms": 5,
+              "available_at_ms": 5,
+              "values": [
+                0.0,
+                4.0
+              ]
+            }
+          ],
+          "intercept": true,
+          "method": {
+            "kind": "ols"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "regression_matrix",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "regression",
+        "spec": {
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                0.0,
+                2.0
+              ]
+            },
+            {
+              "at_ms": 4,
+              "available_at_ms": 4,
+              "values": [
+                1.0,
+                3.0
+              ]
+            },
+            {
+              "at_ms": 5,
+              "available_at_ms": 5,
+              "values": [
+                0.0,
+                4.0
+              ]
+            }
+          ],
+          "intercept": true,
+          "method": {
+            "kind": "ridge",
+            "lambda": 1.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "regression_matrix",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "regression",
+        "spec": {
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                0.0,
+                2.0
+              ]
+            },
+            {
+              "at_ms": 4,
+              "available_at_ms": 4,
+              "values": [
+                1.0,
+                3.0
+              ]
+            },
+            {
+              "at_ms": 5,
+              "available_at_ms": 5,
+              "values": [
+                0.0,
+                4.0
+              ]
+            }
+          ],
+          "intercept": true,
+          "method": {
+            "kind": "lasso",
+            "max_iterations": 50,
+            "tolerance": 1e-06,
+            "lambda": 0.01
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "regression_matrix",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "regression",
+        "spec": {
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                0.0,
+                2.0
+              ]
+            },
+            {
+              "at_ms": 4,
+              "available_at_ms": 4,
+              "values": [
+                1.0,
+                3.0
+              ]
+            },
+            {
+              "at_ms": 5,
+              "available_at_ms": 5,
+              "values": [
+                0.0,
+                4.0
+              ]
+            }
+          ],
+          "intercept": true,
+          "method": {
+            "kind": "logistic",
+            "l2": 1.0,
+            "max_iterations": 50,
+            "tolerance": 1e-06
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "regression_matrix",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "regression",
+        "spec": {
+          "rows": [
+            {
+              "at_ms": 1,
+              "available_at_ms": 1,
+              "values": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "at_ms": 2,
+              "available_at_ms": 2,
+              "values": [
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "at_ms": 3,
+              "available_at_ms": 3,
+              "values": [
+                0.0,
+                2.0
+              ]
+            },
+            {
+              "at_ms": 4,
+              "available_at_ms": 4,
+              "values": [
+                1.0,
+                3.0
+              ]
+            },
+            {
+              "at_ms": 5,
+              "available_at_ms": 5,
+              "values": [
+                0.0,
+                4.0
+              ]
+            }
+          ],
+          "intercept": true,
+          "method": {
+            "kind": "pca",
+            "components": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "minimum_variance",
+            "covariance": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                4.0
+              ]
+            ],
+            "means": [
+              0.1,
+              0.2
+            ],
+            "target_return": 0.15
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "mean_variance",
+            "covariance": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                4.0
+              ]
+            ],
+            "means": [
+              0.1,
+              0.2
+            ],
+            "risk_aversion": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "maximum_sharpe",
+            "covariance": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                4.0
+              ]
+            ],
+            "means": [
+              0.1,
+              0.2
+            ],
+            "risk_free": 0.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "inverse_volatility",
+            "volatilities": [
+              1.0,
+              2.0
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "target_volatility",
+            "current_volatility": 0.2,
+            "target_volatility": 0.1,
+            "maximum_leverage": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "ledoit_wolf",
+            "observations": [
+              [
+                -1.0,
+                -1.0
+              ],
+              [
+                1.0,
+                1.0
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "black_litterman",
+            "covariance": [
+              [
+                2.0
+              ]
+            ],
+            "market_weights": [
+              1.0
+            ],
+            "risk_aversion": 1.0,
+            "tau": 0.5,
+            "views": [
+              [
+                1.0
+              ]
+            ],
+            "view_returns": [
+              4.0
+            ],
+            "view_covariance": [
+              [
+                1.0
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "cvar_optimize",
+            "returns": [
+              [
+                -0.1,
+                -0.1
+              ],
+              [
+                -0.1,
+                -0.1
+              ]
+            ],
+            "confidence": 0.95,
+            "max_iterations": 20,
+            "tolerance": 1e-08
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "ewma",
+            "returns": [
+              2.0
+            ],
+            "initial_variance": 1.0,
+            "decay": 0.5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "garch",
+            "residuals": [
+              2.0
+            ],
+            "omega": 1.0,
+            "alpha": [
+              0.2
+            ],
+            "beta": [
+              0.3
+            ],
+            "initial_squared_residuals": [
+              1.0
+            ],
+            "initial_variances": [
+              2.0
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "dcc",
+            "standardized_residuals": [
+              [
+                1.0,
+                2.0
+              ]
+            ],
+            "a": 0.1,
+            "b": 0.8,
+            "long_run_q": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "initial_q": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "har_rv",
+            "realized_variances": [
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0
+            ],
+            "intercept": 1.0,
+            "daily": 0.1,
+            "weekly": 0.2,
+            "monthly": 0.3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "realized_variance",
+            "log_returns": [
+              0.1,
+              -0.2
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "parkinson",
+            "high": [
+              2.0
+            ],
+            "low": [
+              1.0
+            ],
+            "periods_per_year": 4.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "ornstein_uhlenbeck",
+            "current": 0.0,
+            "long_run_mean": 2.0,
+            "reversion": 1.0,
+            "diffusion": 1.0,
+            "elapsed": 1.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "arima",
+            "observations": [
+              1.0,
+              3.0,
+              5.0,
+              7.0
+            ],
+            "ar": [
+              1.0
+            ],
+            "ma": [],
+            "intercept": 0.0,
+            "differences": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "kalman",
+            "observations": [
+              [
+                2.0
+              ]
+            ],
+            "transition": [
+              [
+                1.0
+              ]
+            ],
+            "observation": [
+              [
+                1.0
+              ]
+            ],
+            "process_covariance": [
+              [
+                0.0
+              ]
+            ],
+            "observation_covariance": [
+              [
+                1.0
+              ]
+            ],
+            "initial_state": [
+              0.0
+            ],
+            "initial_covariance": [
+              [
+                1.0
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "hawkes",
+            "baseline": [
+              1.0
+            ],
+            "alpha": [
+              [
+                0.5
+              ]
+            ],
+            "beta": [
+              [
+                2.0
+              ]
+            ],
+            "arrivals": [
+              {
+                "time": 1.0,
+                "channel": 0
+              }
+            ],
+            "horizon": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "stochastic_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "stochastic",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "paths",
+            "process": {
+              "kind": "geometric_brownian",
+              "initial": 1.0,
+              "drift": 0.05,
+              "volatility": 0.2
+            },
+            "horizon": 1.0,
+            "steps": 4,
+            "paths": 3,
+            "seed": 42
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "stochastic_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "stochastic",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "ito",
+            "time_derivative": 0.0,
+            "space_derivative": 0.5,
+            "second_space_derivative": -0.25,
+            "drift": 0.2,
+            "diffusion": 0.4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "stochastic_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "stochastic",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "heston",
+            "parameters": {
+              "spot": 100.0,
+              "strike": 100.0,
+              "years": 1.0,
+              "rate": 0.05,
+              "dividend_yield": 0.0,
+              "initial_variance": 0.04,
+              "reversion": 2.0,
+              "long_run_variance": 0.04,
+              "vol_of_variance": 0.3,
+              "correlation": -0.7
+            },
+            "integration_limit": 150.0,
+            "intervals": 1600,
+            "tolerance": 1e-05
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "one_sample_t",
+            "samples": [
+              1.0,
+              2.0,
+              3.0
+            ],
+            "null_mean": 2.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "welch",
+            "first": [
+              1.0,
+              2.0,
+              3.0
+            ],
+            "second": [
+              2.0,
+              3.0,
+              4.0
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "correlation_test",
+            "first": [
+              1.0,
+              2.0,
+              3.0,
+              4.0
+            ],
+            "second": [
+              3.0,
+              2.0,
+              4.0,
+              1.0
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "maximum_likelihood",
+            "samples": [
+              1.0,
+              2.0,
+              3.0
+            ],
+            "family": "normal"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "normal_mean_posterior",
+            "samples": [
+              2.0,
+              4.0
+            ],
+            "known_variance": 2.0,
+            "prior_mean": 0.0,
+            "prior_variance": 1.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "adf",
+            "samples": [
+              1.0,
+              2.0,
+              1.0,
+              3.0,
+              2.0,
+              1.0,
+              2.0
+            ],
+            "lags": 0,
+            "trend": "none"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "johansen",
+            "observations": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                1.063558185417193,
+                0.8948421872844885
+              ],
+              [
+                0.7155013718214642,
+                0.4299671429002411
+              ],
+              [
+                -0.38776615918397406,
+                -0.11484610459985711
+              ],
+              [
+                -0.4834546557201531,
+                -0.42222234066865805
+              ],
+              [
+                0.7151199880878155,
+                -0.2864566872907963
+              ],
+              [
+                1.5985433453746052,
+                0.2897391786592998
+              ],
+              [
+                1.0190983623493521,
+                1.096512369422575
+              ],
+              [
+                -0.02782646908565367,
+                1.8155658785102498
+              ],
+              [
+                0.13801641608096793,
+                2.169858636383415
+              ],
+              [
+                1.420167036826641,
+                2.0539022543433045
+              ],
+              [
+                2.0867719642746136,
+                1.5833738620378655
+              ],
+              [
+                1.3077536522994424,
+                1.040711345883316
+              ],
+              [
+                0.3708759872656303,
+                0.742278397868888
+              ],
+              [
+                0.795167177593716,
+                0.8895737278952461
+              ],
+              [
+                2.105539869719601,
+                1.4744630720040077
+              ],
+              [
+                2.5287952340772404,
+                2.2830048638187503
+              ],
+              [
+                1.5913634045759204,
+                2.9960702961410384
+              ],
+              [
+                0.8130844418793507,
+                3.339434585501005
+              ],
+              [
+                1.4806390839267687,
+                3.212749172703671
+              ],
+              [
+                2.762558450479603,
+                2.7367372182078338
+              ],
+              [
+                2.9273279005953787,
+                2.196415613410882
+              ],
+              [
+                1.8800600381158021,
+                1.9070470831128206
+              ],
+              [
+                1.3015049693361858,
+                2.065867199926869
+              ],
+              [
+                2.185747459704116,
+                2.6593214125886346
+              ],
+              [
+                3.383870423545831,
+                3.4694399632114594
+              ],
+              [
+                3.2871211462047394,
+                4.176352470291923
+              ],
+              [
+                2.1837377799200732,
+                4.508727967243502
+              ],
+              [
+                1.8366797755262394,
+                4.3713860956455
+              ],
+              [
+                2.900888156805718,
+                3.8900619150424305
+              ],
+              [
+                3.9637953862840876,
+                3.352270739775732
+              ],
+              [
+                3.6147401169238322,
+                3.0720851940982845
+              ],
+              [
+                2.51158937036233,
+                3.242421949468139
+              ],
+              [
+                2.4169618089945812,
+                3.8443099995556635
+              ],
+              [
+                3.6159872661882244,
+                4.655813020950519
+              ],
+              [
+                4.4985908724117705,
+                5.356409493912254
+              ],
+              [
+                3.9182565111024816,
+                5.67773898139113
+              ],
+              [
+                2.8716756154323546,
+                5.529816235820126
+              ],
+              [
+                3.0385918837114594,
+                5.043352667103974
+              ],
+              [
+                4.320972826142771,
+                4.508280724118853
+              ]
+            ],
+            "lagged_differences": 0,
+            "include_constant": true,
+            "rank": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "continuous_kelly",
+            "mean": 0.1,
+            "risk_free": 0.02,
+            "variance": 0.04,
+            "fraction": 0.5
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "trade_expectancy",
+            "win_probability": 0.6,
+            "average_win": 2.0,
+            "average_loss": 1.0,
+            "cost": 0.1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "allocation_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "allocation",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "risk_parity",
+            "covariance": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                4.0
+              ]
+            ],
+            "max_iterations": 30,
+            "tolerance": 1e-10
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "engle_granger",
+            "dependent": [
+              0.0,
+              1.063558185417193,
+              0.7155013718214642,
+              -0.38776615918397406,
+              -0.4834546557201531,
+              0.7151199880878155,
+              1.5985433453746052,
+              1.0190983623493521,
+              -0.02782646908565367,
+              0.13801641608096793,
+              1.420167036826641,
+              2.0867719642746136,
+              1.3077536522994424,
+              0.3708759872656303,
+              0.795167177593716,
+              2.105539869719601,
+              2.5287952340772404,
+              1.5913634045759204,
+              0.8130844418793507,
+              1.4806390839267687
+            ],
+            "independent": [
+              1.0,
+              0.8948421872844885,
+              0.4299671429002411,
+              -0.11484610459985711,
+              -0.42222234066865805,
+              -0.2864566872907963,
+              0.2897391786592998,
+              1.096512369422575,
+              1.8155658785102498,
+              2.169858636383415,
+              2.0539022543433045,
+              1.5833738620378655,
+              1.040711345883316,
+              0.742278397868888,
+              0.8895737278952461,
+              1.4744630720040077,
+              2.2830048638187503,
+              2.9960702961410384,
+              3.339434585501005,
+              3.212749172703671
+            ],
+            "lags": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "explicit_formula_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "formula",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "turnover",
+            "previous_weights": [
+              0.5,
+              0.5
+            ],
+            "current_weights": [
+              0.7,
+              0.3
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "dynamics_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "dynamics",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "ar1_moments",
+            "intercept": 1.0,
+            "phi": 0.5,
+            "innovation_variance": 3.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "adf_gaussian_calibration",
+            "samples": [
+              0,
+              1,
+              -1,
+              2,
+              0,
+              -2,
+              1,
+              0,
+              2,
+              -1,
+              0,
+              1,
+              -2,
+              1,
+              0,
+              2
+            ],
+            "lags": 0,
+            "trend": "constant",
+            "replicates": 99,
+            "seed": 123
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "engle_granger_gaussian_calibration",
+            "dependent": [
+              0,
+              1,
+              -1,
+              2,
+              0,
+              -2,
+              1,
+              0,
+              2,
+              -1,
+              0,
+              1,
+              -2,
+              1,
+              0,
+              2
+            ],
+            "independent": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "lags": 0,
+            "replicates": 99,
+            "seed": 123
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "vecm",
+            "observations": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                1.063558185417193,
+                0.8948421872844885
+              ],
+              [
+                0.7155013718214642,
+                0.4299671429002411
+              ],
+              [
+                -0.38776615918397406,
+                -0.11484610459985711
+              ],
+              [
+                -0.4834546557201531,
+                -0.42222234066865805
+              ],
+              [
+                0.7151199880878155,
+                -0.2864566872907963
+              ],
+              [
+                1.5985433453746052,
+                0.2897391786592998
+              ],
+              [
+                1.0190983623493521,
+                1.096512369422575
+              ],
+              [
+                -0.02782646908565367,
+                1.8155658785102498
+              ],
+              [
+                0.13801641608096793,
+                2.169858636383415
+              ],
+              [
+                1.420167036826641,
+                2.0539022543433045
+              ],
+              [
+                2.0867719642746136,
+                1.5833738620378655
+              ],
+              [
+                1.3077536522994424,
+                1.040711345883316
+              ],
+              [
+                0.3708759872656303,
+                0.742278397868888
+              ],
+              [
+                0.795167177593716,
+                0.8895737278952461
+              ],
+              [
+                2.105539869719601,
+                1.4744630720040077
+              ],
+              [
+                2.5287952340772404,
+                2.2830048638187503
+              ],
+              [
+                1.5913634045759204,
+                2.9960702961410384
+              ],
+              [
+                0.8130844418793507,
+                3.339434585501005
+              ],
+              [
+                1.4806390839267687,
+                3.212749172703671
+              ],
+              [
+                2.762558450479603,
+                2.7367372182078338
+              ],
+              [
+                2.9273279005953787,
+                2.196415613410882
+              ],
+              [
+                1.8800600381158021,
+                1.9070470831128206
+              ],
+              [
+                1.3015049693361858,
+                2.065867199926869
+              ],
+              [
+                2.185747459704116,
+                2.6593214125886346
+              ],
+              [
+                3.383870423545831,
+                3.4694399632114594
+              ],
+              [
+                3.2871211462047394,
+                4.176352470291923
+              ],
+              [
+                2.1837377799200732,
+                4.508727967243502
+              ],
+              [
+                1.8366797755262394,
+                4.3713860956455
+              ],
+              [
+                2.900888156805718,
+                3.8900619150424305
+              ],
+              [
+                3.9637953862840876,
+                3.352270739775732
+              ],
+              [
+                3.6147401169238322,
+                3.0720851940982845
+              ],
+              [
+                2.51158937036233,
+                3.242421949468139
+              ],
+              [
+                2.4169618089945812,
+                3.8443099995556635
+              ],
+              [
+                3.6159872661882244,
+                4.655813020950519
+              ],
+              [
+                4.4985908724117705,
+                5.356409493912254
+              ],
+              [
+                3.9182565111024816,
+                5.67773898139113
+              ],
+              [
+                2.8716756154323546,
+                5.529816235820126
+              ],
+              [
+                3.0385918837114594,
+                5.043352667103974
+              ],
+              [
+                4.320972826142771,
+                4.508280724118853
+              ]
+            ],
+            "lagged_differences": 0,
+            "include_constant": true,
+            "rank": 1,
+            "steps": 4
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "dynamics_fit",
+            "model": {
+              "kind": "garch",
+              "residuals": [
+                1,
+                -2,
+                1,
+                2,
+                -1,
+                3,
+                -2,
+                1,
+                -1,
+                2
+              ],
+              "omega": 0.5,
+              "alpha": [
+                0.1
+              ],
+              "beta": [
+                0.5
+              ],
+              "initial_squared_residuals": [
+                1
+              ],
+              "initial_variances": [
+                2
+              ]
+            },
+            "lower": [
+              0.01,
+              0,
+              0
+            ],
+            "upper": [
+              5,
+              0.8,
+              0.8
+            ],
+            "max_iterations": 40,
+            "tolerance": 0.001
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "dynamics_fit",
+            "model": {
+              "kind": "arima",
+              "observations": [
+                1,
+                2,
+                3,
+                1,
+                2,
+                3,
+                1,
+                2,
+                3
+              ],
+              "ar": [],
+              "ma": [],
+              "intercept": 0,
+              "differences": 0
+            },
+            "lower": [
+              0
+            ],
+            "upper": [
+              4
+            ],
+            "max_iterations": 30,
+            "tolerance": 0.001
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "dynamics_fit",
+            "model": {
+              "kind": "dcc",
+              "standardized_residuals": [
+                [
+                  1,
+                  0.2
+                ],
+                [
+                  -1,
+                  0.5
+                ],
+                [
+                  0.3,
+                  -1
+                ],
+                [
+                  0.7,
+                  0.2
+                ],
+                [
+                  -0.4,
+                  -0.3
+                ],
+                [
+                  0.8,
+                  1
+                ]
+              ],
+              "a": 0.1,
+              "b": 0.5,
+              "long_run_q": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "initial_q": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            },
+            "lower": [
+              0,
+              0
+            ],
+            "upper": [
+              0.8,
+              0.8
+            ],
+            "max_iterations": 20,
+            "tolerance": 0.001
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "dynamics_fit",
+            "model": {
+              "kind": "hawkes",
+              "baseline": [
+                1
+              ],
+              "alpha": [
+                [
+                  0
+                ]
+              ],
+              "beta": [
+                [
+                  1
+                ]
+              ],
+              "arrivals": [
+                {
+                  "time": 0.2,
+                  "channel": 0
+                },
+                {
+                  "time": 0.8,
+                  "channel": 0
+                },
+                {
+                  "time": 1.5,
+                  "channel": 0
+                },
+                {
+                  "time": 2.4,
+                  "channel": 0
+                },
+                {
+                  "time": 3.5,
+                  "channel": 0
+                },
+                {
+                  "time": 4.8,
+                  "channel": 0
+                }
+              ],
+              "horizon": 6
+            },
+            "lower": [
+              0.1,
+              0,
+              0.1
+            ],
+            "upper": [
+              2,
+              1,
+              2
+            ],
+            "max_iterations": 20,
+            "tolerance": 0.001
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "adf_mac_kinnon",
+            "samples": [
+              0.0,
+              0.674217687237691,
+              1.0454497299884602,
+              0.9532093666488739,
+              0.4549881501559051,
+              -0.20078322768961984,
+              -0.6915757724135878,
+              -0.7724526126243326,
+              -0.39126663787232163,
+              0.28681390048434974,
+              0.9569865987187891,
+              1.3181682338770002,
+              1.2145989080882815,
+              0.7090983623493521,
+              0.05352087074807321,
+              -0.4296957599716701,
+              -0.4991777291513174,
+              -0.1081371122370347,
+              0.5736230472211368,
+              1.2395697621966009,
+              1.5906073556948703,
+              1.4757468311429343,
+              0.9631183567457039,
+              0.3079285828159941,
+              -0.16756703358150293,
+              -0.2256260054681576,
+              0.17516717759371592,
+              0.8604226878068112,
+              1.5219636200681328,
+              1.8627664058359068,
+              1.7366556385360559,
+              1.2170526513277284,
+              0.5624443168785671,
+              0.09481263218031977,
+              0.048201554256135926,
+              0.4586424701348757,
+              1.147208072525475,
+              1.8041646682522419,
+              2.1346447738778376,
+              1.9973279005953806
+            ],
+            "lags": 2,
+            "trend": "constant"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "engle_granger_mac_kinnon",
+            "dependent": [
+              1.0,
+              0.3674988286245874,
+              -0.6568887533689474,
+              -0.42593230420013983,
+              0.8685166713003771,
+              1.4765876257280235,
+              0.653955420562649,
+              -0.24772160213111183,
+              0.23901574257277125,
+              1.5475963386538774,
+              1.9074467814501963,
+              0.9378855635002818,
+              0.20582237481618482,
+              0.9302317361368302,
+              2.1963524702919233,
+              2.295814969813944,
+              1.2294066741623586,
+              0.7059184690707384,
+              1.6387620356758146,
+              2.8078195977561955,
+              2.6469193223286402,
+              1.5382807241188503,
+              1.2525621810432426,
+              2.3548422623500183,
+              3.376778300832262,
+              2.9677318402470734,
+              1.8734571379207656,
+              1.8435694306494281,
+              3.068354513880097,
+              3.8999996055886665,
+              3.2666429323599373,
+              2.242653738545948,
+              2.4746788263108086,
+              3.769301132777109,
+              4.37639618026933,
+              3.5530685362140244,
+              2.6519953622788144,
+              3.1397512035437907,
+              4.44827284414044,
+              4.807073249329606
+            ],
+            "independent": [
+              0.0,
+              0.674217687237691,
+              1.0454497299884602,
+              0.9532093666488739,
+              0.4549881501559051,
+              -0.20078322768961984,
+              -0.6915757724135878,
+              -0.7724526126243326,
+              -0.39126663787232163,
+              0.28681390048434974,
+              0.9569865987187891,
+              1.3181682338770002,
+              1.2145989080882815,
+              0.7090983623493521,
+              0.05352087074807321,
+              -0.4296957599716701,
+              -0.4991777291513174,
+              -0.1081371122370347,
+              0.5736230472211368,
+              1.2395697621966009,
+              1.5906073556948703,
+              1.4757468311429343,
+              0.9631183567457039,
+              0.3079285828159941,
+              -0.16756703358150293,
+              -0.2256260054681576,
+              0.17516717759371592,
+              0.8604226878068112,
+              1.5219636200681328,
+              1.8627664058359068,
+              1.7366556385360559,
+              1.2170526513277284,
+              0.5624443168785671,
+              0.09481263218031977,
+              0.048201554256135926,
+              0.4586424701348757,
+              1.147208072525475,
+              1.8041646682522419,
+              2.1346447738778376,
+              1.9973279005953806
+            ],
+            "lags": 2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "inference_samples",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "inference",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "johansen_rank",
+            "observations": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                1.063558185417193,
+                0.8948421872844885
+              ],
+              [
+                0.7155013718214642,
+                0.4299671429002411
+              ],
+              [
+                -0.38776615918397406,
+                -0.11484610459985711
+              ],
+              [
+                -0.4834546557201531,
+                -0.42222234066865805
+              ],
+              [
+                0.7151199880878155,
+                -0.2864566872907963
+              ],
+              [
+                1.5985433453746052,
+                0.2897391786592998
+              ],
+              [
+                1.0190983623493521,
+                1.096512369422575
+              ],
+              [
+                -0.02782646908565367,
+                1.8155658785102498
+              ],
+              [
+                0.13801641608096793,
+                2.169858636383415
+              ],
+              [
+                1.420167036826641,
+                2.0539022543433045
+              ],
+              [
+                2.0867719642746136,
+                1.5833738620378655
+              ],
+              [
+                1.3077536522994424,
+                1.040711345883316
+              ],
+              [
+                0.3708759872656303,
+                0.742278397868888
+              ],
+              [
+                0.795167177593716,
+                0.8895737278952461
+              ],
+              [
+                2.105539869719601,
+                1.4744630720040077
+              ],
+              [
+                2.5287952340772404,
+                2.2830048638187503
+              ],
+              [
+                1.5913634045759204,
+                2.9960702961410384
+              ],
+              [
+                0.8130844418793507,
+                3.339434585501005
+              ],
+              [
+                1.4806390839267687,
+                3.212749172703671
+              ],
+              [
+                2.762558450479603,
+                2.7367372182078338
+              ],
+              [
+                2.9273279005953787,
+                2.196415613410882
+              ],
+              [
+                1.8800600381158021,
+                1.9070470831128206
+              ],
+              [
+                1.3015049693361858,
+                2.065867199926869
+              ],
+              [
+                2.185747459704116,
+                2.6593214125886346
+              ],
+              [
+                3.383870423545831,
+                3.4694399632114594
+              ],
+              [
+                3.2871211462047394,
+                4.176352470291923
+              ],
+              [
+                2.1837377799200732,
+                4.508727967243502
+              ],
+              [
+                1.8366797755262394,
+                4.3713860956455
+              ],
+              [
+                2.900888156805718,
+                3.8900619150424305
+              ],
+              [
+                3.9637953862840876,
+                3.352270739775732
+              ],
+              [
+                3.6147401169238322,
+                3.0720851940982845
+              ],
+              [
+                2.51158937036233,
+                3.242421949468139
+              ],
+              [
+                2.4169618089945812,
+                3.8443099995556635
+              ],
+              [
+                3.6159872661882244,
+                4.655813020950519
+              ],
+              [
+                4.4985908724117705,
+                5.356409493912254
+              ],
+              [
+                3.9182565111024816,
+                5.67773898139113
+              ],
+              [
+                2.8716756154323546,
+                5.529816235820126
+              ],
+              [
+                3.0385918837114594,
+                5.043352667103974
+              ],
+              [
+                4.320972826142771,
+                4.508280724118853
+              ]
+            ],
+            "lagged_differences": 0,
+            "include_constant": true,
+            "significance": "five_percent",
+            "test": "trace",
+            "forecast_steps": 3
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "identity": {
+      "series_id": "paper-reference",
+      "instrument": "TEST",
+      "timeframe": "snapshot",
+      "source": "manual",
+      "data_version": "1"
+    },
+    "input_kind": "stochastic_parameters",
+    "units": "explicit",
+    "as_of_ms": 100,
+    "fit_cutoff_ms": 100,
+    "points": [],
+    "events": [],
+    "operations": [
+      {
+        "method": "stochastic",
+        "spec": {
+          "available_at_ms": 1,
+          "task": {
+            "kind": "heston_calibrate",
+            "quotes": [
+              {
+                "spot": 100.0,
+                "strike": 100.0,
+                "years": 1.0,
+                "rate": 0.05,
+                "dividend_yield": 0.0,
+                "kind": "call",
+                "price": 10.394218552313326,
+                "weight": 1.0
+              }
+            ],
+            "initial": {
+              "initial_variance": 0.04,
+              "reversion": 2.0,
+              "long_run_variance": 0.04,
+              "vol_of_variance": 0.2,
+              "correlation": -0.7
+            },
+            "parameters": [
+              "vol_of_variance"
+            ],
+            "lower": [
+              0.1
+            ],
+            "upper": [
+              0.5
+            ],
+            "max_iterations": 20,
+            "fit_tolerance": 0.001,
+            "integration_limit": 50.0,
+            "intervals": 128,
+            "pricing_tolerance": 0.0001
+          }
+        }
+      }
+    ]
+  }
+]

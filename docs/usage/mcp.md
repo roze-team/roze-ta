@@ -1,6 +1,6 @@
 # MCP 接口与能力覆盖
 
-本页对应 FR-MCP-001～004、006 和 AC-006。现有 **7 个工具**，保留 **33 类指标的 45 个固定 Profile、14 类分析操作**，
+本页对应 FR-MCP-001～004、006 和 AC-006。现有 **7 个工具**，包含 **33 类指标的 45 个固定 Profile、21 类分析操作**，
 并通过新增入口开放 **全部 36 个原生指标模块、44 个独立 Method**。别名不重复计数，原生算法与 Profile 有重叠。
 全量入口及特殊输出见 [原生 MCP 说明](native-mcp.md)；需求中尚未实现的未来算法不计入已接入能力。
 算法已迁入 roze-ta 原生模块，Cargo 不再依赖 `yata`；`vendor/yata` 仅保留为原始审计基线。
@@ -136,4 +136,11 @@ JSON/参数类型或未知字段错误由 SDK 作为协议参数错误处理；�
 
 ## 组合风险分析
 
-`analysis_batch_calculate` 新增 `portfolio_risk`，目录 ID 为 `risk_portfolio`。输入包含同币种有符号权重、正净资产、对齐收益率和显式压力情景。可在没有历史样本时计算敞口及情景，协方差等结果明确标为样本不足。见 [公式/单位/时间/限额](../contracts/portfolio-risk-v1.md) 和 [完整请求](portfolio-request-v1.json)。7 个工具名称保持兼容；分析方法共 14 个。
+`analysis_batch_calculate` 包含 `portfolio_risk`，目录 ID 为 `risk_portfolio`。输入包含同币种有符号权重、正净资产、对齐收益率和显式压力情景。可在没有历史样本时计算敞口及情景，协方差等结果明确标为样本不足。见 [公式/单位/时间/限额](../contracts/portfolio-risk-v1.md) 和 [完整请求](portfolio-request-v1.json)。7 个工具名称保持兼容。
+
+## 论文增强公式
+
+通过同一个 `analysis_batch_calculate` 调用 `research`、`formula`、`regression`、`allocation`、`dynamics`、`stochastic`、`inference`。
+共 69 个任务变体，目录可查询各组 `tasks`；[示例数组](paper-requests-v1.json) 的每个元素都是一个可独立调用的完整请求。
+参数、单位、时间、限额、迭代收敛和未提供的拟合/统计工作流见 [公式契约](../contracts/paper-models-v1.md)。
+原生与 MCP 共用实现，无新增工具权限、数据库操作或交易执行。

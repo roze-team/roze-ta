@@ -1,5 +1,13 @@
 # 实施状态
 
+## 2026-09-04 论文公式计算层
+
+新增七类分析操作和 69 个任务变体，另增 Bernoulli、Poisson、Exponential、LogNormal；当前 21 类分析操作、九类分布、七个 MCP 工具。
+研究检验、金融/执行、回归、组合、时序、随机模型和推断均可通过原生/MCP 调用。
+见 [逐节范围及限制](formula-coverage.md)、[契约](contracts/paper-models-v1.md)、[验证证据](evidence/2026-09-04-paper-models.md)。
+已补齐显式有界 ARIMA/GARCH/DCC/Hawkes 参数拟合、VECM 短期参数及多步预测、ADF/EG 高斯零假设校准，以及 Heston 报价校准、Johansen 自动选秩和 MacKinnon 响应面。完整 S2/S3 验收仍未完成；见[工作流契约](contracts/inference-workflows-v1.md)与[标准校准契约](contracts/standard-calibration-v1.md)。
+以下记录保留各历史批次当时的计数。
+
 ## 2026-09-04 组合风险分析
 
 新增 `portfolio_risk`：多资产敞口、HHI/有效资产数、协方差/相关性、年化波动和 Euler 风险贡献、线性压力情景。复用既有分析 MCP；当前 7 个工具、14 类分析操作。原生 36 指标/44 Method 与 Profile 流式接口保持兼容。
@@ -111,7 +119,7 @@ Linux 与生产级压力验收尚未完成；B/C 批及 S2/S3 保留原计划。
 | FR-PROB-001～004 | 五类分布、显式种子采样、条件事件去重/成熟/区间不重叠筛选、Wilson、Beta-Binomial 拟合与只读推断 | 增量去重状态和通用时间切分/验证集隔离器 |
 | AC-STAT-001～004、007、009 | 手算/闭式分布参考、标签隔离、重复样本拒绝、产物校验 | 更广泛参考矩阵和跨平台证据 |
 | AC-STAT-006、010 | 基础分布固定种子、预算、协作取消、依赖许可与 release timing smoke | 重采样/路径模拟、完整黑盒超时压力、长期基准 |
-| AC-STAT-005、008 / S2、S3 | 未实施 | 统计检验、校准、Bootstrap/Monte Carlo、HMM 等 |
+| AC-STAT-005、008 / S2、S3 | S1 批次历史未覆盖；后续实现见本文顶部与公式/工作流契约 | 完整验收、概率校准器拟合、HMM 等仍未完成 |
 
 规格卡见 [analysis-v1](contracts/analysis-v1.md)，验证记录见
 [S1 evidence](evidence/2026-09-03-s1-analysis.md)。以上不构成完整 S1 或 P1 验收完成声明。
