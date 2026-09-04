@@ -190,7 +190,10 @@ async fn all_analysis_methods_are_discoverable_and_callable() -> anyhow::Result<
     let validation: Value = serde_json::from_str(include_str!(
         "../../../docs/usage/validation-request-v1.json"
     ))?;
-    for args in [s1, evaluation, validation] {
+    let portfolio: Value = serde_json::from_str(include_str!(
+        "../../../docs/usage/portfolio-request-v1.json"
+    ))?;
+    for args in [s1, evaluation, validation, portfolio] {
         for operation in args["operations"].as_array().unwrap() {
             seen.insert(operation["method"].as_str().unwrap().to_owned());
         }
@@ -217,7 +220,7 @@ async fn all_analysis_methods_are_discoverable_and_callable() -> anyhow::Result<
         .map(|m| m.as_str().unwrap().to_owned())
         .collect();
     assert_eq!(advertised, seen);
-    assert_eq!(seen.len(), 13);
+    assert_eq!(seen.len(), 14);
     // Guard against a future enum variant becoming callable but undocumented/untested.
     let schema = serde_json::to_value(schemars::schema_for!(analysis::Operation))?;
     let variants: BTreeSet<_> = schema["oneOf"]

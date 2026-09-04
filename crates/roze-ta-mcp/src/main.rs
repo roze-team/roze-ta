@@ -6,6 +6,7 @@ use roze_ta::catalog::{self, BatchRequest};
 use roze_ta::{
     analysis, engine,
     error::{ErrorCode, TaError},
+    native,
 };
 use std::{
     sync::Arc,
@@ -15,6 +16,8 @@ use tokio::sync::Semaphore;
 mod bounded;
 #[cfg(test)]
 mod coverage_tests;
+#[cfg(test)]
+mod native_tests;
 mod stream;
 
 const MAX_RESPONSE_BYTES: usize = 8 * 1024 * 1024;
@@ -79,11 +82,80 @@ impl IndicatorGateway {
                 "capabilities":{"streaming":true,"snapshot_restore":true,"full_series":true,"v2_tool":"indicator_batch_calculate_v2",
                     "stream_tool":"indicator_stream","stream_schema_version":stream::SCHEMA_VERSION,
                     "stream_actions":["create","advance","inspect","reset"],"stream_state":"caller_owned_snapshot",
-                    "analysis_tool":"analysis_batch_calculate","parameter_schema":"tools/list.inputSchema"},
+                    "analysis_tool":"analysis_batch_calculate","parameter_schema":"tools/list.inputSchema",
+                    "native_catalog_tool":"native_catalog","native_calculate_tool":"native_batch_calculate"},
                 "limits":{"bars":catalog::MAX_BARS,"profiles":catalog::MAX_PROFILES,"result_rows":engine::MAX_RESULT_ROWS,
                     "request_bytes":bounded::MAX_REQUEST_BYTES,"response_bytes":MAX_RESPONSE_BYTES,
                     "stream_snapshot_json_bytes":stream::MAX_STATE_JSON_BYTES,"concurrent_calculations":2,"compute_timeout_seconds":10}}),
         )
+    }
+
+    #[tool(
+        description = "Discover every implemented native indicator and Method, including aliases, parameter schemas/defaults, input kinds, source documentation and output semantics. Native seeded output is distinct from audited Profile readiness.",
+        annotations(
+            read_only_hint = true,
+            destructive_hint = false,
+            idempotent_hint = true,
+            open_world_hint = false
+        )
+    )]
+    fn native_catalog(&self) -> CallToolResult {
+        tool_result(native::catalog())
+    }
+
+    #[tool(
+        description = "Calculate any native indicator or Method selected from native_catalog, including unregistered indicators, smoothers, extrema, crossover/reversal signals, Heikin-Ashi, bounded Renko and count-based bar aggregation. Supports bars, timed scalars, pairs or JSON values (Past). Preserves native initialization/units; returns explicit nonfinite/pending statuses and emission timestamps. No trading, I/O or server state.",
+        annotations(
+            read_only_hint = true,
+            destructive_hint = false,
+            idempotent_hint = true,
+            open_world_hint = false
+        )
+    )]
+    async fn native_batch_calculate(
+        &self,
+        Parameters(request): Parameters<native::Request>,
+        context: RequestContext<RoleServer>,
+    ) -> CallToolResult {
+        let Ok(permit) = self.permits.clone().try_acquire_owned() else {
+            return tool_result(Err(TaError::new(
+                ErrorCode::LimitExceeded,
+                "calculation concurrency limit exceeded",
+            )));
+        };
+        let token = context.ct.child_token();
+        let _cancel_on_drop = token.clone().drop_guard();
+        let deadline = Instant::now() + COMPUTE_TIMEOUT;
+        tokio::task::spawn_blocking(move || {
+            let _permit = permit;
+            let result = native::calculate_controlled(&request, || {
+                if token.is_cancelled() {
+                    Err(TaError::new(
+                        ErrorCode::Cancelled,
+                        "native calculation cancelled",
+                    ))
+                } else if Instant::now() >= deadline {
+                    Err(TaError::new(
+                        ErrorCode::TimedOut,
+                        "native calculation deadline exceeded",
+                    ))
+                } else {
+                    Ok(())
+                }
+            });
+            tool_result(result.and_then(|v| {
+                serde_json::to_value(v).map_err(|_| {
+                    TaError::new(ErrorCode::EncodingFailed, "native result encoding failed")
+                })
+            }))
+        })
+        .await
+        .unwrap_or_else(|_| {
+            tool_result(Err(TaError::new(
+                ErrorCode::UpstreamFailure,
+                "native worker failed",
+            )))
+        })
     }
 
     #[tool(
@@ -240,7 +312,7 @@ impl IndicatorGateway {
     }
 
     #[tool(
-        description = "Bounded versioned analysis: statistics, probability, net-return risk, trade/factor evaluation, frozen-forecast calibration scores, seeded IID/block bootstrap of the mean, and chronological label-purged partitions. Select methods from indicator_catalog analysis capabilities. No data fetching or persistent writes.",
+        description = "Bounded versioned analysis: statistics, probability, net-return risk, fixed-exposure portfolio covariance/concentration/risk contributions and explicit stress scenarios, trade/factor evaluation, frozen-forecast calibration scores, seeded IID/block bootstrap of the mean, and chronological label-purged partitions. Select methods from indicator_catalog analysis capabilities. No data fetching or persistent writes.",
         annotations(
             read_only_hint = true,
             destructive_hint = false,
@@ -317,7 +389,7 @@ mod tests {
         });
         let client = ().serve(client_transport).await?;
         let tools = client.list_all_tools().await?;
-        assert_eq!(tools.len(), 5);
+        assert_eq!(tools.len(), 7);
         assert!(tools
             .iter()
             .all(|t| t.annotations.as_ref().and_then(|a| a.read_only_hint) == Some(true)));

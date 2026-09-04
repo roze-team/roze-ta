@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "identity": {"series_id":"portfolio-fixture","instrument":"A+B","timeframe":"1d","source":"manual","data_version":"1"},
+  "input_kind":"portfolio_simple_return", "units":"ratio",
+  "as_of_ms":100, "fit_cutoff_ms":100, "points":[], "events":[],
+  "operations":[{"method":"portfolio_risk","spec":{
+    "assets":[{"id":"A","weight":0.6},{"id":"B","weight":0.4}],
+    "equity":1000.0,"currency":"USD","weights_available_at_ms":10,
+    "periods_per_year":252.0,"ddof":1,
+    "observations":[
+      {"at_ms":1,"available_at_ms":1,"returns":[-0.1,0.0]},
+      {"at_ms":2,"available_at_ms":2,"returns":[0.0,0.1]},
+      {"at_ms":3,"available_at_ms":3,"returns":[0.1,-0.1]}
+    ],
+    "scenarios":[{"id":"selloff","available_at_ms":10,"shocks":[-0.2,-0.1]}]
+  }}]
+}

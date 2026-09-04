@@ -1,5 +1,12 @@
 # 实施状态
 
+## 2026-09-04 组合风险分析
+
+新增 `portfolio_risk`：多资产敞口、HHI/有效资产数、协方差/相关性、年化波动和 Euler 风险贡献、线性压力情景。复用既有分析 MCP；当前 7 个工具、14 类分析操作。原生 36 指标/44 Method 与 Profile 流式接口保持兼容。
+
+[契约与限制](contracts/portfolio-risk-v1.md)，[验证证据](evidence/2026-09-04-portfolio-risk.md)。账户预检、仓位/止损执行、限额与熔断仍未在本库实现。以下是各阶段历史记录。
+
+
 更新：2026-09-03。需求正文保持目标规格；本页记录实现进度，不宣布整个 P1 已验收。
 
 ## 原生算法迁移
@@ -10,7 +17,15 @@ Yata 构建依赖已由 `roze-ta` 内部 core/helpers/indicators/methods/prelude
 对应 FR-ENG-006、AC-001/006/007/009，验证见 [原生迁移证据](evidence/2026-09-03-native-migration.md)。
 原生低层方法保留既有前置条件与文档化 panic；批量/流式/MCP 仍使用结构化 Result 边界。
 
-## 最新增量：MCP 已实现能力覆盖
+## 最新增量：全部原生算法开放 MCP
+
+7 个 MCP 工具：新增原生目录和原生批量入口，全部 36 个原生 Indicator 与 44 个独立 Method 可调用。
+支持别名、参数覆盖、数值/双序列/OHLCV/JSON 历史值、规则信号、Heikin-Ashi、Renko 和按根数聚合。
+保留原生种子语义、显式未定义与无输出状态、发出时间、参数与输入输出哈希、计算和输出限额。
+原生计算入口与原有 45 个 Profile / 13 类分析并存，计数不相加；本次不将算法开放等同于所有正式 Profile 审核完成。
+见 [全量说明](usage/native-mcp.md)、[逐项清单](native-mcp-coverage.csv)、[验收证据](evidence/2026-09-03-all-native-mcp.md)。
+
+## 前次增量：MCP 已实现能力覆盖
 
 5 个只读工具覆盖现有 45 个 Profile 和 13 类分析操作；新增无服务端会话的 `indicator_stream`，
 复用原生创建、更新、查看、快照恢复与重置。目录新增操作名称映射，参数 Schema 由 `tools/list` 提供。

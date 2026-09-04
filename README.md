@@ -10,8 +10,10 @@
 
 ## 当前原型
 
-MCP 现有 **5 个只读工具**，覆盖当前目录的 45 个 Profile 与 13 类分析操作；
-新增 `indicator_stream`，支持调用方携带快照的创建、续算、查看和重置。
+MCP 现有 **7 个只读工具**：全部 **36 个原生指标模块、44 个独立 Method** 已通过
+`native_catalog` / `native_batch_calculate` 开放，包括 Renko、Heikin-Ashi、聚合、交叉和反转。
+[全量原生调用说明](docs/usage/native-mcp.md)、[80 项覆盖清单](docs/native-mcp-coverage.csv)。
+已有 45 个固定 Profile、14 类分析操作和 `indicator_stream` 的快照功能保持兼容；各类计数有重叠，不直接相加。
 [完整接口、配置与示例](docs/usage/mcp.md)；[验证记录](docs/evidence/2026-09-03-mcp-coverage.md)。
 
 新增 **S2A 分析**：冻结预测的 Brier/Log Loss 与可靠性分桶、均值 IID/移动块 Bootstrap、
@@ -25,8 +27,8 @@ MCP 现有 **5 个只读工具**，覆盖当前目录的 45 个 Profile 与 13 �
 - 原生 API 使用 `roze_ta::methods` / `roze_ta::indicators`；旧 `roze_ta::yata::*` 保留为同一原生类型的兼容路径。
 - 迁移范围、许可证及快照兼容证据见 [原生迁移说明](docs/patches/yata-native-migration.md)。
 - `crates/roze-ta`：统一计算封装，33 类指标、45 个固定参数 Profile；A1 新增 10 类，A 批尚未整体交付。
-- `crates/roze-ta-mcp`：stdio 服务，提供目录、V1/V2 批量、流式和分析五个 MCP 工具。
-- `roze_ta::indicators` / `roze_ta::methods` 可访问未纳入统一目录的上游能力。
+- `crates/roze-ta-mcp`：stdio 服务，提供原有五个工具，以及全量原生目录和原生批量两个工具。
+- `roze_ta::indicators` / `roze_ta::methods` 的全部实际算法可通过 `roze_ta::native` 和 MCP 调用；别名保留映射。
 - 已登记的全部 45 个 Profile 支持统一流式更新、版本化无损状态快照及恢复；[A1 规格卡](docs/contracts/expansion-a1.md)明确新指标的公式、种子和逐项预热。
 - V2 提供 latest/series、可知时间校验、结构化状态及规范哈希；新增 MCP 工具 `indicator_batch_calculate_v2`。
 - 当前仍为 P1 首批实现；复杂公式独立参考、预热审核、多周期与跨平台验收见 [实施状态](docs/implementation-status.md)。
@@ -67,3 +69,5 @@ commit `5030e2349cedde60b0e367a9de9400d466ff644f`。
 
 P0 独立项目和计算/MCP 原型 → P1 统一可靠引擎与指标审核 → P2 特征分析 → P3 业务接入。
 完整需求是目标规格，不是全部功能已完成的声明。
+
+新增组合风险分析 `portfolio_risk`：敞口、集中度、协方差/相关性、波动风险贡献和显式压力情景。通过现有分析 MCP 调用；[公式与边界](docs/contracts/portfolio-risk-v1.md)、[请求示例](docs/usage/portfolio-request-v1.json)。不含账户执行风控。

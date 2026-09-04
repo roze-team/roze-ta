@@ -1,5 +1,9 @@
 # 上游 Method 与指标模块覆盖
 
+更新：全部 36 个原生指标模块和 44 个独立 Method 现已通过 `native_catalog` / `native_batch_calculate` 开放。
+见 [完整原生覆盖清单](native-mcp-coverage.csv) 和 [原生 MCP 契约](usage/native-mcp.md)。
+下文的延期状态描述固定 Profile、公式审查或业务特征的推进状态，不再表示原生算法无法通过 MCP 调用。
+
 Yata 0.7.0 的 `indicators/mod.rs` 声明 36 个实际指标模块；`example` 为示例，不纳入该计数。
 [36 项映射](upstream-indicator-coverage.csv) 每项均记录目标 ID、当前入口及延期/排除原因。
 覆盖映射不是“36 项全部通过验收”：其中直接/外层映射 20 项，余项保留 A/B/C 或候选状态。
@@ -34,4 +38,4 @@ SMA/EMA/ATR 等基于 Method 的目录家族不增加上游 Indicator 模块数�
 | collapse_timeframe | 多周期聚合候选，需市场日历/完整性/可知时间合同 |
 
 `roze_ta::methods` 与 `roze_ta::indicators` 继续保留全部上游原生访问。
-上述延期项没有被改造成无参考依据的 MCP 工具，也没有因计数需要改名合并。
+这些类型通过明确保留原生初始化、输出和时间语义的批量接口开放；其正式 Profile 与业务特征审核仍按原计划推进。

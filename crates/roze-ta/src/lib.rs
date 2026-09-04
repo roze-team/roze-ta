@@ -17,6 +17,7 @@ pub mod core;
 pub mod helpers;
 pub mod indicators;
 pub mod methods;
+pub mod native;
 pub mod prelude;
 
 /// Compatibility paths for callers of the former Yata re-export.

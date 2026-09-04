@@ -1,8 +1,10 @@
 # MCP 接口与能力覆盖
 
-本页对应 FR-MCP-001～004、006 和 AC-006。当前接入 **33 类指标的 45 个固定 Profile、13 类分析操作**。
-范围以 `indicator_catalog` 为准：需求中的未来指标、未注册的 Yata 原始 Method 和未来统计模型不属于已接入能力。
-底层部分指标仍依赖固定版本的 `vendor/yata`；业务统一调用 roze-ta。
+本页对应 FR-MCP-001～004、006 和 AC-006。现有 **7 个工具**，保留 **33 类指标的 45 个固定 Profile、14 类分析操作**，
+并通过新增入口开放 **全部 36 个原生指标模块、44 个独立 Method**。别名不重复计数，原生算法与 Profile 有重叠。
+全量入口及特殊输出见 [原生 MCP 说明](native-mcp.md)；需求中尚未实现的未来算法不计入已接入能力。
+算法已迁入 roze-ta 原生模块，Cargo 不再依赖 `yata`；`vendor/yata` 仅保留为原始审计基线。
+派生算法保留 Yata 来源和 Apache-2.0 许可，详见 [原生迁移说明](../patches/yata-native-migration.md)。
 
 ## 启动与发现
 
@@ -34,6 +36,8 @@ rtk cargo build -p roze-ta-mcp --locked
 | `indicator_batch_calculate_v2` | 45 个 Profile 的 latest / 完整 series、数据身份、可知时间和规范哈希 | [V2 示例](engine-v2.md) |
 | `indicator_stream` | 任意已注册 Profile 的创建、续算、查看、重置与快照恢复 | 本页下方 |
 | `analysis_batch_calculate` | 下表所有统计、概率、评估和验证操作 | [S1](analysis-v1.md)、[E1](evaluation-v1.md)、[S2A](validation-v1.md) |
+| `native_catalog` | 全部原生指标与 Method 的目录、别名、默认参数和参数 Schema | [全量原生说明](native-mcp.md) |
+| `native_batch_calculate` | 36 个原生指标和 44 个 Method 的参数化批量调用 | [全量原生说明](native-mcp.md) |
 
 多个指标共享有界批量入口，无需为每个周期建立单独工具。新增 Profile 自动进入目录与计算入口。
 
@@ -128,3 +132,8 @@ JSON/参数类型或未知字段错误由 SDK 作为协议参数错误处理；�
 本机 stdio 的验证不代表 HTTP、多租户服务、生产压力或跨平台验收。
 
 验证记录见 [MCP 覆盖证据](../evidence/2026-09-03-mcp-coverage.md)。
+原生迁移后的完整回归、真实 stdio 调用和跨进程恢复见 [最新版运行验证](../evidence/2026-09-03-native-mcp-verification.md)。
+
+## 组合风险分析
+
+`analysis_batch_calculate` 新增 `portfolio_risk`，目录 ID 为 `risk_portfolio`。输入包含同币种有符号权重、正净资产、对齐收益率和显式压力情景。可在没有历史样本时计算敞口及情景，协方差等结果明确标为样本不足。见 [公式/单位/时间/限额](../contracts/portfolio-risk-v1.md) 和 [完整请求](portfolio-request-v1.json)。7 个工具名称保持兼容；分析方法共 14 个。

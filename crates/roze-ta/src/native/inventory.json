@@ -1,0 +1,1500 @@
+[
+  {
+    "id": "indicator.aroon",
+    "symbol": "Aroon",
+    "aliases": [],
+    "module": "aroon",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "signal_zone": "ValueType",
+      "over_zone_period": "PeriodType"
+    },
+    "parameter_documentation": {
+      "period": "main period length. Default is `14`.\n\nRange in *\\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)*",
+      "signal_zone": "zone value determines when signal #2 appears. Default is `0.3`.\n\nRange in *\\[`0.0`; `1.0`\\]*",
+      "over_zone_period": "period until signal #2 appears in full strength. Default is `7`.\n\nRange in *\\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\)*"
+    },
+    "documentation": "Aroon indicator\n\n## Links\n\n* <https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/aroon-indicator>\n\n# 2 values\n\n* `AroonUp`\n\nRange in \\[`0.0`; `1.0`\\]\n\n* `AroonDown`\n\nRange in \\[`0.0`; `1.0`\\]\n\n# 3 signals\n\n* When `AroonUp` crosses `AroonDown` upwards, gives full positive #0 signal.\n  When `AroonDown` crosses `AroonUp` upwards, gives full negative #0 signal.\n  Otherwise gives no #0 signal.\n* When `AroonUp` rises up to 1.0, gives full positive #1 signal. When `AroonDown` rises up to 1.0, gives full negative #1 signal.\n* Gives positive #2 signal when `AroonUp` stays above `(1.0-signal_zone)` and `AroonDown` stays under `signal_zone`.\n  Gives negative #2 signal when `AroonDown` stays above `(1.0-signal_zone)` and `AroonUp` stays under `signal_zone`.",
+    "source": "crates/roze-ta/src/indicators/aroon.rs"
+  },
+  {
+    "id": "indicator.average_directional_index",
+    "symbol": "AverageDirectionalIndex",
+    "aliases": [],
+    "module": "average_directional_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "method1": "M",
+      "method2": "M",
+      "period1": "PeriodType",
+      "zone": "ValueType"
+    },
+    "parameter_documentation": {
+      "struct AverageDirectionalIndex<M": "",
+      "method1": "Default is [`RMA(14)`](crate::methods::RMA)\n\nPeriod range is in \\(`period1`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "method2": "Default is [`RMA(14)`](crate::methods::RMA)\n\nPeriod range is in \\(`period1`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "period1": "Default is `1`\n\nRange in \\[`1`; `min(di_length, adx_smoothing)`\\)",
+      "zone": "Default is `0.2`\n\nRange in \\[`0.0`; `1.0`\\]"
+    },
+    "documentation": "Average Directional Index\n\n## Links:\n\n* <https://school.stockcharts.com/doku.php?id=technical_indicators:average_directional_index_adx>\n* <https://www.investopedia.com/terms/a/adx.asp>\n* <https://primexbt.com/blog/average-directional-index/>\n\n# 3 values\n\n* `ADX`\n\nRange in \\[`0.0`; `1.0`\\]\n\n* `+DI`\n\nRange in \\[`0.0`; `1.0`\\]\n\n* `-DI`\n\nRange in \\[`0.0`; `1.0`\\]\n\n# 2 signals\n\n* `BUY_ALL` when `ADX` over `zone` and `+DI` > `-DI`, `SELL_ALL` when `ADX` over `zone` and `-DI` > `+DI`. Otherwise - no signal.\n* Digital signal by difference between `+DI` and `-DI`\n",
+    "source": "crates/roze-ta/src/indicators/average_directional_index.rs"
+  },
+  {
+    "id": "indicator.awesome_oscillator",
+    "symbol": "AwesomeOscillator",
+    "aliases": [],
+    "module": "awesome_oscillator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma1": "M",
+      "ma2": "M",
+      "source": "Source",
+      "left": "PeriodType",
+      "right": "PeriodType",
+      "conseq_peaks": "u8"
+    },
+    "parameter_documentation": {
+      "struct AwesomeOscillator<M": "",
+      "ma1": "Default is [`SMA(34)`](crate::methods::SMA)\n\nPeriod range in \\(ma2's period; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "ma2": "Default is [`SMA(5)`](crate::methods::SMA)\n\nPeriod range in \\[`3`; ma1's period\\).",
+      "source": "Default is [`HL2`](crate::core::Source::HL2).",
+      "left": "Default is `1`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)-`right`\\).",
+      "right": "Default is `1`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)-`left`\\).",
+      "conseq_peaks": "Default is `2`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\]."
+    },
+    "documentation": "Awesome Oscillator\n\n## Links\n\n* <https://www.tradingview.com/scripts/awesomeoscillator/>\n\n# 1 value\n\n* Absolute difference between fast and slow periods MA\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 2 signals\n\n* \"Twin Peaks\". When `value` is below zero line and we got `conseq_peaks` lower peaks, then returns full positive signal\n  When `value` is above zero line and we got `conseq_peaks` higher peaks, then returns full negative signal.\n  Otherwise gives no signal.\n* Gives signal when `values` crosses zero line",
+    "source": "crates/roze-ta/src/indicators/awesome_oscillator.rs"
+  },
+  {
+    "id": "indicator.bollinger_bands",
+    "symbol": "BollingerBands",
+    "aliases": [],
+    "module": "bollinger_bands",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "avg_size": "PeriodType",
+      "sigma": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "avg_size": "Main period length. Default is `20`\n\nRange in \\[`3`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "sigma": "Standard deviation multiplier for bounds. Default is `2.0`\n\nRange in \\(`0.0`; `+inf`\\)",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Bollinger Bands\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Bollinger_Bands>\n\n# 3 values\n\n* `upper bound`\n\nRange of values is the same as the range of the `source` values.\n\n* `source` value\n* `lower bound`\n\nRange of values is the same as the range of the `source` values.\n\n# 1 digital signal\n\nWhen `source` value goes above the `upper bound`, then returns full buy signal.\nWhen `source` value goes under the `lower bound`, then returns full sell signal.\nOtherwise returns signal according to relative position of the `source` value based on `upper bound` and `lower bound` values.",
+    "source": "crates/roze-ta/src/indicators/bollinger_bands.rs"
+  },
+  {
+    "id": "indicator.chaikin_money_flow",
+    "symbol": "ChaikinMoneyFlow",
+    "aliases": [],
+    "module": "chaikin_money_flow",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "size": "PeriodType"
+    },
+    "parameter_documentation": {
+      "size": "main length size. Default is `20`\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)"
+    },
+    "documentation": "Chaikin Money Flow\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Chaikin_Analytics>\n\n# 1 value\n\n* `main` value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n# 1 signal\n\nWhen `main` value goes above zero, then returns full buy signal.\nWhen `main` value goes below zero, then returns full sell signal.\nOtherwise no signal",
+    "source": "crates/roze-ta/src/indicators/chaikin_money_flow.rs"
+  },
+  {
+    "id": "indicator.chaikin_oscillator",
+    "symbol": "ChaikinOscillator",
+    "aliases": [],
+    "module": "chaikin_oscillator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma1": "M",
+      "ma2": "M",
+      "window": "PeriodType"
+    },
+    "parameter_documentation": {
+      "struct ChaikinOscillator<M": "",
+      "ma1": "Short smoothing [AD index](https://en.wikipedia.org/wiki/Accumulation/distribution_index).\n\nDefault is [`EMA(3)`](crate::methods::EMA).\n\nRange in \\[`1`; ma2's period\\)",
+      "ma2": "Long smoothing [AD index](https://en.wikipedia.org/wiki/Accumulation/distribution_index).\n\nDefault is [`EMA(10)`](crate::methods::EMA).\n\nRange in \\(`period1`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "window": "[AD index](https://en.wikipedia.org/wiki/Accumulation/distribution_index) size. Default is 0 (windowless)\n\nRange in \\[`0`; [`PeriodType::MAX`](crate::core::PeriodType)\\]"
+    },
+    "documentation": "Chaikin Oscillator\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Chaikin_Analytics>\n\n# 1 value\n\n* `oscillator` value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n# 1 signal\n\nWhen `oscillator` value goes above zero, then returns full buy signal.\nWhen `oscillator` value goes below zero, then returns full sell signal.\nOtherwise no signal",
+    "source": "crates/roze-ta/src/indicators/chaikin_oscillator.rs"
+  },
+  {
+    "id": "indicator.chande_kroll_stop",
+    "symbol": "ChandeKrollStop",
+    "aliases": [],
+    "module": "chande_kroll_stop",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "x": "ValueType",
+      "q": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct ChandeKrollStop<M": "",
+      "ma": "ATR moving average.\n\nDefault is [`SMA(10)`](crate::methods::SMA).\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\]",
+      "x": "ATR multiplier. Default is `1.0`.\n\nRange in \\[`0`; `+inf`\\)",
+      "q": "multiplied highest/lowest period length. Default is `9`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\]",
+      "source": "Price source. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Chande Kroll Stop\n\n## Links\n\n* <https://tradingview.com/support/solutions/43000589105-chande-kroll-stop/>\n\n# 3 values\n\n* `stop long`\n  Range of values is the same as the range of the `source` values.\n\n* `source` value\n\n* `stop short`\n\nRange of values is the same as the range of the `source` values.\n\n# 2 signals\n\n* signal 1 is calculated according to relative position of the `source` value between `stop short` and `stop long` values.\n\nWhen `source` value goes above `stop short`, then returns full buy signal.\n\nWhen `source` value goes below `stop long`, then returns full sell signal.\n* signal 2 appears only when `stop long` crosses `stop short` upwards.\n\nWhen cumulative move of `stop short` and `stop long` is upwards, then returns full buy.\n\nWhen cumulative move of `stop short` and `stop long` is downwards, then returns full sell.",
+    "source": "crates/roze-ta/src/indicators/chande_kroll_stop.rs"
+  },
+  {
+    "id": "indicator.chande_momentum_oscillator",
+    "symbol": "ChandeMomentumOscillator",
+    "aliases": [],
+    "module": "chande_momentum_oscillator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "zone": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period": "main period length. Default is `9`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\]",
+      "zone": "Zone size of overbought and oversold. Default is `0.5`.\n\nRange in \\[`0.0`; `1.0`\\]",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Chande Momentum Oscillator\n\n## Links\n\n* <https://www.investopedia.com/terms/c/chandemomentumoscillator.asp>\n\n# 1 value\n\n* `oscillator` value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n# 1 signal\n\nWhen `oscillator` value goes above `zone`, then returns full sell signal.\nWhen `oscillator` value goes below `-zone`, then returns full buy signal.\nOtherwise no signal",
+    "source": "crates/roze-ta/src/indicators/chande_momentum_oscillator.rs"
+  },
+  {
+    "id": "indicator.commodity_channel_index",
+    "symbol": "CommodityChannelIndex",
+    "aliases": [],
+    "module": "commodity_channel_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "zone": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period": "Main period size. Default is `18`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Signal zone size. Default is `1.0`.\n\nRange in \\[`0.0`; `+inf`\\).",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)."
+    },
+    "documentation": "Commodity Channel Index\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Commodity_channel_index>\n\n# 1 value\n\n* `oscillator` value. Most of the time value is in the range around \\[`-1.0`; `+1.0`\\]\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 1 signal\n\nWhen `oscillator` value goes above `zone`, then returns full sell signal.\nWhen `oscillator` value goes below `-zone`, then returns full buy signal.\nOtherwise no signal",
+    "source": "crates/roze-ta/src/indicators/commodity_channel_index.rs"
+  },
+  {
+    "id": "indicator.coppock_curve",
+    "symbol": "CoppockCurve",
+    "aliases": [],
+    "module": "coppock_curve",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma1": "M",
+      "s3_ma": "M",
+      "period2": "PeriodType",
+      "period3": "PeriodType",
+      "s2_left": "PeriodType",
+      "s2_right": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct CoppockCurve<M": "",
+      "ma1": "Main MA type.\n\nDefault is [`WMA(10)`](crate::methods::WMA)\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "s3_ma": "Signal line MA type .\n\nDefault is [`EMA(5)`](crate::methods::EMA)\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period2": "Long rate of change period. Default is `14`.\n\nRange in \\(`period3`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period3": "Short rate of change period. Default is `11`.\n\nRange in \\[`1`; `period2`\\).",
+      "s2_left": "Signal 2 reverse points left limit. Default is `4`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)-`s2_right`\\).",
+      "s2_right": "Signal 2 reverse points right limit. Default is `2`\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)-`s2_left`\\).",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)."
+    },
+    "documentation": "Coppock curve\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Coppock_curve>\n\n# 2 values\n\n* `Main value`\n\nRange of values is the same as the range of the `source` values.\n\n* `Signal line` value\n\nRange of values is the same as the range of the `source` values.\n\n# 3 signals\n\n* Signal 1 appears when `main value` crosses zero line. When `main value` crosses zero line upwards, returns full buy signal. When `main value` crosses zero line downwards, returns full sell signal.\n* Signal 2 appears on reverse points of `main value`. When top reverse point appears,\n* Signal 3 appears on `main value` crosses `signal line`. When `main value` crosses `signal line` upwards, returns full buy signal. When `main value` crosses `signal line` downwards, returns full sell signal.",
+    "source": "crates/roze-ta/src/indicators/coppock_curve.rs"
+  },
+  {
+    "id": "indicator.detrended_price_oscillator",
+    "symbol": "DetrendedPriceOscillator",
+    "aliases": [],
+    "module": "detrended_price_oscillator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct DetrendedPriceOscillator<M": "",
+      "ma": "Main moving average type.\n\nDefault is [`SMA(21)`](crate::methods::SMA)\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Detrended Price Oscillator\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Detrended_price_oscillator>\n\n# 1 value\n\n* `DPO` value\n\nRange in \\(`-inf`; `+inf`\\).\n\n# Has no signals",
+    "source": "crates/roze-ta/src/indicators/detrended_price_oscillator.rs"
+  },
+  {
+    "id": "indicator.donchian_channel",
+    "symbol": "DonchianChannel",
+    "aliases": [],
+    "module": "donchian_channel",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType"
+    },
+    "parameter_documentation": {
+      "period": "Main period. Default is `20`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)"
+    },
+    "documentation": "Donchian Channel\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Donchian_channel>\n\n# 3 values\n\n* Lower bound\n\nRange is the same as [`high`] values.\n\n* Middle value\n\nIt is always middle value between `upper bound` and `lower bound`\n\nRange is the same as [`high`] and [`low`] values.\n\n* Upper bound\n\nRange is the same as [`low`] values.\n\n# 1 signal\n\n* When [`high`] value hits `upper bound`, returns full buy signal.\n  When [`low`] value hits `lower bound`, returns full sell signal.\n  Otherwise returns no signal.\n  If both values hit both bounds, returns no signal.\n\n[`high`]: crate::core::OHLCV::high\n[`low`]: crate::core::OHLCV::low",
+    "source": "crates/roze-ta/src/indicators/donchian_channel.rs"
+  },
+  {
+    "id": "indicator.ease_of_movement",
+    "symbol": "EaseOfMovement",
+    "aliases": [],
+    "module": "ease_of_movement",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "period2": "PeriodType"
+    },
+    "parameter_documentation": {
+      "struct EaseOfMovement<M": "",
+      "ma": "Main moving average type.\n\nDefault is [`SMA(13)`](crate::methods::SMA)\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period2": "Differencial period size. Default is `1`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\]."
+    },
+    "documentation": "Ease Of Movement\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Ease_of_movement>\n* <https://www.investopedia.com/terms/e/easeofmovement.asp>\n\n# 1 value\n\n* Main value\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 1 signal\n\n* Signal 1 appears when `main value` crosses zero line.\n  When `main value` crosses zero line upwards, returns full buy signal.\n  When `main value` crosses zero line downwards, returns full sell signal.",
+    "source": "crates/roze-ta/src/indicators/ease_of_movement.rs"
+  },
+  {
+    "id": "indicator.elders_force_index",
+    "symbol": "EldersForceIndex",
+    "aliases": [],
+    "module": "elders_force_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "period2": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct EldersForceIndex<M": "",
+      "ma": "Main moving average type.\n\nDefault is [`EMA(13)`](crate::methods::EMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period2": "Price change period. Default is `1`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "source": "Price source type of values. Default is [`Close`](crate::core::Source::Close)."
+    },
+    "documentation": "Elders Force Index\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Force_index>\n* <https://www.investopedia.com/terms/f/force-index.asp>\n\n# 1 value\n\n* Main value\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 1 signal\n\n* Signal 1 appears when `main value` crosses zero line.\n  When `main value` crosses zero line upwards, returns full buy signal.\n  When `main value` crosses zero line downwards, returns full sell signal.",
+    "source": "crates/roze-ta/src/indicators/elders_force_index.rs"
+  },
+  {
+    "id": "indicator.envelopes",
+    "symbol": "Envelopes",
+    "aliases": [],
+    "module": "envelopes",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "k": "ValueType",
+      "source": "Source",
+      "source2": "Source"
+    },
+    "parameter_documentation": {
+      "struct Envelopes<M": "",
+      "ma": "Main moving average type.\n\nDefault is [`SMA(20)`](crate::methods::SMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "k": "Bound relative size. Default is `0.1`.\n\nRange in (`0.0`; `+inf`).",
+      "source": "Source value type for bounds. Default is [`Close`](crate::core::Source::Close).",
+      "source2": "Source2 value type for actual price. Default is [`Close`](crate::core::Source::Close)."
+    },
+    "documentation": "Envelopes\n\n## Links\n\n* <https://www.investopedia.com/terms/e/envelope.asp>\n\n# 3 values\n\n* `Upper bound`\n\nRange of values is the same as the range of the `source` values.\n\n* `Lower bound`\n\nRange of values is the same as the range of the `source` values.Action\n\n*  Raw `Source2` value\n\n# 1 signal\n\n* Signal 1 appears when `Source2` value crosses bounds.\n  When `Source2` value crosses `upper bound` upwards, returns full sell signal.\n  When `Source2` value crosses `lower bound` downwards, returns full buy signal.",
+    "source": "crates/roze-ta/src/indicators/envelopes.rs"
+  },
+  {
+    "id": "indicator.fisher_transform",
+    "symbol": "FisherTransform",
+    "aliases": [],
+    "module": "fisher_transform",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "zone": "ValueType",
+      "signal": "M",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct FisherTransform<M": "",
+      "period1": "Main period for max/min values calculation. Default is `9`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Zone size for signals. Default is `1.5`.\n\nRange in \\(`0.0`; `+inf`\\)",
+      "signal": "Signal line moving average type.\n\nDefault is [`SMA(2)`](crate::methods::SMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "source": "Source type of values. Default is [`TP`](crate::core::Source::TP)"
+    },
+    "documentation": "Fisher transform\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Fisher_transformation>\n* <https://www.investopedia.com/terms/f/fisher-transform.asp>\n\n# 2 values\n\n* FT `main value`\n\nRange in \\(`-inf`; `+inf`\\).\n\n* `signal value` line\n\nRange in \\(`-inf`; `+inf`\\).\n\n# 2 signals\n\n* Signal 1 appears when `main value` crosses zero line.\n  When `main value` changes direction, returns signal corresponds to relative position of `main value` in `zone`\n* Signal 2 appears when `main value` crosses `signal line` and after signal 1 appears",
+    "source": "crates/roze-ta/src/indicators/fisher_transform.rs"
+  },
+  {
+    "id": "indicator.hull_moving_average",
+    "symbol": "HullMovingAverage",
+    "aliases": [],
+    "module": "hull_moving_average",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "left": "PeriodType",
+      "right": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period": "HMA period. Default is `9`.\n\nRange in \\[`3`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "left": "Left lag for reverse point detection. Default is `3`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)/`2`\\]",
+      "right": "Right lag for reverse point detection. Default is `2`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)/`2`\\].",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Hull Moving Average indicator\n\n## Links\n\n* <https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/hull-moving-average>\n\n# 1 value\n\n* `HMA value`\n\nRange of values is the same as the range of the `source` values.\n\n# 1 signal\n\n* When `HMA value` reverses upwards, gives full positive signal.\n  When `HMA value` reverses downwards, gives full negative signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/hull_moving_average.rs"
+  },
+  {
+    "id": "indicator.ichimoku_cloud",
+    "symbol": "IchimokuCloud",
+    "aliases": [],
+    "module": "ichimoku_cloud",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "l1": "PeriodType",
+      "l2": "PeriodType",
+      "l3": "PeriodType",
+      "m": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "l1": "`Tenkan Sen` period. Default is `9`.\n\nRange in \\[`1`; `l2`\\).",
+      "l2": "`Kijun Sen` period. Default is `26`.\n\nRange in \\(`l1`; `l3`\\).",
+      "l3": "Senkou Span B period. Default is `52`.\n\nRange in \\(`l2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "m": "Move `Senkou Span A and B` forward by this period. Default is `26`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)."
+    },
+    "documentation": "Ichimoku cloud\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Ichimoku_Kink%C5%8D_Hy%C5%8D>\n\n# 4 values\n\n* `Tenkan Sen`\n* `Kijun Sen`\n* `Senkou Span A`\n* `Senkou Span B`\n\nRange of all the values is the same as the range of the `source` values.\n\n# 2 signals\n\n* When `Tenkan Sen` crosses `Kijun Sen` upwards and `source` value is greater than both `Senkou Span A and B` and when `Senkou Span A` is greater than `Senkou Span B`,\n  returns full buy signal.\n  When `Tenkan Sen` crosses `Kijun Sen` downwards and `source` value is lower than both `Senkou Span A and B` and when `Senkou Span A` is lower than `Senkou Span B`,\n  returns full sell signal.\n\n* When `source` value crosses `Kijun Sen` upwards and `source` value is greater than both `Senkou Span A and B` and when `Senkou Span A` is greater than `Senkou Span B`,\n  returns full buy signal.\n  When `source` value crosses `Kijun Sen` downwards and `source` value is lower than both `Senkou Span A and B` and when `Senkou Span A` is lower than `Senkou Span B`,\n  returns full sell signal.",
+    "source": "crates/roze-ta/src/indicators/ichimoku_cloud.rs"
+  },
+  {
+    "id": "indicator.kaufman",
+    "symbol": "Kaufman",
+    "aliases": [
+      "indicator.kama"
+    ],
+    "module": "kaufman",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "period3": "PeriodType",
+      "filter_period": "PeriodType",
+      "square_smooth": "bool",
+      "k": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period1": "Volatility calculation period. Default is `10`.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period2": "Fast period. Default is `2`.\n\nRange in \\[`1`; `period3`\\).",
+      "period3": "Slow period. Default is `30`.\n\nRange in \\(`period2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "filter_period": "Filter period. Default is `10`.\n\nRange in \\[`0`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "square_smooth": "Apply double smoothing. Default is `true`.",
+      "k": "Standard deviation multiplier. Default is `0.3`.\n\nRange in \\(`0.0`; `+inf`\\)",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Kaufman Adaptive Moving Average (KAMA)\n# Links\n\n* <https://corporatefinanceinstitute.com/resources/knowledge/trading-investing/kaufmans-adaptive-moving-average-kama/>\n* <https://ru.wikipedia.org/wiki/%D0%90%D0%B4%D0%B0%D0%BF%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%B7%D1%8F%D1%89%D0%B0%D1%8F_%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F_%D0%9A%D0%B0%D1%83%D1%84%D0%BC%D0%B0%D0%BD%D0%B0>\n* <https://www.marketvolume.com/technicalanalysis/kama.asp>\n\n# 1 value\n\n* `KAMA` value\n\nRange of `KAMA` values is the same as the range of the `source` values.\n\n# 1 signal\n\n* if `filter_period` is less or equal than `0`, then returns signal when `KAMA` crosses `source` value.\n  When `source` crosses `KAMA` upwards, returns full buy signal.\n  When `source` crosses `KAMA` downwards, returns full sell signal.\n  Otherwise returns no signal.\n\n* if `filter_period` is greater than `1`, it uses same cross between `source` and `KAMA`, but with additional filtering using standard deviation.",
+    "source": "crates/roze-ta/src/indicators/kaufman.rs"
+  },
+  {
+    "id": "indicator.keltner_channel",
+    "symbol": "KeltnerChannel",
+    "aliases": [],
+    "module": "keltner_channel",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "sigma": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct KeltnerChannel<M": "",
+      "ma": "Middle moving average type.\n\nDefault is [`EMA(20)`](crate::methods::EMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "sigma": "True range multiplier. Default is `1.0`.\n\nRange in \\(`0.0`; `+inf`\\)",
+      "source": "Middle moving average source value type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Keltner Channel\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Keltner_channel>\n\n# 3 values\n\n* `upper bound`\n\nRange of values is the same as the range of the `source` values.\n\n* `source` value\n* `lower bound`\n\nRange of values is the same as the range of the `source` values.\n\n# 1 signal\n\nWhen `source` value goes above the `upper bound`, then returns full buy signal.\nWhen `source` value goes under the `lower bound`, then returns full sell signal.\nOtherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/keltner_channel.rs"
+  },
+  {
+    "id": "indicator.klinger_volume_oscillator",
+    "symbol": "KlingerVolumeOscillator",
+    "aliases": [],
+    "module": "klinger_volume_oscillator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma1": "M",
+      "ma2": "M",
+      "signal": "M"
+    },
+    "parameter_documentation": {
+      "struct KlingerVolumeOscillator<M": "",
+      "ma1": "Fast moving average type.\n\nDefault is [`EMA(34)`](crate::methods::EMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "ma2": "Slow moving average type.\n\nDefault is [`EMA(55)`](crate::methods::EMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "signal": "Signal line moving average type.\n\nDefault is [`EMA(13)`](crate::methods::EMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)."
+    },
+    "documentation": "Klinger Volume Oscillator\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Volume_analysis#Klinger_Volume_Oscillator>\n* <https://www.investopedia.com/terms/k/klingeroscillator.asp>\n\n# 2 values\n\n* `main` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n* `signal line` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 2 signals\n\n* When `main` value crosses `0.0` upwards, then returns full buy signal.\n  When `main` value crosses `0.0` downwards, then returns full sell signal.\n  Otherwise returns no signal.\n\n* When `main` value crosses `signal line` value  upwards, then returns full buy signal.\n  When `main` value crosses `signal line` downwards, then returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/klinger_volume_oscillator.rs"
+  },
+  {
+    "id": "indicator.know_sure_thing",
+    "symbol": "KnowSureThing",
+    "aliases": [],
+    "module": "know_sure_thing",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "period3": "PeriodType",
+      "period4": "PeriodType",
+      "ma1": "M",
+      "ma2": "M",
+      "ma3": "M",
+      "ma4": "M",
+      "signal": "M"
+    },
+    "parameter_documentation": {
+      "struct KnowSureThing<M": "",
+      "period1": "ROC1 period. Default is `10`.",
+      "period2": "ROC2 period. Default is `15`.",
+      "period3": "ROC3 period. Default is `20`.",
+      "period4": "ROC4 period. Default is `30`.",
+      "ma1": "ROC1 moving average type. Default is [`SMA(10)`](crate::methods::SMA).",
+      "ma2": "ROC2 moving average type. Default is [`SMA(10)`](crate::methods::SMA).",
+      "ma3": "ROC3 moving average type. Default is [`SMA(10)`](crate::methods::SMA).",
+      "ma4": "ROC4 moving average type. Default is [`SMA(15)`](crate::methods::SMA).",
+      "signal": "Signal line moving average type. Default is [`SMA(9)`](crate::methods::SMA)."
+    },
+    "documentation": "Know Sure Thing\n\n## Links\n\n* <https://en.wikipedia.org/wiki/KST_oscillator>\n\n# 2 values\n\n* `KST` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n* `Signal line` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 1 signal\n\n* When `KST` crosses `Signal line` upwards, returns full buy signal.\n  When `KST` crosses `Signal line` downwards, returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/know_sure_thing.rs"
+  },
+  {
+    "id": "indicator.macd",
+    "symbol": "MACD",
+    "aliases": [
+      "indicator.moving_average_convergence_divergence"
+    ],
+    "module": "macd",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma1": "M",
+      "ma2": "M",
+      "signal": "M",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct MACD<M": "",
+      "ma1": "Fast MA type.\n\nDefault is [`EMA(12)`](crate::methods::EMA).\n\nPeriod range in \\[`2`; ma2's period\\)",
+      "ma2": "Slow MA type.\n\nDefault is [`EMA(26)`](crate::methods::EMA).\n\nPeriod range in \\(ma1's period; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "signal": "Signal line MA type.\n\nDefault is [`EMA(9)`](crate::methods::EMA).\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "source": "Source value type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Moving average convergence/divergence (MACD)\n\n## Links\n\n* <https://en.wikipedia.org/wiki/MACD>\n\n# 2 values\n\n* `MACD` value\n\nRange in \\(`-inf`; `+inf`\\).\n\n* `Signal line` value\n\nRange in \\(`-inf`; `+inf`\\).\n\n# 2 signal\n\n* When `MACD` crosses `Signal line` upwards, returns full buy signal.\n  When `MACD` crosses `Signal line` downwards, returns full sell signal.\n  Otherwise returns no signal.\n\n* When `MACD` crosses zero line upwards, returns full buy signal.\n  When `MACD` crosses zero line downwards, returns full sell signal.\n  Otherwise returns no signal.\n",
+    "source": "crates/roze-ta/src/indicators/macd.rs"
+  },
+  {
+    "id": "indicator.momentum_index",
+    "symbol": "MomentumIndex",
+    "aliases": [],
+    "module": "momentum_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period1": "Slow momentum period. Default is `10`.\n\nRange in \\(`period2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "period2": "Fast momentum period. Default is `1`.\n\nRange in \\[`1`; `period1`\\)",
+      "source": "Source value type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Momentum Index\n\n# 2 values\n\n* `slow momentum` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n* `fast momentum` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 1 signal\n\n* When both momentums are positive, returns full buy signal.\n  When both momentums are negative, returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/momentum_index.rs"
+  },
+  {
+    "id": "indicator.money_flow_index",
+    "symbol": "MoneyFlowIndex",
+    "aliases": [],
+    "module": "money_flow_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "zone": "ValueType"
+    },
+    "parameter_documentation": {
+      "period": "Main period size. Default is `14`.\n\nRange is \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Signal zone size. Default is `0.2`.\n\nRange is \\[`0.0`; `0.5`\\]. Value `0.5` means that the `lower bound` is the same as the `upper bound`."
+    },
+    "documentation": "Money Flow Index\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Money_flow_index>\n\n# 3 values\n\n* `upper bound` const value\n\nRange in \\[`0.5`; `1.0`\\]\n\n* `MFI` value\n\nRange in \\[`0.0`; `1.0`\\]\n\n* `lower bound` const value\n\nRange in \\[`0.0`; `0.5`\\]\n\n# 2 signals\n\n* When `MFI` value crosses `lower bound` downwards, returns full buy signal.\n  When `MFI` value crosses `upper bound` upwards, returns full sell signal.\n  Otherwise returns no signal.\n\n* When `MFI` value crosses `lower bound` upwards, returns full buy signal.\n  When `MFI` value crosses `upper bound` downwards, returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/money_flow_index.rs"
+  },
+  {
+    "id": "indicator.parabolic_sar",
+    "symbol": "ParabolicSAR",
+    "aliases": [
+      "indicator.parabolic_stop_and_reverse"
+    ],
+    "module": "parabolic_sar",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "af_step": "ValueType",
+      "af_max": "ValueType"
+    },
+    "parameter_documentation": {
+      "af_step": "",
+      "af_max": ""
+    },
+    "documentation": "Parabolic Stop And Reverse\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Parabolic_SAR>\n\n# 2 values\n\n* `SAR` value\n\nRange of values is the same as the range of the timeseries values.\n\n* `trend` value\n\nCan be one of the next values: {`-1.0`; `0.0`; `1.0`}\n\n# 1 signal\n* When `trend` changes it's value to positive, then returns full buy signal.\n  When `trend` changes it's value to negative, then returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/parabolic_sar.rs"
+  },
+  {
+    "id": "indicator.pivot_reversal_strategy",
+    "symbol": "PivotReversalStrategy",
+    "aliases": [],
+    "module": "pivot_reversal_strategy",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "left": "PeriodType",
+      "right": "PeriodType"
+    },
+    "parameter_documentation": {
+      "left": "How many periods should left before pivot point.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)-`right`\\).",
+      "right": "How many periods should appear after pivot point.\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)-`left`\\)."
+    },
+    "documentation": "Pivot Reversal Strategy\n\nSimply searches for pivot points and returns signal.\n\n## Links\n\n* <https://www.incrediblecharts.com/technical/pivot_point_reversal.php>\n\n# No values\n\n# 1 signal\n\n* `main` pivot signal\n\nWhen low pivot happens, returns full buy signal.\nWhen high pivot happens, returns full sell signal.\nOtherwise returns no signal.\n",
+    "source": "crates/roze-ta/src/indicators/pivot_reversal_strategy.rs"
+  },
+  {
+    "id": "indicator.price_channel_strategy",
+    "symbol": "PriceChannelStrategy",
+    "aliases": [],
+    "module": "price_channel_strategy",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "sigma": "ValueType"
+    },
+    "parameter_documentation": {
+      "period": "Main period length. Default is `20`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "sigma": "Relative channel size. Default is `1.0`.\n\nRange in \\(`0.0`; `1.0`\\]"
+    },
+    "documentation": "Price Channel Strategy\n\nCalculates price channel by highest high and lowest low for last `period` candles.\n\n## Links\n\n* <https://www.investopedia.com/terms/p/price-channel.asp>\n\n# 2 values\n\n* `Upper bound` value\n\nRange of values is the same as the range of the source values.\n\n* `Lower bound` value\n\nRange of values is the same as the range of the source values.\n\n# 1 signal\n\nWhen current `high` price touches `upper bound`, returns full buy signal.\nWhen current `low` price touches `lower bound`, returns full sell signal.\nWhen both touches occure, or no toucher, then returns no signal.\n",
+    "source": "crates/roze-ta/src/indicators/price_channel_strategy.rs"
+  },
+  {
+    "id": "indicator.relative_strength_index",
+    "symbol": "RelativeStrengthIndex",
+    "aliases": [
+      "indicator.rsi"
+    ],
+    "module": "relative_strength_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "ma": "M",
+      "zone": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct RelativeStrengthIndex<M": "",
+      "ma": "Main MA type.\n\nDefault is [`EMA(14)`](crate::methods::EMA)\n\nPeriod range in \\[`3`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Overbought/oversell relative zone. Default is `0.3`.\n\nRange in \\(`0.0`; `0.5`\\]",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Relative Strength Index\n\n## Links:\n\n* <https://en.wikipedia.org/wiki/Relative_strength_index>\n\n# 1 value\n\n* `main` value\n\nRange in \\[`0.0`; `1.0`\\]\n\n# 2 signals\n\n* Signal #1 on enters over-zone.\n\nWhen main value crosses upper zone upwards, returns full sell signal.\nWhen main value crosses lower zone downwards, returns full buy signal.\nOtherwise returns no signal.\n\n* Signal #2 on leaves over-zone.\n\nWhen main value crosses upper zone downwards, returns full sell signal.\nWhen main value crosses lower zone upwards, returns full buy signal.\nOtherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/relative_strength_index.rs"
+  },
+  {
+    "id": "indicator.relative_vigor_index",
+    "symbol": "RelativeVigorIndex",
+    "aliases": [],
+    "module": "relative_vigor_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "signal": "M",
+      "zone": "ValueType"
+    },
+    "parameter_documentation": {
+      "struct RelativeVigorIndex<M": "",
+      "period1": "Summarize period. Default is `10`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "period2": "SWMA period. Default is `4`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "signal": "Signal line moving average type.\n\nDefault is [`SWMA(4)`](crate::methods::SWMA).\n\nPeriod range in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "zone": "Signal zone filter. Default is `0.25`.\n\nRange in \\[`0.0`; `0.5`\\)"
+    },
+    "documentation": "Relative Vigor Index\n\n## Links:\n\n* <https://www.investopedia.com/terms/r/relative_vigor_index.asp>\n\n# 2 values\n\n* `main` value\n\nRange in \\[`-0.5`; `0.5`\\]\n\n* `signal line` value\n\nRange in \\[`-0.5`; `0.5`\\]\n\n# 2 signals\n\n* Signal #1 on `main` value crosses `signal line` value.\n\nWhen main value crosses signal line upwards, returns full buy signal.\nWhen main value crosses signal line downwards, returns full sell signal.\nOtherwise returns no signal.\n\n* Signal #2 on `main` value crosses `signal line` value outside safe zone.\n\nWhen main value is below `-zone` and crosses signal line upwards, returns full buy signal.\nWhen main value is above `+zone` and crosses signal line downwards, returns full sell signal.\nOtherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/relative_vigor_index.rs"
+  },
+  {
+    "id": "indicator.smi_ergodic_indicator",
+    "symbol": "SMIErgodicIndicator",
+    "aliases": [],
+    "module": "smi_ergodic_indicator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "signal": "M",
+      "zone": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct SMIErgodicIndicator<M": "",
+      "period1": "Long TSI period. Default is `20`.\n\nRange in \\[`period2`, [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period2": "Short TSI period. Default is `5`.\n\nRange in \\(`2`, `period1`\\].",
+      "signal": "Signal line moving average type.\n\nDefault is [`EMA(5)`](crate::methods::EMA).\n\nPeriod range is in \\[`2`, [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Signal zone size. Default is `0.2`.\n\nRange in \\[`0.0`; `1.0`]",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "SMI Ergodic Indicator\n\n## Links\n\n* <http://www.motivewave.com/studies/smi_ergodic_indicator.htm>\n* <https://en.wikipedia.org/wiki/Ergodic_theory>\n\n# 3 value\n\n* `SMI` main value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n* `Signal line` value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n* `Oscillator` value\n\nRange in \\[`-2.0`; `2.0`\\]\n\n# 1 signals\n\n* Signal #1 on `SMI` crosses `Signal`\n\nWhen `Signal line` value is below `-zone` and `SMI` value crosses `Signal line` upwards, returns full buy signal.\nWhen `Signal line` value is above `+zone` and `SMI` value crosses `Signal line` downwards, returns full sell signal.\nOtherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/smi_ergodic_indicator.rs"
+  },
+  {
+    "id": "indicator.stochastic_oscillator",
+    "symbol": "StochasticOscillator",
+    "aliases": [],
+    "module": "stochastic_oscillator",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "ma": "M",
+      "signal": "M",
+      "zone": "ValueType"
+    },
+    "parameter_documentation": {
+      "struct StochasticOscillator<M": "",
+      "period": "Period for searching highest high and lowest low. Default is `14`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "ma": "Moving average for smoothing `main` value.\n\nDefault is [`SMA(14)`](crate::methods::SMA).\n\nUsually it is equal to `period`.\n\nPeriod range is in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "signal": "Moving average type for smoothing `signal line` value.\n\nDefault is [`SMA(3)`](crate::methods::SMA).\n\nPeriod range is in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "zone": "Zone size for #1 and #2 signals.\n\nRange in \\[`0.0`; `0.5`\\]."
+    },
+    "documentation": "Stochastic Oscillator\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Stochastic_oscillator>\n\n# 2 values\n\n* `main` value\n\nRange in \\[`0.0`; `1.0`\\].\n\n* `signal line` value\n\nRange in \\[`0.0`; `1.0`\\].\n\n# 3 signals\n\n* Signal #1\n\nWhen `main` value crosses lower bound upwards, returns full buy signal.\nWhen `main` value crosses upper bound downwards, returns full sell signal.\nOtherwise returns no signal.\n\n* Signal #2\n\nWhen `signal line` value crosses lower bound upwards, returns full buy signal.\nWhen `signal line` value crosses upper bound downwards, returns full sell signal.\nOtherwise returns no signal.\n\n* Signal #3\n\nWhen `main` value crosses `signal line` upwards, returns full buy signal.\nWhen `main` value crosses `signal line` downwards, returns full sell signal.\nOtherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/stochastic_oscillator.rs"
+  },
+  {
+    "id": "indicator.trend_strength_index",
+    "symbol": "TrendStrengthIndex",
+    "aliases": [],
+    "module": "trend_strength_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period": "PeriodType",
+      "zone": "ValueType",
+      "reverse_offset": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period": "Main period length. Default is `14`.\n\nRange in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Zone value determines when signal #2 appears. Default is `0.75`.\n\nRange in \\[`0.0`; `1.0`\\).",
+      "reverse_offset": "Reverse period\n\nRange in \\[`1`; [`PeriodType::MAX`](crate::core::PeriodType)/`2`\\].",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)."
+    },
+    "documentation": "Trend Strength Index\n\nThere are bunch of different indicators named \"Trend Strength Index\" on the internet.\n\nThis particular one was seen somewhere a long time ago. I can't even tell where. It produces an oscillator which may move in range \\[`-1.0`; `1.0`\\].\n\n# 1 value\n\n* `Main value`\n\nRange in \\[`-1.0`; `1.0`\\]\n\n# 2 signals\n\n* When `main value` crosses upper `zone` downwards, gives full negative #1 signal.\n  When `main value` crosses lower `zone` upwards, gives full positive #1 signal.\n\n* When `main value` is below lower `zone` and changes direction upwards, gives full positive #2 signal\n  When `main value` is above upper `zone` and changes direction downwards, gives full negative #2 signal",
+    "source": "crates/roze-ta/src/indicators/trend_strength_index.rs"
+  },
+  {
+    "id": "indicator.trix",
+    "symbol": "Trix",
+    "aliases": [],
+    "module": "trix",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "signal": "M",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "struct Trix<M": "",
+      "period1": "TRIX period. Default is `18`.\n\nRange in \\[`3`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "signal": "Signal line moving average type.\n\nDefault is [`EMA(6)`](crate::methods::EMA).\n\nPeriod range is in \\[`2`; [`PeriodType::MAX`](crate::core::PeriodType)\\)",
+      "source": "Source type. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "TRIX (extended)\n\n## Links\n\n* <https://en.wikipedia.org/wiki/Trix_(technical_analysis)>\n\n# 2 values\n\n* `main` value\n\nRange is \\(`-inf`; `+inf`\\)\n\n* `signal line` value\n\nRange is \\(`-inf`; `+inf`\\)\n\n# 3 signals\n\n* When `main` value changes direction upwards, returns full buy signal.\n  When `main` value changes direction downwards, returns full sell signal.\n  Otherwise returns no signal.\n\n* When `main` value crosses `signal line` value upwards, returns full buy signal.\n  When `main` value crosses `signal line` value downwards, returns full sell signal.\n  Otherwise returns no signal.\n\n* When `main` value crosses zero line upwards, returns full buy signal.\n  When `main` value crosses zero line downwards, returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/trix.rs"
+  },
+  {
+    "id": "indicator.true_strength_index",
+    "symbol": "TrueStrengthIndex",
+    "aliases": [],
+    "module": "true_strength_index",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "period3": "PeriodType",
+      "zone": "ValueType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period1": "Long TSI period. Default is `25`.\n\nRange in \\[`period2`, [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "period2": "Short TSI period. Default is `13`.\n\nRange in \\(`2`, `period1`\\].",
+      "period3": "Signal line MA period. Default is `13`.\n\nRange in \\[`2`, [`PeriodType::MAX`](crate::core::PeriodType)\\).",
+      "zone": "Signal zone size. Default is `0.25`.\n\nRange in \\[`0.0`; `1.0`]",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "True Strength Index\n\n## Links\n\n* <https://en.wikipedia.org/wiki/True_strength_index>\n\n# 2 values\n\n* `main` value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n* `signal line` value\n\nRange in \\[`-1.0`; `1.0`\\]\n\n# 3 signals\n\n* Signal #1.\n\nWhen `main` value crosses upper `zone` upwards , returns full sell signal.\nWhen `main` value crosses lower `-zone` downwards, returns full buy signal.\nOtherwise returns no signal.\n\n* Signal #2.\n  When `main` value crosses zero line upwards, returns full buy signal.\n  When `main` value crosses zero line downwards, returns full sell signal.\n  Otherwise returns no signal.\n\n* Signal #3.\n  When `main` value crosses `signal line` upwards, returns full buy signal.\n  When `main` value crosses `signal line` downwards, returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/true_strength_index.rs"
+  },
+  {
+    "id": "indicator.woodies_cci",
+    "symbol": "WoodiesCCI",
+    "aliases": [],
+    "module": "woodies_cci",
+    "kind": "indicator",
+    "inputs": [
+      "bars"
+    ],
+    "params_fields": {
+      "period1": "PeriodType",
+      "period2": "PeriodType",
+      "s1_lag": "PeriodType",
+      "source": "Source"
+    },
+    "parameter_documentation": {
+      "period1": "`Turbo` CCI period",
+      "period2": "`Trend` CCI period",
+      "s1_lag": "Signal #1 bars count to occur",
+      "source": "Source type of values. Default is [`Close`](crate::core::Source::Close)"
+    },
+    "documentation": "Woodies Commodity Channel Index\n\n## Links\n\n* <https://tlc.thinkorswim.com/center/reference/Tech-Indicators/studies-library/V-Z/WoodiesCCI.html>\n* <https://ftmo.com/en/woodies-cci-system/>\n\n# 2 values\n\n* `Turbo CCI`  value\n\nRange in \\(`-inf`; `+inf`\\)\n\n* `Trend CCI` value\n\nRange in \\(`-inf`; `+inf`\\)\n\n# 1 signals\n\n* When `Trend CCI` stays above zero line for `s1_lag` bars, returns full buy signal.\n  When `Trend CCI` stays below zero line for `s1_lag` bars, returns full sell signal.\n  Otherwise returns no signal.",
+    "source": "crates/roze-ta/src/indicators/woodies_cci.rs"
+  },
+  {
+    "id": "method.adi",
+    "symbol": "ADI",
+    "module": "adi",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "bars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "ValueType",
+    "documentation": "[Accumulation Distribution Index](https://en.wikipedia.org/wiki/Accumulation/distribution_index) of specified `length` for timeseries of [`OHLCV`]\n\n[`CLV`] ranges from `-1.0` when the close is the low of the day, to `+1.0` when it's the high.\nFor instance if the close is `3/4` the way up the range then [`CLV`] is `+0.5`.\nThe accumulation/distribution index adds up volume multiplied by the [`CLV`] factor, i.e.\n\nADI = `ADI_prev` + [`CLV`] * [`volume`]\n\nThe name accumulation/distribution comes from the idea that during accumulation buyers are in control\nand the price will be bid up through the day, or will make a recovery if sold down, in either case\nmore often finishing near the day's high than the low. The opposite applies during distribution.\n\nThe accumulation/distribution index is similar to on balance volume, but acc/dist is based on the close\nwithin the day's range, instead of the close-to-close up or down that the latter uses.\n\nCan be used by a shortcut [`ADI`]\n\nUsed in indicators: [`Chaikin Money Flow`](crate::indicators::ChaikinMoneyFlow), [`Chaikin Oscillator`](crate::indicators::ChaikinOscillator)\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\nWhen `length == 0`, `ADI` becomes windowless. That means full `ADI` value accumulation over time.\n\nWhen `length > 0`, `ADI` will be calculated over the last `length` values.\n\n# Input type\nInput type is reference to [`OHLCV`]\n\n# Output type\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::ADI;\nuse roze_ta::helpers::RandomCandles;\n\nlet mut candles = RandomCandles::default();\nlet mut windowless = ADI::new(0, &candles.first()).unwrap();\nlet mut windowed = ADI::new(3, &candles.first()).unwrap(); // <----- Window size 3\n\nlet candle = candles.next().unwrap();\nassert_ne!(windowless.next(&candle), windowed.next(&candle));\n\nlet candle = candles.next().unwrap();\nassert_ne!(windowless.next(&candle), windowed.next(&candle));\n\nlet candle = candles.next().unwrap();\nassert!((windowless.next(&candle)-windowed.next(&candle)).abs() < 1e-5); // Must be equal here\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[ADI]\n\n[`OHLCV`]: crate::core::OHLCV\n[`volume`]: crate::core::OHLCV::volume\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`CLV`]: crate::core::OHLCV::clv",
+    "source": "crates/roze-ta/src/methods/adi.rs"
+  },
+  {
+    "id": "method.cci",
+    "symbol": "CCI",
+    "module": "cci",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Commodity channel index](https://en.wikipedia.org/wiki/Commodity_channel_index) of specified `length` for time series of type [`ValueType`]\n\nIn the original formula there is constant coefficient `K = 1/0.015`. This implementation does not include this coefficient (tl;dr it is `1.0`).\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(`length`)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/cci.rs"
+  },
+  {
+    "id": "method.collapse_timeframe",
+    "symbol": "CollapseTimeframe",
+    "module": "collapse_timeframe",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "bars"
+    ],
+    "params_type": "usize",
+    "output_type": "Option<T>",
+    "documentation": "Converting between different timeframes.\n\n# Parameters\n\nHas a single parameter `period`: [`usize`]\n\n`period` must be > `0`\n\n# Input type\n\nInput type is reference to [`OHLCV`]\n\n# Output type\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::CollapseTimeframe;\n\nlet timeframe: [Candle; 2] = [\n//   open  high  low  close volume\n    (10.0, 15.0, 5.0, 12.0, 1000.0).into(),\n    (12.1, 17.0, 6.0, 13.0, 2000.0).into(),\n];\n\nlet mut collapser = CollapseTimeframe::new(2, &timeframe[0]).unwrap();\n\nassert_eq!(collapser.next(&timeframe[0]), None);\n\nlet collapsed = collapser.next(&timeframe[1]).unwrap();\nassert_eq!(collapsed.open(), 10.0);\nassert_eq!(collapsed.high(), 17.0);\nassert_eq!(collapsed.low(), 5.0);\nassert_eq!(collapsed.close(), 13.0);\nassert_eq!(collapsed.volume(), 3000.0);\n```\n\nOutput type is [`Candle`]\n\n# Performance\n\nO(1)\n\nSee also Sequence's [`collapse_timeframe`](crate::core::Sequence::collapse_timeframe) function.\n\n[`ValueType`]: crate::core::ValueType\n[`Candle`]: crate::core::Candle",
+    "source": "crates/roze-ta/src/methods/collapse_timeframe.rs"
+  },
+  {
+    "id": "method.conv",
+    "symbol": "Conv",
+    "module": "conv",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "Vec<ValueType>",
+    "output_type": "Self::Input",
+    "documentation": "Convolution Moving Average with specified `weights` for timeseries of [`ValueType`].\n\n# Parameters\n\nHas a single parameter `weights`: Vec<[`ValueType`]>\n\n`weights` vector's length must be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(length(`weights`))\n\nThis method is relatively slow compare to the other methods.\n\n# See also\n\n[`WMA`](crate::methods::WMA), [`SWMA`](crate::methods::SWMA)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n",
+    "source": "crates/roze-ta/src/methods/conv.rs"
+  },
+  {
+    "id": "method.cross",
+    "symbol": "Cross",
+    "module": "cross",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "pairs"
+    ],
+    "params_type": "()",
+    "output_type": "Action",
+    "documentation": "Searches for two timeseries lines of type [`ValueType`] cross each other.\n\nIf `value` crossed `base` upwards, then returns [`Action::BUY_ALL`](crate::core::Action::BUY_ALL)\n\nIf `value` crossed `base` downwards, then returns [`Action::SELL_ALL`](crate::core::Action::SELL_ALL)\n\nElse (if series did not cross each other) returns [`Action::None`](crate::core::Action::None)\n\n# Parameters\n\nHas no parameters\n\n# Input type\n\nInput type is (`value`: [`ValueType`], `base`: [`ValueType`])\n\n# Output type\n\nOutput type is [`Action`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Cross;\n\nlet mut cross = Cross::default();\n\nlet t1 = vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0];\nlet t2 = vec![5.0, 3.0, 1.8, 2.9, 4.1, 5.6];\nlet r  = vec![ 0,   0,   1,   0,   -1,  0 ];\n\n(0..t1.len()).for_each(|i| {\n    let value = t1[i];\n    let base = t2[i];\n    let cross_value = cross.next(&(value, base)).analog();\n    assert_eq!(cross_value, r[i]);\n});\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[`CrossAbove`], [`CrossUnder`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`Action`]: crate::core::Action",
+    "source": "crates/roze-ta/src/methods/cross.rs"
+  },
+  {
+    "id": "method.cross_above",
+    "symbol": "CrossAbove",
+    "module": "cross",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "pairs"
+    ],
+    "params_type": "()",
+    "output_type": "Action",
+    "documentation": "Searches for `value` timeseries line crosses `base` line upwards\n\nIf `value` crossed `base` upwards, then returns [`Action::BUY_ALL`](crate::core::Action::BUY_ALL)\n\nElse returns [`Action::None`](crate::core::Action::None)\n\n# Parameters\n\nHas no parameters\n\n# Input type\n\nInput type is (`value`: [`ValueType`], `base`: [`ValueType`])\n\n# Output type\n\nOutput type is [`Action`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::CrossAbove;\n\nlet mut cross_above = CrossAbove::new((), &(0.0, 5.0)).unwrap();\n\nlet t1 = vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0];\nlet t2 = vec![5.0, 3.0, 1.8, 2.9, 4.1, 5.6];\nlet r  = vec![ 0,   0,   1,   0,   0,   0 ];\n\n(0..t1.len()).for_each(|i| {\n    let value = t1[i];\n    let base = t2[i];\n    let cross_value = cross_above.next(&(value, base)).analog();\n    assert_eq!(cross_value, r[i]);\n});\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[`Cross`], [`CrossUnder`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`DigitalSignal`]: crate::core::DigitalSignal",
+    "source": "crates/roze-ta/src/methods/cross.rs"
+  },
+  {
+    "id": "method.cross_under",
+    "symbol": "CrossUnder",
+    "module": "cross",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "pairs"
+    ],
+    "params_type": "()",
+    "output_type": "Action",
+    "documentation": "Searches for `value` timeseries line crosses `base` line downwards\n\nIf `value` crossed `base` downwards, then returns [`Action::BUY_ALL`](crate::core::Action::BUY_ALL)\n\nElse returns [`Action::None`](crate::core::Action::None)\n\n# Parameters\n\nHas no parameters\n\n# Input type\n\nInput type is (`value`: [`ValueType`], `base`: [`ValueType`])\n\n# Output type\n\nOutput type is [`Action`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::CrossUnder;\n\nlet mut cross_under = CrossUnder::new((), &(0.0, 5.0)).unwrap();\n\nlet t1 = vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0];\nlet t2 = vec![5.0, 3.0, 1.8, 2.9, 4.1, 5.6];\nlet r  = vec![ 0,   0,   0,   0,   1,   0 ];\n\n(0..t1.len()).for_each(|i| {\n    let value = t1[i];\n    let base = t2[i];\n    let cross_value = cross_under.next(&(value, base)).analog();\n    assert_eq!(cross_value, r[i]);\n});\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[`Cross`], [`CrossAbove`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`DigitalSignal`]: crate::core::DigitalSignal",
+    "source": "crates/roze-ta/src/methods/cross.rs"
+  },
+  {
+    "id": "method.derivative",
+    "symbol": "Derivative",
+    "module": "derivative",
+    "aliases": [
+      "method.differential"
+    ],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Derivative](https://en.wikipedia.org/wiki/Derivative) of specified window `length` for timeseries of [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\nDefault is `1`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Derivative;\n\nlet s = vec![0.0, 1.0, 3.0, 0.5, 2.0, -10.0];\nlet r = vec![0.0, 1.0, 2.0,-2.5, 1.5, -12.0];\n\nlet mut derivative = Derivative::new(1, &s[0]).unwrap();\n\n(0..s.len()).for_each(|i| {\n    let der = derivative.next(&s[i]);\n    assert_eq!(der, r[i]);\n});\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[`Integral`](crate::methods::Integral), [`Rate of Change`](crate::methods::RateOfChange), [`Momentum`](crate::methods::Momentum)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/derivative.rs"
+  },
+  {
+    "id": "method.ema",
+    "symbol": "EMA",
+    "module": "ema",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Exponential Moving Average](https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::EMA;\n\n// EMA of length=3\nlet mut ema = EMA::new(3, &3.0).unwrap();\n\nema.next(&3.0);\nema.next(&6.0);\n\nassert_eq!(ema.next(&9.0), 6.75);\nassert_eq!(ema.next(&12.0), 9.375);\n```\n# Performance\n\nO(1)\n\n# See also\n\n[DMA], [DEMA], [TMA], [TEMA], [RMA](crate::methods::RMA)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/ema.rs"
+  },
+  {
+    "id": "method.dma",
+    "symbol": "DMA",
+    "module": "ema",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Simple shortcut for [EMA] over [EMA]\n\n# See also\n\n[EMA], [DEMA], [TMA], [TEMA], [RMA](crate::methods::RMA)",
+    "source": "crates/roze-ta/src/methods/ema.rs"
+  },
+  {
+    "id": "method.tma",
+    "symbol": "TMA",
+    "module": "ema",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Simple shortcut for [EMA] over [EMA] over [EMA] (or [EMA] over [DMA], or [DMA] over [EMA])\n\n# See also\n\n[EMA], [DMA], [DEMA], [TEMA], [RMA](crate::methods::RMA)",
+    "source": "crates/roze-ta/src/methods/ema.rs"
+  },
+  {
+    "id": "method.dema",
+    "symbol": "DEMA",
+    "module": "ema",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Double Exponential Moving Average](https://en.wikipedia.org/wiki/Double_exponential_moving_average) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > 0\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::DEMA;\n\n// DEMA of length=3\nlet mut dema = DEMA::new(3, &1.0).unwrap();\n\ndema.next(&1.0);\ndema.next(&2.0);\n\nassert_eq!(dema.next(&3.0), 2.75);\nassert_eq!(dema.next(&4.0), 3.8125);\n```\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n\n# See also\n\n[EMA], [DMA], [TMA], [TEMA], [RMA](crate::methods::RMA)",
+    "source": "crates/roze-ta/src/methods/ema.rs"
+  },
+  {
+    "id": "method.tema",
+    "symbol": "TEMA",
+    "module": "ema",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Triple Exponential Moving Average](https://en.wikipedia.org/wiki/Triple_exponential_moving_average) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > 0\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::TEMA;\n\n// TEMA of length=3\nlet mut tema = TEMA::new(3, &1.0).unwrap();\n\ntema.next(&1.0);\ntema.next(&2.0);\n\nassert_eq!(tema.next(&3.0), 2.9375);\nassert_eq!(tema.next(&4.0), 4.0);\n```\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n\n# See also\n\n[EMA], [DMA], [DEMA], [TMA], [RMA](crate::methods::RMA)",
+    "source": "crates/roze-ta/src/methods/ema.rs"
+  },
+  {
+    "id": "method.heikin_ashi",
+    "symbol": "HeikinAshi",
+    "module": "heikin_ashi",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "bars"
+    ],
+    "params_type": "()",
+    "output_type": "Candle",
+    "documentation": "Converts default `OHLCV`s into [Heikin Ashi](https://en.wikipedia.org/wiki/Candlestick_chart#Heikin-Ashi_candlesticks) `OHLCV`s",
+    "source": "crates/roze-ta/src/methods/heikin_ashi.rs"
+  },
+  {
+    "id": "method.highest_lowest_delta",
+    "symbol": "HighestLowestDelta",
+    "module": "highest_lowest",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Calculates absolute difference between highest and lowest values over the last `length` values for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\nOutput value is always >= `0.0`\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::HighestLowestDelta;\n\n\nlet values = [1.0, 2.0, 3.0, 2.0, 1.0, 0.5, 2.0, 3.0];\nlet r      = [0.0, 1.0, 2.0, 1.0, 2.0, 1.5, 1.5, 2.5];\nlet mut hld = HighestLowestDelta::new(3, &values[0]).unwrap();\n\n(0..values.len()).for_each(|i| {\n    let v = hld.next(&values[i]);\n    assert_eq!(v, r[i]);\n});\n```\n\n# Performance\n\nO(`length`)\n\nThis method is relatively very slow compare to the other methods.\n\n# See also\n\n[`Highest`], [`Lowest`], [`HighestIndex`], [`LowestIndex`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`HighestIndex`]: crate::methods::HighestIndex\n[`LowestIndex`]: crate::methods::LowestIndex",
+    "source": "crates/roze-ta/src/methods/highest_lowest.rs"
+  },
+  {
+    "id": "method.highest",
+    "symbol": "Highest",
+    "module": "highest_lowest",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Calculates absolute difference between highest and lowest values over the last `length` values for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\nOutput value is always >= `0.0`\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::HighestLowestDelta;\n\n\nlet values = [1.0, 2.0, 3.0, 2.0, 1.0, 0.5, 2.0, 3.0];\nlet r      = [0.0, 1.0, 2.0, 1.0, 2.0, 1.5, 1.5, 2.5];\nlet mut hld = HighestLowestDelta::new(3, &values[0]).unwrap();\n\n(0..values.len()).for_each(|i| {\n    let v = hld.next(&values[i]);\n    assert_eq!(v, r[i]);\n});\n```\n\n# Performance\n\nO(`length`)\n\nThis method is relatively very slow compare to the other methods.\n\n# See also\n\n[`Highest`], [`Lowest`], [`HighestIndex`], [`LowestIndex`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`HighestIndex`]: crate::methods::HighestIndex\n[`LowestIndex`]: crate::methods::LowestIndex",
+    "source": "crates/roze-ta/src/methods/highest_lowest.rs"
+  },
+  {
+    "id": "method.lowest",
+    "symbol": "Lowest",
+    "module": "highest_lowest",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Returns lowest value over the last `length` values for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > 0\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::Lowest;\n\nlet values = [1.0, 2.0, 3.0, 2.0, 1.0, 0.5, 2.0, 3.0];\nlet r      = [1.0, 1.0, 1.0, 2.0, 1.0, 0.5, 0.5, 0.5];\n\nlet mut lowest = Lowest::new(3, &values[0]).unwrap();\n\n(0..values.len()).for_each(|i| {\n    let v = lowest.next(&values[i]);\n    assert_eq!(v, r[i]);\n});\n```\n\n# Performance\n\nO(`length`)\n\nThis method is relatively slow compare to the other methods.\n\n# See also\n\n[`HighestLowestDelta`], [`Highest`], [`HighestIndex`], [`LowestIndex`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`HighestIndex`]: crate::methods::HighestIndex\n[`LowestIndex`]: crate::methods::LowestIndex",
+    "source": "crates/roze-ta/src/methods/highest_lowest.rs"
+  },
+  {
+    "id": "method.highest_index",
+    "symbol": "HighestIndex",
+    "module": "highest_lowest_index",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "PeriodType",
+    "documentation": "Returns highest value index over the last `length` values for timeseries of type [`ValueType`]\n\nIf period has more than one maximum values, then returns the index of the newest value (e.g. the smallest index)\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`PeriodType`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::HighestIndex;\n\nlet values = [1.0, 2.0, 3.0, 2.0, 1.0, 0.5, 2.0, 3.0];\nlet r      = [ 0,   0,   0,   1,   2,   2,   0,   0 ];\n\nlet mut highest_index = HighestIndex::new(3, &values[0]).unwrap();\n\n(0..values.len()).for_each(|i| {\n    let v = highest_index.next(&values[i]);\n    assert_eq!(v, r[i]);\n});\n```\n\n# Performance\n\nO(`length`)\n\nThis method is relatively slow compare to the other methods.\n\n# See also\n\n[`LowestIndex`], [`Highest`], [`Lowest`], [`HighestLowestDelta`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`Highest`]: crate::methods::Highest\n[`Lowest`]: crate::methods::Lowest\n[`HighestLowestDelta`]: crate::methods::HighestLowestDelta",
+    "source": "crates/roze-ta/src/methods/highest_lowest_index.rs"
+  },
+  {
+    "id": "method.lowest_index",
+    "symbol": "LowestIndex",
+    "module": "highest_lowest_index",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "PeriodType",
+    "documentation": "Returns lowest value index over the last `length` values for timeseries of type [`ValueType`]\n\nIf period has more than one minimum values, then returns the index of the newest value (e.g. the smallest index)\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > 0\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`PeriodType`]\n\n# Examples\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::LowestIndex;\n\nlet values = [1.0, 2.0, 3.0, 2.0, 1.0, 0.5, 2.0, 3.0];\nlet r      = [ 0,   1,   2,   0,   0,   0,   1,   2 ];\n\nlet mut lowest_index = LowestIndex::new(3, &values[0]).unwrap();\n\n(0..values.len()).for_each(|i| {\n    let v = lowest_index.next(&values[i]);\n    assert_eq!(v, r[i]);\n});\n```\n\n# Performance\n\nO(`length`)\n\nThis method is relatively slow compare to the other methods.\n\n# See also\n\n[`HighestIndex`], [`Highest`], [`Lowest`], [`HighestLowestDelta`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`Highest`]: crate::methods::Highest\n[`Lowest`]: crate::methods::Lowest\n[`HighestLowestDelta`]: crate::methods::HighestLowestDelta",
+    "source": "crates/roze-ta/src/methods/highest_lowest_index.rs"
+  },
+  {
+    "id": "method.hma",
+    "symbol": "HMA",
+    "module": "hma",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Hull Moving Average](https://www.tradingview.com/scripts/hullma/) for last `length` values for timeseries of type [`ValueType`]\n\nHMA = [`WMA`] from (2*[`WMA`] over `length`/`2` − [`WMA`] over `length`) over sqrt(`length`))\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `1`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::HMA;\nuse roze_ta::helpers::RandomCandles;\n\nlet mut candles = RandomCandles::default();\n\nlet mut hma = HMA::new(5, &candles.first().close).unwrap();\n\ncandles.take(5).enumerate().for_each(|(index, candle)| {\n    println!(\"HMA at #{} is {}\", index, hma.next(&candle.close));\n});\n\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[Weighted Moving Average][`WMA`]\n\n[`WMA`]: crate::methods::WMA\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/hma.rs"
+  },
+  {
+    "id": "method.integral",
+    "symbol": "Integral",
+    "module": "integral",
+    "aliases": [
+      "method.sum"
+    ],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Integrates (summarizes) [`ValueType`] values for the given window size `length`\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\nIf `length == 0`, then integrates since the beginning of timeseries\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Integral;\n\n// Integrates over last 3 values\nlet mut integral = Integral::new(3, &1.0).unwrap();\n\nintegral.next(&1.0);\nintegral.next(&2.0);\nassert_eq!(integral.next(&3.0), 6.0); // 1 + 2 + 3\nassert_eq!(integral.next(&4.0), 9.0); // 2 + 3 + 4\nassert_eq!(integral.next(&5.0), 12.0); // 3 + 4 + 5\n```\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Integral;\n\n// Integrates since the beginning\nlet mut integral = Integral::new(0, &1.0).unwrap(); // same as Integral::default()\n\nintegral.next(&1.0);\nintegral.next(&2.0);\nassert_eq!(integral.next(&3.0), 6.0); // 1 + 2 + 3\nassert_eq!(integral.next(&4.0), 10.0); // 1 + 2 + 3 + 4\nassert_eq!(integral.next(&5.0), 15.0); // 1 + 2 + 3 + 4 + 5\n```\n\n### Integral is opposite method for Derivative\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::{Integral, Derivative};\n\nlet s = [1.0, 2.0, 3.0, 3.0, 2.5, 3.5, 5.0];\nlet mut integral = Integral::default();\nlet mut derivative = Derivative::new(1, &s[0]).unwrap();\n\n(&s).iter().for_each(|v| {\n    let integration_constant = s[0];\n    let der = derivative.next(v);\n    let integr = integral.next(&der) + integration_constant;\n\n    assert_eq!(integr, *v);\n});\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[Derivative](crate::methods::Derivative)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/integral.rs"
+  },
+  {
+    "id": "method.lin_reg",
+    "symbol": "LinReg",
+    "module": "lin_reg",
+    "aliases": [
+      "method.lsma"
+    ],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Linear regression](https://en.wikipedia.org/wiki/Linear_regression) moving average for last `length` values of timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `1`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/lin_reg.rs"
+  },
+  {
+    "id": "method.mean_abs_dev",
+    "symbol": "MeanAbsDev",
+    "module": "mean_abs_dev",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Mean absolute deviation](https://en.wikipedia.org/wiki/Average_absolute_deviation) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(`length`)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/mean_abs_dev.rs"
+  },
+  {
+    "id": "method.median_abs_dev",
+    "symbol": "MedianAbsDev",
+    "module": "median_abs_dev",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Median absolute deviation](https://en.wikipedia.org/wiki/Average_absolute_deviation) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `1`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(`length`)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/median_abs_dev.rs"
+  },
+  {
+    "id": "method.momentum",
+    "symbol": "Momentum",
+    "module": "momentum",
+    "aliases": [
+      "method.change",
+      "method.mtm"
+    ],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Momentum](https://en.wikipedia.org/wiki/Momentum_(technical_analysis)) calculates difference between current\nvalue and n-th value back, where n = `length`\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Momentum;\n\nlet mut change = Momentum::new(3, &1.0).unwrap(); // a.k.a. Change => let mut change = Change::new(3);\nchange.next(&1.0);\nchange.next(&2.0);\nassert_eq!(change.next(&3.0), 2.0);\nassert_eq!(change.next(&4.0), 3.0);\nassert_eq!(change.next(&2.0), 0.0);\n```\n\n### At `length`=1 Momentum is the same as Derivative with `length`=1\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Momentum;\nuse roze_ta::methods::Derivative;\n\nlet mut change = Momentum::new(1, &1.0).unwrap();\nlet mut derivative = Derivative::new(1, &1.0).unwrap();\nchange.next(&1.0); derivative.next(&1.0);\nchange.next(&2.0); derivative.next(&2.0);\nassert_eq!(change.next(&3.0), derivative.next(&3.0));\nassert_eq!(change.next(&4.0), derivative.next(&4.0));\nassert_eq!(change.next(&2.0), derivative.next(&2.0));\n```\n\n# Performance\n\nO(1)\n\n# See Also\n\n[`Rate of Change`](crate::methods::RateOfChange), [`Derivative`](crate::methods::Derivative)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n",
+    "source": "crates/roze-ta/src/methods/momentum.rs"
+  },
+  {
+    "id": "method.past",
+    "symbol": "Past",
+    "module": "past",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars",
+      "pairs",
+      "bars",
+      "values"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "T",
+    "documentation": "Moves timeseries by `length` items forward\n\nIt's just a simple method-like wrapper for [`Window<T>`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is any `T: Copy + std::fmt::Debug`\n\n# Output type\n\nOutput type is the same as input type\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Past;\n\n// Move of length=3\nlet mut past = Past::new(3, &1.0).unwrap();\n\npast.next(&1.0);\npast.next(&2.0);\npast.next(&3.0);\n\nassert_eq!(past.next(&4.0), 1.0);\nassert_eq!(past.next(&5.0), 2.0);\nassert_eq!(past.next(&6.0), 3.0);\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[`Window<T>`]\n\n[`Window<T>`]: crate::core::Window\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/past.rs"
+  },
+  {
+    "id": "method.rate_of_change",
+    "symbol": "RateOfChange",
+    "module": "rate_of_change",
+    "aliases": [
+      "method.roc"
+    ],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Rate of change](https://en.wikipedia.org/wiki/Momentum_(technical_analysis)) calculates relative difference between current\nvalue and n-th value back, where n = `length`\n\n`ROC` = (`value` - `n_th_value`) / `n_th_value`\n\n`ROC` = [`Momentum`] / `n_th_value`\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\nInput value should always be greater than `0.0.` (`value` > `0.0`)\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(1)\n\n# See Also\n\n[`Momentum`], [`Derivative`](crate::methods::Derivative)\n\n[`Momentum`]: crate::methods::Momentum\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/rate_of_change.rs"
+  },
+  {
+    "id": "method.renko",
+    "symbol": "Renko",
+    "module": "renko",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "bars"
+    ],
+    "params_type": "(ValueType, Source)",
+    "output_type": "RenkoOutput",
+    "documentation": "Converts timeseries to [Renko](https://en.wikipedia.org/wiki/Renko_chart) timeseries\n\nRenko is very different from a simple timeseries. On each step it may generate any amount of blocks or not generate it at all.\nThat's why it needs to be implemented throw three different structures:\n\n* [`Renko`] method itself.\n\nWhen call [`Method::next`] on `Renko`, it always returns `RenkoOutput`.\n\n* [`RenkoOutput`] which is `Renko`'s method output type.\n\nIt implements an [`Iterator`] trait for generating [`RenkoBlock`]s after each step of calling [`Method::next`] on [`Renko`].\n`RenkoOutput` may produce any amount of `RenkoBlock`s or may not produce it at all.\n\n* [`RenkoBlock`] is final entity of Renko chart.\n\nIt has `open` and `close` values which are similar to corresponding [`OHLCV`]'s values.\n\nSo the final workflow is like that:\n\n1. Call [`Renko`]'s [`Method::next`] on some [`ValueType`] and get [`RenkoOutput`].\n2. Iterate over taken [`RenkoOutput`] to get some (or none) [`RenkoBlock`]s.\n3. Use produced [`RenkoBlock`]s on your own.\n\n# Parameters\n\nHas a tuple of 2 parameters \\(`size`: [`ValueType`], `source`: [`Source`]\\)\n\n* `size`: [`ValueType`]. Represents relative block size.\n\n`size` must be in range \\(`0.0`; `1.0`\\)\n\n* `source`: [`Source`]. Represents which value of input's OHLCV it will use.\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::core::Source;\nuse roze_ta::methods::Renko;\nlet first_timeseries_value = Candle { close: 123.456, ..Candle::default() };\nlet renko = Renko::new((0.01, Source::Close), &first_timeseries_value); // creates a Renko method with relative block size of 1%.\n```\n\n# Input type\n\nInput type is reference to [`OHLCV`]\n\n# Output type\n\nInput type is [`RenkoOutput`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::core::Source;\nuse roze_ta::methods::Renko;\n\n// Here we just creating a `Vec` of `OHLCV`s with only `close` value inside\nlet inputs = (&[100.0, 100.5, 101.506, 105.0, 102.0, 101.4, 100.0])\n    .iter()\n    .map(|&v| Candle {\n        close: v,\n        ..Candle::default()\n    })\n    .collect::<Vec<_>>();\nlet mut renko = Renko::new((0.01, Source::Close), &inputs[0]).unwrap(); // renko with relative block size of 1%\n\nassert!(renko.next(&inputs[0]).is_empty());\nassert!(renko.next(&inputs[1]).is_empty());\nassert_eq!(renko.next(&inputs[2]).len(), 1);\nlet blocks = renko.next(&inputs[3]);\nassert_eq!(blocks.len(), 3);\nblocks.for_each(|block| { println!(\"{:?}\", &block); });\nassert_eq!(renko.next(&inputs[4]).len(), 1);\nassert_eq!(renko.next(&inputs[5]).len(), 1);\nassert_eq!(renko.next(&inputs[6]).len(), 1);\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n* [`HeikinAshi`](crate::methods::HeikinAshi)\n\n[`ValueType`]: crate::core::ValueType\n[`Source`']: crate::core::Source\n[`OHLCV`]: crate::core::OHLCV",
+    "source": "crates/roze-ta/src/methods/renko.rs"
+  },
+  {
+    "id": "method.reversal_signal",
+    "symbol": "ReversalSignal",
+    "module": "reversal",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "(PeriodType, PeriodType)",
+    "output_type": "Action",
+    "documentation": "Searches for reversal points over last `left`+`right`+1 values of type [`ValueType`]\n\n# Parameters\n\nHas a tuple of 2 parameters (`left`: [`PeriodType`], `right`: [`PeriodType`])\n\n`left` should be > `0` and `right` should be > `0`\n\nThere is an additional restriction on parameters: `left`+`right`+1 should be <= [`PeriodType`]`::MAX`.\nSo if your [`PeriodType`] is default `u8`, then `left`+`right`+1 should be <= `255`\n\n[Read more about `PeriodType`][`PeriodType`]\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`Action`]\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::ReversalSignal;\n\nlet s = [1.0, 2.0, 3.0, 2.0, 1.0, 1.0, 2.0];\nlet r = [ 0,   0,   1,   0,   -1,  0,   0 ];\n\nlet mut pivot = ReversalSignal::new(2, 2, &s[0]).unwrap();\nlet r2: Vec<i8> = s.iter().map(|v| pivot.next(v).analog()).collect();\n\nassert_eq!(r2, r);\n```\n\n# Performance\n\nO(`left`+`right`)\n\n# See also\n\n[`UpperReversalSignal`], [`LowerReversalSignal`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`Action`]: crate::core::Action",
+    "source": "crates/roze-ta/src/methods/reversal.rs"
+  },
+  {
+    "id": "method.upper_reversal_signal",
+    "symbol": "UpperReversalSignal",
+    "module": "reversal",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "(PeriodType, PeriodType)",
+    "output_type": "Action",
+    "documentation": "Searches for upper reversal points over last `left`+`right`+1 values of type [`ValueType`]\n\n# Parameters\n\nHas a tuple of 2 parameters (`left`: [`PeriodType`], `right`: [`PeriodType`])\n\n`left` should be > 0 and `right` should be > 0\n\nThere is an additional restriction on parameters: `left`+`right`+1 should be <= [`PeriodType`]`::MAX`.\nSo if your [`PeriodType`] is default `u8`, then `left`+`right`+1 should be <= 255\n\n[Read more about `PeriodType`][`PeriodType`]\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`Action`]\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::UpperReversalSignal;\n\nlet s = [1.0, 2.0, 3.0, 2.0, 1.0, 1.0, 2.0];\nlet r = [ 0,   0,   0,   0,   1,   0,   0 ];\n\nlet mut pivot = UpperReversalSignal::new(2, 2, &s[0]).unwrap();\nlet r2: Vec<i8> = s.iter().map(|v| pivot.next(v).analog()).collect();\n\nassert_eq!(r2, r);\n```\n\n# Performance\n\nO(`left`+`right`)\n\n# See also\n\n[`ReversalSignal`], [`LowerReversalSignal`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`Action`]: crate::core::Action\n",
+    "source": "crates/roze-ta/src/methods/reversal.rs"
+  },
+  {
+    "id": "method.lower_reversal_signal",
+    "symbol": "LowerReversalSignal",
+    "module": "reversal",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "(PeriodType, PeriodType)",
+    "output_type": "Action",
+    "documentation": "Searches for lower reversal points over last `left`+`right`+1 values of type [`ValueType`]\n\n# Parameters\n\nHas a tuple of 2 parameters \\(`left`: [`PeriodType`], `right`: [`PeriodType`]\\)\n\n`left` should be > 0 and `right` should be > 0\n\nThere is an additional restriction on parameters: `left`+`right`+1 should be <= [`PeriodType`]`::MAX`.\nSo if your [`PeriodType`] is default `u8`, then `left`+`right`+1 should be <= 255\n\n[Read more about `PeriodType`][`PeriodType`]\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`Action`]\n\n```\nuse roze_ta::core::Method;\nuse roze_ta::methods::UpperReversalSignal;\n\nlet s = [1.0, 2.0, 3.0, 2.0, 1.0, 1.0, 2.0];\nlet r = [ 0,   0,   0,   0,   1,   0,   0 ];\n\nlet mut pivot = UpperReversalSignal::new(2, 2, &s[0]).unwrap();\nlet r2: Vec<i8> = s.iter().map(|v| pivot.next(v).analog()).collect();\n\nassert_eq!(r2, r);\n```\n\n# Performance\n\nO(`left`+`right`)\n\n# See also\n\n[`ReversalSignal`], [`UpperReversalSignal`]\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n[`Action`]: crate::core::Action\n",
+    "source": "crates/roze-ta/src/methods/reversal.rs"
+  },
+  {
+    "id": "method.rma",
+    "symbol": "RMA",
+    "module": "rma",
+    "aliases": [
+      "method.mma",
+      "method.smma"
+    ],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Running Moving Average](https://en.wikipedia.org/wiki/Moving_average#Modified_moving_average) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::RMA;\n\n// RMA of length=3\nlet mut rma = RMA::new(3, &1.0).unwrap();\n\nrma.next(&1.0);\nrma.next(&2.0);\n\nassert!((rma.next(&3.0)-1.8888888).abs() < 1e-5);\nassert!((rma.next(&4.0)-2.5925925925).abs() < 1e-5);\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[`EMA`](crate::methods::EMA)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n",
+    "source": "crates/roze-ta/src/methods/rma.rs"
+  },
+  {
+    "id": "method.sma",
+    "symbol": "SMA",
+    "module": "sma",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Simple Moving Average](https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::SMA;\n\n// SMA of length=3\nlet mut sma = SMA::new(3, &1.0).unwrap();\n\nsma.next(&1.0);\nsma.next(&2.0);\n\nassert_eq!(sma.next(&3.0), 2.0);\nassert_eq!(sma.next(&4.0), 3.0);\n```\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/sma.rs"
+  },
+  {
+    "id": "method.smm",
+    "symbol": "SMM",
+    "module": "smm",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "\n[Simple Moving Median](https://en.wikipedia.org/wiki/Moving_average#Moving_median) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::SMM;\n\n// SMM of length=3\nlet mut smm = SMM::new(3, &1.0).unwrap();\n\nsmm.next(&1.0);\nsmm.next(&2.0);\n\nassert_eq!(smm.next(&3.0), 2.0);\nassert_eq!(smm.next(&100.0), 3.0);\n```\n\n# Performance\n\nO(log(`length`))\n\nThis method is relatively slower compare to the most of the other methods.\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/smm.rs"
+  },
+  {
+    "id": "method.st_dev",
+    "symbol": "StDev",
+    "module": "st_dev",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Moving [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation) over the window of size `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `1`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::StDev;\n\n// StDev over the window with length=3\nlet mut stdev = StDev::new(3, &1.0).unwrap();\n\nstdev.next(&1.0);\nstdev.next(&2.0);\n\nassert_eq!(stdev.next(&3.0), 1.0);\nassert_eq!(stdev.next(&4.0), 1.0);\n```\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/st_dev.rs"
+  },
+  {
+    "id": "method.swma",
+    "symbol": "SWMA",
+    "module": "swma",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Symmetrically Weighted Moving Average of specified `length` for timeseries of [`ValueType`].\n\nF.e. if `length = 4`, then weights are: `[ 1.0, 2.0, 2.0, 1.0 ]`.\n\nIf `length = 5`, then weights are: `[ 1.0, 2.0, 3.0, 2.0, 1.0 ]`.\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(1)\n\n# See also\n\n[`WMA`](crate::methods::WMA)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType\n",
+    "source": "crates/roze-ta/src/methods/swma.rs"
+  },
+  {
+    "id": "method.tr",
+    "symbol": "TR",
+    "module": "tr",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "bars"
+    ],
+    "params_type": "()",
+    "output_type": "ValueType",
+    "documentation": "[True Range](https://en.wikipedia.org/wiki/Average_true_range)\n\n# Parameters\n\nHas no parameters\n\n# Input type\n\nInput type is [`OHLCV`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Performance\n\nO(1)\n\n# See also\n\n[`OHLCV::tr`]\n\n[`OHLCV::tr_close`]\n\n[`ValueType`]: crate::core::ValueType\n[`OHLCV`]: crate::core::OHLCV\n[`OHLCV::tr`]: crate::core::OHLCV::tr\n[`OHLCV::tr_close`]: crate::core::OHLCV::tr_close",
+    "source": "crates/roze-ta/src/methods/tr.rs"
+  },
+  {
+    "id": "method.trima",
+    "symbol": "TRIMA",
+    "module": "trima",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Triangular Moving Average of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::TRIMA;\n\n// TRIMA of length=3\nlet mut trima = TRIMA::new(4, &1.0).unwrap();\n\ntrima.next(&1.0);\ntrima.next(&2.0);\n\nassert_eq!(trima.next(&3.0), 1.25);\nassert_eq!(trima.next(&4.0), 1.625);\n```\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/trima.rs"
+  },
+  {
+    "id": "method.tsi",
+    "symbol": "TSI",
+    "module": "tsi",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "(PeriodType, PeriodType)",
+    "output_type": "Self::Input",
+    "documentation": "[True Strength Index](https://en.wikipedia.org/wiki/True_strength_index) of specified `short period` and `long period` for timeseries of type [`ValueType`]\n\n```txt\n         EMA(EMA(momentum_1, long_period), short_period)\nTSI = ------------------------------------------------------\n       EMA(EMA(ABS(momentum_1), long_period), short_period)\n```\n\n# Parameters\n\nTuple of \\(`short_length`, `long_length`\\) \\([`PeriodType`], [`PeriodType`]\\)\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::TSI;\n\n// TSI with short length=3, long length=10\nlet mut tsi = TSI::new(3, 10, &3.0).unwrap();\n\ntsi.next(&3.0);\ntsi.next(&6.0);\n\nprintln!(\"{}\", tsi.next(&9.0));\nprintln!(\"{}\", tsi.next(&12.0));\n```\n\n# Performance\n\nO\\(1\\)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/tsi.rs"
+  },
+  {
+    "id": "method.vidya",
+    "symbol": "Vidya",
+    "module": "vidya",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Variable Index Dynamic Average](https://www.metatrader5.com/en/terminal/help/indicators/trend_indicators/vida) of specified `length` for timeseries of type [`ValueType`]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` must be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::Vidya;\n\n// Vidya with period length=3\nlet mut vidya = Vidya::new(3, &1.0).unwrap();\n\nvidya.next(&3.0);\nvidya.next(&6.0);\n\nprintln!(\"{}\", vidya.next(&9.0));\nprintln!(\"{}\", vidya.next(&12.0));\n```\n\n# Performance\n\nO\\(1\\)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/vidya.rs"
+  },
+  {
+    "id": "method.linear_volatility",
+    "symbol": "LinearVolatility",
+    "module": "volatility",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "Calculate moving linear volatility for last `length` values of type [`ValueType`]\n\nLV = Σ\\[abs([`Derivative`]\\(1\\))\\]\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\nOutput is always positive or `0.0`\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::LinearVolatility;\n\n// volatility over 3 periods\nlet mut vol = LinearVolatility::new(3, &1.0).unwrap();\nvol.next(&1.0);\nvol.next(&2.0);\nassert_eq!(vol.next(&3.0), 2.0);\nassert_eq!(vol.next(&1.0), 4.0);\n```\n\n# Performance\n\nO(1)\n\n[`Derivative`]: crate::methods::Derivative\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/volatility.rs"
+  },
+  {
+    "id": "method.vwma",
+    "symbol": "VWMA",
+    "module": "vwma",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "pairs"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "ValueType",
+    "documentation": "[Volume Weighed Moving Average](https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average) of specified `length`\nfor timeseries of type ([`ValueType`], [`ValueType`]) which represents pair of values (`value`, `volume`)\n\n# Parameters\n\n`length` should be > `0`\n\nHas a single parameter `length`: [`PeriodType`]\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::VWMA;\n\n// VWMA of length=3\nlet mut vwma = VWMA::new(3, &(3.0, 1.0)).unwrap();\n\n// input value is a pair of f64 (value, weight)\nvwma.next(&(3.0, 1.0));\nvwma.next(&(6.0, 1.0));\n\nassert_eq!(vwma.next(&(9.0, 2.0)), 6.75);\nassert!((vwma.next(&(12.0, 0.5))- 8.571428571428571).abs() < 1e-10);\n```\n\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/vwma.rs"
+  },
+  {
+    "id": "method.wma",
+    "symbol": "WMA",
+    "module": "wma",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Weighted Moving Average](https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average) of specified `length` for timeseries of type [`ValueType`].\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::WMA;\n\n// WMA of length=3\nlet mut wma = WMA::new(3, &3.0).unwrap();\n\nwma.next(&3.0);\nwma.next(&6.0);\n\nassert_eq!(wma.next(&9.0), 7.0);\nassert_eq!(wma.next(&12.0), 10.0);\n```\n\n# Performance\n\nO(1)\n\n# See also\n\n[Volume Weighted Moving Average](crate::methods::VWMA) for computing weighted moving average with custom weights over every value\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/wma.rs"
+  },
+  {
+    "id": "method.wsma",
+    "symbol": "WSMA",
+    "module": "wsma",
+    "aliases": [],
+    "kind": "method",
+    "inputs": [
+      "scalars"
+    ],
+    "params_type": "PeriodType",
+    "output_type": "Self::Input",
+    "documentation": "[Wilder’s Smoothing Average](http://etfhq.com/blog/2010/08/19/wilders-smoothing/) of specified `length` for timeseries of type [`ValueType`]\n\nIt is actually a simple EMA over `length*2-1` periods\n\n# Parameters\n\nHas a single parameter `length`: [`PeriodType`]\n\n`length` should be > `0` and < `PeriodType::MAX`/`2`\n\n# Input type\n\nInput type is [`ValueType`]\n\n# Output type\n\nOutput type is [`ValueType`]\n\n# Examples\n\n```\nuse roze_ta::prelude::*;\nuse roze_ta::methods::WSMA;\n\n// WSMA of length=3\nlet mut wsma = WSMA::new(4, &2.0).unwrap();\n\nwsma.next(&3.0);\nwsma.next(&6.0);\n\nassert_eq!(wsma.next(&9.0), 4.640625);\nassert_eq!(wsma.next(&12.0), 6.48046875);\n```\n# Performance\n\nO(1)\n\n[`ValueType`]: crate::core::ValueType\n[`PeriodType`]: crate::core::PeriodType",
+    "source": "crates/roze-ta/src/methods/wsma.rs"
+  }
+]

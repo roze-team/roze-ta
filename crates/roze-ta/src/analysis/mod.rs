@@ -4,6 +4,7 @@ pub mod bootstrap;
 pub mod calibration;
 mod distribution;
 pub mod evaluation;
+pub mod portfolio;
 mod probability;
 mod statistics;
 pub mod temporal;
@@ -85,6 +86,9 @@ pub enum Operation {
     InferBeta {
         artifact: Box<BetaArtifact>,
     },
+    PortfolioRisk {
+        spec: portfolio::PortfolioSpec,
+    },
     Performance {
         spec: evaluation::PerformanceSpec,
     },
@@ -153,6 +157,7 @@ pub enum Output {
     Distribution(DistributionResult),
     Probability(Box<ProbabilityResult>),
     BetaInference(BetaInference),
+    PortfolioRisk(Box<portfolio::PortfolioResult>),
     Performance(Box<evaluation::PerformanceResult>),
     TradeSummary(evaluation::TradeResult),
     FactorEvaluation(evaluation::FactorResult),
@@ -319,6 +324,14 @@ pub fn calculate_controlled(
                 infer_beta(artifact, request.as_of_ms)?;
                 (128, 16)
             }
+            Operation::PortfolioRisk { spec } => {
+                spec.validate(request)?;
+                let m = spec.assets.len();
+                (
+                    spec.observations.len() * (m * m + m * 4) + spec.scenarios.len() * m,
+                    m * m * 2 + spec.scenarios.len() * (m + 8) + m * 8 + 64,
+                )
+            }
             Operation::Performance { spec } => {
                 spec.validate(request, &points)?;
                 (points.len() * (32 + spec.hac_lags), points.len() * 6 + 256)
@@ -405,6 +418,9 @@ pub fn calculate_controlled(
             Operation::InferBeta { artifact } => {
                 Output::BetaInference(infer_beta(artifact, request.as_of_ms)?)
             }
+            Operation::PortfolioRisk { spec } => Output::PortfolioRisk(Box::new(
+                portfolio::calculate(spec, request.fit_cutoff_ms, &mut checkpoint)?,
+            )),
             Operation::Performance { spec } => Output::Performance(Box::new(
                 evaluation::performance(spec, &points, &mut checkpoint)?,
             )),
@@ -518,6 +534,7 @@ pub fn catalog() -> serde_json::Value {
             {"id":"stat_pair","methods":["pair"],"capability_kind":"statistics","reuses":["stat_corr","stat_beta","stat_linreg"],"data":"aligned_timed_pair","fits":true,"random":false,"online_update":false},
             {"id":"prob_distribution","methods":["distribution"],"capability_kind":"probability","data":"explicit_parameters_or_timed_scalar","fits":false,"random":"only_when_sampling_requested","online_update":false},
             {"id":"prob_beta_binomial","methods":["probability","infer_beta"],"inference_data":"frozen_beta_artifact","capability_kind":"probability","data":"mature_event_intervals","fits":true,"random":false,"online_update":false},
+            {"id":"risk_portfolio","methods":["portfolio_risk"],"capability_kind":"risk_analysis","data":"fixed_exposures_aligned_returns_and_explicit_shocks","method_version":portfolio::VERSION,"fits":true,"random":false,"online_update":false,"execution_authority":false,"max_assets":portfolio::MAX_ASSETS,"max_scenarios":portfolio::MAX_SCENARIOS},
             {"id":"eval_performance","methods":["performance"],"capability_kind":"evaluation","data":"consecutive_net_simple_returns_and_optional_benchmark","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
             {"id":"eval_trades","methods":["trade_summary"],"capability_kind":"evaluation","data":"closed_gross_pnl_and_explicit_costs","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
             {"id":"eval_factor","methods":["factor_evaluation"],"capability_kind":"evaluation","data":"cross_sectional_scores_and_mature_forward_labels","method_version":evaluation::VERSION,"fits":false,"random":false,"online_update":false},
