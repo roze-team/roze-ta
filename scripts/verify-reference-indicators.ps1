@@ -23,10 +23,23 @@ $referenceCatalog = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $pro
 $referenceIds = @($referenceCatalog.entries | ForEach-Object { $_.id })
 if ($expected.Count -ne $actual.Count -or @($actual | Sort-Object -Unique).Count -ne $actual.Count -or (Compare-Object $expected $actual)) { throw 'Source/mapping entries are missing or duplicated' }
 foreach ($row in $mapping.entries) {
-    if ($row.status -notin @('review_pending','implemented_variant','mapped_variant','non_indicator')) { throw 'Unknown mapping status' }
-    if ($row.status -in @('implemented_variant','mapped_variant')) {
+    if ($row.status -notin @('review_pending','implemented_variant','mapped_variant','verified_default_cases','verified_source_cases','verified_causal_cases','non_indicator')) { throw 'Unknown mapping status' }
+    if ($row.status -in @('implemented_variant','mapped_variant','verified_default_cases','verified_source_cases','verified_causal_cases')) {
         if ($row.operation_id -notin $referenceIds -or -not $row.evidence -or -not (Test-Path -LiteralPath (Join-Path $project $row.evidence)) -or -not (Test-Path -LiteralPath (Join-Path $project $row.contract))) { throw 'Mapped entry has no registered operation/contract/evidence' }
         if ($row.status -eq 'mapped_variant' -and $row.compatibility -ne 'cross_library_numeric_parity_not_verified') { throw 'Cross-library availability must not imply numeric parity' }
+        if ($row.status -eq 'verified_default_cases') {
+            $parity = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $project $row.evidence) | ConvertFrom-Json
+            $cases = @($parity.records | Where-Object { $_.name -eq $row.name })
+            if ($row.source -ne 'ta-lib' -or $cases.Count -ne 3 -or @($cases | Where-Object { $_.status -ne 'pass' }).Count -ne 0) { throw 'Default-case acceptance lacks three passing independent references' }
+        }
+        if ($row.status -in @('verified_source_cases','verified_causal_cases')) {
+            $parity = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $project $row.evidence) | ConvertFrom-Json
+            $accepted = @($parity.entries | Where-Object { $_.source -eq $row.source -and $_.name -eq $row.name })
+            if ($accepted.Count -ne 1 -or $accepted[0].operation_id -ne $row.operation_id -or $accepted[0].cases.Count -ne 3 -or @($accepted[0].cases | Where-Object { $_.differences -ne 0 }).Count -ne 0) { throw 'Source acceptance lacks three passing independent cases' }
+            foreach ($fixture in $parity.fixture_sha256.PSObject.Properties) {
+                if ((Get-Sha256 (Join-Path $project $fixture.Name)) -ne $fixture.Value) { throw 'Accepted fixture changed' }
+            }
+        }
     }
     if ($row.status -eq 'non_indicator' -and -not $row.reason) { throw 'Non-indicator classification needs a reason' }
 }

@@ -1,8 +1,10 @@
 //! Versioned, bounded wire access to the maintained reference algorithms.
 //! Explicit typed inputs are checked before consuming any algorithm state.
+mod compat;
 mod extras;
 mod input;
 mod registry;
+mod talib;
 
 use crate::{
     engine::SeriesIdentity,
@@ -389,6 +391,6 @@ pub fn calculate_controlled(
     Ok(
         json!({"schema_version":1,"implementation_version":VERSION,"identity":request.identity,
         "operation":request.operation,"as_of_ms":request.as_of_ms,"input_hash":input_hash,"output_hash":output_hash,
-        "quality_flags":["wickra_formula_variant","source_neutral_value_conventions","timestamps_are_emission_times"],"rows":rows}),
+        "quality_flags":[if request.operation.id.starts_with("compat.") {"source_specific_formula_variant"} else if request.operation.id.starts_with("talib.") {"talib_formula_variant"} else {"wickra_formula_variant"},"source_neutral_value_conventions","timestamps_are_emission_times"],"rows":rows}),
     )
 }

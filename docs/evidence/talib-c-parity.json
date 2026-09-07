@@ -1,0 +1,4231 @@
+{
+  "schema_version": 1,
+  "c_dll_sha256": "df2aa8a65b4438f5902050f603d799035580f3b260205fd89a62e29d2581fc98",
+  "tolerance": {
+    "absolute": 2e-09,
+    "relative": 2e-09
+  },
+  "records": [
+    {
+      "name": "AC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ACCBANDS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ACOS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADOSC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADXR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AO",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "APO",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AROON",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AROONOSC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ASIN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ATAN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ATR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AVGDEV",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AVGPRICE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BBANDS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BETA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BOP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CCI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL2CROWS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3BLACKCROWS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3INSIDE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3LINESTRIKE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3OUTSIDE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3STARSINSOUTH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3WHITESOLDIERS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLABANDONEDBABY",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLADVANCEBLOCK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLBELTHOLD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLBREAKAWAY",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCLOSINGMARUBOZU",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCONCEALBABYSWALL",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCOUNTERATTACK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDARKCLOUDCOVER",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDOJI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDOJISTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDRAGONFLYDOJI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLENGULFING",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLEVENINGDOJISTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLEVENINGSTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLGAPSIDESIDEWHITE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLGRAVESTONEDOJI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHAMMER",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHANGINGMAN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHARAMI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHARAMICROSS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIGHWAVE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIKKAKE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIKKAKEMOD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHOMINGPIGEON",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLIDENTICAL3CROWS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLINNECK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLINVERTEDHAMMER",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLKICKING",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLKICKINGBYLENGTH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLADDERBOTTOM",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLONGLEGGEDDOJI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLONGLINE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMARUBOZU",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMATCHINGLOW",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMATHOLD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMORNINGDOJISTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMORNINGSTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLONNECK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLPIERCING",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLRICKSHAWMAN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLRISEFALL3METHODS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSEPARATINGLINES",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSHOOTINGSTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSHORTLINE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSPINNINGTOP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSTALLEDPATTERN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSTICKSANDWICH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTAKURI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTASUKIGAP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTHRUSTING",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTRISTAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLUNIQUE3RIVER",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLUPSIDEGAP2CROWS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLXSIDEGAP3METHODS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CEIL",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMF",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMO",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMOU",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COPPOCK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CORREL",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COS",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COSH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CUMSUM",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CVI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DEMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DIV",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DONCHIAN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DPO",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EFI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ER",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ERI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EXP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FLOOR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FOSC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FRACTAL",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_DCPERIOD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_DCPHASE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_PHASOR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_SINE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_TRENDLINE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_TRENDMODE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "IMI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KAMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KDJ",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_ANGLE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_INTERCEPT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_SLOPE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LOG10",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACDEXT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACDFIX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MARKETFI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MASSI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAVP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAXINDEX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MEDPRICE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MFI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIDPOINT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIDPRICE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MININDEX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINMAX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINMAXINDEX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINUS_DI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINUS_DM",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MOM",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MULT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "NATR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "NVI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "OBV",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PERCENTILE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PERCENTRANK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PLUS_DI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PLUS_DM",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PPO",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVO",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "QSTICK",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCR100",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RSI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RVI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RVOL",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SAREXT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SIN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SINH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SMI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SQRT",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STDDEV",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCHF",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCHRSI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUB",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUM",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUPERTREND",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "T3",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TAN",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TANH",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TEMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRANGE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRIMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRIX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TSF",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TSI",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TYPPRICE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ULTOSC",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VAR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VHF",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VORTEX",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VWAP",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VWMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WAD",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WCLPRICE",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WILLR",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ZLEMA",
+      "case": "mixed",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ACCBANDS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ACOS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADOSC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADXR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AO",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "APO",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AROON",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AROONOSC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ASIN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ATAN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ATR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AVGDEV",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AVGPRICE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BBANDS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BETA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BOP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CCI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL2CROWS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3BLACKCROWS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3INSIDE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3LINESTRIKE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3OUTSIDE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3STARSINSOUTH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3WHITESOLDIERS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLABANDONEDBABY",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLADVANCEBLOCK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLBELTHOLD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLBREAKAWAY",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCLOSINGMARUBOZU",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCONCEALBABYSWALL",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCOUNTERATTACK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDARKCLOUDCOVER",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDOJI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDOJISTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDRAGONFLYDOJI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLENGULFING",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLEVENINGDOJISTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLEVENINGSTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLGAPSIDESIDEWHITE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLGRAVESTONEDOJI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHAMMER",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHANGINGMAN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHARAMI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHARAMICROSS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIGHWAVE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIKKAKE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIKKAKEMOD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHOMINGPIGEON",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLIDENTICAL3CROWS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLINNECK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLINVERTEDHAMMER",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLKICKING",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLKICKINGBYLENGTH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLADDERBOTTOM",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLONGLEGGEDDOJI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLONGLINE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMARUBOZU",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMATCHINGLOW",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMATHOLD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMORNINGDOJISTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMORNINGSTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLONNECK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLPIERCING",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLRICKSHAWMAN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLRISEFALL3METHODS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSEPARATINGLINES",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSHOOTINGSTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSHORTLINE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSPINNINGTOP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSTALLEDPATTERN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSTICKSANDWICH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTAKURI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTASUKIGAP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTHRUSTING",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTRISTAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLUNIQUE3RIVER",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLUPSIDEGAP2CROWS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLXSIDEGAP3METHODS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CEIL",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMF",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMO",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMOU",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COPPOCK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CORREL",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COS",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COSH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CUMSUM",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CVI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DEMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DIV",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DONCHIAN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DPO",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EFI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ER",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ERI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EXP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FLOOR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FOSC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FRACTAL",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_DCPERIOD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_DCPHASE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_PHASOR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_SINE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_TRENDLINE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_TRENDMODE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "IMI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KAMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KDJ",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_ANGLE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_INTERCEPT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_SLOPE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LOG10",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACDEXT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACDFIX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MARKETFI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MASSI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAVP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAXINDEX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MEDPRICE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MFI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIDPOINT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIDPRICE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MININDEX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINMAX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINMAXINDEX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINUS_DI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINUS_DM",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MOM",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MULT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "NATR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "NVI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "OBV",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PERCENTILE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PERCENTRANK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PLUS_DI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PLUS_DM",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PPO",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVO",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "QSTICK",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCR100",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RSI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RVI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RVOL",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SAREXT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SIN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SINH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SMI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SQRT",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STDDEV",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCHF",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCHRSI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUB",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUM",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUPERTREND",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "T3",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TAN",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TANH",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TEMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRANGE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRIMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRIX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TSF",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TSI",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TYPPRICE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ULTOSC",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VAR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VHF",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VORTEX",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VWAP",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VWMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WAD",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WCLPRICE",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WILLR",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ZLEMA",
+      "case": "flat",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ACCBANDS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ACOS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADOSC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ADXR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AO",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "APO",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AROON",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AROONOSC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ASIN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ATAN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ATR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AVGDEV",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "AVGPRICE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BBANDS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BETA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "BOP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CCI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL2CROWS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3BLACKCROWS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3INSIDE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3LINESTRIKE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3OUTSIDE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3STARSINSOUTH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDL3WHITESOLDIERS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLABANDONEDBABY",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLADVANCEBLOCK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLBELTHOLD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLBREAKAWAY",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCLOSINGMARUBOZU",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCONCEALBABYSWALL",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLCOUNTERATTACK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDARKCLOUDCOVER",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDOJI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDOJISTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLDRAGONFLYDOJI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLENGULFING",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLEVENINGDOJISTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLEVENINGSTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLGAPSIDESIDEWHITE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLGRAVESTONEDOJI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHAMMER",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHANGINGMAN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHARAMI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHARAMICROSS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIGHWAVE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIKKAKE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHIKKAKEMOD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLHOMINGPIGEON",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLIDENTICAL3CROWS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLINNECK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLINVERTEDHAMMER",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLKICKING",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLKICKINGBYLENGTH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLADDERBOTTOM",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLONGLEGGEDDOJI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLLONGLINE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMARUBOZU",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMATCHINGLOW",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMATHOLD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMORNINGDOJISTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLMORNINGSTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLONNECK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLPIERCING",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLRICKSHAWMAN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLRISEFALL3METHODS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSEPARATINGLINES",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSHOOTINGSTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSHORTLINE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSPINNINGTOP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSTALLEDPATTERN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLSTICKSANDWICH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTAKURI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTASUKIGAP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTHRUSTING",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLTRISTAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLUNIQUE3RIVER",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLUPSIDEGAP2CROWS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CDLXSIDEGAP3METHODS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CEIL",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMF",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMO",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CMOU",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COPPOCK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CORREL",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COS",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "COSH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CUMSUM",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "CVI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DEMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DIV",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DONCHIAN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DPO",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "DX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EFI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ER",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ERI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "EXP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FLOOR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FOSC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "FRACTAL",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_DCPERIOD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_DCPHASE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_PHASOR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_SINE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_TRENDLINE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "HT_TRENDMODE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "IMI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KAMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "KDJ",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_ANGLE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_INTERCEPT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LINEARREG_SLOPE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "LOG10",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACDEXT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MACDFIX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MARKETFI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MASSI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAVP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MAXINDEX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MEDPRICE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MFI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIDPOINT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIDPRICE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MIN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MININDEX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINMAX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINMAXINDEX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINUS_DI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MINUS_DM",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MOM",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "MULT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "NATR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "NVI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "OBV",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PERCENTILE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PERCENTRANK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PLUS_DI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PLUS_DM",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PPO",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVO",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "PVT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "QSTICK",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ROCR100",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RSI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RVI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "RVOL",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SAREXT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SIN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SINH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SMI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SQRT",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STDDEV",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCHF",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "STOCHRSI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUB",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUM",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "SUPERTREND",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "T3",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TAN",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TANH",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TEMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRANGE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRIMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TRIX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TSF",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TSI",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "TYPPRICE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ULTOSC",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VAR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VHF",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VORTEX",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VWAP",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "VWMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WAD",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WCLPRICE",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WILLR",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "WMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "name": "ZLEMA",
+      "case": "trend",
+      "status": "pass",
+      "differences": 0,
+      "first_difference": []
+    }
+  ]
+}

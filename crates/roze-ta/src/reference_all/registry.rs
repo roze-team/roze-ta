@@ -3,8 +3,13 @@ mod generated {
     include!("registry_generated.rs");
 }
 pub(super) fn build(operation: &Operation) -> Result<Box<dyn Runner>, TaError> {
+    if operation.id.starts_with("compat.") {
+        return compat::build(operation);
+    }
     if operation.id.starts_with("extra.") {
         extras::build(operation)
+    } else if operation.id.starts_with("talib.") {
+        talib::build(operation)
     } else {
         generated::build(operation)
     }
@@ -19,6 +24,8 @@ fn entries() -> Result<&'static [Value], TaError> {
                     TaError::new(ErrorCode::EncodingFailed, "invalid reference inventory")
                 })?;
             entries.extend(extras::entries());
+            entries.extend(talib::entries());
+            entries.extend(compat::entries()?);
             Ok(entries)
         })
         .as_ref()
@@ -47,6 +54,12 @@ pub(super) fn validate_params(operation: &Operation) -> Result<(), TaError> {
     }
     for (key, schema) in properties {
         let value = &params[key];
+        if schema["enum"]
+            .as_array()
+            .is_some_and(|allowed| !allowed.contains(value))
+        {
+            return Err(invalid("parameter is outside its enumerated domain"));
+        }
         if schema["type"] == "string" {
             if !schema["enum"].as_array().is_some_and(|a| a.contains(value)) {
                 return Err(invalid("invalid moving-average type"));
@@ -74,7 +87,7 @@ pub(super) fn catalog() -> Result<Value, TaError> {
         "limits":{"samples":MAX_SAMPLES,"history_bytes":MAX_BYTES,"nested_items":MAX_ITEMS,"period":512},
         "snapshots":"bounded_history_replayed_through_validated_inputs",
         "time_unit":"UTC_milliseconds","readiness":"source_warmup_is_a_lower_bound_for_event_driven_outputs",
-        "formula_policy":"explicit_Wickra_variants_not_TA_Lib_compatibility"}),
+        "formula_policy":"explicit_source_variants; see per-operation contracts and scoped parity evidence"}),
     )
 }
 

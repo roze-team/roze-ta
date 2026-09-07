@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "reason": "Preserve original Yata attribution and record TA-Lib license expression plus source-variant notices; no algorithm change. Upgrade requires replaying these additions against the immutable notice baseline.",
+  "baseline": "docs/patches/native-notices-baseline.md",
+  "validation": "verify-native.ps1 reconstructs each notice from the original hash and explicit replacement/append records",
+  "files": [
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "replace_old": "`MIT AND Apache-2.0`",
+      "replace_new": "`MIT AND Apache-2.0 AND BSD-3-Clause`",
+      "append": "\nThe `crates/roze-ta/src/talib/` module is derived from the official TA-Lib Rust\nlibrary at commit `2f0426d4a3e7d5b153c83ce7e6c4b9b05d8ca9c7`.\nCopyright (c) 1999-2026, Mario Fortier and contributors; BSD-3-Clause.\nThe full terms are retained in `crates/roze-ta/src/talib/LICENSE-BSD-3-Clause`.\nOriginal files remain in `vendor/ta-lib-rust/`. Module paths and safe portable\ndispatch were adapted as documented in `docs/patches/talib-rust-migration.md`.\nThe combined crate includes BSD-3-Clause in its declared license expression.\nGPL TTR is an independent test oracle only; its C library is not linked\ninto the Rust product.\n\nSource-specific ta/talipp compatibility conventions and attribution are\ndocumented in `crates/roze-ta/src/reference_all/compat/SOURCE-NOTICES.md`.\n"
+    },
+    {
+      "path": "crates/roze-ta/THIRD-PARTY-NOTICES.md",
+      "replace_old": "`MIT AND Apache-2.0`",
+      "replace_new": "`MIT AND Apache-2.0 AND BSD-3-Clause`",
+      "append": "\nThe `src/talib/` module is derived from the official TA-Lib Rust library at\ncommit `2f0426d4a3e7d5b153c83ce7e6c4b9b05d8ca9c7`.\nCopyright (c) 1999-2026, Mario Fortier and contributors; BSD-3-Clause.\nFull license terms are in `src/talib/LICENSE-BSD-3-Clause`.\nModule paths and safe portable dispatch were adapted; the formulas retain\ntheir upstream terms. The combined crate's license expression includes\nBSD-3-Clause. GPL TTR is an independent test oracle, not a linked dependency.\n\nSource-specific ta/talipp compatibility conventions and attribution are\ndocumented in `src/reference_all/compat/SOURCE-NOTICES.md`.\n"
+    }
+  ]
+}

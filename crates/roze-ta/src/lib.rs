@@ -13,6 +13,7 @@ pub mod engine;
 pub mod error;
 pub mod fingerprint;
 pub mod reference_all;
+pub mod talib;
 pub mod wickra;
 pub mod wickra_all;
 pub mod wickra_data;

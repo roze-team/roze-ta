@@ -1,13 +1,15 @@
 # Reference API V1：外部算法变体
 
-对应 FR-IND-009 / AC-IND-009。核心入口为 `roze_ta::reference_all`，迁入的低层类型为 `roze_ta::wickra_all`；原 50 个严格 Profile、R1 变体及旧快照保持原有版本。
+对应 FR-IND-009 / AC-IND-009。核心入口为 `roze_ta::reference_all`，迁入的低层类型为 `roze_ta::wickra_all` 和 `roze_ta::talib`；原 50 个严格 Profile、R1 变体及旧快照保持原有版本。
 
 ## 目录与参数
 
 `reference_catalog` 列出显式构造参数、输入类型、输出类型、公式说明和源文件。514 个 Wickra 导出名来自固定提交的 FAMILIES；不把辅助输出结构或不同周期重复计数。补充运算与组合见 [extras 规格](reference-extras.md)。
 参数必须按目录完整提供，不接受未知字段，不静默截断整数；`example_params` 是经构造测试的示例，不冒充源库默认值。Wickra 的 usize 参数限制 0..512，u32 限制 0..10080，i32 限制 -1440..1440，浮点参数限制绝对值 1e6；随后还要通过各构造器的关系与取值校验。
 
-每项公式以 `wickra-7ed1504-v1` 命名，直接使用保留的 Rust 算法。目录 `documentation` 是各类型的公式规格卡；完整算法、初始化、warmup_period、reset、独立样本和边界测试位于目录指向的源文件及对应维护副本。这不是 TA-Lib / talipp / ta / TTR 的默认参数或逐位兼容声明。
+`wickra.*` 公式以 `wickra-7ed1504-v1` 命名，直接使用保留的 Rust 算法。目录 `documentation` 是各类型的公式规格卡；完整算法、初始化、warmup_period、reset、独立样本和边界测试位于目录指向的源文件及对应维护副本。这不是 TA-Lib / talipp / ta / TTR 的默认参数或逐位兼容声明。
+
+另有201个`talib.*`入口，变体为`ta-lib-rust-2f0426d-v1`，参数、预热、独立C验收范围见[TA-Lib契约](talib-reference-v1.md)。新增114个`compat.*`入口，见[来源契约](source-parity-v1.md)。目录合计895项；TA-Lib结果使用`talib_formula_variant`标志，保留源默认中性值约定。
 
 ## 输入契约
 
@@ -42,6 +44,8 @@
 Rust Stream 支持 new、update、latest、reset、snapshot、restore；MCP 增加 reference_catalog、reference_batch_calculate、reference_stream（create/advance/inspect/reset）。所有公式只在核心库运行。
 
 在线计算调用相同原生 update。为确保错误、取消或意外 panic 后状态不变，wire 更新使用私有候选副本；更新成本等于原生算法成本加状态复制成本，不能笼统标为 O(1)。原生的各算法成本可从其有界窗口、回归或频谱循环核查。
+
+`talib.*`适配器每次调用原生批量算法重放完整已观察前缀；成本高于增量更新，界限和限制见其独立契约。
 
 快照保存完整受限历史，不反序列化未经语义检查的内部 Rust 状态。恢复核验版本、身份、配置、校验和，再按相同路径重放。历史上限4096条/4 MiB，单行输出上限64 KiB、结果上限4 MiB；达到历史上限时明确拒绝继续扩展，不丢弃种子历史伪造连续性。恢复成本为完整历史重放成本；这不是无限长度流的压缩状态格式。
 

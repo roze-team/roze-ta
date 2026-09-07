@@ -1,0 +1,6583 @@
+{
+  "schema_version": 1,
+  "tolerance": {
+    "absolute": 2e-09,
+    "relative": 2e-09
+  },
+  "records": [
+    {
+      "source": "talipp",
+      "name": "ADX",
+      "case": "mixed",
+      "operation_id": "wickra.Adx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "di_period": 5,
+        "adx_period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 68,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": {
+            "adx": null,
+            "plus_di": 22.272012733145104,
+            "minus_di": 22.642229522260088
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ALMA",
+      "case": "mixed",
+      "operation_id": "wickra.Alma",
+      "parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "source_parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "AO",
+      "case": "mixed",
+      "operation_id": "wickra.AwesomeOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ATR",
+      "case": "mixed",
+      "operation_id": "wickra.Atr",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "AccuDist",
+      "case": "mixed",
+      "operation_id": "wickra.Adl",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Aroon",
+      "case": "mixed",
+      "operation_id": "wickra.Aroon",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "BB",
+      "case": "mixed",
+      "operation_id": "wickra.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5,
+        "std_dev_mult": 2.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "lower": 98.69317029886346,
+            "middle": 104.9958819993237,
+            "upper": 111.29859369978394
+          },
+          "actual": {
+            "lower": 98.69317029886346,
+            "middle": 104.9958819993237,
+            "stddev": 3.151355850230116,
+            "upper": 111.29859369978394
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "BOP",
+      "case": "mixed",
+      "operation_id": "wickra.BalanceOfPower",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "CCI",
+      "case": "mixed",
+      "operation_id": "wickra.Cci",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "CHOP",
+      "case": "mixed",
+      "operation_id": "wickra.ChoppinessIndex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ChaikinOsc",
+      "case": "mixed",
+      "operation_id": "wickra.ChaikinOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ChandeKrollStop",
+      "case": "mixed",
+      "operation_id": "wickra.ChandeKrollStop",
+      "parameters": {
+        "atr_multiplier": 1.0,
+        "atr_period": 10,
+        "stop_period": 9
+      },
+      "source_parameters": {
+        "atr_period": 10,
+        "atr_mult": 1.0,
+        "period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 239,
+      "first_difference": [
+        {
+          "index": 17,
+          "expected": {
+            "short_stop": 104.76851969469324,
+            "long_stop": 90.81975935228729
+          },
+          "actual": {
+            "stop_long": 90.81975935228729,
+            "stop_short": 104.76851969469324
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "CoppockCurve",
+      "case": "mixed",
+      "operation_id": "wickra.Coppock",
+      "parameters": {
+        "roc_long_period": 14,
+        "roc_short_period": 11,
+        "wma_period": 10
+      },
+      "source_parameters": {
+        "wma_period": 10,
+        "slow_roc_period": 14,
+        "fast_roc_period": 11
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DEMA",
+      "case": "mixed",
+      "operation_id": "wickra.Dema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DPO",
+      "case": "mixed",
+      "operation_id": "wickra.Dpo",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DonchianChannels",
+      "case": "mixed",
+      "operation_id": "wickra.Donchian",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "EMA",
+      "case": "mixed",
+      "operation_id": "wickra.Ema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "EMV",
+      "case": "mixed",
+      "operation_id": "wickra.EaseOfMovement",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14,
+        "volume_div": 100000000
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "FibonacciRetracement",
+      "case": "mixed",
+      "operation_id": "wickra.FibRetracement",
+      "parameters": {},
+      "source_parameters": {
+        "fibonacci_coefficient": 0.618
+      },
+      "scope_note": "static helper is not the mapped pivot indicator",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 161.1067775030591,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ForceIndex",
+      "case": "mixed",
+      "operation_id": "wickra.ForceIndex",
+      "parameters": {
+        "period": 13
+      },
+      "source_parameters": {
+        "period": 13
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "HMA",
+      "case": "mixed",
+      "operation_id": "wickra.Hma",
+      "parameters": {
+        "period": 9
+      },
+      "source_parameters": {
+        "period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": null,
+          "actual": 95.53396105429202
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "IBS",
+      "case": "mixed",
+      "operation_id": "extra.InternalBarStrength",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Ichimoku",
+      "case": "mixed",
+      "operation_id": "wickra.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "source_parameters": {
+        "kijun_period": 26,
+        "tenkan_period": 9,
+        "chikou_lag_period": 26,
+        "senkou_slow_period": 52,
+        "senkou_lookup_period": 26
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 231,
+      "first_difference": [
+        {
+          "index": 25,
+          "expected": {
+            "kijun": 98.0572436498762,
+            "tenkan": 101.54280213529277,
+            "chikou": 91.28217580457013,
+            "senkou_a": null,
+            "senkou_b": null
+          },
+          "actual": {
+            "chikou": 99.57155593514159,
+            "kijun": 98.0572436498762,
+            "senkou_a": null,
+            "senkou_b": null,
+            "tenkan": 101.54280213529277
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KAMA",
+      "case": "mixed",
+      "operation_id": "wickra.Kama",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "source_parameters": {
+        "period": 10,
+        "fast_ema_constant_period": 2,
+        "slow_ema_constant_period": 30
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 238,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": 95.84546940012326,
+          "actual": 99.51235263195235
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KST",
+      "case": "mixed",
+      "operation_id": "wickra.Kst",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "source_parameters": {
+        "roc1_period": 10,
+        "roc2_period": 15,
+        "roc3_period": 20,
+        "roc4_period": 30,
+        "roc1_ma_period": 10,
+        "roc2_ma_period": 10,
+        "roc3_ma_period": 10,
+        "roc4_ma_period": 15,
+        "signal_period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 44,
+          "expected": {
+            "kst": 0.4749555202303668,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KVO",
+      "case": "mixed",
+      "operation_id": "wickra.Kvo",
+      "parameters": {
+        "fast": 34,
+        "slow": 55
+      },
+      "source_parameters": {
+        "fast_period": 34,
+        "slow_period": 55
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 201,
+      "first_difference": [
+        {
+          "index": 55,
+          "expected": null,
+          "actual": 1121.1654815894422
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KeltnerChannels",
+      "case": "mixed",
+      "operation_id": "wickra.Keltner",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "source_parameters": {
+        "ma_period": 5,
+        "atr_period": 5,
+        "atr_mult_up": 2.0,
+        "atr_mult_down": 2.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "lower": 91.4599912129059,
+            "middle": 104.9958819993237,
+            "upper": 118.5317727857415
+          },
+          "actual": {
+            "lower": 91.71447543069827,
+            "middle": 105.25036621711607,
+            "upper": 118.78625700353386
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MACD",
+      "case": "mixed",
+      "operation_id": "wickra.MacdIndicator",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 6,
+        "signal_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": {
+            "macd": -0.04003889422433815,
+            "signal": null,
+            "histogram": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MassIndex",
+      "case": "mixed",
+      "operation_id": "wickra.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "source_parameters": {
+        "ma_period": 9,
+        "ma_ma_period": 9,
+        "ma_ratio_period": 25
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "McGinleyDynamic",
+      "case": "mixed",
+      "operation_id": "wickra.McGinleyDynamic",
+      "parameters": {
+        "period": 10
+      },
+      "source_parameters": {
+        "period": 10
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 246,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": 102.34951426173717,
+          "actual": 101.66072874472312
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MeanDev",
+      "case": "mixed",
+      "operation_id": "extra.MeanDeviation",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "NATR",
+      "case": "mixed",
+      "operation_id": "wickra.Natr",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "OBV",
+      "case": "mixed",
+      "operation_id": "talib.OBV",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ParabolicSAR",
+      "case": "mixed",
+      "operation_id": "wickra.Psar",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "source_parameters": {
+        "init_accel_factor": 0.02,
+        "accel_factor_inc": 0.02,
+        "max_accel_factor": 0.2
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 255,
+      "first_difference": [
+        {
+          "index": 1,
+          "expected": null,
+          "actual": 96.73689034209558
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "PivotsHL",
+      "case": "mixed",
+      "operation_id": "extra.PivotsHL",
+      "parameters": {},
+      "source_parameters": {
+        "high_period": 14,
+        "low_period": 14
+      },
+      "scope_note": "event output",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "ohlcv": {
+              "open": 98.65684553283829,
+              "high": 103.2119237969151,
+              "low": 96.73689034209558,
+              "close": 99.57155593514159,
+              "volume": 72.9050309065326,
+              "time": null
+            },
+            "type": "LOW"
+          },
+          "actual": {
+            "kind": "low",
+            "observed_at_ms": 1,
+            "pivot_at_ms": 1,
+            "price": 96.73689034209558,
+            "provisional": true,
+            "revision_event": true
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ROC",
+      "case": "mixed",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "RSI",
+      "case": "mixed",
+      "operation_id": "wickra.Rsi",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "RogersSatchell",
+      "case": "mixed",
+      "operation_id": "wickra.RogersSatchellVolatility",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 237,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0.04778921179140424,
+          "actual": 75.8630218511107
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SFX",
+      "case": "mixed",
+      "operation_id": "extra.Sfx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "atr_period": 5,
+        "std_dev_period": 5,
+        "std_dev_smoothing_period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "atr": null,
+            "stddev": null,
+            "smoothed_stddev": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SMA",
+      "case": "mixed",
+      "operation_id": "wickra.Sma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "SMMA",
+      "case": "mixed",
+      "operation_id": "wickra.Smma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "SOBV",
+      "case": "mixed",
+      "operation_id": "extra.SmoothedObv",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 128.62547702767824,
+          "actual": 55.72044612114563
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "STC",
+      "case": "mixed",
+      "operation_id": "wickra.Stc",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "source_parameters": {
+        "fast_macd_period": 23,
+        "slow_macd_period": 50,
+        "stoch_period": 10,
+        "stoch_smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 189,
+      "first_difference": [
+        {
+          "index": 67,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StdDev",
+      "case": "mixed",
+      "operation_id": "wickra.StdDev",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Stoch",
+      "case": "mixed",
+      "operation_id": "wickra.Stochastic",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "source_parameters": {
+        "period": 5,
+        "smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "k": 59.83465639085854,
+            "d": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StochRSI",
+      "case": "mixed",
+      "operation_id": "wickra.StochRsi",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "source_parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14,
+        "k_smoothing_period": 3,
+        "d_smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 229,
+      "first_difference": [
+        {
+          "index": 27,
+          "expected": {
+            "k": null,
+            "d": null
+          },
+          "actual": 9.865523439418025
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SuperTrend",
+      "case": "mixed",
+      "operation_id": "wickra.SuperTrend",
+      "parameters": {
+        "atr_period": 10,
+        "multiplier": 3.0
+      },
+      "source_parameters": {
+        "atr_period": 10,
+        "mult": 3.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": {
+            "value": 0.0,
+            "direction": 1.0
+          },
+          "actual": {
+            "direction": 1.0,
+            "value": 70.52489108031341
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "T3",
+      "case": "mixed",
+      "operation_id": "wickra.T3",
+      "parameters": {
+        "period": 5,
+        "v": 0.7
+      },
+      "source_parameters": {
+        "period": 5,
+        "factor": 0.7
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TEMA",
+      "case": "mixed",
+      "operation_id": "wickra.Tema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TRIX",
+      "case": "mixed",
+      "operation_id": "wickra.Trix",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 249,
+      "first_difference": [
+        {
+          "index": 7,
+          "expected": -41.33885436499191,
+          "actual": -0.41338854364991906
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "TSI",
+      "case": "mixed",
+      "operation_id": "wickra.Tsi",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "source_parameters": {
+        "fast_period": 13,
+        "slow_period": 25
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TTM",
+      "case": "mixed",
+      "operation_id": "wickra.TtmSqueeze",
+      "parameters": {
+        "bb_mult": 2.0,
+        "kc_mult": 1.5,
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20,
+        "bb_std_dev_mult": 2.0,
+        "kc_atr_mult": 1.5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 237,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": {
+            "squeeze": 0.0,
+            "momentum": null
+          },
+          "actual": {
+            "momentum": -0.6652217070067405,
+            "squeeze": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "UO",
+      "case": "mixed",
+      "operation_id": "wickra.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "source_parameters": {
+        "fast_period": 7,
+        "mid_period": 14,
+        "slow_period": 28
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VTX",
+      "case": "mixed",
+      "operation_id": "wickra.Vortex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VWAP",
+      "case": "mixed",
+      "operation_id": "wickra.Vwap",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VWMA",
+      "case": "mixed",
+      "operation_id": "wickra.Vwma",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "WMA",
+      "case": "mixed",
+      "operation_id": "wickra.Wma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Williams",
+      "case": "mixed",
+      "operation_id": "wickra.WilliamsR",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ZLEMA",
+      "case": "mixed",
+      "operation_id": "wickra.Zlema",
+      "parameters": {
+        "period": 10
+      },
+      "source_parameters": {
+        "period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ZigZag",
+      "case": "mixed",
+      "operation_id": "wickra.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "source_parameters": {
+        "sensitivity": 0.1,
+        "min_trend_length": 1
+      },
+      "scope_note": "event output",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "ohlcv": {
+              "open": 98.65684553283829,
+              "high": 103.2119237969151,
+              "low": 96.73689034209558,
+              "close": 99.57155593514159,
+              "volume": 72.9050309065326,
+              "time": null
+            },
+            "type": "LOW"
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ADXIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Adx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 9,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "adx": 0.0,
+            "plus_di": 0.0,
+            "minus_di": 0.0
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AccDistIndexIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Adl",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "AroonIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Aroon",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "additional source getters: aroon_indicator",
+      "status": "mismatch",
+      "differences": 5,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "up": null,
+            "down": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AverageTrueRange",
+      "case": "mixed",
+      "operation_id": "wickra.Atr",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 0.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AwesomeOscillatorIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.AwesomeOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "window1": 3,
+        "window2": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "BollingerBands",
+      "case": "mixed",
+      "operation_id": "wickra.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5,
+        "window_dev": 2.0
+      },
+      "scope_note": "additional source getters: bollinger_hband_indicator,bollinger_lband_indicator,bollinger_pband,bollinger_wband",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "CCIIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Cci",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "ChaikinMoneyFlowIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.ChaikinMoneyFlow",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "window": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "CumulativeReturnIndicator",
+      "case": "mixed",
+      "operation_id": "extra.CumulativeReturn",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DPOIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Dpo",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "window": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DailyLogReturnIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.LogReturn",
+      "parameters": {
+        "period": 1
+      },
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 255,
+      "first_difference": [
+        {
+          "index": 1,
+          "expected": 6.0418170129452164,
+          "actual": 0.06041817012945288
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "DailyReturnIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 1
+      },
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DonchianChannel",
+      "case": "mixed",
+      "operation_id": "wickra.Donchian",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "additional source getters: donchian_channel_pband,donchian_channel_wband",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EMAIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Ema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 23,
+      "first_difference": [
+        {
+          "index": 2,
+          "expected": 106.03057300460634,
+          "actual": 104.91113114644645
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EaseOfMovementIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.EaseOfMovement",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: ease_of_movement",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "ForceIndexIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.ForceIndex",
+      "parameters": {
+        "period": 13
+      },
+      "source_parameters": {
+        "window": 13
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 106,
+      "first_difference": [
+        {
+          "index": 13,
+          "expected": -9.146453220491637,
+          "actual": -10.124988731903953
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "IchimokuIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "source_parameters": {
+        "window1": 9,
+        "window2": 26,
+        "window3": 52
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tenkan": null,
+            "kijun": null,
+            "senkou_a": null,
+            "senkou_b": 99.97440706950533
+          },
+          "actual": {
+            "chikou": null,
+            "kijun": null,
+            "senkou_a": null,
+            "senkou_b": null,
+            "tenkan": null
+          }
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KAMAIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Kama",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "source_parameters": {
+        "window": 10,
+        "pow1": 2,
+        "pow2": 30
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 239,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 95.84661453546214,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KSTIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Kst",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "source_parameters": {
+        "nsig": 9,
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "window1": 10,
+        "window2": 10,
+        "window3": 10,
+        "window4": 15
+      },
+      "scope_note": "additional source getters: kst_diff",
+      "status": "mismatch",
+      "differences": 52,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "kst": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KeltnerChannel",
+      "case": "mixed",
+      "operation_id": "wickra.Keltner",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "source_parameters": {
+        "window": 5,
+        "window_atr": 5,
+        "multiplier": 2.0
+      },
+      "scope_note": "additional source getters: keltner_channel_hband_indicator,keltner_channel_lband_indicator,keltner_channel_pband,keltner_channel_wband",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": 93.36508990323124,
+            "middle": null,
+            "upper": 106.31515681287028
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MACD",
+      "case": "mixed",
+      "operation_id": "wickra.MacdIndicator",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "source_parameters": {
+        "window_fast": 3,
+        "window_slow": 6,
+        "window_sign": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 62,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "macd": null,
+            "signal": null,
+            "histogram": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MFIIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Mfi",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 38.22119809324461,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MassIndex",
+      "case": "mixed",
+      "operation_id": "wickra.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "source_parameters": {
+        "window_fast": 9,
+        "window_slow": 25
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 70,
+      "first_difference": [
+        {
+          "index": 40,
+          "expected": 23.86342239025522,
+          "actual": 23.817629675207215
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "NegativeVolumeIndexIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Nvi",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "OnBalanceVolumeIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Obv",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 72.9050309065326,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PSARIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Psar",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "source_parameters": {
+        "step": 0.02,
+        "max_step": 0.2
+      },
+      "scope_note": "additional source getters: psar_down,psar_down_indicator,psar_up,psar_up_indicator",
+      "status": "mismatch",
+      "differences": 15,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 99.57155593514159,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentagePriceOscillator",
+      "case": "mixed",
+      "operation_id": "wickra.Ppo",
+      "parameters": {
+        "fast": 12,
+        "slow": 26
+      },
+      "source_parameters": {
+        "window_fast": 12,
+        "window_slow": 26
+      },
+      "scope_note": "additional source getters: ppo_hist,ppo_signal",
+      "status": "mismatch",
+      "differences": 231,
+      "first_difference": [
+        {
+          "index": 25,
+          "expected": -0.4156706299294132,
+          "actual": -0.7536610243972061
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentageVolumeOscillator",
+      "case": "mixed",
+      "operation_id": "extra.PercentageVolumeOscillator",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "additional source getters: pvo_hist,pvo_signal",
+      "status": "mismatch",
+      "differences": 231,
+      "first_difference": [
+        {
+          "index": 25,
+          "expected": 7.778686210604676,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ROCIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "RSIIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Rsi",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 45,
+      "first_difference": [
+        {
+          "index": 2,
+          "expected": 100.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "SMAIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Sma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "STCIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Stc",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "source_parameters": {
+        "window_fast": 23,
+        "window_slow": 50,
+        "cycle": 10
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 189,
+      "first_difference": [
+        {
+          "index": 67,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochRSIIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.StochRsi",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: stochrsi_d,stochrsi_k",
+      "status": "mismatch",
+      "differences": 211,
+      "first_difference": [
+        {
+          "index": 26,
+          "expected": 0.34015186794137103,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochasticOscillator",
+      "case": "mixed",
+      "operation_id": "wickra.Stochastic",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "source_parameters": {
+        "window": 5,
+        "smooth_window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 6,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "k": null,
+            "d": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TRIXIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Trix",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 32,
+      "first_difference": [
+        {
+          "index": 7,
+          "expected": -0.6020240613583491,
+          "actual": -0.41338854364991906
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TSIIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Tsi",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "source_parameters": {
+        "window_fast": 13,
+        "window_slow": 25
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 219,
+      "first_difference": [
+        {
+          "index": 37,
+          "expected": 16.99596801127029,
+          "actual": 9.332059131947352
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UlcerIndex",
+      "case": "mixed",
+      "operation_id": "wickra.UlcerIndex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 13,
+      "first_difference": [
+        {
+          "index": 13,
+          "expected": 10.243521318496555,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UltimateOscillator",
+      "case": "mixed",
+      "operation_id": "wickra.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "source_parameters": {
+        "window1": 7,
+        "window2": 14,
+        "window3": 28
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "VolumePriceTrendIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.VolumePriceTrend",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "VolumeWeightedAveragePrice",
+      "case": "mixed",
+      "operation_id": "wickra.RollingVwap",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "VortexIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Vortex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: vortex_indicator_diff",
+      "status": "mismatch",
+      "differences": 14,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "plus": null,
+            "minus": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "WMAIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.Wma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "WilliamsRIndicator",
+      "case": "mixed",
+      "operation_id": "wickra.WilliamsR",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "lbp": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ADX",
+      "case": "flat",
+      "operation_id": "wickra.Adx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "di_period": 5,
+        "adx_period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": {
+            "adx": null,
+            "plus_di": 0.0,
+            "minus_di": 0.0
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ALMA",
+      "case": "flat",
+      "operation_id": "wickra.Alma",
+      "parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "source_parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "AO",
+      "case": "flat",
+      "operation_id": "wickra.AwesomeOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ATR",
+      "case": "flat",
+      "operation_id": "wickra.Atr",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "AccuDist",
+      "case": "flat",
+      "operation_id": "wickra.Adl",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "Aroon",
+      "case": "flat",
+      "operation_id": "wickra.Aroon",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "BB",
+      "case": "flat",
+      "operation_id": "wickra.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5,
+        "std_dev_mult": 2.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "lower": 100.0,
+            "middle": 100.0,
+            "upper": 100.0
+          },
+          "actual": {
+            "lower": 100.0,
+            "middle": 100.0,
+            "stddev": 0.0,
+            "upper": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "BOP",
+      "case": "flat",
+      "operation_id": "wickra.BalanceOfPower",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "CCI",
+      "case": "flat",
+      "operation_id": "wickra.Cci",
+      "parameters": {
+        "period": 5
+      },
+      "status": "oracle_or_binding_error",
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    {
+      "source": "talipp",
+      "name": "CHOP",
+      "case": "flat",
+      "operation_id": "wickra.ChoppinessIndex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 243,
+      "first_difference": [
+        {
+          "index": 13,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ChaikinOsc",
+      "case": "flat",
+      "operation_id": "wickra.ChaikinOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 10
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 247,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ChandeKrollStop",
+      "case": "flat",
+      "operation_id": "wickra.ChandeKrollStop",
+      "parameters": {
+        "atr_multiplier": 1.0,
+        "atr_period": 10,
+        "stop_period": 9
+      },
+      "source_parameters": {
+        "atr_period": 10,
+        "atr_mult": 1.0,
+        "period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 239,
+      "first_difference": [
+        {
+          "index": 17,
+          "expected": {
+            "short_stop": 100.0,
+            "long_stop": 100.0
+          },
+          "actual": {
+            "stop_long": 100.0,
+            "stop_short": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "CoppockCurve",
+      "case": "flat",
+      "operation_id": "wickra.Coppock",
+      "parameters": {
+        "roc_long_period": 14,
+        "roc_short_period": 11,
+        "wma_period": 10
+      },
+      "source_parameters": {
+        "wma_period": 10,
+        "slow_roc_period": 14,
+        "fast_roc_period": 11
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DEMA",
+      "case": "flat",
+      "operation_id": "wickra.Dema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DPO",
+      "case": "flat",
+      "operation_id": "wickra.Dpo",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DonchianChannels",
+      "case": "flat",
+      "operation_id": "wickra.Donchian",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "EMA",
+      "case": "flat",
+      "operation_id": "wickra.Ema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "EMV",
+      "case": "flat",
+      "operation_id": "wickra.EaseOfMovement",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14,
+        "volume_div": 100000000
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "FibonacciRetracement",
+      "case": "flat",
+      "operation_id": "wickra.FibRetracement",
+      "parameters": {},
+      "source_parameters": {
+        "fibonacci_coefficient": 0.618
+      },
+      "scope_note": "static helper is not the mapped pivot indicator",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 161.8,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ForceIndex",
+      "case": "flat",
+      "operation_id": "wickra.ForceIndex",
+      "parameters": {
+        "period": 13
+      },
+      "source_parameters": {
+        "period": 13
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "HMA",
+      "case": "flat",
+      "operation_id": "wickra.Hma",
+      "parameters": {
+        "period": 9
+      },
+      "source_parameters": {
+        "period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "IBS",
+      "case": "flat",
+      "operation_id": "extra.InternalBarStrength",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Ichimoku",
+      "case": "flat",
+      "operation_id": "wickra.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "source_parameters": {
+        "kijun_period": 26,
+        "tenkan_period": 9,
+        "chikou_lag_period": 26,
+        "senkou_slow_period": 52,
+        "senkou_lookup_period": 26
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 3,
+      "first_difference": [
+        {
+          "index": 50,
+          "expected": {
+            "kijun": 100.0,
+            "tenkan": 100.0,
+            "chikou": 100.0,
+            "senkou_a": null,
+            "senkou_b": null
+          },
+          "actual": {
+            "chikou": 100.0,
+            "kijun": 100.0,
+            "senkou_a": 100.0,
+            "senkou_b": null,
+            "tenkan": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KAMA",
+      "case": "flat",
+      "operation_id": "wickra.Kama",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "source_parameters": {
+        "period": 10,
+        "fast_ema_constant_period": 2,
+        "slow_ema_constant_period": 30
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "KST",
+      "case": "flat",
+      "operation_id": "wickra.Kst",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "source_parameters": {
+        "roc1_period": 10,
+        "roc2_period": 15,
+        "roc3_period": 20,
+        "roc4_period": 30,
+        "roc1_ma_period": 10,
+        "roc2_ma_period": 10,
+        "roc3_ma_period": 10,
+        "roc4_ma_period": 15,
+        "signal_period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 44,
+          "expected": {
+            "kst": 0.0,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KVO",
+      "case": "flat",
+      "operation_id": "wickra.Kvo",
+      "parameters": {
+        "fast": 34,
+        "slow": 55
+      },
+      "source_parameters": {
+        "fast_period": 34,
+        "slow_period": 55
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 55,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KeltnerChannels",
+      "case": "flat",
+      "operation_id": "wickra.Keltner",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "source_parameters": {
+        "ma_period": 5,
+        "atr_period": 5,
+        "atr_mult_up": 2.0,
+        "atr_mult_down": 2.0
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "MACD",
+      "case": "flat",
+      "operation_id": "wickra.MacdIndicator",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 6,
+        "signal_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": {
+            "macd": 0.0,
+            "signal": null,
+            "histogram": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MassIndex",
+      "case": "flat",
+      "operation_id": "wickra.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "status": "oracle_or_binding_error",
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    {
+      "source": "talipp",
+      "name": "McGinleyDynamic",
+      "case": "flat",
+      "operation_id": "wickra.McGinleyDynamic",
+      "parameters": {
+        "period": 10
+      },
+      "source_parameters": {
+        "period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "MeanDev",
+      "case": "flat",
+      "operation_id": "extra.MeanDeviation",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "NATR",
+      "case": "flat",
+      "operation_id": "wickra.Natr",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "OBV",
+      "case": "flat",
+      "operation_id": "talib.OBV",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ParabolicSAR",
+      "case": "flat",
+      "operation_id": "wickra.Psar",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "source_parameters": {
+        "init_accel_factor": 0.02,
+        "accel_factor_inc": 0.02,
+        "max_accel_factor": 0.2
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 255,
+      "first_difference": [
+        {
+          "index": 1,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "PivotsHL",
+      "case": "flat",
+      "operation_id": "extra.PivotsHL",
+      "parameters": {},
+      "source_parameters": {
+        "high_period": 14,
+        "low_period": 14
+      },
+      "scope_note": "event output",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "ohlcv": {
+              "open": 100.0,
+              "high": 100.0,
+              "low": 100.0,
+              "close": 100.0,
+              "volume": 0.0,
+              "time": null
+            },
+            "type": "LOW"
+          },
+          "actual": {
+            "kind": "low",
+            "observed_at_ms": 1,
+            "pivot_at_ms": 1,
+            "price": 100.0,
+            "provisional": true,
+            "revision_event": true
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ROC",
+      "case": "flat",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "RSI",
+      "case": "flat",
+      "operation_id": "wickra.Rsi",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 253,
+      "first_difference": [
+        {
+          "index": 3,
+          "expected": 100.0,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "RogersSatchell",
+      "case": "flat",
+      "operation_id": "wickra.RogersSatchellVolatility",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 237,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SFX",
+      "case": "flat",
+      "operation_id": "extra.Sfx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "atr_period": 5,
+        "std_dev_period": 5,
+        "std_dev_smoothing_period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "atr": null,
+            "stddev": null,
+            "smoothed_stddev": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SMA",
+      "case": "flat",
+      "operation_id": "wickra.Sma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "SMMA",
+      "case": "flat",
+      "operation_id": "wickra.Smma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "SOBV",
+      "case": "flat",
+      "operation_id": "extra.SmoothedObv",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "STC",
+      "case": "flat",
+      "operation_id": "wickra.Stc",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "source_parameters": {
+        "fast_macd_period": 23,
+        "slow_macd_period": 50,
+        "stoch_period": 10,
+        "stoch_smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 189,
+      "first_difference": [
+        {
+          "index": 67,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StdDev",
+      "case": "flat",
+      "operation_id": "wickra.StdDev",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Stoch",
+      "case": "flat",
+      "operation_id": "wickra.Stochastic",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "source_parameters": {
+        "period": 5,
+        "smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "k": 100.0,
+            "d": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StochRSI",
+      "case": "flat",
+      "operation_id": "wickra.StochRsi",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "source_parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14,
+        "k_smoothing_period": 3,
+        "d_smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 229,
+      "first_difference": [
+        {
+          "index": 27,
+          "expected": {
+            "k": null,
+            "d": null
+          },
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SuperTrend",
+      "case": "flat",
+      "operation_id": "wickra.SuperTrend",
+      "parameters": {
+        "atr_period": 10,
+        "multiplier": 3.0
+      },
+      "source_parameters": {
+        "atr_period": 10,
+        "mult": 3.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 247,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": {
+            "value": 0.0,
+            "direction": 1.0
+          },
+          "actual": {
+            "direction": 1.0,
+            "value": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "T3",
+      "case": "flat",
+      "operation_id": "wickra.T3",
+      "parameters": {
+        "period": 5,
+        "v": 0.7
+      },
+      "source_parameters": {
+        "period": 5,
+        "factor": 0.7
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TEMA",
+      "case": "flat",
+      "operation_id": "wickra.Tema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TRIX",
+      "case": "flat",
+      "operation_id": "wickra.Trix",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TSI",
+      "case": "flat",
+      "operation_id": "wickra.Tsi",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "source_parameters": {
+        "fast_period": 13,
+        "slow_period": 25
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 219,
+      "first_difference": [
+        {
+          "index": 37,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "TTM",
+      "case": "flat",
+      "operation_id": "wickra.TtmSqueeze",
+      "parameters": {
+        "bb_mult": 2.0,
+        "kc_mult": 1.5,
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20,
+        "bb_std_dev_mult": 2.0,
+        "kc_atr_mult": 1.5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 237,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": {
+            "squeeze": 0.0,
+            "momentum": null
+          },
+          "actual": {
+            "momentum": 0.0,
+            "squeeze": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "UO",
+      "case": "flat",
+      "operation_id": "wickra.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "source_parameters": {
+        "fast_period": 7,
+        "mid_period": 14,
+        "slow_period": 28
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 228,
+      "first_difference": [
+        {
+          "index": 28,
+          "expected": null,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "VTX",
+      "case": "flat",
+      "operation_id": "wickra.Vortex",
+      "parameters": {
+        "period": 14
+      },
+      "status": "oracle_or_binding_error",
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    {
+      "source": "talipp",
+      "name": "VWAP",
+      "case": "flat",
+      "operation_id": "wickra.Vwap",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VWMA",
+      "case": "flat",
+      "operation_id": "wickra.Vwma",
+      "parameters": {
+        "period": 5
+      },
+      "status": "oracle_or_binding_error",
+      "error": "ZeroDivisionError: float division by zero"
+    },
+    {
+      "source": "talipp",
+      "name": "WMA",
+      "case": "flat",
+      "operation_id": "wickra.Wma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Williams",
+      "case": "flat",
+      "operation_id": "wickra.WilliamsR",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": null,
+          "actual": -50.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ZLEMA",
+      "case": "flat",
+      "operation_id": "wickra.Zlema",
+      "parameters": {
+        "period": 10
+      },
+      "source_parameters": {
+        "period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ZigZag",
+      "case": "flat",
+      "operation_id": "wickra.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "source_parameters": {
+        "sensitivity": 0.1,
+        "min_trend_length": 1
+      },
+      "scope_note": "event output",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "ohlcv": {
+              "open": 100.0,
+              "high": 100.0,
+              "low": 100.0,
+              "close": 100.0,
+              "volume": 0.0,
+              "time": null
+            },
+            "type": "LOW"
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ADXIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Adx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 9,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "adx": 0.0,
+            "plus_di": 0.0,
+            "minus_di": 0.0
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AccDistIndexIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Adl",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "AroonIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Aroon",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "additional source getters: aroon_indicator",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "up": null,
+            "down": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AverageTrueRange",
+      "case": "flat",
+      "operation_id": "wickra.Atr",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 0.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AwesomeOscillatorIndicator",
+      "case": "flat",
+      "operation_id": "wickra.AwesomeOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "window1": 3,
+        "window2": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "BollingerBands",
+      "case": "flat",
+      "operation_id": "wickra.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5,
+        "window_dev": 2.0
+      },
+      "scope_note": "additional source getters: bollinger_hband_indicator,bollinger_lband_indicator,bollinger_pband,bollinger_wband",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "CCIIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Cci",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ChaikinMoneyFlowIndicator",
+      "case": "flat",
+      "operation_id": "wickra.ChaikinMoneyFlow",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "window": 20
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 237,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "CumulativeReturnIndicator",
+      "case": "flat",
+      "operation_id": "extra.CumulativeReturn",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DPOIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Dpo",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "window": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DailyLogReturnIndicator",
+      "case": "flat",
+      "operation_id": "wickra.LogReturn",
+      "parameters": {
+        "period": 1
+      },
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DailyReturnIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 1
+      },
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DonchianChannel",
+      "case": "flat",
+      "operation_id": "wickra.Donchian",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "additional source getters: donchian_channel_pband,donchian_channel_wband",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EMAIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Ema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "EaseOfMovementIndicator",
+      "case": "flat",
+      "operation_id": "wickra.EaseOfMovement",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: ease_of_movement",
+      "status": "mismatch",
+      "differences": 242,
+      "first_difference": [
+        {
+          "index": 14,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ForceIndexIndicator",
+      "case": "flat",
+      "operation_id": "wickra.ForceIndex",
+      "parameters": {
+        "period": 13
+      },
+      "source_parameters": {
+        "window": 13
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "IchimokuIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "source_parameters": {
+        "window1": 9,
+        "window2": 26,
+        "window3": 52
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tenkan": null,
+            "kijun": null,
+            "senkou_a": null,
+            "senkou_b": 100.0
+          },
+          "actual": {
+            "chikou": null,
+            "kijun": null,
+            "senkou_a": null,
+            "senkou_b": null,
+            "tenkan": null
+          }
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KAMAIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Kama",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "source_parameters": {
+        "window": 10,
+        "pow1": 2,
+        "pow2": 30
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 100.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KSTIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Kst",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "source_parameters": {
+        "nsig": 9,
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "window1": 10,
+        "window2": 10,
+        "window3": 10,
+        "window4": 15
+      },
+      "scope_note": "additional source getters: kst_diff",
+      "status": "mismatch",
+      "differences": 52,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "kst": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KeltnerChannel",
+      "case": "flat",
+      "operation_id": "wickra.Keltner",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "source_parameters": {
+        "window": 5,
+        "window_atr": 5,
+        "multiplier": 2.0
+      },
+      "scope_note": "additional source getters: keltner_channel_hband_indicator,keltner_channel_lband_indicator,keltner_channel_pband,keltner_channel_wband",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": 100.0,
+            "middle": null,
+            "upper": 100.0
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MACD",
+      "case": "flat",
+      "operation_id": "wickra.MacdIndicator",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "source_parameters": {
+        "window_fast": 3,
+        "window_slow": 6,
+        "window_sign": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 7,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "macd": null,
+            "signal": null,
+            "histogram": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MFIIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Mfi",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 251,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": null,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MassIndex",
+      "case": "flat",
+      "operation_id": "wickra.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "source_parameters": {
+        "window_fast": 9,
+        "window_slow": 25
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 216,
+      "first_difference": [
+        {
+          "index": 40,
+          "expected": null,
+          "actual": 25.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "NegativeVolumeIndexIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Nvi",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "OnBalanceVolumeIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Obv",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "PSARIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Psar",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "source_parameters": {
+        "step": 0.02,
+        "max_step": 0.2
+      },
+      "scope_note": "additional source getters: psar_down,psar_down_indicator,psar_up,psar_up_indicator",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 100.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentagePriceOscillator",
+      "case": "flat",
+      "operation_id": "wickra.Ppo",
+      "parameters": {
+        "fast": 12,
+        "slow": 26
+      },
+      "source_parameters": {
+        "window_fast": 12,
+        "window_slow": 26
+      },
+      "scope_note": "additional source getters: ppo_hist,ppo_signal",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "PercentageVolumeOscillator",
+      "case": "flat",
+      "operation_id": "extra.PercentageVolumeOscillator",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "additional source getters: pvo_hist,pvo_signal",
+      "status": "mismatch",
+      "differences": 223,
+      "first_difference": [
+        {
+          "index": 33,
+          "expected": null,
+          "actual": {
+            "histogram": 0.0,
+            "pvo": 0.0,
+            "signal": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ROCIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "RSIIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Rsi",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 254,
+      "first_difference": [
+        {
+          "index": 2,
+          "expected": 100.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "SMAIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Sma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "STCIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Stc",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "source_parameters": {
+        "window_fast": 23,
+        "window_slow": 50,
+        "cycle": 10
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 189,
+      "first_difference": [
+        {
+          "index": 67,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochRSIIndicator",
+      "case": "flat",
+      "operation_id": "wickra.StochRsi",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: stochrsi_d,stochrsi_k",
+      "status": "mismatch",
+      "differences": 229,
+      "first_difference": [
+        {
+          "index": 27,
+          "expected": null,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochasticOscillator",
+      "case": "flat",
+      "operation_id": "wickra.Stochastic",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "source_parameters": {
+        "window": 5,
+        "smooth_window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "k": null,
+            "d": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TRIXIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Trix",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "TSIIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Tsi",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "source_parameters": {
+        "window_fast": 13,
+        "window_slow": 25
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 219,
+      "first_difference": [
+        {
+          "index": 37,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UlcerIndex",
+      "case": "flat",
+      "operation_id": "wickra.UlcerIndex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 13,
+      "first_difference": [
+        {
+          "index": 13,
+          "expected": 0.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UltimateOscillator",
+      "case": "flat",
+      "operation_id": "wickra.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "source_parameters": {
+        "window1": 7,
+        "window2": 14,
+        "window3": 28
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 228,
+      "first_difference": [
+        {
+          "index": 28,
+          "expected": null,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "VolumePriceTrendIndicator",
+      "case": "flat",
+      "operation_id": "wickra.VolumePriceTrend",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "VolumeWeightedAveragePrice",
+      "case": "flat",
+      "operation_id": "wickra.RollingVwap",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "VortexIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Vortex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: vortex_indicator_diff",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "plus": null,
+            "minus": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "WMAIndicator",
+      "case": "flat",
+      "operation_id": "wickra.Wma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "WilliamsRIndicator",
+      "case": "flat",
+      "operation_id": "wickra.WilliamsR",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "lbp": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": null,
+          "actual": -50.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ADX",
+      "case": "trend",
+      "operation_id": "wickra.Adx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "di_period": 5,
+        "adx_period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": {
+            "adx": null,
+            "plus_di": 40.000000000002274,
+            "minus_di": 0.0
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ALMA",
+      "case": "trend",
+      "operation_id": "wickra.Alma",
+      "parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "source_parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "AO",
+      "case": "trend",
+      "operation_id": "wickra.AwesomeOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ATR",
+      "case": "trend",
+      "operation_id": "wickra.Atr",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "AccuDist",
+      "case": "trend",
+      "operation_id": "wickra.Adl",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Aroon",
+      "case": "trend",
+      "operation_id": "wickra.Aroon",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "BB",
+      "case": "trend",
+      "operation_id": "wickra.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5,
+        "std_dev_mult": 2.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "lower": 99.96715728752538,
+            "middle": 100.25,
+            "upper": 100.53284271247462
+          },
+          "actual": {
+            "lower": 99.96715728752538,
+            "middle": 100.25,
+            "stddev": 0.14142135623731153,
+            "upper": 100.53284271247462
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "BOP",
+      "case": "trend",
+      "operation_id": "wickra.BalanceOfPower",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "CCI",
+      "case": "trend",
+      "operation_id": "wickra.Cci",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "CHOP",
+      "case": "trend",
+      "operation_id": "wickra.ChoppinessIndex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ChaikinOsc",
+      "case": "trend",
+      "operation_id": "wickra.ChaikinOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ChandeKrollStop",
+      "case": "trend",
+      "operation_id": "wickra.ChandeKrollStop",
+      "parameters": {
+        "atr_multiplier": 1.0,
+        "atr_period": 10,
+        "stop_period": 9
+      },
+      "source_parameters": {
+        "atr_period": 10,
+        "atr_mult": 1.0,
+        "period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 239,
+      "first_difference": [
+        {
+          "index": 17,
+          "expected": {
+            "short_stop": 101.60000000000001,
+            "long_stop": 100.14999999999999
+          },
+          "actual": {
+            "stop_long": 100.14999999999999,
+            "stop_short": 101.60000000000001
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "CoppockCurve",
+      "case": "trend",
+      "operation_id": "wickra.Coppock",
+      "parameters": {
+        "roc_long_period": 14,
+        "roc_short_period": 11,
+        "wma_period": 10
+      },
+      "source_parameters": {
+        "wma_period": 10,
+        "slow_roc_period": 14,
+        "fast_roc_period": 11
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DEMA",
+      "case": "trend",
+      "operation_id": "wickra.Dema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DPO",
+      "case": "trend",
+      "operation_id": "wickra.Dpo",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "DonchianChannels",
+      "case": "trend",
+      "operation_id": "wickra.Donchian",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "EMA",
+      "case": "trend",
+      "operation_id": "wickra.Ema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "EMV",
+      "case": "trend",
+      "operation_id": "wickra.EaseOfMovement",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14,
+        "volume_div": 100000000
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "FibonacciRetracement",
+      "case": "trend",
+      "operation_id": "wickra.FibRetracement",
+      "parameters": {},
+      "source_parameters": {
+        "fibonacci_coefficient": 0.618
+      },
+      "scope_note": "static helper is not the mapped pivot indicator",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 161.8809,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ForceIndex",
+      "case": "trend",
+      "operation_id": "wickra.ForceIndex",
+      "parameters": {
+        "period": 13
+      },
+      "source_parameters": {
+        "period": 13
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "HMA",
+      "case": "trend",
+      "operation_id": "wickra.Hma",
+      "parameters": {
+        "period": 9
+      },
+      "source_parameters": {
+        "period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": null,
+          "actual": 101.05
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "IBS",
+      "case": "trend",
+      "operation_id": "extra.InternalBarStrength",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Ichimoku",
+      "case": "trend",
+      "operation_id": "wickra.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "source_parameters": {
+        "kijun_period": 26,
+        "tenkan_period": 9,
+        "chikou_lag_period": 26,
+        "senkou_slow_period": 52,
+        "senkou_lookup_period": 26
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 231,
+      "first_difference": [
+        {
+          "index": 25,
+          "expected": {
+            "kijun": 101.275,
+            "tenkan": 102.125,
+            "chikou": 102.55,
+            "senkou_a": null,
+            "senkou_b": null
+          },
+          "actual": {
+            "chikou": 100.05,
+            "kijun": 101.275,
+            "senkou_a": null,
+            "senkou_b": null,
+            "tenkan": 102.125
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KAMA",
+      "case": "trend",
+      "operation_id": "wickra.Kama",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "source_parameters": {
+        "period": 10,
+        "fast_ema_constant_period": 2,
+        "slow_ema_constant_period": 30
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 25,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": 100.99444444444444,
+          "actual": 100.49444444444444
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KST",
+      "case": "trend",
+      "operation_id": "wickra.Kst",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "source_parameters": {
+        "roc1_period": 10,
+        "roc2_period": 15,
+        "roc3_period": 20,
+        "roc4_period": 30,
+        "roc1_ma_period": 10,
+        "roc2_ma_period": 10,
+        "roc3_ma_period": 10,
+        "roc4_ma_period": 15,
+        "signal_period": 9
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 44,
+          "expected": {
+            "kst": 21.691022191727303,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KVO",
+      "case": "trend",
+      "operation_id": "wickra.Kvo",
+      "parameters": {
+        "fast": 34,
+        "slow": 55
+      },
+      "source_parameters": {
+        "fast_period": 34,
+        "slow_period": 55
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 201,
+      "first_difference": [
+        {
+          "index": 55,
+          "expected": null,
+          "actual": 480.55353112984085
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KeltnerChannels",
+      "case": "trend",
+      "operation_id": "wickra.Keltner",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "source_parameters": {
+        "ma_period": 5,
+        "atr_period": 5,
+        "atr_mult_up": 2.0,
+        "atr_mult_down": 2.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "lower": 99.75000000000003,
+            "middle": 100.25,
+            "upper": 100.74999999999997
+          },
+          "actual": {
+            "lower": 99.73333333333336,
+            "middle": 100.23333333333333,
+            "upper": 100.7333333333333
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MACD",
+      "case": "trend",
+      "operation_id": "wickra.MacdIndicator",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "source_parameters": {
+        "fast_period": 3,
+        "slow_period": 6,
+        "signal_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": {
+            "macd": 0.14999999999999147,
+            "signal": null,
+            "histogram": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MassIndex",
+      "case": "trend",
+      "operation_id": "wickra.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "source_parameters": {
+        "ma_period": 9,
+        "ma_ma_period": 9,
+        "ma_ratio_period": 25
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "McGinleyDynamic",
+      "case": "trend",
+      "operation_id": "wickra.McGinleyDynamic",
+      "parameters": {
+        "period": 10
+      },
+      "source_parameters": {
+        "period": 10
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 246,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": 100.55381231368222,
+          "actual": 100.58968718947035
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MeanDev",
+      "case": "trend",
+      "operation_id": "extra.MeanDeviation",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "NATR",
+      "case": "trend",
+      "operation_id": "wickra.Natr",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "OBV",
+      "case": "trend",
+      "operation_id": "talib.OBV",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ParabolicSAR",
+      "case": "trend",
+      "operation_id": "wickra.Psar",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "source_parameters": {
+        "init_accel_factor": 0.02,
+        "accel_factor_inc": 0.02,
+        "max_accel_factor": 0.2
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 255,
+      "first_difference": [
+        {
+          "index": 1,
+          "expected": null,
+          "actual": 99.9
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "PivotsHL",
+      "case": "trend",
+      "operation_id": "extra.PivotsHL",
+      "parameters": {},
+      "source_parameters": {
+        "high_period": 14,
+        "low_period": 14
+      },
+      "scope_note": "event output",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "ohlcv": {
+              "open": 100.0,
+              "high": 100.14999999999999,
+              "low": 99.9,
+              "close": 100.05,
+              "volume": 100.0,
+              "time": null
+            },
+            "type": "LOW"
+          },
+          "actual": {
+            "kind": "low",
+            "observed_at_ms": 1,
+            "pivot_at_ms": 1,
+            "price": 99.9,
+            "provisional": true,
+            "revision_event": true
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ROC",
+      "case": "trend",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "RSI",
+      "case": "trend",
+      "operation_id": "wickra.Rsi",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "RogersSatchell",
+      "case": "trend",
+      "operation_id": "wickra.RogersSatchellVolatility",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 237,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0.001715411516326535,
+          "actual": 2.7231313610017365
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SFX",
+      "case": "trend",
+      "operation_id": "extra.Sfx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "atr_period": 5,
+        "std_dev_period": 5,
+        "std_dev_smoothing_period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "atr": null,
+            "stddev": null,
+            "smoothed_stddev": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SMA",
+      "case": "trend",
+      "operation_id": "wickra.Sma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "SMMA",
+      "case": "trend",
+      "operation_id": "wickra.Smma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "SOBV",
+      "case": "trend",
+      "operation_id": "extra.SmoothedObv",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 252,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 304.0,
+          "actual": 204.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "STC",
+      "case": "trend",
+      "operation_id": "wickra.Stc",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "source_parameters": {
+        "fast_macd_period": 23,
+        "slow_macd_period": 50,
+        "stoch_period": 10,
+        "stoch_smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 189,
+      "first_difference": [
+        {
+          "index": 67,
+          "expected": null,
+          "actual": 49.99999999999999
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StdDev",
+      "case": "trend",
+      "operation_id": "wickra.StdDev",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Stoch",
+      "case": "trend",
+      "operation_id": "wickra.Stochastic",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "source_parameters": {
+        "period": 5,
+        "smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": {
+            "k": 84.61538461538528,
+            "d": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StochRSI",
+      "case": "trend",
+      "operation_id": "wickra.StochRsi",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "source_parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14,
+        "k_smoothing_period": 3,
+        "d_smoothing_period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 229,
+      "first_difference": [
+        {
+          "index": 27,
+          "expected": {
+            "k": null,
+            "d": null
+          },
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SuperTrend",
+      "case": "trend",
+      "operation_id": "wickra.SuperTrend",
+      "parameters": {
+        "atr_period": 10,
+        "multiplier": 3.0
+      },
+      "source_parameters": {
+        "atr_period": 10,
+        "mult": 3.0
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 9,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": {
+            "value": 0.0,
+            "direction": 1.0
+          },
+          "actual": {
+            "direction": 1.0,
+            "value": 100.17500000000005
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "T3",
+      "case": "trend",
+      "operation_id": "wickra.T3",
+      "parameters": {
+        "period": 5,
+        "v": 0.7
+      },
+      "source_parameters": {
+        "period": 5,
+        "factor": 0.7
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TEMA",
+      "case": "trend",
+      "operation_id": "wickra.Tema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TRIX",
+      "case": "trend",
+      "operation_id": "wickra.Trix",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 249,
+      "first_difference": [
+        {
+          "index": 7,
+          "expected": 9.965122072746242,
+          "actual": 0.09965122072746242
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "TSI",
+      "case": "trend",
+      "operation_id": "wickra.Tsi",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "source_parameters": {
+        "fast_period": 13,
+        "slow_period": 25
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "TTM",
+      "case": "trend",
+      "operation_id": "wickra.TtmSqueeze",
+      "parameters": {
+        "bb_mult": 2.0,
+        "kc_mult": 1.5,
+        "period": 20
+      },
+      "source_parameters": {
+        "period": 20,
+        "bb_std_dev_mult": 2.0,
+        "kc_atr_mult": 1.5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 19,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": {
+            "squeeze": 0.0,
+            "momentum": null
+          },
+          "actual": {
+            "momentum": 0.9625000000000008,
+            "squeeze": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "UO",
+      "case": "trend",
+      "operation_id": "wickra.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "source_parameters": {
+        "fast_period": 7,
+        "mid_period": 14,
+        "slow_period": 28
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VTX",
+      "case": "trend",
+      "operation_id": "wickra.Vortex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "period": 14
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VWAP",
+      "case": "trend",
+      "operation_id": "wickra.Vwap",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "VWMA",
+      "case": "trend",
+      "operation_id": "wickra.Vwma",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "WMA",
+      "case": "trend",
+      "operation_id": "wickra.Wma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "period": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "Williams",
+      "case": "trend",
+      "operation_id": "wickra.WilliamsR",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "period": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ZLEMA",
+      "case": "trend",
+      "operation_id": "wickra.Zlema",
+      "parameters": {
+        "period": 10
+      },
+      "source_parameters": {
+        "period": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "talipp",
+      "name": "ZigZag",
+      "case": "trend",
+      "operation_id": "wickra.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "source_parameters": {
+        "sensitivity": 0.1,
+        "min_trend_length": 1
+      },
+      "scope_note": "event output",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "ohlcv": {
+              "open": 100.0,
+              "high": 100.14999999999999,
+              "low": 99.9,
+              "close": 100.05,
+              "volume": 100.0,
+              "time": null
+            },
+            "type": "LOW"
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ADXIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Adx",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 9,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "adx": 0.0,
+            "plus_di": 0.0,
+            "minus_di": 0.0
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AccDistIndexIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Adl",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "AroonIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Aroon",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "additional source getters: aroon_indicator",
+      "status": "mismatch",
+      "differences": 5,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "up": null,
+            "down": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AverageTrueRange",
+      "case": "trend",
+      "operation_id": "wickra.Atr",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 0.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AwesomeOscillatorIndicator",
+      "case": "trend",
+      "operation_id": "wickra.AwesomeOscillator",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "source_parameters": {
+        "window1": 3,
+        "window2": 10
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "BollingerBands",
+      "case": "trend",
+      "operation_id": "wickra.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5,
+        "window_dev": 2.0
+      },
+      "scope_note": "additional source getters: bollinger_hband_indicator,bollinger_lband_indicator,bollinger_pband,bollinger_wband",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "CCIIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Cci",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "ChaikinMoneyFlowIndicator",
+      "case": "trend",
+      "operation_id": "wickra.ChaikinMoneyFlow",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "window": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "CumulativeReturnIndicator",
+      "case": "trend",
+      "operation_id": "extra.CumulativeReturn",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DPOIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Dpo",
+      "parameters": {
+        "period": 20
+      },
+      "source_parameters": {
+        "window": 20
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DailyLogReturnIndicator",
+      "case": "trend",
+      "operation_id": "wickra.LogReturn",
+      "parameters": {
+        "period": 1
+      },
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 255,
+      "first_difference": [
+        {
+          "index": 1,
+          "expected": 0.09990010820848383,
+          "actual": 0.000999001082084833
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "DailyReturnIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 1
+      },
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "DonchianChannel",
+      "case": "trend",
+      "operation_id": "wickra.Donchian",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "additional source getters: donchian_channel_pband,donchian_channel_wband",
+      "status": "mismatch",
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EMAIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Ema",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 17,
+      "first_difference": [
+        {
+          "index": 2,
+          "expected": 100.175,
+          "actual": 100.14999999999999
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EaseOfMovementIndicator",
+      "case": "trend",
+      "operation_id": "wickra.EaseOfMovement",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: ease_of_movement",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "ForceIndexIndicator",
+      "case": "trend",
+      "operation_id": "wickra.ForceIndex",
+      "parameters": {
+        "period": 13
+      },
+      "source_parameters": {
+        "window": 13
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 85,
+      "first_difference": [
+        {
+          "index": 13,
+          "expected": 10.189115297969495,
+          "actual": 10.199999999999982
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "IchimokuIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "source_parameters": {
+        "window1": 9,
+        "window2": 26,
+        "window3": 52
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tenkan": null,
+            "kijun": null,
+            "senkou_a": null,
+            "senkou_b": 100.025
+          },
+          "actual": {
+            "chikou": null,
+            "kijun": null,
+            "senkou_a": null,
+            "senkou_b": null,
+            "tenkan": null
+          }
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KAMAIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Kama",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "source_parameters": {
+        "window": 10,
+        "pow1": 2,
+        "pow2": 30
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 26,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 100.95,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KSTIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Kst",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "source_parameters": {
+        "nsig": 9,
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "window1": 10,
+        "window2": 10,
+        "window3": 10,
+        "window4": 15
+      },
+      "scope_note": "additional source getters: kst_diff",
+      "status": "mismatch",
+      "differences": 52,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "kst": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KeltnerChannel",
+      "case": "trend",
+      "operation_id": "wickra.Keltner",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "source_parameters": {
+        "window": 5,
+        "window_atr": 5,
+        "multiplier": 2.0
+      },
+      "scope_note": "additional source getters: keltner_channel_hband_indicator,keltner_channel_lband_indicator,keltner_channel_pband,keltner_channel_wband",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": 99.78333333333335,
+            "middle": null,
+            "upper": 100.28333333333332
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MACD",
+      "case": "trend",
+      "operation_id": "wickra.MacdIndicator",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "source_parameters": {
+        "window_fast": 3,
+        "window_slow": 6,
+        "window_sign": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 57,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "macd": null,
+            "signal": null,
+            "histogram": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MFIIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Mfi",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 100.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MassIndex",
+      "case": "trend",
+      "operation_id": "wickra.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "source_parameters": {
+        "window_fast": 9,
+        "window_slow": 25
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "NegativeVolumeIndexIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Nvi",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "OnBalanceVolumeIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Obv",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 256,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 100.0,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PSARIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Psar",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "source_parameters": {
+        "step": 0.02,
+        "max_step": 0.2
+      },
+      "scope_note": "additional source getters: psar_down,psar_down_indicator,psar_up,psar_up_indicator",
+      "status": "mismatch",
+      "differences": 71,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 100.05,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentagePriceOscillator",
+      "case": "trend",
+      "operation_id": "wickra.Ppo",
+      "parameters": {
+        "fast": 12,
+        "slow": 26
+      },
+      "source_parameters": {
+        "window_fast": 12,
+        "window_slow": 26
+      },
+      "scope_note": "additional source getters: ppo_hist,ppo_signal",
+      "status": "mismatch",
+      "differences": 230,
+      "first_difference": [
+        {
+          "index": 25,
+          "expected": 0.5182395309825962,
+          "actual": 0.691016781836133
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentageVolumeOscillator",
+      "case": "trend",
+      "operation_id": "extra.PercentageVolumeOscillator",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "additional source getters: pvo_hist,pvo_signal",
+      "status": "mismatch",
+      "differences": 231,
+      "first_difference": [
+        {
+          "index": 25,
+          "expected": 0.23453739293866938,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ROCIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "RSIIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Rsi",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 2,
+          "expected": 100.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "SMAIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Sma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "STCIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Stc",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "source_parameters": {
+        "window_fast": 23,
+        "window_slow": 50,
+        "cycle": 10
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 189,
+      "first_difference": [
+        {
+          "index": 67,
+          "expected": null,
+          "actual": 49.99999999999999
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochRSIIndicator",
+      "case": "trend",
+      "operation_id": "wickra.StochRsi",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: stochrsi_d,stochrsi_k",
+      "status": "mismatch",
+      "differences": 229,
+      "first_difference": [
+        {
+          "index": 27,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochasticOscillator",
+      "case": "trend",
+      "operation_id": "wickra.Stochastic",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "source_parameters": {
+        "window": 5,
+        "smooth_window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 6,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "k": null,
+            "d": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TRIXIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Trix",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 27,
+      "first_difference": [
+        {
+          "index": 7,
+          "expected": 0.08015221138394289,
+          "actual": 0.09965122072746242
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TSIIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Tsi",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "source_parameters": {
+        "window_fast": 13,
+        "window_slow": 25
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "UlcerIndex",
+      "case": "trend",
+      "operation_id": "wickra.UlcerIndex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 13,
+      "first_difference": [
+        {
+          "index": 13,
+          "expected": 0.0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UltimateOscillator",
+      "case": "trend",
+      "operation_id": "wickra.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "source_parameters": {
+        "window1": 7,
+        "window2": 14,
+        "window3": 28
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "VolumePriceTrendIndicator",
+      "case": "trend",
+      "operation_id": "wickra.VolumePriceTrend",
+      "parameters": {},
+      "source_parameters": {},
+      "scope_note": "",
+      "status": "mismatch",
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "VolumeWeightedAveragePrice",
+      "case": "trend",
+      "operation_id": "wickra.RollingVwap",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "window": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "VortexIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Vortex",
+      "parameters": {
+        "period": 14
+      },
+      "source_parameters": {
+        "window": 14
+      },
+      "scope_note": "additional source getters: vortex_indicator_diff",
+      "status": "mismatch",
+      "differences": 14,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "plus": null,
+            "minus": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "WMAIndicator",
+      "case": "trend",
+      "operation_id": "wickra.Wma",
+      "parameters": {
+        "period": 3
+      },
+      "source_parameters": {
+        "window": 3
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ta",
+      "name": "WilliamsRIndicator",
+      "case": "trend",
+      "operation_id": "wickra.WilliamsR",
+      "parameters": {
+        "period": 5
+      },
+      "source_parameters": {
+        "lbp": 5
+      },
+      "scope_note": "",
+      "status": "pass_selected_outputs",
+      "differences": 0,
+      "first_difference": []
+    }
+  ]
+}

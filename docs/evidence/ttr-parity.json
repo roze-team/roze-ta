@@ -1,0 +1,3220 @@
+{
+  "schema_version": 1,
+  "oracle": {
+    "r_sources": "76e5618e4a714f190519ee98da6de3234cf7d8b5",
+    "native_sources": "76e5618e4a714f190519ee98da6de3234cf7d8b5",
+    "note": "MSVC test-only native build; R header compatibility flags select int enum and unused legacy complex layout; source formulas unchanged.",
+    "native_dll_sha256": "cb4095df93b4c0bd57a2de2e09f594118db83859c339cebfae734a222b94a860"
+  },
+  "tolerance": {
+    "absolute": 2e-09,
+    "relative": 2e-09
+  },
+  "records": [
+    {
+      "source": "ttr",
+      "name": "ADX",
+      "case": "mixed",
+      "operation_id": "wickra.Adx",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "plus_di": null,
+            "minus_di": null,
+            "DX": null,
+            "adx": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ALMA",
+      "case": "mixed",
+      "operation_id": "wickra.Alma",
+      "status": "mismatch",
+      "parameters": {
+        "n": 9,
+        "offset": 0.85,
+        "sigma": 6
+      },
+      "differences": 504,
+      "first_difference": [
+        {
+          "index": 8,
+          "expected": 104.247788370606,
+          "actual": 103.18718205141049
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ATR",
+      "case": "mixed",
+      "operation_id": "wickra.Atr",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tr": null,
+            "atr": null,
+            "trueHigh": null,
+            "trueLow": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "BBands",
+      "case": "mixed",
+      "operation_id": "wickra.BollingerBands",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "sd": 2
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null,
+            "pctB": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CCI",
+      "case": "mixed",
+      "operation_id": "wickra.Cci",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CLV",
+      "case": "mixed",
+      "operation_id": "extra.CloseLocationValue",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CMF",
+      "case": "mixed",
+      "operation_id": "wickra.ChaikinMoneyFlow",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CMO",
+      "case": "mixed",
+      "operation_id": "wickra.Cmo",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 14
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CTI",
+      "case": "mixed",
+      "operation_id": "wickra.CorrelationTrendIndicator",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": -0.12781954887218,
+          "actual": -0.17010916365069292
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DEMA",
+      "case": "mixed",
+      "operation_id": "wickra.Dema",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "DPO",
+      "case": "mixed",
+      "operation_id": "wickra.Dpo",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 504,
+      "first_difference": [
+        {
+          "index": 8,
+          "expected": -0.218352520331976,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DVI",
+      "case": "mixed",
+      "operation_id": "extra.Dvi",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "dvi.mag": null,
+            "dvi.str": null,
+            "dvi": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DonchianChannel",
+      "case": "mixed",
+      "operation_id": "wickra.Donchian",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "high": null,
+            "mid": null,
+            "low": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EMA",
+      "case": "mixed",
+      "operation_id": "wickra.Ema",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "EMV",
+      "case": "mixed",
+      "operation_id": "wickra.EaseOfMovement",
+      "status": "mismatch",
+      "parameters": {
+        "n": 14
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "emv": null,
+            "maEMV": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EVWMA",
+      "case": "mixed",
+      "operation_id": "wickra.Evwma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "GMMA",
+      "case": "mixed",
+      "operation_id": "extra.Guppy",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "short lag 3": null,
+            "short lag 5": null,
+            "short lag 8": null,
+            "short lag 10": null,
+            "short lag 12": null,
+            "short lag 15": null,
+            "long lag 30": null,
+            "long lag 35": null,
+            "long lag 40": null,
+            "long lag 45": null,
+            "long lag 50": null,
+            "long lag 60": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "HMA",
+      "case": "mixed",
+      "operation_id": "wickra.Hma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 9
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "KST",
+      "case": "mixed",
+      "operation_id": "wickra.Kst",
+      "status": "mismatch",
+      "parameters": {
+        "n": [
+          10,
+          10,
+          10,
+          15
+        ],
+        "nROC": [
+          10,
+          15,
+          20,
+          30
+        ],
+        "nSig": 9
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "kst": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MACD",
+      "case": "mixed",
+      "operation_id": "wickra.MacdIndicator",
+      "status": "mismatch",
+      "parameters": {
+        "nFast": 3,
+        "nSlow": 6,
+        "nSig": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "macd": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MFI",
+      "case": "mixed",
+      "operation_id": "wickra.Mfi",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "OBV",
+      "case": "mixed",
+      "operation_id": "talib.OBV",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "PBands",
+      "case": "mixed",
+      "operation_id": "extra.PriceBands",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "center": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ROC",
+      "case": "mixed",
+      "operation_id": "wickra.Roc",
+      "status": "mismatch",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 509,
+      "first_difference": [
+        {
+          "index": 3,
+          "expected": 0.050581065246817,
+          "actual": 5.188213098340728
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "RSI",
+      "case": "mixed",
+      "operation_id": "wickra.Rsi",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "SAR",
+      "case": "mixed",
+      "operation_id": "wickra.Psar",
+      "status": "mismatch",
+      "parameters": {
+        "accel": [
+          0.02,
+          0.2
+        ]
+      },
+      "differences": 467,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 92.1583502777829,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SMA",
+      "case": "mixed",
+      "operation_id": "wickra.Sma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "SMI",
+      "case": "mixed",
+      "operation_id": "wickra.Smi",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "nFast": 3,
+        "nSlow": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "SMI": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SNR",
+      "case": "mixed",
+      "operation_id": "extra.SignalNoiseRatio",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 65,
+      "first_difference": [
+        {
+          "index": 5,
+          "expected": 0.681453059186618,
+          "actual": 0.6868847004869612
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TDI",
+      "case": "mixed",
+      "operation_id": "extra.TrendDetectionIndex",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 14,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tdi": null,
+            "di": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TR",
+      "case": "mixed",
+      "operation_id": "wickra.TrueRange",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tr": null,
+            "trueHigh": null,
+            "trueLow": null
+          },
+          "actual": 6.475033454819524
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TRIX",
+      "case": "mixed",
+      "operation_id": "wickra.Trix",
+      "status": "mismatch",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "TRIX": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VHF",
+      "case": "mixed",
+      "operation_id": "wickra.VerticalHorizontalFilter",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 28
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "VWAP",
+      "case": "mixed",
+      "operation_id": "wickra.Vwap",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 99.84012335805075
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VWMA",
+      "case": "mixed",
+      "operation_id": "wickra.Vwma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "WMA",
+      "case": "mixed",
+      "operation_id": "wickra.Wma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "WPR",
+      "case": "mixed",
+      "operation_id": "wickra.WilliamsR",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 508,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 0.401653436091415,
+          "actual": -40.165343609141466
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZLEMA",
+      "case": "mixed",
+      "operation_id": "wickra.Zlema",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 503,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 103.382692537258,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZigZag",
+      "case": "mixed",
+      "operation_id": "wickra.ZigZag",
+      "status": "mismatch",
+      "parameters": {
+        "change": 10
+      },
+      "differences": 510,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 99.9744070695053,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "aroon",
+      "case": "mixed",
+      "operation_id": "wickra.Aroon",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "up": null,
+            "down": null,
+            "oscillator": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinAD",
+      "case": "mixed",
+      "operation_id": "wickra.Adl",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinVolatility",
+      "case": "mixed",
+      "operation_id": "wickra.ChaikinVolatility",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": -0.0866652583875435,
+          "actual": -8.666525838754351
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "growth",
+      "case": "mixed",
+      "operation_id": "extra.Growth",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 1.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "keltnerChannels",
+      "case": "mixed",
+      "operation_id": "wickra.Keltner",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "atr": 2
+      },
+      "differences": 65,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "lags",
+      "case": "mixed",
+      "operation_id": "extra.Lags",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "V1": null,
+            "V1.1": null,
+            "V1.2": null,
+            "V1.3": null,
+            "V1.4": null,
+            "V1.5": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "momentum",
+      "case": "mixed",
+      "operation_id": "wickra.Mom",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "rollSFM",
+      "case": "mixed",
+      "operation_id": "extra.SingleFactorModel",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "alpha": null,
+            "beta": null,
+            "r.squared": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCor",
+      "case": "mixed",
+      "operation_id": "wickra.RollingCorrelation",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 503,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 0.983540176527349,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCov",
+      "case": "mixed",
+      "operation_id": "extra.SampleCovariance",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMAD",
+      "case": "mixed",
+      "operation_id": "extra.ScaledMedianDeviation",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMax",
+      "case": "mixed",
+      "operation_id": "extra.Maximum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMean",
+      "case": "mixed",
+      "operation_id": "wickra.Sma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMedian",
+      "case": "mixed",
+      "operation_id": "wickra.MedianMa",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMin",
+      "case": "mixed",
+      "operation_id": "extra.Minimum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runPercentRank",
+      "case": "mixed",
+      "operation_id": "wickra.RollingPercentileRank",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0.775,
+          "actual": 77.5
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runRange",
+      "case": "mixed",
+      "operation_id": "extra.MinMax",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "min": null,
+            "max": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runSD",
+      "case": "mixed",
+      "operation_id": "extra.SampleStdDev",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runSum",
+      "case": "mixed",
+      "operation_id": "extra.Sum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runVar",
+      "case": "mixed",
+      "operation_id": "extra.SampleVariance",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "stoch",
+      "case": "mixed",
+      "operation_id": "wickra.Stochastic",
+      "status": "mismatch",
+      "parameters": {
+        "nFastK": 5,
+        "nFastD": 3,
+        "nSlowD": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "k": null,
+            "d": null,
+            "slowD": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ultimateOscillator",
+      "case": "mixed",
+      "operation_id": "wickra.UltimateOscillator",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": [
+          7,
+          14,
+          28
+        ]
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "volatility",
+      "case": "mixed",
+      "operation_id": "wickra.HistoricalVolatility",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20,
+        "N": 252
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0.802134863058548,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "wilderSum",
+      "case": "mixed",
+      "operation_id": "extra.WilderSum",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 82,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 441.085223220273,
+          "actual": 524.9794099966184
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "williamsAD",
+      "case": "mixed",
+      "operation_id": "wickra.Wad",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "ADX",
+      "case": "flat",
+      "operation_id": "wickra.Adx",
+      "status": "oracle_error",
+      "error": "not enough non-NA values"
+    },
+    {
+      "source": "ttr",
+      "name": "ALMA",
+      "case": "flat",
+      "operation_id": "wickra.Alma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 9,
+        "offset": 0.85,
+        "sigma": 6
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "ATR",
+      "case": "flat",
+      "operation_id": "wickra.Atr",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tr": null,
+            "atr": null,
+            "trueHigh": null,
+            "trueLow": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "BBands",
+      "case": "flat",
+      "operation_id": "wickra.BollingerBands",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "sd": 2
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null,
+            "pctB": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CCI",
+      "case": "flat",
+      "operation_id": "wickra.Cci",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 508,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CLV",
+      "case": "flat",
+      "operation_id": "extra.CloseLocationValue",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CMF",
+      "case": "flat",
+      "operation_id": "wickra.ChaikinMoneyFlow",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CMO",
+      "case": "flat",
+      "operation_id": "wickra.Cmo",
+      "status": "mismatch",
+      "parameters": {
+        "n": 14
+      },
+      "differences": 498,
+      "first_difference": [
+        {
+          "index": 14,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CTI",
+      "case": "flat",
+      "operation_id": "wickra.CorrelationTrendIndicator",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DEMA",
+      "case": "flat",
+      "operation_id": "wickra.Dema",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "DPO",
+      "case": "flat",
+      "operation_id": "wickra.Dpo",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 22,
+      "first_difference": [
+        {
+          "index": 8,
+          "expected": 0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DVI",
+      "case": "flat",
+      "operation_id": "extra.Dvi",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "dvi.mag": null,
+            "dvi.str": null,
+            "dvi": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DonchianChannel",
+      "case": "flat",
+      "operation_id": "wickra.Donchian",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "high": null,
+            "mid": null,
+            "low": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EMA",
+      "case": "flat",
+      "operation_id": "wickra.Ema",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "EMV",
+      "case": "flat",
+      "operation_id": "wickra.EaseOfMovement",
+      "status": "oracle_error",
+      "error": "not enough non-NA values"
+    },
+    {
+      "source": "ttr",
+      "name": "EVWMA",
+      "case": "flat",
+      "operation_id": "wickra.Evwma",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 492,
+      "first_difference": [
+        {
+          "index": 20,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "GMMA",
+      "case": "flat",
+      "operation_id": "extra.Guppy",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "short lag 3": null,
+            "short lag 5": null,
+            "short lag 8": null,
+            "short lag 10": null,
+            "short lag 12": null,
+            "short lag 15": null,
+            "long lag 30": null,
+            "long lag 35": null,
+            "long lag 40": null,
+            "long lag 45": null,
+            "long lag 50": null,
+            "long lag 60": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "HMA",
+      "case": "flat",
+      "operation_id": "wickra.Hma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 9
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "KST",
+      "case": "flat",
+      "operation_id": "wickra.Kst",
+      "status": "mismatch",
+      "parameters": {
+        "n": [
+          10,
+          10,
+          10,
+          15
+        ],
+        "nROC": [
+          10,
+          15,
+          20,
+          30
+        ],
+        "nSig": 9
+      },
+      "differences": 52,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "kst": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MACD",
+      "case": "flat",
+      "operation_id": "wickra.MacdIndicator",
+      "status": "mismatch",
+      "parameters": {
+        "nFast": 3,
+        "nSlow": 6,
+        "nSig": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "macd": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MFI",
+      "case": "flat",
+      "operation_id": "wickra.Mfi",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "OBV",
+      "case": "flat",
+      "operation_id": "talib.OBV",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "PBands",
+      "case": "flat",
+      "operation_id": "extra.PriceBands",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "center": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ROC",
+      "case": "flat",
+      "operation_id": "wickra.Roc",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "RSI",
+      "case": "flat",
+      "operation_id": "wickra.Rsi",
+      "status": "mismatch",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 509,
+      "first_difference": [
+        {
+          "index": 3,
+          "expected": null,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SAR",
+      "case": "flat",
+      "operation_id": "wickra.Psar",
+      "status": "mismatch",
+      "parameters": {
+        "accel": [
+          0.02,
+          0.2
+        ]
+      },
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 100,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SMA",
+      "case": "flat",
+      "operation_id": "wickra.Sma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "SMI",
+      "case": "flat",
+      "operation_id": "wickra.Smi",
+      "status": "oracle_error",
+      "error": "not enough non-NA values"
+    },
+    {
+      "source": "ttr",
+      "name": "SNR",
+      "case": "flat",
+      "operation_id": "extra.SignalNoiseRatio",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "TDI",
+      "case": "flat",
+      "operation_id": "extra.TrendDetectionIndex",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 14,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tdi": null,
+            "di": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TR",
+      "case": "flat",
+      "operation_id": "wickra.TrueRange",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tr": null,
+            "trueHigh": null,
+            "trueLow": null
+          },
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TRIX",
+      "case": "flat",
+      "operation_id": "wickra.Trix",
+      "status": "mismatch",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "TRIX": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VHF",
+      "case": "flat",
+      "operation_id": "wickra.VerticalHorizontalFilter",
+      "status": "mismatch",
+      "parameters": {
+        "n": 28
+      },
+      "differences": 484,
+      "first_difference": [
+        {
+          "index": 28,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VWAP",
+      "case": "flat",
+      "operation_id": "wickra.Vwap",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "VWMA",
+      "case": "flat",
+      "operation_id": "wickra.Vwma",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 508,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": null,
+          "actual": 100.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "WMA",
+      "case": "flat",
+      "operation_id": "wickra.Wma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "WPR",
+      "case": "flat",
+      "operation_id": "wickra.WilliamsR",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 508,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 0.5,
+          "actual": -50.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZLEMA",
+      "case": "flat",
+      "operation_id": "wickra.Zlema",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 100,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZigZag",
+      "case": "flat",
+      "operation_id": "wickra.ZigZag",
+      "status": "mismatch",
+      "parameters": {
+        "change": 10
+      },
+      "differences": 2,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 100,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "aroon",
+      "case": "flat",
+      "operation_id": "wickra.Aroon",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "up": null,
+            "down": null,
+            "oscillator": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinAD",
+      "case": "flat",
+      "operation_id": "wickra.Adl",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinVolatility",
+      "case": "flat",
+      "operation_id": "wickra.ChaikinVolatility",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "growth",
+      "case": "flat",
+      "operation_id": "extra.Growth",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 1.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "keltnerChannels",
+      "case": "flat",
+      "operation_id": "wickra.Keltner",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "atr": 2
+      },
+      "differences": 5,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "lags",
+      "case": "flat",
+      "operation_id": "extra.Lags",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "V1": null,
+            "V1.1": null,
+            "V1.2": null,
+            "V1.3": null,
+            "V1.4": null,
+            "V1.5": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "momentum",
+      "case": "flat",
+      "operation_id": "wickra.Mom",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "rollSFM",
+      "case": "flat",
+      "operation_id": "extra.SingleFactorModel",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "alpha": null,
+            "beta": null,
+            "r.squared": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCor",
+      "case": "flat",
+      "operation_id": "wickra.RollingCorrelation",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 502,
+      "first_difference": [
+        {
+          "index": 10,
+          "expected": null,
+          "actual": 0.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCov",
+      "case": "flat",
+      "operation_id": "extra.SampleCovariance",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMAD",
+      "case": "flat",
+      "operation_id": "extra.ScaledMedianDeviation",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMax",
+      "case": "flat",
+      "operation_id": "extra.Maximum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMean",
+      "case": "flat",
+      "operation_id": "wickra.Sma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMedian",
+      "case": "flat",
+      "operation_id": "wickra.MedianMa",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMin",
+      "case": "flat",
+      "operation_id": "extra.Minimum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runPercentRank",
+      "case": "flat",
+      "operation_id": "wickra.RollingPercentileRank",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0.5,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runRange",
+      "case": "flat",
+      "operation_id": "extra.MinMax",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "min": null,
+            "max": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runSD",
+      "case": "flat",
+      "operation_id": "extra.SampleStdDev",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runSum",
+      "case": "flat",
+      "operation_id": "extra.Sum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runVar",
+      "case": "flat",
+      "operation_id": "extra.SampleVariance",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "stoch",
+      "case": "flat",
+      "operation_id": "wickra.Stochastic",
+      "status": "oracle_error",
+      "error": "not enough non-NA values"
+    },
+    {
+      "source": "ttr",
+      "name": "ultimateOscillator",
+      "case": "flat",
+      "operation_id": "wickra.UltimateOscillator",
+      "status": "mismatch",
+      "parameters": {
+        "n": [
+          7,
+          14,
+          28
+        ]
+      },
+      "differences": 484,
+      "first_difference": [
+        {
+          "index": 28,
+          "expected": null,
+          "actual": 50.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "volatility",
+      "case": "flat",
+      "operation_id": "wickra.HistoricalVolatility",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20,
+        "N": 252
+      },
+      "differences": 1,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "wilderSum",
+      "case": "flat",
+      "operation_id": "extra.WilderSum",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 82,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 420,
+          "actual": 500.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "williamsAD",
+      "case": "flat",
+      "operation_id": "wickra.Wad",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "ADX",
+      "case": "trend",
+      "operation_id": "wickra.Adx",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "plus_di": null,
+            "minus_di": null,
+            "DX": null,
+            "adx": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ALMA",
+      "case": "trend",
+      "operation_id": "wickra.Alma",
+      "status": "mismatch",
+      "parameters": {
+        "n": 9,
+        "offset": 0.85,
+        "sigma": 6
+      },
+      "differences": 504,
+      "first_difference": [
+        {
+          "index": 8,
+          "expected": 100.634920931148,
+          "actual": 100.69427647822559
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ATR",
+      "case": "trend",
+      "operation_id": "wickra.Atr",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tr": null,
+            "atr": null,
+            "trueHigh": null,
+            "trueLow": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "BBands",
+      "case": "trend",
+      "operation_id": "wickra.BollingerBands",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "sd": 2
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null,
+            "pctB": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CCI",
+      "case": "trend",
+      "operation_id": "wickra.Cci",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CLV",
+      "case": "trend",
+      "operation_id": "extra.CloseLocationValue",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CMF",
+      "case": "trend",
+      "operation_id": "wickra.ChaikinMoneyFlow",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CMO",
+      "case": "trend",
+      "operation_id": "wickra.Cmo",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 14
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "CTI",
+      "case": "trend",
+      "operation_id": "wickra.CorrelationTrendIndicator",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "DEMA",
+      "case": "trend",
+      "operation_id": "wickra.Dema",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "DPO",
+      "case": "trend",
+      "operation_id": "wickra.Dpo",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 22,
+      "first_difference": [
+        {
+          "index": 8,
+          "expected": -0.150000000000006,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DVI",
+      "case": "trend",
+      "operation_id": "extra.Dvi",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "dvi.mag": null,
+            "dvi.str": null,
+            "dvi": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DonchianChannel",
+      "case": "trend",
+      "operation_id": "wickra.Donchian",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "high": null,
+            "mid": null,
+            "low": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EMA",
+      "case": "trend",
+      "operation_id": "wickra.Ema",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "EMV",
+      "case": "trend",
+      "operation_id": "wickra.EaseOfMovement",
+      "status": "mismatch",
+      "parameters": {
+        "n": 14
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "emv": null,
+            "maEMV": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EVWMA",
+      "case": "trend",
+      "operation_id": "wickra.Evwma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "GMMA",
+      "case": "trend",
+      "operation_id": "extra.Guppy",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "short lag 3": null,
+            "short lag 5": null,
+            "short lag 8": null,
+            "short lag 10": null,
+            "short lag 12": null,
+            "short lag 15": null,
+            "long lag 30": null,
+            "long lag 35": null,
+            "long lag 40": null,
+            "long lag 45": null,
+            "long lag 50": null,
+            "long lag 60": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "HMA",
+      "case": "trend",
+      "operation_id": "wickra.Hma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 9
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "KST",
+      "case": "trend",
+      "operation_id": "wickra.Kst",
+      "status": "mismatch",
+      "parameters": {
+        "n": [
+          10,
+          10,
+          10,
+          15
+        ],
+        "nROC": [
+          10,
+          15,
+          20,
+          30
+        ],
+        "nSig": 9
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "kst": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MACD",
+      "case": "trend",
+      "operation_id": "wickra.MacdIndicator",
+      "status": "mismatch",
+      "parameters": {
+        "nFast": 3,
+        "nSlow": 6,
+        "nSig": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "macd": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MFI",
+      "case": "trend",
+      "operation_id": "wickra.Mfi",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "OBV",
+      "case": "trend",
+      "operation_id": "talib.OBV",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "PBands",
+      "case": "trend",
+      "operation_id": "extra.PriceBands",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 8,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "center": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ROC",
+      "case": "trend",
+      "operation_id": "wickra.Roc",
+      "status": "mismatch",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 509,
+      "first_difference": [
+        {
+          "index": 3,
+          "expected": 0.00299401421260459,
+          "actual": 0.2998500749625159
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "RSI",
+      "case": "trend",
+      "operation_id": "wickra.Rsi",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "SAR",
+      "case": "trend",
+      "operation_id": "wickra.Psar",
+      "status": "mismatch",
+      "parameters": {
+        "accel": [
+          0.02,
+          0.2
+        ]
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 99.7232233047034,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SMA",
+      "case": "trend",
+      "operation_id": "wickra.Sma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "SMI",
+      "case": "trend",
+      "operation_id": "wickra.Smi",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "nFast": 3,
+        "nSlow": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "SMI": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SNR",
+      "case": "trend",
+      "operation_id": "extra.SignalNoiseRatio",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "TDI",
+      "case": "trend",
+      "operation_id": "extra.TrendDetectionIndex",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 14,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tdi": null,
+            "di": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TR",
+      "case": "trend",
+      "operation_id": "wickra.TrueRange",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "tr": null,
+            "trueHigh": null,
+            "trueLow": null
+          },
+          "actual": 0.2499999999999858
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TRIX",
+      "case": "trend",
+      "operation_id": "wickra.Trix",
+      "status": "mismatch",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "TRIX": null,
+            "signal": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VHF",
+      "case": "trend",
+      "operation_id": "wickra.VerticalHorizontalFilter",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 28
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "VWAP",
+      "case": "trend",
+      "operation_id": "wickra.Vwap",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 100.03333333333335
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VWMA",
+      "case": "trend",
+      "operation_id": "wickra.Vwma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "WMA",
+      "case": "trend",
+      "operation_id": "wickra.Wma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "WPR",
+      "case": "trend",
+      "operation_id": "wickra.WilliamsR",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 508,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 0.153846153846147,
+          "actual": -15.384615384614712
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZLEMA",
+      "case": "trend",
+      "operation_id": "wickra.Zlema",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 503,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": 100.5,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZigZag",
+      "case": "trend",
+      "operation_id": "wickra.ZigZag",
+      "status": "mismatch",
+      "parameters": {
+        "change": 10
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": 100.025,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "aroon",
+      "case": "trend",
+      "operation_id": "wickra.Aroon",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "up": null,
+            "down": null,
+            "oscillator": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinAD",
+      "case": "trend",
+      "operation_id": "wickra.Adl",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinVolatility",
+      "case": "trend",
+      "operation_id": "wickra.ChaikinVolatility",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "growth",
+      "case": "trend",
+      "operation_id": "extra.Growth",
+      "status": "mismatch",
+      "parameters": {},
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": null,
+          "actual": 1.0
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "keltnerChannels",
+      "case": "trend",
+      "operation_id": "wickra.Keltner",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5,
+        "atr": 2
+      },
+      "differences": 5,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "lower": null,
+            "middle": null,
+            "upper": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "lags",
+      "case": "trend",
+      "operation_id": "extra.Lags",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "V1": null,
+            "V1.1": null,
+            "V1.2": null,
+            "V1.3": null,
+            "V1.4": null,
+            "V1.5": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "momentum",
+      "case": "trend",
+      "operation_id": "wickra.Mom",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "rollSFM",
+      "case": "trend",
+      "operation_id": "extra.SingleFactorModel",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "alpha": null,
+            "beta": null,
+            "r.squared": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCor",
+      "case": "trend",
+      "operation_id": "wickra.RollingCorrelation",
+      "status": "mismatch",
+      "parameters": {
+        "n": 10
+      },
+      "differences": 503,
+      "first_difference": [
+        {
+          "index": 9,
+          "expected": -0.90367557986349,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCov",
+      "case": "trend",
+      "operation_id": "extra.SampleCovariance",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMAD",
+      "case": "trend",
+      "operation_id": "extra.ScaledMedianDeviation",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMax",
+      "case": "trend",
+      "operation_id": "extra.Maximum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMean",
+      "case": "trend",
+      "operation_id": "wickra.Sma",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 3
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMedian",
+      "case": "trend",
+      "operation_id": "wickra.MedianMa",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runMin",
+      "case": "trend",
+      "operation_id": "extra.Minimum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runPercentRank",
+      "case": "trend",
+      "operation_id": "wickra.RollingPercentileRank",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 0.975,
+          "actual": 97.5
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runRange",
+      "case": "trend",
+      "operation_id": "extra.MinMax",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 4,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "min": null,
+            "max": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runSD",
+      "case": "trend",
+      "operation_id": "extra.SampleStdDev",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runSum",
+      "case": "trend",
+      "operation_id": "extra.Sum",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "runVar",
+      "case": "trend",
+      "operation_id": "extra.SampleVariance",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": 20
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "stoch",
+      "case": "trend",
+      "operation_id": "wickra.Stochastic",
+      "status": "mismatch",
+      "parameters": {
+        "nFastK": 5,
+        "nFastD": 3,
+        "nSlowD": 3
+      },
+      "differences": 512,
+      "first_difference": [
+        {
+          "index": 0,
+          "expected": {
+            "k": null,
+            "d": null,
+            "slowD": null
+          },
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ultimateOscillator",
+      "case": "trend",
+      "operation_id": "wickra.UltimateOscillator",
+      "status": "pass_selected_configuration",
+      "parameters": {
+        "n": [
+          7,
+          14,
+          28
+        ]
+      },
+      "differences": 0,
+      "first_difference": []
+    },
+    {
+      "source": "ttr",
+      "name": "volatility",
+      "case": "trend",
+      "operation_id": "wickra.HistoricalVolatility",
+      "status": "mismatch",
+      "parameters": {
+        "n": 20,
+        "N": 252
+      },
+      "differences": 493,
+      "first_difference": [
+        {
+          "index": 19,
+          "expected": 8.75763370655135e-05,
+          "actual": null
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "wilderSum",
+      "case": "trend",
+      "operation_id": "extra.WilderSum",
+      "status": "mismatch",
+      "parameters": {
+        "n": 5
+      },
+      "differences": 82,
+      "first_difference": [
+        {
+          "index": 4,
+          "expected": 421.09,
+          "actual": 501.24999999999994
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "williamsAD",
+      "case": "trend",
+      "operation_id": "wickra.Wad",
+      "status": "pass_selected_configuration",
+      "parameters": {},
+      "differences": 0,
+      "first_difference": []
+    }
+  ]
+}

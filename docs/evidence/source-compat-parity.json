@@ -1,0 +1,4075 @@
+{
+  "schema_version": 1,
+  "requirements": [
+    "FR-IND-009",
+    "AC-IND-009"
+  ],
+  "counts": {
+    "variants": 114,
+    "numeric_cases": 334,
+    "normalized_reference_exceptions": 8,
+    "failed_cases": 0
+  },
+  "fixture_sha256": {
+    "crates/roze-ta/tests/fixtures/python-parity.json": "0b0d18c3f6a2a735fd7e7773754ae6b1a8b9062d3526ce3c29e17460d06167b7",
+    "crates/roze-ta/tests/fixtures/ttr-parity.json": "81ba3be8bec3804fac440daea0d3094f03503495cc130df842f5542623915802",
+    "crates/roze-ta/tests/fixtures/causal-parity.json": "8f1961bf5e9f3fa5fdb567e51bfa61500e63e3fab1efc059834da29bf6fdc3ca"
+  },
+  "entries": [
+    {
+      "source": "talipp",
+      "name": "ADX",
+      "operation_id": "compat.talipp.ADX",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "ADX",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ADX",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ADX",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "AccuDist",
+      "operation_id": "compat.talipp.AccuDist",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "AccuDist",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "AccuDist",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "AccuDist",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "BB",
+      "operation_id": "compat.talipp.BB",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "BB",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "BB",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "BB",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "BOP",
+      "operation_id": "compat.talipp.BOP",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "BOP",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "BOP",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "BOP",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "CCI",
+      "operation_id": "compat.talipp.CCI",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "CCI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "CCI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "CCI",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "CHOP",
+      "operation_id": "compat.talipp.CHOP",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "CHOP",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "CHOP",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "CHOP",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ChaikinOsc",
+      "operation_id": "compat.talipp.ChaikinOsc",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "ChaikinOsc",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ChaikinOsc",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ChaikinOsc",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ChandeKrollStop",
+      "operation_id": "compat.talipp.ChandeKrollStop",
+      "parameters": {
+        "atr_multiplier": 1.0,
+        "atr_period": 10,
+        "stop_period": 9
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "ChandeKrollStop",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ChandeKrollStop",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ChandeKrollStop",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "FibonacciRetracement",
+      "operation_id": "compat.talipp.FibonacciRetracement",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "FibonacciRetracement",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "FibonacciRetracement",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "FibonacciRetracement",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "HMA",
+      "operation_id": "compat.talipp.HMA",
+      "parameters": {
+        "period": 9
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "HMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "HMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "HMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "Ichimoku",
+      "operation_id": "compat.talipp.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "Ichimoku",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "Ichimoku",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "Ichimoku",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KAMA",
+      "operation_id": "compat.talipp.KAMA",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "KAMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KAMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KAMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KST",
+      "operation_id": "compat.talipp.KST",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "KST",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KST",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KST",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KVO",
+      "operation_id": "compat.talipp.KVO",
+      "parameters": {
+        "fast": 34,
+        "slow": 55
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "KVO",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KVO",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KVO",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "KeltnerChannels",
+      "operation_id": "compat.talipp.KeltnerChannels",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "KeltnerChannels",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KeltnerChannels",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "KeltnerChannels",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MACD",
+      "operation_id": "compat.talipp.MACD",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "MACD",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "MACD",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "MACD",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "MassIndex",
+      "operation_id": "compat.talipp.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "MassIndex",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "MassIndex",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "MassIndex",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "McGinleyDynamic",
+      "operation_id": "compat.talipp.McGinleyDynamic",
+      "parameters": {
+        "period": 10
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "McGinleyDynamic",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "McGinleyDynamic",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "McGinleyDynamic",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ParabolicSAR",
+      "operation_id": "compat.talipp.ParabolicSAR",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "ParabolicSAR",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ParabolicSAR",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ParabolicSAR",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "PivotsHL",
+      "operation_id": "compat.talipp.PivotsHL",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "PivotsHL",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "PivotsHL",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "PivotsHL",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "RSI",
+      "operation_id": "compat.talipp.RSI",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "RSI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "RSI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "RSI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "RogersSatchell",
+      "operation_id": "compat.talipp.RogersSatchell",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "RogersSatchell",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "RogersSatchell",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "RogersSatchell",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SFX",
+      "operation_id": "compat.talipp.SFX",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "SFX",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "SFX",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "SFX",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SOBV",
+      "operation_id": "compat.talipp.SOBV",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "SOBV",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "SOBV",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "SOBV",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "STC",
+      "operation_id": "compat.talipp.STC",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "STC",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "STC",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "STC",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "Stoch",
+      "operation_id": "compat.talipp.Stoch",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "Stoch",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "Stoch",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "Stoch",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "StochRSI",
+      "operation_id": "compat.talipp.StochRSI",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "StochRSI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "StochRSI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "StochRSI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "SuperTrend",
+      "operation_id": "compat.talipp.SuperTrend",
+      "parameters": {
+        "atr_period": 10,
+        "multiplier": 3.0
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "SuperTrend",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "SuperTrend",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "SuperTrend",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "TRIX",
+      "operation_id": "compat.talipp.TRIX",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "TRIX",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "TRIX",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "TRIX",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "TSI",
+      "operation_id": "compat.talipp.TSI",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "TSI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "TSI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "TSI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "TTM",
+      "operation_id": "compat.talipp.TTM",
+      "parameters": {
+        "bb_mult": 2.0,
+        "kc_mult": 1.5,
+        "period": 20
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "TTM",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "TTM",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "TTM",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "UO",
+      "operation_id": "compat.talipp.UO",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "UO",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "UO",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "UO",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "VTX",
+      "operation_id": "compat.talipp.VTX",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "VTX",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "VTX",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "VTX",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "VWMA",
+      "operation_id": "compat.talipp.VWMA",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "VWMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "VWMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "VWMA",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "Williams",
+      "operation_id": "compat.talipp.Williams",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "Williams",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "Williams",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "Williams",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "talipp",
+      "name": "ZigZag",
+      "operation_id": "compat.talipp.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "talipp",
+          "name": "ZigZag",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ZigZag",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "talipp",
+          "name": "ZigZag",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ADXIndicator",
+      "operation_id": "compat.ta.ADXIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "ADXIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "ADXIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "ADXIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AroonIndicator",
+      "operation_id": "compat.ta.AroonIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "AroonIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "AroonIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "AroonIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "AverageTrueRange",
+      "operation_id": "compat.ta.AverageTrueRange",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "AverageTrueRange",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "AverageTrueRange",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "AverageTrueRange",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "BollingerBands",
+      "operation_id": "compat.ta.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "BollingerBands",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "BollingerBands",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "BollingerBands",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "CCIIndicator",
+      "operation_id": "compat.ta.CCIIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "CCIIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "CCIIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "CCIIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ChaikinMoneyFlowIndicator",
+      "operation_id": "compat.ta.ChaikinMoneyFlowIndicator",
+      "parameters": {
+        "period": 20
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "ChaikinMoneyFlowIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "ChaikinMoneyFlowIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "ChaikinMoneyFlowIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "DailyLogReturnIndicator",
+      "operation_id": "compat.ta.DailyLogReturnIndicator",
+      "parameters": {
+        "period": 1
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "DailyLogReturnIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "DailyLogReturnIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "DailyLogReturnIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "DonchianChannel",
+      "operation_id": "compat.ta.DonchianChannel",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "DonchianChannel",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "DonchianChannel",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "DonchianChannel",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EMAIndicator",
+      "operation_id": "compat.ta.EMAIndicator",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "EMAIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "EMAIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "EMAIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "EaseOfMovementIndicator",
+      "operation_id": "compat.ta.EaseOfMovementIndicator",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "EaseOfMovementIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "EaseOfMovementIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "EaseOfMovementIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "ForceIndexIndicator",
+      "operation_id": "compat.ta.ForceIndexIndicator",
+      "parameters": {
+        "period": 13
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "ForceIndexIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "ForceIndexIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "ForceIndexIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "IchimokuIndicator",
+      "operation_id": "compat.ta.IchimokuIndicator",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "IchimokuIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "IchimokuIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "IchimokuIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KAMAIndicator",
+      "operation_id": "compat.ta.KAMAIndicator",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "KAMAIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "KAMAIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "KAMAIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KSTIndicator",
+      "operation_id": "compat.ta.KSTIndicator",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "status": "verified_causal_cases",
+      "alignment": "prefix_snapshot_last; early ROC fill mean uses only observed prefix",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "KSTIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "KSTIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "KSTIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "KeltnerChannel",
+      "operation_id": "compat.ta.KeltnerChannel",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "KeltnerChannel",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "KeltnerChannel",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "KeltnerChannel",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MACD",
+      "operation_id": "compat.ta.MACD",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "MACD",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "MACD",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "MACD",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MFIIndicator",
+      "operation_id": "compat.ta.MFIIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "MFIIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "MFIIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "MFIIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "MassIndex",
+      "operation_id": "compat.ta.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "MassIndex",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "MassIndex",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "MassIndex",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "OnBalanceVolumeIndicator",
+      "operation_id": "compat.ta.OnBalanceVolumeIndicator",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "OnBalanceVolumeIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "OnBalanceVolumeIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "OnBalanceVolumeIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PSARIndicator",
+      "operation_id": "compat.ta.PSARIndicator",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "PSARIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "PSARIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "PSARIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentagePriceOscillator",
+      "operation_id": "compat.ta.PercentagePriceOscillator",
+      "parameters": {
+        "fast": 12,
+        "slow": 26
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "PercentagePriceOscillator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "PercentagePriceOscillator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "PercentagePriceOscillator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "PercentageVolumeOscillator",
+      "operation_id": "compat.ta.PercentageVolumeOscillator",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "PercentageVolumeOscillator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "PercentageVolumeOscillator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "PercentageVolumeOscillator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "RSIIndicator",
+      "operation_id": "compat.ta.RSIIndicator",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "RSIIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "RSIIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "RSIIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "STCIndicator",
+      "operation_id": "compat.ta.STCIndicator",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "STCIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "STCIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "STCIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochRSIIndicator",
+      "operation_id": "compat.ta.StochRSIIndicator",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "StochRSIIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "StochRSIIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "StochRSIIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "StochasticOscillator",
+      "operation_id": "compat.ta.StochasticOscillator",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "StochasticOscillator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "StochasticOscillator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "StochasticOscillator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TRIXIndicator",
+      "operation_id": "compat.ta.TRIXIndicator",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "TRIXIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "TRIXIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "TRIXIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "TSIIndicator",
+      "operation_id": "compat.ta.TSIIndicator",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "TSIIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "TSIIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "TSIIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UlcerIndex",
+      "operation_id": "compat.ta.UlcerIndex",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "UlcerIndex",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "UlcerIndex",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "UlcerIndex",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "UltimateOscillator",
+      "operation_id": "compat.ta.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "UltimateOscillator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "UltimateOscillator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "UltimateOscillator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "VolumePriceTrendIndicator",
+      "operation_id": "compat.ta.VolumePriceTrendIndicator",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "VolumePriceTrendIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "VolumePriceTrendIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "VolumePriceTrendIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "VortexIndicator",
+      "operation_id": "compat.ta.VortexIndicator",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "VortexIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "VortexIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "VortexIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ta",
+      "name": "WilliamsRIndicator",
+      "operation_id": "compat.ta.WilliamsRIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ta",
+          "name": "WilliamsRIndicator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "WilliamsRIndicator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ta",
+          "name": "WilliamsRIndicator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ADX",
+      "operation_id": "compat.ttr.ADX",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ADX",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ADX",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ADX",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ALMA",
+      "operation_id": "compat.ttr.ALMA",
+      "parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ALMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ALMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ALMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ATR",
+      "operation_id": "compat.ttr.ATR",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ATR",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ATR",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ATR",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "BBands",
+      "operation_id": "compat.ttr.BBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "BBands",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "BBands",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "BBands",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CCI",
+      "operation_id": "compat.ttr.CCI",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "CCI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CCI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CCI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CLV",
+      "operation_id": "compat.ttr.CLV",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "CLV",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CLV",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CLV",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CMF",
+      "operation_id": "compat.ttr.CMF",
+      "parameters": {
+        "period": 20
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "CMF",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CMF",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CMF",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CMO",
+      "operation_id": "compat.ttr.CMO",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "CMO",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CMO",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CMO",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "CTI",
+      "operation_id": "compat.ttr.CTI",
+      "parameters": {
+        "period": 20
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "CTI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CTI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "CTI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DPO",
+      "operation_id": "compat.ttr.DPO",
+      "parameters": {
+        "period": 20
+      },
+      "status": "verified_causal_cases",
+      "alignment": "delayed_by_11_observations; source value t emitted at t+delay",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "DPO",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "DPO",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "DPO",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DVI",
+      "operation_id": "compat.ttr.DVI",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "DVI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "DVI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "DVI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "DonchianChannel",
+      "operation_id": "compat.ttr.DonchianChannel",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "DonchianChannel",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "DonchianChannel",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "DonchianChannel",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EMV",
+      "operation_id": "compat.ttr.EMV",
+      "parameters": {
+        "period": 14
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "EMV",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "EMV",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "EMV",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "EVWMA",
+      "operation_id": "compat.ttr.EVWMA",
+      "parameters": {
+        "period": 20
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "EVWMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "EVWMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "EVWMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "GMMA",
+      "operation_id": "compat.ttr.GMMA",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "GMMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "GMMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "GMMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "KST",
+      "operation_id": "compat.ttr.KST",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "KST",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "KST",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "KST",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "MACD",
+      "operation_id": "compat.ttr.MACD",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "MACD",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "MACD",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "MACD",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "PBands",
+      "operation_id": "compat.ttr.PBands",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "PBands",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "PBands",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "PBands",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ROC",
+      "operation_id": "compat.ttr.ROC",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ROC",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ROC",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ROC",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "RSI",
+      "operation_id": "compat.ttr.RSI",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "RSI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "RSI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "RSI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SAR",
+      "operation_id": "compat.ttr.SAR",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "SAR",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "SAR",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "SAR",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SMI",
+      "operation_id": "compat.ttr.SMI",
+      "parameters": {
+        "d2_period": 3,
+        "d_period": 3,
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "SMI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "SMI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "SMI",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "SNR",
+      "operation_id": "compat.ttr.SNR",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "SNR",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "SNR",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "SNR",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TDI",
+      "operation_id": "compat.ttr.TDI",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "TDI",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "TDI",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "TDI",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TR",
+      "operation_id": "compat.ttr.TR",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "TR",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "TR",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "TR",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "TRIX",
+      "operation_id": "compat.ttr.TRIX",
+      "parameters": {
+        "period": 3
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "TRIX",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "TRIX",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "TRIX",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VHF",
+      "operation_id": "compat.ttr.VHF",
+      "parameters": {
+        "period": 28
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "VHF",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "VHF",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "VHF",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VWAP",
+      "operation_id": "compat.ttr.VWAP",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "VWAP",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "VWAP",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "VWAP",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "VWMA",
+      "operation_id": "compat.ttr.VWMA",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "VWMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "VWMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "VWMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "WPR",
+      "operation_id": "compat.ttr.WPR",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "WPR",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "WPR",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "WPR",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZLEMA",
+      "operation_id": "compat.ttr.ZLEMA",
+      "parameters": {
+        "period": 10
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ZLEMA",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ZLEMA",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ZLEMA",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ZigZag",
+      "operation_id": "compat.ttr.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "status": "verified_causal_cases",
+      "alignment": "prefix_snapshot_last; one sample is warming (reference requires two)",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ZigZag",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ZigZag",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ZigZag",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "aroon",
+      "operation_id": "compat.ttr.aroon",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "aroon",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "aroon",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "aroon",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinVolatility",
+      "operation_id": "compat.ttr.chaikinVolatility",
+      "parameters": {
+        "ema_period": 10,
+        "roc_period": 10
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "chaikinVolatility",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "chaikinVolatility",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "chaikinVolatility",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "growth",
+      "operation_id": "compat.ttr.growth",
+      "parameters": {},
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "growth",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "growth",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "growth",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "keltnerChannels",
+      "operation_id": "compat.ttr.keltnerChannels",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "keltnerChannels",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "keltnerChannels",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "keltnerChannels",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "lags",
+      "operation_id": "compat.ttr.lags",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "lags",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "lags",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "lags",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "rollSFM",
+      "operation_id": "compat.ttr.rollSFM",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "rollSFM",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "rollSFM",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "rollSFM",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runCor",
+      "operation_id": "compat.ttr.runCor",
+      "parameters": {
+        "period": 10
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "runCor",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "runCor",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "runCor",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runPercentRank",
+      "operation_id": "compat.ttr.runPercentRank",
+      "parameters": {
+        "period": 20
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "runPercentRank",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "runPercentRank",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "runPercentRank",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "runRange",
+      "operation_id": "compat.ttr.runRange",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "runRange",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "runRange",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "runRange",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "stoch",
+      "operation_id": "compat.ttr.stoch",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "stoch",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "stoch",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "stoch",
+          "case": "flat_reference_exception",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "ultimateOscillator",
+      "operation_id": "compat.ttr.ultimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "ultimateOscillator",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ultimateOscillator",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "ultimateOscillator",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "volatility",
+      "operation_id": "compat.ttr.volatility",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "volatility",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "volatility",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "volatility",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    },
+    {
+      "source": "ttr",
+      "name": "wilderSum",
+      "operation_id": "compat.ttr.wilderSum",
+      "parameters": {
+        "period": 5
+      },
+      "status": "verified_source_cases",
+      "alignment": "same_observation",
+      "evidence": "docs/evidence/source-compat-parity.json",
+      "scope": "explicit constructor parameters; every row on mixed, flat and trend; source exceptions normalize to transactional undefined_result; causal alignment is explicit; not whole source API or all parameter combinations",
+      "cases": [
+        {
+          "source": "ttr",
+          "name": "wilderSum",
+          "case": "mixed",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "wilderSum",
+          "case": "flat",
+          "differences": 0,
+          "first": []
+        },
+        {
+          "source": "ttr",
+          "name": "wilderSum",
+          "case": "trend",
+          "differences": 0,
+          "first": []
+        }
+      ]
+    }
+  ]
+}

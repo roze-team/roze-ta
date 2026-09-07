@@ -1,0 +1,1155 @@
+{
+  "schema_version": 1,
+  "bindings": [
+    {
+      "source": "ttr",
+      "name": "runCov",
+      "operation_id": "extra.SampleCovariance",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Source default uses sample covariance of raw input values."
+    },
+    {
+      "source": "ttr",
+      "name": "runVar",
+      "operation_id": "extra.SampleVariance",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Source sample=true uses n-1 denominator."
+    },
+    {
+      "source": "ttr",
+      "name": "runSD",
+      "operation_id": "extra.SampleStdDev",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Source sample=true uses n-1 denominator."
+    },
+    {
+      "source": "ttr",
+      "name": "runMAD",
+      "operation_id": "extra.ScaledMedianDeviation",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Source median absolute deviation default scale is 1.4826."
+    },
+    {
+      "source": "ttr",
+      "name": "OBV",
+      "operation_id": "talib.OBV",
+      "parameters": {},
+      "reason": "Source initializes from first volume, not zero."
+    },
+    {
+      "source": "talipp",
+      "name": "OBV",
+      "operation_id": "talib.OBV",
+      "parameters": {},
+      "reason": "Source initializes from first volume, equal closes preserve the preceding value."
+    },
+    {
+      "source": "ta",
+      "name": "DailyReturnIndicator",
+      "operation_id": "wickra.Roc",
+      "parameters": {
+        "period": 1
+      },
+      "reason": "DailyReturn is one-step percent change, not a three-step ROC."
+    },
+    {
+      "source": "talipp",
+      "name": "ADX",
+      "operation_id": "compat.talipp.ADX",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "AccuDist",
+      "operation_id": "compat.talipp.AccuDist",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "BB",
+      "operation_id": "compat.talipp.BB",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "BOP",
+      "operation_id": "compat.talipp.BOP",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "CCI",
+      "operation_id": "compat.talipp.CCI",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "CHOP",
+      "operation_id": "compat.talipp.CHOP",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "ChaikinOsc",
+      "operation_id": "compat.talipp.ChaikinOsc",
+      "parameters": {
+        "fast": 3,
+        "slow": 10
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "ChandeKrollStop",
+      "operation_id": "compat.talipp.ChandeKrollStop",
+      "parameters": {
+        "atr_multiplier": 1.0,
+        "atr_period": 10,
+        "stop_period": 9
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "FibonacciRetracement",
+      "operation_id": "compat.talipp.FibonacciRetracement",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "HMA",
+      "operation_id": "compat.talipp.HMA",
+      "parameters": {
+        "period": 9
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "Ichimoku",
+      "operation_id": "compat.talipp.Ichimoku",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "KAMA",
+      "operation_id": "compat.talipp.KAMA",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "KST",
+      "operation_id": "compat.talipp.KST",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "KVO",
+      "operation_id": "compat.talipp.KVO",
+      "parameters": {
+        "fast": 34,
+        "slow": 55
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "KeltnerChannels",
+      "operation_id": "compat.talipp.KeltnerChannels",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "MACD",
+      "operation_id": "compat.talipp.MACD",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "MassIndex",
+      "operation_id": "compat.talipp.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "McGinleyDynamic",
+      "operation_id": "compat.talipp.McGinleyDynamic",
+      "parameters": {
+        "period": 10
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "ParabolicSAR",
+      "operation_id": "compat.talipp.ParabolicSAR",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "PivotsHL",
+      "operation_id": "compat.talipp.PivotsHL",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "RSI",
+      "operation_id": "compat.talipp.RSI",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "RogersSatchell",
+      "operation_id": "compat.talipp.RogersSatchell",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "SFX",
+      "operation_id": "compat.talipp.SFX",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "SOBV",
+      "operation_id": "compat.talipp.SOBV",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "STC",
+      "operation_id": "compat.talipp.STC",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "Stoch",
+      "operation_id": "compat.talipp.Stoch",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "StochRSI",
+      "operation_id": "compat.talipp.StochRSI",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "SuperTrend",
+      "operation_id": "compat.talipp.SuperTrend",
+      "parameters": {
+        "atr_period": 10,
+        "multiplier": 3.0
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "TRIX",
+      "operation_id": "compat.talipp.TRIX",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "TSI",
+      "operation_id": "compat.talipp.TSI",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "TTM",
+      "operation_id": "compat.talipp.TTM",
+      "parameters": {
+        "bb_mult": 2.0,
+        "kc_mult": 1.5,
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "UO",
+      "operation_id": "compat.talipp.UO",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "VTX",
+      "operation_id": "compat.talipp.VTX",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "VWMA",
+      "operation_id": "compat.talipp.VWMA",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "Williams",
+      "operation_id": "compat.talipp.Williams",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "talipp",
+      "name": "ZigZag",
+      "operation_id": "compat.talipp.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "ADXIndicator",
+      "operation_id": "compat.ta.ADXIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "AroonIndicator",
+      "operation_id": "compat.ta.AroonIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "AverageTrueRange",
+      "operation_id": "compat.ta.AverageTrueRange",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "BollingerBands",
+      "operation_id": "compat.ta.BollingerBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "CCIIndicator",
+      "operation_id": "compat.ta.CCIIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "ChaikinMoneyFlowIndicator",
+      "operation_id": "compat.ta.ChaikinMoneyFlowIndicator",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "DailyLogReturnIndicator",
+      "operation_id": "compat.ta.DailyLogReturnIndicator",
+      "parameters": {
+        "period": 1
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "DonchianChannel",
+      "operation_id": "compat.ta.DonchianChannel",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "EMAIndicator",
+      "operation_id": "compat.ta.EMAIndicator",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "EaseOfMovementIndicator",
+      "operation_id": "compat.ta.EaseOfMovementIndicator",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "ForceIndexIndicator",
+      "operation_id": "compat.ta.ForceIndexIndicator",
+      "parameters": {
+        "period": 13
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "IchimokuIndicator",
+      "operation_id": "compat.ta.IchimokuIndicator",
+      "parameters": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "KAMAIndicator",
+      "operation_id": "compat.ta.KAMAIndicator",
+      "parameters": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "KSTIndicator",
+      "operation_id": "compat.ta.KSTIndicator",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: prefix_snapshot_last; early ROC fill mean uses only observed prefix"
+    },
+    {
+      "source": "ta",
+      "name": "KeltnerChannel",
+      "operation_id": "compat.ta.KeltnerChannel",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "MACD",
+      "operation_id": "compat.ta.MACD",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "MFIIndicator",
+      "operation_id": "compat.ta.MFIIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "MassIndex",
+      "operation_id": "compat.ta.MassIndex",
+      "parameters": {
+        "ema_period": 9,
+        "sum_period": 25
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "OnBalanceVolumeIndicator",
+      "operation_id": "compat.ta.OnBalanceVolumeIndicator",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "PSARIndicator",
+      "operation_id": "compat.ta.PSARIndicator",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "PercentagePriceOscillator",
+      "operation_id": "compat.ta.PercentagePriceOscillator",
+      "parameters": {
+        "fast": 12,
+        "slow": 26
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "PercentageVolumeOscillator",
+      "operation_id": "compat.ta.PercentageVolumeOscillator",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "RSIIndicator",
+      "operation_id": "compat.ta.RSIIndicator",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "STCIndicator",
+      "operation_id": "compat.ta.STCIndicator",
+      "parameters": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "StochRSIIndicator",
+      "operation_id": "compat.ta.StochRSIIndicator",
+      "parameters": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "StochasticOscillator",
+      "operation_id": "compat.ta.StochasticOscillator",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "TRIXIndicator",
+      "operation_id": "compat.ta.TRIXIndicator",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "TSIIndicator",
+      "operation_id": "compat.ta.TSIIndicator",
+      "parameters": {
+        "long": 25,
+        "short": 13
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "UlcerIndex",
+      "operation_id": "compat.ta.UlcerIndex",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "UltimateOscillator",
+      "operation_id": "compat.ta.UltimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "VolumePriceTrendIndicator",
+      "operation_id": "compat.ta.VolumePriceTrendIndicator",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "VortexIndicator",
+      "operation_id": "compat.ta.VortexIndicator",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ta",
+      "name": "WilliamsRIndicator",
+      "operation_id": "compat.ta.WilliamsRIndicator",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ADX",
+      "operation_id": "compat.ttr.ADX",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ALMA",
+      "operation_id": "compat.ttr.ALMA",
+      "parameters": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ATR",
+      "operation_id": "compat.ttr.ATR",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "BBands",
+      "operation_id": "compat.ttr.BBands",
+      "parameters": {
+        "multiplier": 2.0,
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "CCI",
+      "operation_id": "compat.ttr.CCI",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "CLV",
+      "operation_id": "compat.ttr.CLV",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "CMF",
+      "operation_id": "compat.ttr.CMF",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "CMO",
+      "operation_id": "compat.ttr.CMO",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "CTI",
+      "operation_id": "compat.ttr.CTI",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "DPO",
+      "operation_id": "compat.ttr.DPO",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: delayed_by_11_observations; source value t emitted at t+delay"
+    },
+    {
+      "source": "ttr",
+      "name": "DVI",
+      "operation_id": "compat.ttr.DVI",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "DonchianChannel",
+      "operation_id": "compat.ttr.DonchianChannel",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "EMV",
+      "operation_id": "compat.ttr.EMV",
+      "parameters": {
+        "period": 14
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "EVWMA",
+      "operation_id": "compat.ttr.EVWMA",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "GMMA",
+      "operation_id": "compat.ttr.GMMA",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "KST",
+      "operation_id": "compat.ttr.KST",
+      "parameters": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "MACD",
+      "operation_id": "compat.ttr.MACD",
+      "parameters": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "PBands",
+      "operation_id": "compat.ttr.PBands",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ROC",
+      "operation_id": "compat.ttr.ROC",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "RSI",
+      "operation_id": "compat.ttr.RSI",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "SAR",
+      "operation_id": "compat.ttr.SAR",
+      "parameters": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "SMI",
+      "operation_id": "compat.ttr.SMI",
+      "parameters": {
+        "d2_period": 3,
+        "d_period": 3,
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "SNR",
+      "operation_id": "compat.ttr.SNR",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "TDI",
+      "operation_id": "compat.ttr.TDI",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "TR",
+      "operation_id": "compat.ttr.TR",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "TRIX",
+      "operation_id": "compat.ttr.TRIX",
+      "parameters": {
+        "period": 3
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "VHF",
+      "operation_id": "compat.ttr.VHF",
+      "parameters": {
+        "period": 28
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "VWAP",
+      "operation_id": "compat.ttr.VWAP",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "VWMA",
+      "operation_id": "compat.ttr.VWMA",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "WPR",
+      "operation_id": "compat.ttr.WPR",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ZLEMA",
+      "operation_id": "compat.ttr.ZLEMA",
+      "parameters": {
+        "period": 10
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ZigZag",
+      "operation_id": "compat.ttr.ZigZag",
+      "parameters": {
+        "threshold": 0.1
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: prefix_snapshot_last; one sample is warming (reference requires two)"
+    },
+    {
+      "source": "ttr",
+      "name": "aroon",
+      "operation_id": "compat.ttr.aroon",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "chaikinVolatility",
+      "operation_id": "compat.ttr.chaikinVolatility",
+      "parameters": {
+        "ema_period": 10,
+        "roc_period": 10
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "growth",
+      "operation_id": "compat.ttr.growth",
+      "parameters": {},
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "keltnerChannels",
+      "operation_id": "compat.ttr.keltnerChannels",
+      "parameters": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "lags",
+      "operation_id": "compat.ttr.lags",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "rollSFM",
+      "operation_id": "compat.ttr.rollSFM",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "runCor",
+      "operation_id": "compat.ttr.runCor",
+      "parameters": {
+        "period": 10
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "runPercentRank",
+      "operation_id": "compat.ttr.runPercentRank",
+      "parameters": {
+        "period": 20
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "runRange",
+      "operation_id": "compat.ttr.runRange",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "stoch",
+      "operation_id": "compat.ttr.stoch",
+      "parameters": {
+        "d_period": 3,
+        "k_period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "ultimateOscillator",
+      "operation_id": "compat.ttr.ultimateOscillator",
+      "parameters": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "volatility",
+      "operation_id": "compat.ttr.volatility",
+      "parameters": {
+        "period": 20,
+        "trading_periods": 252
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    },
+    {
+      "source": "ttr",
+      "name": "wilderSum",
+      "operation_id": "compat.ttr.wilderSum",
+      "parameters": {
+        "period": 5
+      },
+      "reason": "Independent source-specific numerical acceptance; alignment: same_observation"
+    }
+  ]
+}

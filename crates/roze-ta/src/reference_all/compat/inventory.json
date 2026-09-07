@@ -1,0 +1,4564 @@
+[
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.ADX",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ADX",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Adx",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.AccuDist",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "AccuDist",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Adl",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "multiplier": 2.0,
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.BB",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "BB",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.BollingerBands",
+      "params": {
+        "multiplier": 2.0,
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.BOP",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "BOP",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.BalanceOfPower",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.CCI",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "CCI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Cci",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.CHOP",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "CHOP",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.ChoppinessIndex",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "fast": 3,
+      "slow": 10
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.ChaikinOsc",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ChaikinOsc",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.ChaikinOscillator",
+      "params": {
+        "fast": 3,
+        "slow": 10
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "atr_multiplier": 1.0,
+      "atr_period": 10,
+      "stop_period": 9
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.ChandeKrollStop",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ChandeKrollStop",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "atr_multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "atr_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "stop_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "atr_period",
+        "atr_multiplier",
+        "stop_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.ChandeKrollStop",
+      "params": {
+        "atr_multiplier": 1.0,
+        "atr_period": 10,
+        "stop_period": 9
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.FibonacciRetracement",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "FibonacciRetracement",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.FibRetracement",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 9
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.HMA",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "HMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Hma",
+      "params": {
+        "period": 9
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "displacement": 26,
+      "kijun_period": 26,
+      "senkou_b_period": 52,
+      "tenkan_period": 9
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.Ichimoku",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "Ichimoku",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "displacement": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "kijun_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "senkou_b_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tenkan_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "tenkan_period",
+        "kijun_period",
+        "senkou_b_period",
+        "displacement"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Ichimoku",
+      "params": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "er_period": 10,
+      "fast": 2,
+      "slow": 30
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.KAMA",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "KAMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "er_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "er_period",
+        "fast",
+        "slow"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Kama",
+      "params": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "roc1": 10,
+      "roc2": 15,
+      "roc3": 20,
+      "roc4": 30,
+      "signal": 9,
+      "sma1": 10,
+      "sma2": 10,
+      "sma3": 10,
+      "sma4": 15
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.KST",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "KST",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "roc1": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc2": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc3": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc4": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signal": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma1": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma2": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma3": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma4": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "roc1",
+        "roc2",
+        "roc3",
+        "roc4",
+        "sma1",
+        "sma2",
+        "sma3",
+        "sma4",
+        "signal"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Kst",
+      "params": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "fast": 34,
+      "slow": 55
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.KVO",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "KVO",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Kvo",
+      "params": {
+        "fast": 34,
+        "slow": 55
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "atr_period": 5,
+      "ema_period": 5,
+      "multiplier": 2.0
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.KeltnerChannels",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "KeltnerChannels",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "atr_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "ema_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "ema_period",
+        "atr_period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Keltner",
+      "params": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "fast": 3,
+      "signal": 3,
+      "slow": 6
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.MACD",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "MACD",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signal": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow",
+        "signal"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.MacdIndicator",
+      "params": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "ema_period": 9,
+      "sum_period": 25
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.MassIndex",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "MassIndex",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "ema_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sum_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ema_period",
+        "sum_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.MassIndex",
+      "params": {
+        "ema_period": 9,
+        "sum_period": 25
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 10
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.McGinleyDynamic",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "McGinleyDynamic",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.McGinleyDynamic",
+      "params": {
+        "period": 10
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "af_max": 0.2,
+      "af_start": 0.02,
+      "af_step": 0.02
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.ParabolicSAR",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ParabolicSAR",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "af_max": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "af_start": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "af_step": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "af_start",
+        "af_step",
+        "af_max"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Psar",
+      "params": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.PivotsHL",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "PivotsHL",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "extra.PivotsHL",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.RSI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "RSI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Rsi",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20,
+      "trading_periods": 252
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.RogersSatchell",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "RogersSatchell",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "trading_periods": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "trading_periods"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.RogersSatchellVolatility",
+      "params": {
+        "period": 20,
+        "trading_periods": 252
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.SFX",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "SFX",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "extra.Sfx",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.SOBV",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "SOBV",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "extra.SmoothedObv",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "factor": 0.5,
+      "fast": 23,
+      "schaff_period": 10,
+      "slow": 50
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.STC",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "STC",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "factor": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "schaff_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow",
+        "schaff_period",
+        "factor"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Stc",
+      "params": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "d_period": 3,
+      "k_period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.Stoch",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "Stoch",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "d_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "k_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "k_period",
+        "d_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Stochastic",
+      "params": {
+        "d_period": 3,
+        "k_period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "rsi_period": 14,
+      "stoch_period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.StochRSI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "StochRSI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "rsi_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "stoch_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "rsi_period",
+        "stoch_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.StochRsi",
+      "params": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "atr_period": 10,
+      "multiplier": 3.0
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.SuperTrend",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "SuperTrend",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "atr_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "atr_period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.SuperTrend",
+      "params": {
+        "atr_period": 10,
+        "multiplier": 3.0
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.TRIX",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "TRIX",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Trix",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "long": 25,
+      "short": 13
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.TSI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "TSI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "long": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "short": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "long",
+        "short"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Tsi",
+      "params": {
+        "long": 25,
+        "short": 13
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "bb_mult": 2.0,
+      "kc_mult": 1.5,
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.TTM",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "TTM",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "bb_mult": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "kc_mult": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "bb_mult",
+        "kc_mult"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.TtmSqueeze",
+      "params": {
+        "bb_mult": 2.0,
+        "kc_mult": 1.5,
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "long": 28,
+      "mid": 14,
+      "short": 7
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.UO",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "UO",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "long": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mid": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "short": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "short",
+        "mid",
+        "long"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.UltimateOscillator",
+      "params": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.VTX",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "VTX",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Vortex",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.VWMA",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "VWMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.Vwma",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.Williams",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "Williams",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.WilliamsR",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "threshold": 0.1
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.talipp.ZigZag",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ZigZag",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "threshold": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "threshold"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "talipp",
+    "base_operation": {
+      "id": "wickra.ZigZag",
+      "params": {
+        "threshold": 0.1
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.ADXIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ADXIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Adx",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.AroonIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "AroonIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Aroon",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.AverageTrueRange",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "AverageTrueRange",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Atr",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "multiplier": 2.0,
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.BollingerBands",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "BollingerBands",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.BollingerBands",
+      "params": {
+        "multiplier": 2.0,
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.CCIIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "CCIIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Cci",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.ChaikinMoneyFlowIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ChaikinMoneyFlowIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.ChaikinMoneyFlow",
+      "params": {
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 1
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.DailyLogReturnIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "DailyLogReturnIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.LogReturn",
+      "params": {
+        "period": 1
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.DonchianChannel",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "DonchianChannel",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Donchian",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.EMAIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "EMAIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Ema",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.EaseOfMovementIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "EaseOfMovementIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.EaseOfMovement",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 13
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.ForceIndexIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ForceIndexIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.ForceIndex",
+      "params": {
+        "period": 13
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "displacement": 26,
+      "kijun_period": 26,
+      "senkou_b_period": 52,
+      "tenkan_period": 9
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.IchimokuIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "IchimokuIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "displacement": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "kijun_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "senkou_b_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tenkan_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "tenkan_period",
+        "kijun_period",
+        "senkou_b_period",
+        "displacement"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Ichimoku",
+      "params": {
+        "displacement": 26,
+        "kijun_period": 26,
+        "senkou_b_period": 52,
+        "tenkan_period": 9
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "er_period": 10,
+      "fast": 2,
+      "slow": 30
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.KAMAIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "KAMAIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "er_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "er_period",
+        "fast",
+        "slow"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Kama",
+      "params": {
+        "er_period": 10,
+        "fast": 2,
+        "slow": 30
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "roc1": 10,
+      "roc2": 15,
+      "roc3": 20,
+      "roc4": 30,
+      "signal": 9,
+      "sma1": 10,
+      "sma2": 10,
+      "sma3": 10,
+      "sma4": 15
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.KSTIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "KSTIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "roc1": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc2": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc3": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc4": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signal": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma1": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma2": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma3": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma4": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "roc1",
+        "roc2",
+        "roc3",
+        "roc4",
+        "sma1",
+        "sma2",
+        "sma3",
+        "sma4",
+        "signal"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Kst",
+      "params": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "atr_period": 5,
+      "ema_period": 5,
+      "multiplier": 2.0
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.KeltnerChannel",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "KeltnerChannel",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "atr_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "ema_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "ema_period",
+        "atr_period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Keltner",
+      "params": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "fast": 3,
+      "signal": 3,
+      "slow": 6
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.MACD",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "MACD",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signal": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow",
+        "signal"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.MacdIndicator",
+      "params": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.MFIIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "MFIIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Mfi",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "ema_period": 9,
+      "sum_period": 25
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.MassIndex",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "MassIndex",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "ema_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sum_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ema_period",
+        "sum_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.MassIndex",
+      "params": {
+        "ema_period": 9,
+        "sum_period": 25
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.OnBalanceVolumeIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "OnBalanceVolumeIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Obv",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "af_max": 0.2,
+      "af_start": 0.02,
+      "af_step": 0.02
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.PSARIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "PSARIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "af_max": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "af_start": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "af_step": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "af_start",
+        "af_step",
+        "af_max"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Psar",
+      "params": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "fast": 12,
+      "slow": 26
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.PercentagePriceOscillator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "PercentagePriceOscillator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Ppo",
+      "params": {
+        "fast": 12,
+        "slow": 26
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.PercentageVolumeOscillator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "PercentageVolumeOscillator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "extra.PercentageVolumeOscillator",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.RSIIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "RSIIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Rsi",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "factor": 0.5,
+      "fast": 23,
+      "schaff_period": 10,
+      "slow": 50
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.STCIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "STCIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "factor": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "schaff_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow",
+        "schaff_period",
+        "factor"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Stc",
+      "params": {
+        "factor": 0.5,
+        "fast": 23,
+        "schaff_period": 10,
+        "slow": 50
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "rsi_period": 14,
+      "stoch_period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.StochRSIIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "StochRSIIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "rsi_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "stoch_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "rsi_period",
+        "stoch_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.StochRsi",
+      "params": {
+        "rsi_period": 14,
+        "stoch_period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "d_period": 3,
+      "k_period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.StochasticOscillator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "StochasticOscillator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "d_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "k_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "k_period",
+        "d_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Stochastic",
+      "params": {
+        "d_period": 3,
+        "k_period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.TRIXIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "TRIXIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Trix",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "long": 25,
+      "short": 13
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.TSIIndicator",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "TSIIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "long": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "short": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "long",
+        "short"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Tsi",
+      "params": {
+        "long": 25,
+        "short": 13
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.UlcerIndex",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "UlcerIndex",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.UlcerIndex",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "long": 28,
+      "mid": 14,
+      "short": 7
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.UltimateOscillator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "UltimateOscillator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "long": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mid": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "short": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "short",
+        "mid",
+        "long"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.UltimateOscillator",
+      "params": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.VolumePriceTrendIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "VolumePriceTrendIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.VolumePriceTrend",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.VortexIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "VortexIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.Vortex",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ta.WilliamsRIndicator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "WilliamsRIndicator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ta",
+    "base_operation": {
+      "id": "wickra.WilliamsR",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ADX",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ADX",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Adx",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "offset": 0.85,
+      "period": 9,
+      "sigma": 6.0
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ALMA",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "ALMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "offset": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sigma": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "period",
+        "offset",
+        "sigma"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Alma",
+      "params": {
+        "offset": 0.85,
+        "period": 9,
+        "sigma": 6.0
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ATR",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ATR",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Atr",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "multiplier": 2.0,
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.BBands",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "BBands",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.BollingerBands",
+      "params": {
+        "multiplier": 2.0,
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.CCI",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "CCI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Cci",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.CLV",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "CLV",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.CloseLocationValue",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.CMF",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "CMF",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.ChaikinMoneyFlow",
+      "params": {
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.CMO",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "CMO",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Cmo",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.CTI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "CTI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.CorrelationTrendIndicator",
+      "params": {
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.DPO",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "DPO",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Dpo",
+      "params": {
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.DVI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "DVI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.Dvi",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.DonchianChannel",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "DonchianChannel",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Donchian",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 14
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.EMV",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "EMV",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.EaseOfMovement",
+      "params": {
+        "period": 14
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.EVWMA",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "EVWMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Evwma",
+      "params": {
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.GMMA",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "GMMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.Guppy",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "roc1": 10,
+      "roc2": 15,
+      "roc3": 20,
+      "roc4": 30,
+      "signal": 9,
+      "sma1": 10,
+      "sma2": 10,
+      "sma3": 10,
+      "sma4": 15
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.KST",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "KST",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "roc1": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc2": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc3": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc4": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signal": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma1": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma2": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma3": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sma4": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "roc1",
+        "roc2",
+        "roc3",
+        "roc4",
+        "sma1",
+        "sma2",
+        "sma3",
+        "sma4",
+        "signal"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Kst",
+      "params": {
+        "roc1": 10,
+        "roc2": 15,
+        "roc3": 20,
+        "roc4": 30,
+        "signal": 9,
+        "sma1": 10,
+        "sma2": 10,
+        "sma3": 10,
+        "sma4": 15
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "fast": 3,
+      "signal": 3,
+      "slow": 6
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.MACD",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "MACD",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "fast": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signal": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "slow": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fast",
+        "slow",
+        "signal"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.MacdIndicator",
+      "params": {
+        "fast": 3,
+        "signal": 3,
+        "slow": 6
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.PBands",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "PBands",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.PriceBands",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ROC",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "ROC",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Roc",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.RSI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "RSI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Rsi",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "af_max": 0.2,
+      "af_start": 0.02,
+      "af_step": 0.02
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.SAR",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "SAR",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "af_max": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "af_start": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        },
+        "af_step": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "af_start",
+        "af_step",
+        "af_max"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Psar",
+      "params": {
+        "af_max": 0.2,
+        "af_start": 0.02,
+        "af_step": 0.02
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "d2_period": 3,
+      "d_period": 3,
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.SMI",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "SMI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "d2_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "d_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "d_period",
+        "d2_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Smi",
+      "params": {
+        "d2_period": 3,
+        "d_period": 3,
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.SNR",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "SNR",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.SignalNoiseRatio",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.TDI",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "TDI",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.TrendDetectionIndex",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.TR",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "TR",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.TrueRange",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 3
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.TRIX",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "TRIX",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Trix",
+      "params": {
+        "period": 3
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 28
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.VHF",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "VHF",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.VerticalHorizontalFilter",
+      "params": {
+        "period": 28
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.VWAP",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "VWAP",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Vwap",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.VWMA",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "VWMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Vwma",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.WPR",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "WPR",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.WilliamsR",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 10
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ZLEMA",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "ZLEMA",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Zlema",
+      "params": {
+        "period": 10
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "threshold": 0.1
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ZigZag",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ZigZag",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "threshold": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "threshold"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.ZigZag",
+      "params": {
+        "threshold": 0.1
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.aroon",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "aroon",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Aroon",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "ema_period": 10,
+      "roc_period": 10
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.chaikinVolatility",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "chaikinVolatility",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "ema_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "roc_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ema_period",
+        "roc_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.ChaikinVolatility",
+      "params": {
+        "ema_period": 10,
+        "roc_period": 10
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {},
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.growth",
+    "input_type": "(f64, f64)",
+    "kind": "Indicator",
+    "name": "growth",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.Growth",
+      "params": {}
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "atr_period": 5,
+      "ema_period": 5,
+      "multiplier": 2.0
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.keltnerChannels",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "keltnerChannels",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "atr_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "ema_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "multiplier": {
+          "maximum": 1000000.0,
+          "minimum": -1000000.0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "ema_period",
+        "atr_period",
+        "multiplier"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Keltner",
+      "params": {
+        "atr_period": 5,
+        "ema_period": 5,
+        "multiplier": 2.0
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.lags",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "lags",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.Lags",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.rollSFM",
+    "input_type": "(f64, f64)",
+    "kind": "Indicator",
+    "name": "rollSFM",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.SingleFactorModel",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 10
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.runCor",
+    "input_type": "(f64, f64)",
+    "kind": "Indicator",
+    "name": "runCor",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.RollingCorrelation",
+      "params": {
+        "period": 10
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.runPercentRank",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "runPercentRank",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.RollingPercentileRank",
+      "params": {
+        "period": 20
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.runRange",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "runRange",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.MinMax",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "d_period": 3,
+      "k_period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.stoch",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "stoch",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "d_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "k_period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "k_period",
+        "d_period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.Stochastic",
+      "params": {
+        "d_period": 3,
+        "k_period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "long": 28,
+      "mid": 14,
+      "short": 7
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.ultimateOscillator",
+    "input_type": "Candle",
+    "kind": "Indicator",
+    "name": "ultimateOscillator",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "long": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mid": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "short": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "short",
+        "mid",
+        "long"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.UltimateOscillator",
+      "params": {
+        "long": 28,
+        "mid": 14,
+        "short": 7
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 20,
+      "trading_periods": 252
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.volatility",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "volatility",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "trading_periods": {
+          "maximum": 512,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period",
+        "trading_periods"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "wickra.HistoricalVolatility",
+      "params": {
+        "period": 20,
+        "trading_periods": 252
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  },
+  {
+    "documentation": "Source-specific formula card: docs/contracts/source-parity-v1.md; explicit configuration and source warmup/undefined conventions.",
+    "example_params": {
+      "period": 5
+    },
+    "formula_variant": "source-parity-20260907-v1",
+    "id": "compat.ttr.wilderSum",
+    "input_type": "f64",
+    "kind": "Indicator",
+    "name": "wilderSum",
+    "output_type": "source_named_values",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "period": {
+          "maximum": 128,
+          "minimum": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "period"
+      ],
+      "type": "object"
+    },
+    "source": "crates/roze-ta/src/reference_all/compat",
+    "source_library": "ttr",
+    "base_operation": {
+      "id": "extra.WilderSum",
+      "params": {
+        "period": 5
+      }
+    },
+    "complexity": "bounded prefix replay; at most 4096 observations"
+  }
+]

@@ -17,12 +17,13 @@ MCP 现有 **10 个只读工具**：全部 **36 个原生指标模块、44 个�
 
 R1 从 Wickra 迁入 ALMA、SuperTrend、StochRSI、Vortex、Ulcer Index 五类 Rust 指标，
 接入统一批量/流式与 MCP；[公式与变体](docs/contracts/reference-r1.md)、[来源与 MIT 许可](docs/patches/wickra-r1-migration.md)。
-另已迁入全部514个Wickra导出算法，并补充66个运算，提供580个Reference入口及独立的批量/流式/恢复MCP接口。
+另已迁入全部514个Wickra导出算法、201个官方TA-Lib Rust函数，并补充66个运算，新增114个来源兼容变体，提供895个Reference入口及独立的批量/流式/恢复MCP接口。
 Wickra固定版本的**完整2639文件仓库**也已保留在`vendor/wickra-full`，包括全部语言绑定、数据层、测试、样本、示例和文档。
 Rust另开放`wickra_data`逐笔聚合/重采样及可选`wickra-parallel`；[整仓交付范围与验证](docs/evidence/2026-09-07-wickra-repository.md)。
 [调用说明](docs/usage/reference-mcp.md)、[契约](docs/contracts/reference-all-v1.md)、[验证记录](docs/evidence/2026-09-07-reference-full.md)。
 [外部指标逐项覆盖](docs/reference-indicator-parity.md) 登记五库886个源条目：514直接迁移、368跨库候选映射、4辅助功能。
-候选映射已有可调用公式，但368条跨库数值兼容尚未逐项验收；不把目录覆盖等同于全部外部库兼容。
+368条跨库映射均有明确范围的验收：201项TA-Lib默认配置、53项既有选定配置、111项来源变体、3项明确时间对齐的实时变体。
+原106项差异、8项参考异常已通过334组数值与8组错误验收；详见[逐项审计](docs/evidence/cross-library-parity-audit.json)和[来源契约](docs/contracts/source-parity-v1.md)。这不等于全部参数和输出API兼容。
 
 新增论文公式计算层：七类操作内的 69 个任务变体，覆盖研究检验、金融/执行公式、回归、组合、时序、随机模型及统计推断；另增加四类分布。
 [逐节覆盖与剩余边界](docs/formula-coverage.md)、[公式契约](docs/contracts/paper-models-v1.md)、[72 个请求](docs/usage/paper-requests-v1.json)。
@@ -39,7 +40,7 @@ Rust另开放`wickra_data`逐笔聚合/重采样及可选`wickra-parallel`；[�
 - `vendor/yata` 保留 Yata v0.7.0 原始审计基线，不参与 workspace 构建。
 - 原生 API 使用 `roze_ta::methods` / `roze_ta::indicators`；旧 `roze_ta::yata::*` 保留为同一原生类型的兼容路径。
 - 迁移范围、许可证及快照兼容证据见 [原生迁移说明](docs/patches/yata-native-migration.md)。
-- `crates/roze-ta`：38类指标、50个固定Profile，另有580个Reference入口；计数包含重叠与变体。
+- `crates/roze-ta`：38类指标、50个固定Profile，另有895个Reference入口；计数包含重叠与变体。
 - `crates/roze-ta-mcp`：stdio服务，原有7个工具加Reference目录、批量和流式3个工具。
 - `roze_ta::indicators` / `roze_ta::methods` 的全部实际算法可通过 `roze_ta::native` 和 MCP 调用；别名保留映射。
 - 已登记的全部50个 Profile 支持统一流式更新、版本化无损状态快照及恢复；[A1规格卡](docs/contracts/expansion-a1.md)与[R1规格卡](docs/contracts/reference-r1.md)明确新增指标的公式、种子和逐项预热。

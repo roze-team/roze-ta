@@ -50,7 +50,16 @@ foreach ($entry in $manifest.files) {
     }
 }
 foreach ($entry in $manifest.support_files.PSObject.Properties) {
-    if ((Digest $entry.Name) -ne $entry.Value) { throw "Migration support file differs: $($entry.Name)" }
+    if ((Digest $entry.Name) -ne $entry.Value) {
+        $additions = Read-Json 'docs/patches/native-notices-additions.json'
+        $changes = @($additions.files | Where-Object { $_.path -ceq $entry.Name })
+        if ($changes.Count -ne 1 -or (Digest $additions.baseline) -ne $entry.Value) { throw "Migration support file differs: $($entry.Name)" }
+        $change = $changes[0]
+        $original = [IO.File]::ReadAllText((Resolve-ProjectFile $additions.baseline))
+        if (-not $original.Contains($change.replace_old)) { throw 'Notice replacement does not match original baseline' }
+        $rebuiltNotice = $original.Replace($change.replace_old, $change.replace_new) + $change.append
+        if ($rebuiltNotice -cne [IO.File]::ReadAllText((Resolve-ProjectFile $entry.Name))) { throw 'Notice additions do not reconstruct current file' }
+    }
 }
 if ((Digest 'crates/roze-ta/LICENSE-APACHE') -ne (Digest 'vendor/yata/LICENSE')) { throw 'Apache license copy differs' }
 $baseline = Read-Json 'docs/evidence/native-migration-baseline.json'

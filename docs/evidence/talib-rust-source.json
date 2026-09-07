@@ -1,0 +1,1727 @@
+{
+  "commit": "2f0426d4a3e7d5b153c83ce7e6c4b9b05d8ca9c7",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "59655ee2b5b40e6f298768e94955ef1c08596baf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/Cargo.toml",
+      "git_blob_sha": "caa39853d6da1e187d21f0cf2aaf3a6f4886ff26"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/LICENSE",
+      "git_blob_sha": "59655ee2b5b40e6f298768e94955ef1c08596baf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/README.md",
+      "git_blob_sha": "bdd331f9c20c510ecc23641533d39f28f366d351"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/abstract_api.rs",
+      "git_blob_sha": "ea892f7e035e4ff787d7fbcc62258424dcf817f2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/lib.rs",
+      "git_blob_sha": "5fbb2e259153581fb18f16234080e5e14fdf81ea"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ac.rs",
+      "git_blob_sha": "b4333e482442dda3615ca95b77cd5527da660d76"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/accbands.rs",
+      "git_blob_sha": "32c49d306245e36a945da9f57dbff2386168bef3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/acos.rs",
+      "git_blob_sha": "e23f8030c115ab4c386a63ebe1b48a181474b384"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ad.rs",
+      "git_blob_sha": "9dc1300d46a16a6c023a703267b36e02ec64acaf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/add.rs",
+      "git_blob_sha": "dc7bbdbbefd05a697657356b1f2feb24e67cb773"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/adosc.rs",
+      "git_blob_sha": "0564307f4d7bb704061a3af4063c87563ac219d0"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/adr.rs",
+      "git_blob_sha": "7af5b17bf08dc65c4441255d1bec6b9d4d8174e8"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/adx.rs",
+      "git_blob_sha": "f4b8ff8c2cb234e523694013cca2f2ba77c1eeed"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/adxr.rs",
+      "git_blob_sha": "2206382fcc857dae6ce69113805676f816870f37"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ao.rs",
+      "git_blob_sha": "2079eb0ceb7a63376243b64e10349adab815e795"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/apo.rs",
+      "git_blob_sha": "b6e27963dfb2bbc293fd5bb4d27e435df7371eb6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/aroon.rs",
+      "git_blob_sha": "7869f2f2c9012eba2aeadcbe7194c90d59d78277"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/aroonosc.rs",
+      "git_blob_sha": "f2b1b0141b7d53b49ed2403969ce0533594e29aa"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/asin.rs",
+      "git_blob_sha": "a6291771e92d5b1886626a0b1328b737332bc000"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/atan.rs",
+      "git_blob_sha": "4e884981d560a7269c4f7c856607df6ab91f636e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/atr.rs",
+      "git_blob_sha": "fd8086c10df3120e883fb6a8037860317f0fc314"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/avgdev.rs",
+      "git_blob_sha": "812a17f897a6b5b6dcd8346e0ef016468b03d4dd"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/avgprice.rs",
+      "git_blob_sha": "5ebe16e48bf65b01f9348a02931263c383d01292"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/bbands.rs",
+      "git_blob_sha": "47c8868582c96fbe3c0cab1900d8c45252fc12c2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/beta.rs",
+      "git_blob_sha": "18633f2b26b9a65278c8638125b609ecc3255dc1"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/bop.rs",
+      "git_blob_sha": "50c0dae86a7191c3f9a0369583fb26276c74ea2b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cci.rs",
+      "git_blob_sha": "b655634dc1871cd0868f54336383d7cc5eb9fccb"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl2crows.rs",
+      "git_blob_sha": "e5c77b0c991990c13ee58f3525ed87f247df014a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl3blackcrows.rs",
+      "git_blob_sha": "4e50f022e55a2dd44f30e41bcdfb496ae01094dd"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl3inside.rs",
+      "git_blob_sha": "566318978f531cd451c95313afdac9a668f7e47e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl3linestrike.rs",
+      "git_blob_sha": "e0ce0abf67003663ddfe0ed758f0c20faa21261e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl3outside.rs",
+      "git_blob_sha": "1c82572d35328225f91c2dae797b16dec3af4700"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl3starsinsouth.rs",
+      "git_blob_sha": "e3f81deb173e0108e31e86f2ab8f2eb5c1a98911"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdl3whitesoldiers.rs",
+      "git_blob_sha": "6678641eb01ac900f35cdc03575fb9f6768ac338"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlabandonedbaby.rs",
+      "git_blob_sha": "b29abfb4f8d9de83bd4562c375a498f8f6b79369"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdladvanceblock.rs",
+      "git_blob_sha": "6c25304d7ca75b26b31fa92f58ca822c6c4fe5ac"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlbelthold.rs",
+      "git_blob_sha": "51091e2f3253176745d3ff31c7fbafcd71d5eed6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlbreakaway.rs",
+      "git_blob_sha": "095cf36c556014fe93b6fe93b89b28bde448b0c0"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlclosingmarubozu.rs",
+      "git_blob_sha": "8816621d4f773ea9ca397386d9bb972e83509976"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlconcealbabyswall.rs",
+      "git_blob_sha": "df67b9a8dae3f24006c57d8a795bfb3bbb22d106"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlcounterattack.rs",
+      "git_blob_sha": "2abf2841b45b82e07930511fd159dd985ecc9da3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdldarkcloudcover.rs",
+      "git_blob_sha": "52d1ca6dd63ac674bbbcf42e1d5f6d2f445c4c96"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdldoji.rs",
+      "git_blob_sha": "fb2f4344551d7ef6d0fc1587216f63c132ba6a8e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdldojistar.rs",
+      "git_blob_sha": "f20460c64600d1a94a6e9d17b57923474b1b208f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdldragonflydoji.rs",
+      "git_blob_sha": "59dd00272ad7016ad909e179b6db27898d98e784"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlengulfing.rs",
+      "git_blob_sha": "ec280d641287d9616a47113cd0d14b1c2d538daf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdleveningdojistar.rs",
+      "git_blob_sha": "d2d51158a258b92eb0b6abb291e96c55caabb5a4"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdleveningstar.rs",
+      "git_blob_sha": "e386d4811183ca7d39a6ea6aeee63bb471ef1859"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlgapsidesidewhite.rs",
+      "git_blob_sha": "eea3e4f920d70a1ef58d0ef810a31e3f6652c925"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlgravestonedoji.rs",
+      "git_blob_sha": "f5c78f50a13f7bf88a7f83a1f45553a9b730f043"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlhammer.rs",
+      "git_blob_sha": "d1655fc848bc0fab47a3f19c9220df848ef51127"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlhangingman.rs",
+      "git_blob_sha": "b57bb1b1634ed4cffd9a467fb94ff325015c2a41"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlharami.rs",
+      "git_blob_sha": "265d429ec05a4c776483a1a462283d0157840e38"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlharamicross.rs",
+      "git_blob_sha": "81afdbb47bdc74918501ca8d264534da65ec2537"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlhighwave.rs",
+      "git_blob_sha": "b70bf48d59ed825d5c182f32672879a895523aa0"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlhikkake.rs",
+      "git_blob_sha": "9028904aa6134f21726bf11390bf20fa0e990a72"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlhikkakemod.rs",
+      "git_blob_sha": "dc9a2a9cd2080d0292241550f8c335e68ab37acf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlhomingpigeon.rs",
+      "git_blob_sha": "b50517db6971f3d4511932b47b1222530d53994e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlidentical3crows.rs",
+      "git_blob_sha": "d4b56520eb27fe1956737719319ad74a7ffcf15c"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlinneck.rs",
+      "git_blob_sha": "c64d3099e23a46a84bedc2db63249677eaa167c3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlinvertedhammer.rs",
+      "git_blob_sha": "21c35822d5c54d315d82519db8c027721e2a7050"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlkicking.rs",
+      "git_blob_sha": "25e904ed7b8a194fb6d7ed72504e073f4a38717b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlkickingbylength.rs",
+      "git_blob_sha": "f0af5931c086bdef62382a6c16c683c2b8bfb66f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlladderbottom.rs",
+      "git_blob_sha": "286c531c8fe6c461f7d9d641876e9b28dc90192a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdllongleggeddoji.rs",
+      "git_blob_sha": "9f67bd663b78ba43ca73da1762274fdd44f98bd3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdllongline.rs",
+      "git_blob_sha": "b4aa616cc09e4be7fc7030d8454628191eedd84f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlmarubozu.rs",
+      "git_blob_sha": "83e758f5d14e4e3863fadbf56a0271fe8e82ce0a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlmatchinglow.rs",
+      "git_blob_sha": "298ba800d6aa42cc6e3c30df68b5acef221019e3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlmathold.rs",
+      "git_blob_sha": "4323a3e822c773aef65a30f3ad66aba92f46531c"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlmorningdojistar.rs",
+      "git_blob_sha": "c4af5d7556d581a998e419b5ff8ac869bc50f920"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlmorningstar.rs",
+      "git_blob_sha": "cc3adf08405ee0a2c83615c5bdd768101d5fa389"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlonneck.rs",
+      "git_blob_sha": "ff1d3e08ef4d55c61b2b2a89a703fd6651e049b0"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlpiercing.rs",
+      "git_blob_sha": "4806d64b4d676c0f5f43a343d6632c4bf8c752cb"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlrickshawman.rs",
+      "git_blob_sha": "e0b064507484089ad0a71456e96fdb07f40771fa"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlrisefall3methods.rs",
+      "git_blob_sha": "75ec398857b634e59ae900c0ae4b15543319de27"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlseparatinglines.rs",
+      "git_blob_sha": "842023283e82d00fc577083d3be5a65bfc0536ea"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlshootingstar.rs",
+      "git_blob_sha": "3b7a1b00cfda7db31b2d1b50409b2ec2e6647b8f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlshortline.rs",
+      "git_blob_sha": "e00bcefd8babecd9ec242f9c171310272a918234"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlspinningtop.rs",
+      "git_blob_sha": "01565fbd21bd23e7beb6735e4406b8cf5c20099a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlstalledpattern.rs",
+      "git_blob_sha": "6d37fb41e74570a205815066d9c57acba27c7cde"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlsticksandwich.rs",
+      "git_blob_sha": "27b826fcc7c3720435d73a5b9b1b1aef35d7b9be"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdltakuri.rs",
+      "git_blob_sha": "6f846e230090e2d35ecae1a2ad3debca61f1952f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdltasukigap.rs",
+      "git_blob_sha": "125f6e5644660c949937fff98e267193b123907e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlthrusting.rs",
+      "git_blob_sha": "785e1a5c0425df345725df7204a58bacfeab17cd"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdltristar.rs",
+      "git_blob_sha": "77c11ae5c26ec71d77a9f989c08bc60ed9dd388a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlunique3river.rs",
+      "git_blob_sha": "9e3d3c2d5008ac39c6f635e601416ca7f50132fc"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlupsidegap2crows.rs",
+      "git_blob_sha": "0d33b3702ec216bc1c2c826de562de2db81a1304"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cdlxsidegap3methods.rs",
+      "git_blob_sha": "ac4508728068a1e9f4425c8e1904f4f54feae576"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ceil.rs",
+      "git_blob_sha": "2cae4cfa39ae8cc5c6ea8444777b2a37f2a25431"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cmf.rs",
+      "git_blob_sha": "2f4b3677c2da0b29fc718a31412114418f35f445"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cmo.rs",
+      "git_blob_sha": "9ecbc6103274e83f8b02b0f9c9ac310020a523fc"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cmou.rs",
+      "git_blob_sha": "c5ff6d33f8dae6af4def60ccfb067b18b596447a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/coppock.rs",
+      "git_blob_sha": "b0bb48e2e906cb69c42ed5479cb23e71659da6a9"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/correl.rs",
+      "git_blob_sha": "6d6f83f788ffadc46b03bc38767e89ee08cd3c42"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cos.rs",
+      "git_blob_sha": "7af5aa02eede9a19ead2c03275d04d94a40d91b2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cosh.rs",
+      "git_blob_sha": "fc056fb6c718827545ba0c80bcdb6fba75eaab23"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cumsum.rs",
+      "git_blob_sha": "fad3101f1d60f18458b6f5866a9373fdb78578d2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/cvi.rs",
+      "git_blob_sha": "5df6fb457f74cfe189a7a6083f7e39fa3de83b51"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/dema.rs",
+      "git_blob_sha": "ef1c4d063c9ca66143ce1d97d5f091471a0ddc0a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/div.rs",
+      "git_blob_sha": "b230f4c1a595ca4872f9e8b4dffbaee9c12624f0"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/div_zero.rs",
+      "git_blob_sha": "148c36a273de2223a102b6fbe55fd463d93bf33f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/donchian.rs",
+      "git_blob_sha": "4ea1525c76776c97f3d66f56d42b1e8336ca9010"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/dpo.rs",
+      "git_blob_sha": "0f4c35f499604d43eb969f37908348d8226265df"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/dx.rs",
+      "git_blob_sha": "04706cfa61593cb57a3432191448ef851182c5e9"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/efi.rs",
+      "git_blob_sha": "e67833f0ebaed9bd384c6d6cf516cdf1c77f2213"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ema.rs",
+      "git_blob_sha": "9782754fbd7f2fa37d6a8376b6bf8fc500296dac"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/er.rs",
+      "git_blob_sha": "74ef02a5668c90cb8e119da734b973732de178c2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/eri.rs",
+      "git_blob_sha": "0fde5fa31dec2f1826d6f64692c7b87603631676"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/exp.rs",
+      "git_blob_sha": "6ca2850a574ba1a7eceb17a40d59cde4de4aa2ac"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/floor.rs",
+      "git_blob_sha": "43d0f2ba69a5b0fc8b231472189a375ea760adf5"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/fosc.rs",
+      "git_blob_sha": "43ae502e3c930d386a3f6cb1e671a3e7a3558a9c"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/fractal.rs",
+      "git_blob_sha": "73b8ad372e258b68e5cd8c1362a92fc3d1aca816"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ha.rs",
+      "git_blob_sha": "335c14803066cf09993b1863c59f28535167d25f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/hma.rs",
+      "git_blob_sha": "c6e7a43b519ac20f070c030b72f91a72143e3c1f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ht_dcperiod.rs",
+      "git_blob_sha": "a43ba1f4450d61dfc75feeba8bbc52cb31fb9e5d"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ht_dcphase.rs",
+      "git_blob_sha": "ca1bcc0664975ceed782af90495e430d5f867e4b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ht_phasor.rs",
+      "git_blob_sha": "4dea832249f6cba6cdc1210f8e0c2fb0bdb375a4"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ht_sine.rs",
+      "git_blob_sha": "998f1e8e7d40b6607fb25c7246531dc398251c05"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ht_trendline.rs",
+      "git_blob_sha": "99e88f7776c1a1387e60cd3ca89053b1b9f63ecb"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ht_trendmode.rs",
+      "git_blob_sha": "a280efe1e815738f8b5ac4946923433fc6ebc1ee"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/imi.rs",
+      "git_blob_sha": "022e2db6dcce1ba3b69c21ff2048cdddb0f34c2f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/kama.rs",
+      "git_blob_sha": "9666b294325f68b156652d2d1f4096be4bbed9bc"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/kc.rs",
+      "git_blob_sha": "e7af15cd6e4024efc028b68936d324bd2a7a81af"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/kdj.rs",
+      "git_blob_sha": "413feb37b49d7de649f906e605aa204f71de0402"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/linearreg.rs",
+      "git_blob_sha": "ddd2295e8b66e0d23ebfeffdeff9457f22f67426"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/linearreg_angle.rs",
+      "git_blob_sha": "13e428889690f4be7d0044e5d31bd3f080a6e667"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/linearreg_intercept.rs",
+      "git_blob_sha": "0eff40545e6e0951c61d92ef41a34cbc7d1ecfb3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/linearreg_slope.rs",
+      "git_blob_sha": "bdc6d001dd2b5bdd15a8931e8a53bc6fbd6934d2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ln.rs",
+      "git_blob_sha": "ad63910f94962a4d1d1e08a46e0342c6c690bc48"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/log10.rs",
+      "git_blob_sha": "3536ff555e95303fdddaa1ca84fc99dfd46dcd8d"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ma.rs",
+      "git_blob_sha": "0026fb71db6a2964ed1eec191a5a6285a0692ba6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/macd.rs",
+      "git_blob_sha": "97038ec1a12a213ad3d8ac2f53ad46109184cf37"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/macdext.rs",
+      "git_blob_sha": "22598bdcdaa86d1d35ecee4301404317a55f36eb"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/macdfix.rs",
+      "git_blob_sha": "971cd2713f1c172bfe1ea5d19cae178852c9194f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/mama.rs",
+      "git_blob_sha": "0ec97cf29383e928f45d4d88f24668cfc870cead"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/marketfi.rs",
+      "git_blob_sha": "c5becde3656133b6df0ed40f31726884c74f29bf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/massi.rs",
+      "git_blob_sha": "00a4b9a72142dc0f4701d0c4d70b7974646078a3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/mavp.rs",
+      "git_blob_sha": "1fb506260245ec2dfebbb6e11394987768ad91ee"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/max.rs",
+      "git_blob_sha": "82e85cf9e3c289719d98e20d816a07c9aec284c1"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/maxindex.rs",
+      "git_blob_sha": "843abce031e68382d1bf1a99f4874034698e97e6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/medprice.rs",
+      "git_blob_sha": "11b361c602c644f831cf85bf3da56a74cdd9a7ca"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/mfi.rs",
+      "git_blob_sha": "0de6116ab3d330d97b8679834e7a77916b46d92a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/midpoint.rs",
+      "git_blob_sha": "6066f8ce6344097e12de0aaf4eeb9399a170a884"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/midprice.rs",
+      "git_blob_sha": "2bee8940ee3e4dd2067479fcacdedd98f924a1d6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/min.rs",
+      "git_blob_sha": "877caef4819ee8d2b77116a3861bb268c6168239"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/minindex.rs",
+      "git_blob_sha": "bb69be5d5c6aedfac662976f48f561608b0f2a08"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/minmax.rs",
+      "git_blob_sha": "38f849b41525dd61fda05672be3c7031b549aee5"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/minmaxindex.rs",
+      "git_blob_sha": "27b435b399e58e112cf3c2c766672e362aeb9793"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/minus_di.rs",
+      "git_blob_sha": "dfff3bfbfb14b2060d9105693cbef88ead6999cf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/minus_dm.rs",
+      "git_blob_sha": "122588e170b7bb3156bd9909e10b2af571e4a31b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/mod.rs",
+      "git_blob_sha": "638cde9d7352ccb07dd65ee26afdce4144e29011"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/mom.rs",
+      "git_blob_sha": "917970300648f785d378e9f2f7cd9dee857a97b5"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/mult.rs",
+      "git_blob_sha": "edf754537cc9edc9932884737081e272fb227d96"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/natr.rs",
+      "git_blob_sha": "89aec65300b0fe6353e22255d72908706f230496"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/no_phantom_io.rs",
+      "git_blob_sha": "b6e78bab2b6b5e4acb7d5e8fee652395f5b3ee4c"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/nvi.rs",
+      "git_blob_sha": "7d573b6aab182a7c475d119a8765bc235b78143b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/obv.rs",
+      "git_blob_sha": "9d90460f8a42497e17a92f1de56b38ad5298331b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/percentile.rs",
+      "git_blob_sha": "e350a285ee0a21056089370683d1d54ad77c6437"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/percentrank.rs",
+      "git_blob_sha": "38cb5aa51752ec076147c9aeb01a9538ae9aaf9b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/plus_di.rs",
+      "git_blob_sha": "2e20736d0e747c70c08dfcd8bd83aeedd60d7284"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/plus_dm.rs",
+      "git_blob_sha": "795c56c20c9aa69840dc773955e9127881f5d034"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ppo.rs",
+      "git_blob_sha": "c29ebf9865680afb64722658a18bd76a08cd69aa"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/pvi.rs",
+      "git_blob_sha": "6f24cdbb529446586f35f873093e0a656068ae4a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/pvo.rs",
+      "git_blob_sha": "fd797ba9802133fcca6c0900205fc307226e704b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/pvt.rs",
+      "git_blob_sha": "98463cb3d13bcbd1af6fa2c4d0f4a1f866622e6c"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/qstick.rs",
+      "git_blob_sha": "0bbe7fe3327bc6d54ab4388bd5ea988c58894af6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rma.rs",
+      "git_blob_sha": "d5dee28d940696ac6040574c506599c55e65db71"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/roc.rs",
+      "git_blob_sha": "582b9734e3be81f2161eeefe8e7543d8e2d70200"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rocp.rs",
+      "git_blob_sha": "3a9e09bb78b6cef974b36cc648649a2057687bb3"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rocr.rs",
+      "git_blob_sha": "c04dd6961867a6d8de1e894bfe7e4b46968933dd"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rocr100.rs",
+      "git_blob_sha": "007a416c79385442049cc8d2ffccbd89ff350f82"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rsi.rs",
+      "git_blob_sha": "a5e50e6b0a376f8e275ea4d75fa86c36a3f85b90"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rvi.rs",
+      "git_blob_sha": "8dd0e24b2c7cf94c51678c15d4ecee9d971d4925"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/rvol.rs",
+      "git_blob_sha": "01b09ed71448ab0d6a28eadc1c72a1b638636bca"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sar.rs",
+      "git_blob_sha": "c4071b1088ea258cf532fe02b0b20156dd386fa8"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sarext.rs",
+      "git_blob_sha": "2ac15a544cd588eb2faf2c34523193d094b2c04b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/scratch_election.rs",
+      "git_blob_sha": "bdca9c0628735a120115eaf7a7778548ba79e4df"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sin.rs",
+      "git_blob_sha": "23552f959511da8d20f2beb9e7a623f75f6c2f5d"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sinh.rs",
+      "git_blob_sha": "b38d3c20fe925c00bea734e221b9a16fdd45d140"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sma.rs",
+      "git_blob_sha": "d19406eb06e2557e2a499d6c924fe7b407c19664"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/smi.rs",
+      "git_blob_sha": "fd246a00105a63b780773c58abf8e871daa3df7d"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sqrt.rs",
+      "git_blob_sha": "9b74147b7584f3f2ec3ed8736d8566b717a63d57"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/stddev.rs",
+      "git_blob_sha": "c21538acf7c93a559e296e17502969ee15832f85"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/stoch.rs",
+      "git_blob_sha": "77ab87aa293efdfb4ed9042eb7db10e2983f99f8"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/stochf.rs",
+      "git_blob_sha": "1f2ba738fa71f11f39d36767359292ca6812a2cc"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/stochrsi.rs",
+      "git_blob_sha": "fe0e80691a066b5e2dca5117a8b2f86f44016f02"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/stream_finite.rs",
+      "git_blob_sha": "942c29d9176fc8becec1c13d128a51731232630b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/stream_out_range.rs",
+      "git_blob_sha": "f1960e2feef27bcbc3ea76e41e00300e6a2a84a0"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sub.rs",
+      "git_blob_sha": "b8d15803f0da70bdbc124e2fbe86d1c90ef43b63"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/sum.rs",
+      "git_blob_sha": "cdc98eac30f612d723aaed386e7b29fb7877781b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/supertrend.rs",
+      "git_blob_sha": "8f817fa2b3c1d9dc9fda5bddf720380ef7fb86d6"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/t3.rs",
+      "git_blob_sha": "b1ce37b3ed527feb7e296b1ca1feb7c68950a002"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/tan.rs",
+      "git_blob_sha": "8a702c9c925281c90e2412601e22f7cac28aa7f1"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/tanh.rs",
+      "git_blob_sha": "272361b31a9c02199a93ee43d74d06b0901d915f"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/tema.rs",
+      "git_blob_sha": "32de570e2c4544f39452d16e5017215e79351ec2"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/trange.rs",
+      "git_blob_sha": "c0c276a547208a95ada832576b31612a721ff8af"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/trima.rs",
+      "git_blob_sha": "5e9a27b0109bab0c7e69e708edf7f81365c3060a"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/trix.rs",
+      "git_blob_sha": "759533d9b72b6b104c7f9114590f1ac706c3ae7d"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/tsf.rs",
+      "git_blob_sha": "a9e5d1eecdfab122e2e3e2ab806b3b20fee7be9b"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/tsi.rs",
+      "git_blob_sha": "745b89f6c0e4651a9d6dd73d96f2c652a834848e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/types.rs",
+      "git_blob_sha": "02bcc5cba6e2b028d4febd31d22f51d6203e3101"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/typprice.rs",
+      "git_blob_sha": "2c9abeb759867d72c100fb274d1579d9aefd75d1"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/ultosc.rs",
+      "git_blob_sha": "9a7b12e6ba45ed28195862da173dc12bae14e493"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/var.rs",
+      "git_blob_sha": "2ad31fbd848a47f2f8dde0fcfca3b195ddb85834"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/vhf.rs",
+      "git_blob_sha": "08cda24e7fb8f05fcab7584139957cbfaafc8705"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/vortex.rs",
+      "git_blob_sha": "03a315324ee82a53e9442083250ac53779fcd75e"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/vwap.rs",
+      "git_blob_sha": "55de42b879b3444178019235032e81e78d00d241"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/vwma.rs",
+      "git_blob_sha": "2eae80c06ba9b7bb085f0721dd256cc9f3e7c608"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/wad.rs",
+      "git_blob_sha": "c8045b37f3362917b91b501e4be64ce13c4822bf"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/wclprice.rs",
+      "git_blob_sha": "549c3a05371f3839fca2f90ad0e4b7e9c7f34129"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/willr.rs",
+      "git_blob_sha": "873a306bb92e205a26738537a49f70e8eba350a5"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/wma.rs",
+      "git_blob_sha": "4d9626ff73c31a696d4e0e2668e6932e8271e7e4"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func/zlema.rs",
+      "git_blob_sha": "61c282b90435cfa618c105edf08dffb74cc840ef"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/src/ta_func_api.xml",
+      "git_blob_sha": "2efba80ada53f448b17632980b949629cf1298da"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/tests/empty_range.rs",
+      "git_blob_sha": "467055aa1728b09e9f9f561848f427cf6072e128"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/tests/nullable_outputs.rs",
+      "git_blob_sha": "b20ca378d0a8f012ec44a9749bf4e60c4318d629"
+    },
+    {
+      "path": "ta_codegen/output/rust/library/tests/stream_open_contract.rs",
+      "git_blob_sha": "896619280ece2cb77bc7094afe358c13c0a18381"
+    },
+    {
+      "path": "ta_func_api.xml",
+      "git_blob_sha": "2efba80ada53f448b17632980b949629cf1298da"
+    }
+  ],
+  "derived": [
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/abstract_api.rs",
+      "derived": "crates/roze-ta/src/talib/abstract_api.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/lib.rs",
+      "derived": "crates/roze-ta/src/talib/mod.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ac.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ac.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/accbands.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/accbands.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/acos.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/acos.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ad.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ad.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/add.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/add.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/adosc.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/adosc.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/adr.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/adr.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/adx.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/adx.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/adxr.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/adxr.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ao.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ao.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/apo.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/apo.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/aroon.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/aroon.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/aroonosc.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/aroonosc.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/asin.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/asin.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/atan.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/atan.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/atr.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/atr.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/avgdev.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/avgdev.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/avgprice.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/avgprice.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/bbands.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/bbands.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/beta.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/beta.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/bop.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/bop.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cci.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cci.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl2crows.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl2crows.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl3blackcrows.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl3blackcrows.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl3inside.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl3inside.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl3linestrike.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl3linestrike.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl3outside.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl3outside.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl3starsinsouth.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl3starsinsouth.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdl3whitesoldiers.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdl3whitesoldiers.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlabandonedbaby.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlabandonedbaby.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdladvanceblock.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdladvanceblock.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlbelthold.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlbelthold.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlbreakaway.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlbreakaway.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlclosingmarubozu.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlclosingmarubozu.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlconcealbabyswall.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlconcealbabyswall.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlcounterattack.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlcounterattack.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdldarkcloudcover.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdldarkcloudcover.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdldoji.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdldoji.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdldojistar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdldojistar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdldragonflydoji.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdldragonflydoji.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlengulfing.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlengulfing.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdleveningdojistar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdleveningdojistar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdleveningstar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdleveningstar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlgapsidesidewhite.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlgapsidesidewhite.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlgravestonedoji.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlgravestonedoji.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlhammer.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlhammer.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlhangingman.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlhangingman.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlharami.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlharami.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlharamicross.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlharamicross.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlhighwave.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlhighwave.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlhikkake.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlhikkake.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlhikkakemod.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlhikkakemod.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlhomingpigeon.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlhomingpigeon.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlidentical3crows.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlidentical3crows.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlinneck.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlinneck.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlinvertedhammer.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlinvertedhammer.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlkicking.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlkicking.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlkickingbylength.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlkickingbylength.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlladderbottom.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlladderbottom.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdllongleggeddoji.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdllongleggeddoji.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdllongline.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdllongline.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlmarubozu.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlmarubozu.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlmatchinglow.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlmatchinglow.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlmathold.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlmathold.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlmorningdojistar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlmorningdojistar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlmorningstar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlmorningstar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlonneck.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlonneck.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlpiercing.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlpiercing.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlrickshawman.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlrickshawman.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlrisefall3methods.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlrisefall3methods.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlseparatinglines.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlseparatinglines.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlshootingstar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlshootingstar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlshortline.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlshortline.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlspinningtop.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlspinningtop.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlstalledpattern.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlstalledpattern.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlsticksandwich.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlsticksandwich.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdltakuri.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdltakuri.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdltasukigap.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdltasukigap.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlthrusting.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlthrusting.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdltristar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdltristar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlunique3river.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlunique3river.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlupsidegap2crows.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlupsidegap2crows.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cdlxsidegap3methods.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cdlxsidegap3methods.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ceil.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ceil.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cmf.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cmf.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cmo.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cmo.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cmou.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cmou.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/coppock.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/coppock.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/correl.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/correl.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cos.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cos.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cosh.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cosh.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cumsum.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cumsum.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/cvi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/cvi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/dema.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/dema.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/div.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/div.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/div_zero.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/div_zero.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/donchian.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/donchian.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/dpo.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/dpo.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/dx.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/dx.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/efi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/efi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ema.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ema.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/er.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/er.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/eri.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/eri.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/exp.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/exp.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/floor.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/floor.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/fosc.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/fosc.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/fractal.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/fractal.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ha.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ha.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/hma.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/hma.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ht_dcperiod.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ht_dcperiod.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ht_dcphase.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ht_dcphase.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ht_phasor.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ht_phasor.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ht_sine.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ht_sine.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ht_trendline.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ht_trendline.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ht_trendmode.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ht_trendmode.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/imi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/imi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/kama.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/kama.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/kc.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/kc.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/kdj.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/kdj.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/linearreg.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/linearreg.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/linearreg_angle.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/linearreg_angle.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/linearreg_intercept.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/linearreg_intercept.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/linearreg_slope.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/linearreg_slope.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ln.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ln.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/log10.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/log10.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ma.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ma.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/macd.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/macd.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/macdext.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/macdext.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/macdfix.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/macdfix.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/mama.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/mama.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/marketfi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/marketfi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/massi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/massi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/mavp.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/mavp.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/max.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/max.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/maxindex.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/maxindex.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/medprice.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/medprice.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/mfi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/mfi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/midpoint.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/midpoint.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/midprice.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/midprice.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/min.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/min.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/minindex.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/minindex.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/minmax.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/minmax.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/minmaxindex.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/minmaxindex.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/minus_di.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/minus_di.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/minus_dm.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/minus_dm.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/mod.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/mod.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/mom.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/mom.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/mult.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/mult.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/natr.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/natr.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/no_phantom_io.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/no_phantom_io.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/nvi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/nvi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/obv.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/obv.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/percentile.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/percentile.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/percentrank.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/percentrank.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/plus_di.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/plus_di.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/plus_dm.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/plus_dm.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ppo.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ppo.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/pvi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/pvi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/pvo.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/pvo.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/pvt.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/pvt.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/qstick.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/qstick.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rma.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rma.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/roc.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/roc.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rocp.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rocp.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rocr.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rocr.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rocr100.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rocr100.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rsi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rsi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rvi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rvi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/rvol.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/rvol.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sar.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sar.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sarext.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sarext.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/scratch_election.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/scratch_election.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sin.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sin.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sinh.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sinh.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sma.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sma.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/smi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/smi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sqrt.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sqrt.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/stddev.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/stddev.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/stoch.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/stoch.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/stochf.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/stochf.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/stochrsi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/stochrsi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/stream_finite.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/stream_finite.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/stream_out_range.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/stream_out_range.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sub.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sub.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/sum.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/sum.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/supertrend.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/supertrend.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/t3.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/t3.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/tan.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/tan.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/tanh.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/tanh.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/tema.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/tema.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/trange.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/trange.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/trima.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/trima.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/trix.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/trix.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/tsf.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/tsf.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/tsi.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/tsi.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/types.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/types.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/typprice.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/typprice.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/ultosc.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/ultosc.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/var.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/var.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/vhf.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/vhf.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/vortex.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/vortex.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/vwap.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/vwap.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/vwma.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/vwma.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/wad.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/wad.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/wclprice.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/wclprice.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/willr.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/willr.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/wma.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/wma.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func/zlema.rs",
+      "derived": "crates/roze-ta/src/talib/ta_func/zlema.rs"
+    },
+    {
+      "original": "vendor/ta-lib-rust/ta_codegen/output/rust/library/src/ta_func_api.xml",
+      "derived": "crates/roze-ta/src/talib/ta_func_api.xml"
+    }
+  ]
+}

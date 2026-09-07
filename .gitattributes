@@ -2,6 +2,7 @@
 /vendor/yata/** -text
 /vendor/wickra-r1/** -text
 /vendor/wickra-full/** -text
+/vendor/ta-lib-rust/** -text
 /UPSTREAM.json -text
 /crates/roze-ta/src/** text eol=lf
 /crates/roze-ta/tests/fixtures/pre-native-* text eol=lf
@@ -15,3 +16,7 @@
 /docs/evidence/native-migration-baseline.json text eol=lf
 /docs/evidence/reference-*.json text eol=lf
 /docs/evidence/wickra-*.json text eol=lf
+/docs/evidence/*parity*.json text eol=lf
+/docs/evidence/cross-library-sources.json text eol=lf
+/docs/evidence/talib-rust-source.json text eol=lf
+/crates/roze-ta/tests/fixtures/*parity.json text eol=lf

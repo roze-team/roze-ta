@@ -20,8 +20,19 @@ manifest and patch are documented in `docs/patches/yata-native-migration.md`.
 
 These derived files retain Apache-2.0 terms; they are not relicensed as MIT-only
 or represented as original Roze work. Original Roze code remains under MIT.
-The combined `roze-ta` crate declares `MIT AND Apache-2.0` and includes
+The combined `roze-ta` crate declares `MIT AND Apache-2.0 AND BSD-3-Clause` and includes
 `LICENSE-MIT`, `LICENSE-APACHE`, and this notice in its package directory.
 
 For a standalone crate copy, the derived module paths above are relative to
 that crate's `src/`; its per-file headers retain the upstream source paths.
+
+The `src/talib/` module is derived from the official TA-Lib Rust library at
+commit `2f0426d4a3e7d5b153c83ce7e6c4b9b05d8ca9c7`.
+Copyright (c) 1999-2026, Mario Fortier and contributors; BSD-3-Clause.
+Full license terms are in `src/talib/LICENSE-BSD-3-Clause`.
+Module paths and safe portable dispatch were adapted; the formulas retain
+their upstream terms. The combined crate's license expression includes
+BSD-3-Clause. GPL TTR is an independent test oracle, not a linked dependency.
+
+Source-specific ta/talipp compatibility conventions and attribution are
+documented in `src/reference_all/compat/SOURCE-NOTICES.md`.

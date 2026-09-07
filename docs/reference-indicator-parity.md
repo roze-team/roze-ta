@@ -29,12 +29,15 @@ AC-IND-009：每个源条目必须有最终映射或明确的非指标分类。�
 - `review_pending`：尚未完成公式与本地实现核对；不能推断为缺失或完成。
 - `implemented_variant`：已有固定来源的迁移实现、登记入口与证据，但不代表其他库默认行为兼容。
 - `mapped_variant`：有可调用的本地公式候选；尚未完成逐项跨库数值兼容验收，不能计为完整AC-IND-009通过。
+- `verified_default_cases`：固定TA-Lib默认参数三组独立C参考值通过；不代表所有参数组合兼容。
 - `non_indicator`：数据下载、校验等非指标辅助功能，记录理由。
 
 第一批 R1 为 ALMA、SuperTrend、StochRSI、Vortex、Ulcer Index；规格见[公式契约](contracts/reference-r1.md)。
-后续已迁入全部514个Wickra导出算法，补充66个运算，开放580个Reference入口。
-886条来源映射现为514个implemented_variant、368个mapped_variant、4个non_indicator。
-368个跨库候选仍需逐项兼容验收；见[本轮证据与限制](evidence/2026-09-07-reference-full.md)。
+后续已迁入全部514个Wickra导出算法、201个官方TA-Lib Rust函数，补充66个运算，新增114个来源兼容变体，开放895个Reference入口。
+886条来源映射现为514个implemented_variant、201个verified_default_cases、167个mapped_variant、4个non_indicator。
+368个跨库候选均已执行三组输入对照：[完整审计](evidence/cross-library-parity-audit.json)。其中201项TA-Lib默认配置通过，53项其他库既有选定配置通过，111项来源变体与3项实时对齐变体通过。
+原106项差异与8项异常已由114个明确变体闭合，共334组数值和8组异常事务用例通过。全部验收均有参数、输出、时间范围，不能推断整个来源API兼容；另53项保留mapped_variant并附选定用例验收证据。详见[来源契约](contracts/source-parity-v1.md)。
+早期证据见[上一轮记录](evidence/2026-09-07-reference-full.md)，新过程见[跨库数值验收记录](evidence/2026-09-07-cross-library-parity.md)。
 
 ## 来源入口
 
@@ -44,3 +47,5 @@ AC-IND-009：每个源条目必须有最终映射或明确的非指标分类。�
 - [ta](https://github.com/bukosabino/ta)
 - [TTR](https://github.com/joshuaulrich/TTR)
 - [Wickra](https://github.com/wickra-lib/wickra)
+
+来源变体状态：`verified_source_cases` 表示显式配置的三组来源用例通过；`verified_causal_cases` 表示同时具有明确实时对齐约定，不能替换完整历史回填图表。
