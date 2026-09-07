@@ -1,0 +1,255 @@
+diff --git a/crates/roze-ta/src/wickra/alma.rs b/crates/roze-ta/src/wickra/alma.rs
+index 283501c..6c8c122 100644
+--- a/crates/roze-ta/src/wickra/alma.rs
++++ b/crates/roze-ta/src/wickra/alma.rs
+@@ -1,9 +1,14 @@
++// SPDX-License-Identifier: MIT
++// Copyright (c) 2026 kingchenc and the Wickra contributors
++// Derived from wickra-lib/wickra; original files, license and Git blob IDs:
++// vendor/wickra-r1/ and docs/evidence/reference-r1-source.json.
++// Local changes: module paths, serde state, bounded parameters, selected API subset.
+ //! Arnaud Legoux Moving Average (ALMA).
+ 
+ use std::collections::VecDeque;
+ 
+-use crate::error::{Error, Result};
+-use crate::traits::Indicator;
++use crate::wickra::error::{Error, Result};
++use crate::wickra::traits::Indicator;
+ 
+ /// Arnaud Legoux Moving Average — a Gaussian-weighted moving average.
+ ///
+@@ -32,7 +37,7 @@ use crate::traits::Indicator;
+ /// # Example
+ ///
+ /// ```
+-/// use wickra_core::{Alma, Indicator};
++/// use roze_ta::wickra::{Alma, Indicator};
+ ///
+ /// let mut alma = Alma::new(9, 0.85, 6.0).unwrap();
+ /// let mut last = None;
+@@ -41,16 +46,16 @@ use crate::traits::Indicator;
+ /// }
+ /// assert!(last.is_some());
+ /// ```
+-#[derive(Debug, Clone)]
++#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+ pub struct Alma {
+-    period: usize,
+-    offset: f64,
+-    sigma: f64,
++    pub(crate) period: usize,
++    pub(crate) offset: f64,
++    pub(crate) sigma: f64,
+     /// Pre-computed, normalised weights (sum to 1). `weights[0]` is the oldest
+     /// sample in the window, `weights[period - 1]` the newest.
+-    weights: Vec<f64>,
+-    window: VecDeque<f64>,
+-    current: Option<f64>,
++    pub(crate) weights: Vec<f64>,
++    pub(crate) window: VecDeque<f64>,
++    pub(crate) current: Option<f64>,
+ }
+ 
+ impl Alma {
+@@ -65,9 +70,9 @@ impl Alma {
+         if period == 0 {
+             return Err(Error::PeriodZero);
+         }
+-        if period > crate::error::MAX_PERIOD {
++        if period > crate::wickra::error::MAX_PERIOD {
+             return Err(Error::InvalidPeriod {
+-                message: crate::error::PERIOD_ABOVE_MAX,
++                message: crate::wickra::error::PERIOD_ABOVE_MAX,
+             });
+         }
+         if !offset.is_finite() || !(0.0..=1.0).contains(&offset) {
+@@ -90,6 +95,11 @@ impl Alma {
+             .map(|i| (-((i as f64 - m).powi(2)) / denom).exp())
+             .collect();
+         let sum: f64 = raw.iter().sum();
++        if !sum.is_finite() || sum <= 0.0 {
++            return Err(Error::InvalidPeriod {
++                message: "ALMA weights are not representable",
++            });
++        }
+         for w in &mut raw {
+             *w /= sum;
+         }
+@@ -169,176 +179,3 @@ impl Indicator for Alma {
+         "ALMA"
+     }
+ }
+-
+-#[cfg(test)]
+-mod tests {
+-    use super::*;
+-    use crate::traits::BatchExt;
+-    use approx::assert_relative_eq;
+-
+-    #[test]
+-    fn rejects_zero_period() {
+-        assert!(matches!(Alma::new(0, 0.85, 6.0), Err(Error::PeriodZero)));
+-    }
+-
+-    #[test]
+-    fn rejects_invalid_offset() {
+-        assert!(matches!(
+-            Alma::new(9, -0.1, 6.0),
+-            Err(Error::InvalidPeriod { .. })
+-        ));
+-        assert!(matches!(
+-            Alma::new(9, 1.1, 6.0),
+-            Err(Error::InvalidPeriod { .. })
+-        ));
+-        assert!(matches!(
+-            Alma::new(9, f64::NAN, 6.0),
+-            Err(Error::InvalidPeriod { .. })
+-        ));
+-    }
+-
+-    #[test]
+-    fn rejects_invalid_sigma() {
+-        assert!(matches!(
+-            Alma::new(9, 0.85, 0.0),
+-            Err(Error::InvalidPeriod { .. })
+-        ));
+-        assert!(matches!(
+-            Alma::new(9, 0.85, -1.0),
+-            Err(Error::InvalidPeriod { .. })
+-        ));
+-        assert!(matches!(
+-            Alma::new(9, 0.85, f64::INFINITY),
+-            Err(Error::InvalidPeriod { .. })
+-        ));
+-    }
+-
+-    #[test]
+-    fn accessors_and_metadata() {
+-        let alma = Alma::new(9, 0.85, 6.0).unwrap();
+-        assert_eq!(alma.period(), 9);
+-        assert_eq!(alma.warmup_period(), 9);
+-        assert_eq!(alma.name(), "ALMA");
+-        assert!((alma.offset() - 0.85).abs() < 1e-12);
+-        assert!((alma.sigma() - 6.0).abs() < 1e-12);
+-        // Weights are normalised by construction.
+-        let sum: f64 = alma.weights.iter().sum();
+-        assert_relative_eq!(sum, 1.0, epsilon = 1e-12);
+-    }
+-
+-    #[test]
+-    fn classic_factory() {
+-        let a = Alma::classic();
+-        assert_eq!(a.period(), 9);
+-        assert!((a.offset() - 0.85).abs() < 1e-12);
+-        assert!((a.sigma() - 6.0).abs() < 1e-12);
+-    }
+-
+-    #[test]
+-    fn constant_series_yields_the_constant() {
+-        // Normalised weights sum to 1, so any constant is reproduced exactly.
+-        let mut alma = Alma::new(9, 0.85, 6.0).unwrap();
+-        let out = alma.batch(&[42.0_f64; 40]);
+-        for v in out.iter().skip(8).flatten() {
+-            assert_relative_eq!(*v, 42.0, epsilon = 1e-12);
+-        }
+-    }
+-
+-    #[test]
+-    fn warmup_emits_first_value_at_period() {
+-        let mut alma = Alma::new(5, 0.85, 6.0).unwrap();
+-        for i in 0..4 {
+-            assert_eq!(alma.update(f64::from(i)), None);
+-        }
+-        assert!(alma.update(4.0).is_some());
+-    }
+-
+-    #[test]
+-    fn reference_value_period_3() {
+-        // ALMA(period=3, offset=0.85, sigma=6) on [10, 20, 30].
+-        // m = 0.85 * 2 = 1.7;  s = 3 / 6 = 0.5;  2*s^2 = 0.5.
+-        // Independently compute the normalised Gaussian weights and the
+-        // expected weighted sum, then check the indicator output matches.
+-        // Computing the expectation here (rather than pinning a printed
+-        // constant) keeps the test stable across libm `exp` implementations.
+-        let mut alma = Alma::new(3, 0.85, 6.0).unwrap();
+-        alma.update(10.0);
+-        alma.update(20.0);
+-        let v = alma.update(30.0).expect("ALMA emits after period");
+-
+-        let w0 = (-((0.0_f64 - 1.7).powi(2)) / 0.5).exp();
+-        let w1 = (-((1.0_f64 - 1.7).powi(2)) / 0.5).exp();
+-        let w2 = (-((2.0_f64 - 1.7).powi(2)) / 0.5).exp();
+-        let s = w0 + w1 + w2;
+-        let expected = (10.0 * w0 + 20.0 * w1 + 30.0 * w2) / s;
+-
+-        // The weighted sum is heavily skewed toward the newest sample so the
+-        // output must sit close to but below the latest input (30).
+-        assert!(v > 25.0 && v < 30.0, "ALMA(3) on [10,20,30] = {v}");
+-        assert_relative_eq!(v, expected, epsilon = 1e-12);
+-    }
+-
+-    #[test]
+-    fn offset_zero_centres_on_oldest_sample() {
+-        // With offset = 0 the Gaussian peaks at index 0, so ALMA leans toward
+-        // the oldest sample in the window and away from the newest.
+-        let mut alma = Alma::new(5, 0.0, 6.0).unwrap();
+-        let series: Vec<f64> = (1..=5).map(f64::from).collect();
+-        let mut last = None;
+-        for p in &series {
+-            last = alma.update(*p);
+-        }
+-        let v = last.unwrap();
+-        let mean = series.iter().sum::<f64>() / series.len() as f64;
+-        // Oldest sample is 1.0, mean is 3.0; an offset-0 ALMA should sit
+-        // strictly below the mean.
+-        assert!(v < mean, "{v} should be less than {mean}");
+-    }
+-
+-    #[test]
+-    fn offset_one_centres_on_newest_sample() {
+-        // Symmetric to the above: offset = 1 leans toward the newest sample.
+-        let mut alma = Alma::new(5, 1.0, 6.0).unwrap();
+-        let series: Vec<f64> = (1..=5).map(f64::from).collect();
+-        let mut last = None;
+-        for p in &series {
+-            last = alma.update(*p);
+-        }
+-        let v = last.unwrap();
+-        let mean = series.iter().sum::<f64>() / series.len() as f64;
+-        assert!(v > mean, "{v} should exceed {mean}");
+-    }
+-
+-    #[test]
+-    fn batch_equals_streaming() {
+-        let prices: Vec<f64> = (1..=100)
+-            .map(|i| (f64::from(i) * 0.2).sin() * 5.0 + f64::from(i) * 0.1)
+-            .collect();
+-        let mut a = Alma::new(9, 0.85, 6.0).unwrap();
+-        let mut b = Alma::new(9, 0.85, 6.0).unwrap();
+-        assert_eq!(
+-            a.batch(&prices),
+-            prices.iter().map(|p| b.update(*p)).collect::<Vec<_>>()
+-        );
+-    }
+-
+-    #[test]
+-    fn reset_clears_state() {
+-        let mut alma = Alma::new(9, 0.85, 6.0).unwrap();
+-        alma.batch(&(1..=40).map(f64::from).collect::<Vec<_>>());
+-        assert!(alma.is_ready());
+-        alma.reset();
+-        assert!(!alma.is_ready());
+-        assert_eq!(alma.update(1.0), None);
+-    }
+-
+-    #[test]
+-    fn ignores_non_finite_input() {
+-        let mut alma = Alma::new(5, 0.85, 6.0).unwrap();
+-        alma.batch(&(1..=5).map(f64::from).collect::<Vec<_>>());
+-        alma.update(6.0).unwrap();
+-        // Non-finite inputs leave the window/current untouched.
+-        assert_eq!(alma.update(f64::NAN), None);
+-        assert_eq!(alma.update(f64::INFINITY), None);
+-    }
+-}

@@ -1,0 +1,109 @@
+[package]
+name = "wickra-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+serde_json = "1"
+wickra-core = { path = "../crates/wickra-core" }
+wickra-data = { path = "../crates/wickra-data", features = ["live-binance"] }
+
+# Detach this crate from the parent workspace — cargo-fuzz builds it on its
+# own with sanitizer flags.
+[workspace]
+
+[[bin]]
+name = "csv_reader"
+path = "fuzz_targets/csv_reader.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "binance_envelope"
+path = "fuzz_targets/binance_envelope.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update"
+path = "fuzz_targets/indicator_update.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_candle"
+path = "fuzz_targets/indicator_update_candle.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_pair"
+path = "fuzz_targets/indicator_update_pair.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_orderbook"
+path = "fuzz_targets/indicator_update_orderbook.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_trade"
+path = "fuzz_targets/indicator_update_trade.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_tradequote"
+path = "fuzz_targets/indicator_update_tradequote.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_derivatives"
+path = "fuzz_targets/indicator_update_derivatives.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_update_crosssection"
+path = "fuzz_targets/indicator_update_crosssection.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "tick_aggregator"
+path = "fuzz_targets/tick_aggregator.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "bar_builder_update_candle"
+path = "fuzz_targets/bar_builder_update_candle.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "indicator_chain"
+path = "fuzz_targets/indicator_chain.rs"
+test = false
+doc = false
+bench = false

@@ -46,6 +46,7 @@ macro_rules! kernels {
             Chaikin(ChaikinState),
             $($variant(Option<Box<<$config as IndicatorConfig>::Instance>>)),+,
             Extension(Box<super::extensions::Extension>),
+            Reference(Box<super::reference::Reference>),
         }
         impl Kernel {
             pub(super) fn new(id: &str) -> Result<Self, TaError> {
@@ -60,6 +61,8 @@ macro_rules! kernels {
                     "atr.14" => crate::AtrState::new(14).map(Self::Atr).ok_or_else(upstream_error),
                     "chaikin.default" => Ok(Self::Chaikin(ChaikinState::default())),
                     $($id => Ok(Self::$variant(None))),+,
+                    "alma.9" | "supertrend.10_3" | "stoch_rsi.14_14" | "vortex.14" | "ulcer.14" =>
+                        super::reference::Reference::new(id).map(|s|Self::Reference(Box::new(s))),
                     _ => super::extensions::Extension::new(id).map(|s|Self::Extension(Box::new(s))),
                 }
             }
@@ -76,6 +79,7 @@ macro_rules! kernels {
                         .map(|v|vec![v]).ok_or_else(upstream_error),
                     Self::Chaikin(state) => state.step(&candle),
                     Self::Extension(state) => state.step(bar),
+                    Self::Reference(state) => Ok(state.step(bar)),
                     $(Self::$variant(state) => {
                         if state.is_none() { *state = Some(Box::new(<$config>::default().init(&candle).map_err(|_|upstream_error())?)); }
                         Ok(state.as_mut().ok_or_else(upstream_error)?.next(&candle).values().to_vec())
@@ -87,6 +91,7 @@ macro_rules! kernels {
                     Self::Ema(_) => "ema", Self::Sma(_,_) => "sma", Self::Rsi(_) => "rsi.14", Self::Atr(_) => "atr.14",
                     Self::Chaikin(_) => "chaikin.default",
                     Self::Extension(state) => state.kind(),
+                    Self::Reference(state) => state.kind(),
                     $(Self::$variant(_) => $id),+
                 }
             }
@@ -101,6 +106,7 @@ macro_rules! kernels {
                         && s.average.is_some()==initialized && s.value.is_some()==initialized,
                     Self::Chaikin(s) => id=="chaikin.default" && s.short.is_some()==initialized && s.long.is_some()==initialized,
                     Self::Extension(s) => s.valid_for(id,samples),
+                    Self::Reference(s) => s.valid_for(id,samples),
                     $(Self::$variant(s) => id==$id && s.is_some()==initialized && s.as_ref().is_none_or(|state|
                         serde_json::to_value(state.config()).ok() == serde_json::to_value(<$config>::default()).ok()
                     )),+

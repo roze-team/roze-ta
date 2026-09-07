@@ -1,0 +1,48 @@
+# CodeQL analysis configuration, referenced from .github/workflows/codeql.yml.
+#
+# `bindings/node/src/lib.rs` is excluded from analysis. The file is a thin
+# napi-derive wrapper over wickra-core: roughly 22,000 lines of `#[napi]`
+# attributes, `node_*_indicator!` macro invocations and one-line delegating
+# methods, with a single hand-written `unsafe` item — the `from_napi_value`
+# trait impl that napi requires.
+#
+# napi-derive expands every `#[napi]` into FFI glue that dereferences raw
+# `napi_env` and `napi_value` handles, and CodeQL attributes that generated
+# code back to the source span of the macro. The result is one
+# `rust/access-invalid-pointer` finding per exported class, anchored on a
+# struct identifier rather than on any pointer expression; 518 of them
+# appeared at once when the query first shipped, and every new indicator
+# adds another.
+#
+# `query-filters` matches on query id, tags and severity only — it cannot be
+# scoped to a path. Excluding the rule that way would also disable it for
+# `bindings/c/src`, which is where the workspace's real raw-pointer code
+# lives. Dropping this one file of generated glue keeps the rule active
+# everywhere it can say something useful.
+#
+# The C# binding is generated the same way and for the same reason: one class
+# per catalogue entry, emitted from the C header. Indicators.g.cs and
+# NativeMethods.g.cs are 79,000 lines of P/Invoke declarations and one-line
+# delegating methods between them, and GoldenAllTests.g.cs is a test per entry.
+# Excluding them leaves exactly the part worth reading -- WickraHandle.cs and
+# WickraNative.cs, where the handle lifetime and the native library resolution
+# actually live, plus the hand-written tests and examples.
+#
+# The rule for adding to this list: a path belongs here when a generator owns
+# the file end to end and stamps it as such, never because a finding in it was
+# inconvenient.
+paths-ignore:
+  - bindings/node/src/lib.rs
+  - bindings/csharp/Wickra/Generated/Indicators.g.cs
+  - bindings/csharp/Wickra/Generated/NativeMethods.g.cs
+  - bindings/csharp/Wickra.Tests/GoldenAllTests.g.cs
+  # Java, same generator and the same stamp: 624 classes directly under
+  # org/wickra/ plus internal/NativeMethods.java, all emitted from the C header
+  # and all carrying "Do not edit by hand". 37,900 lines between them.
+  #
+  # Two files in the binding are written by a person and stay in the analysis:
+  # internal/WickraNative.java, which owns the FFI arena, the Cleaner and the
+  # library lookup, and every test under src/test. Those are the only places a
+  # Java memory mistake can originate here.
+  - bindings/java/src/main/java/org/wickra/*.java
+  - bindings/java/src/main/java/org/wickra/internal/NativeMethods.java

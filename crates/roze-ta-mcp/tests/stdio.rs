@@ -156,19 +156,38 @@ fn all_tools_work_over_stdio_and_snapshots_survive_restart() -> anyhow::Result<(
             "indicator_stream",
             "analysis_batch_calculate",
             "native_catalog",
-            "native_batch_calculate"
+            "native_batch_calculate",
+            "reference_catalog",
+            "reference_batch_calculate",
+            "reference_stream"
         ]
         .into_iter()
         .collect()
     );
     let catalog = client.tool("indicator_catalog", json!({}))?;
-    assert_eq!(catalog["profiles"].as_array().unwrap().len(), 45);
+    assert_eq!(catalog["profiles"].as_array().unwrap().len(), 50);
     let native_catalog = client.tool("native_catalog", json!({}))?;
     assert_eq!(
         native_catalog["counts"],
         json!({"indicators":36,"methods":44})
     );
     let identity = json!({"series_id":"stdio-test","instrument":"TEST","timeframe":"1ms","source":"fixture","data_version":"1"});
+    let references = client.tool("reference_catalog", json!({}))?;
+    assert_eq!(references, roze_ta::reference_all::catalog()?);
+    let reference_operation = json!({"id":"wickra.Sma","params":{"period":2}});
+    let reference_args = json!({"schema_version":1,"identity":identity,"operation":reference_operation,"as_of_ms":10,
+        "samples":[{"at_ms":1,"available_at_ms":2,"value":2.0},{"at_ms":2,"available_at_ms":3,"value":6.0}]});
+    let reference_request = serde_json::from_value(reference_args.clone())?;
+    assert_eq!(
+        client.tool("reference_batch_calculate", reference_args)?,
+        roze_ta::reference_all::calculate(&reference_request)?
+    );
+    let reference_start = client.tool(
+        "reference_stream",
+        json!({"action":"create","identity":identity,"operation":reference_operation}),
+    )?;
+    let reference_first=client.tool("reference_stream",json!({"action":"advance","identity":identity,"operation":reference_operation,
+        "snapshot":reference_start["snapshot"],"as_of_ms":10,"samples":[{"at_ms":1,"available_at_ms":2,"value":2.0}]}))?;
     let bars: Vec<_> = (1..=6)
         .map(|i| {
             json!({"closed_at_ms":i,"open":100.0+i as f64,
@@ -215,6 +234,9 @@ fn all_tools_work_over_stdio_and_snapshots_survive_restart() -> anyhow::Result<(
     )?;
     client.shutdown()?;
     let mut restarted = Client::start()?;
+    let reference_resumed=restarted.tool("reference_stream",json!({"action":"advance","identity":identity,"operation":reference_operation,
+        "snapshot":reference_first["snapshot"],"as_of_ms":10,"samples":[{"at_ms":2,"available_at_ms":3,"value":6.0}]}))?;
+    assert_eq!(reference_resumed["latest"]["value"], 4.0);
     let resumed = restarted.tool("indicator_stream", json!({"schema_version":1,"identity":identity,"profile_id":"sma.5",
         "as_of_ms":10,"action":{"kind":"advance","snapshot":first["snapshot"],"bars":&closed[3..]}}))?;
     assert_eq!(resumed["latest"], expected["series"][0]["rows"][0]);

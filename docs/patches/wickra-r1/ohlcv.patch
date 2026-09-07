@@ -1,0 +1,188 @@
+diff --git a/crates/roze-ta/src/wickra/ohlcv.rs b/crates/roze-ta/src/wickra/ohlcv.rs
+index 02db6af..1c396d2 100644
+--- a/crates/roze-ta/src/wickra/ohlcv.rs
++++ b/crates/roze-ta/src/wickra/ohlcv.rs
+@@ -1,6 +1,11 @@
++// SPDX-License-Identifier: MIT
++// Copyright (c) 2026 kingchenc and the Wickra contributors
++// Derived from wickra-lib/wickra; original files, license and Git blob IDs:
++// vendor/wickra-r1/ and docs/evidence/reference-r1-source.json.
++// Local changes: module paths, serde state, bounded parameters, selected API subset.
+ //! OHLCV value types: candles and ticks.
+ 
+-use crate::error::{Error, Result};
++use crate::wickra::error::{Error, Result};
+ 
+ /// A single OHLCV bar.
+ ///
+@@ -21,7 +26,7 @@ use crate::error::{Error, Result};
+ /// it: the indicators that consume this type rely on the constructor's
+ /// guarantee rather than re-checking every bar. Treat a mutation the way you
+ /// would treat `new_unchecked` — you are asserting the invariants still hold.
+-#[derive(Debug, Clone, Copy, PartialEq)]
++#[derive(Debug, Clone, Copy, PartialEq, serde::Serialize, serde::Deserialize)]
+ #[non_exhaustive]
+ pub struct Candle {
+     /// Bar open price.
+@@ -170,7 +175,7 @@ impl Candle {
+ /// it: the code that consumes this type relies on the constructor's guarantee
+ /// rather than re-checking. A mutation is an assertion that the invariants
+ /// still hold.
+-#[derive(Debug, Clone, Copy, PartialEq)]
++#[derive(Debug, Clone, Copy, PartialEq, serde::Serialize, serde::Deserialize)]
+ #[non_exhaustive]
+ pub struct Tick {
+     /// Trade price.
+@@ -205,152 +210,3 @@ impl Tick {
+         })
+     }
+ }
+-
+-#[cfg(test)]
+-mod tests {
+-    use super::*;
+-
+-    #[test]
+-    fn candle_new_accepts_valid_ohlc() {
+-        let c = Candle::new(10.0, 11.0, 9.0, 10.5, 100.0, 1).unwrap();
+-        assert_eq!(c.open, 10.0);
+-        assert_eq!(c.high, 11.0);
+-        assert_eq!(c.low, 9.0);
+-        assert_eq!(c.close, 10.5);
+-        assert_eq!(c.volume, 100.0);
+-        assert_eq!(c.timestamp, 1);
+-    }
+-
+-    #[test]
+-    fn candle_new_rejects_high_below_low() {
+-        let err = Candle::new(10.0, 9.0, 10.0, 10.0, 1.0, 0).unwrap_err();
+-        assert!(matches!(err, Error::InvalidCandle { .. }));
+-    }
+-
+-    #[test]
+-    fn candle_new_rejects_high_below_close() {
+-        let err = Candle::new(10.0, 10.0, 9.0, 11.0, 1.0, 0).unwrap_err();
+-        assert!(matches!(err, Error::InvalidCandle { .. }));
+-    }
+-
+-    #[test]
+-    fn candle_new_rejects_low_above_open() {
+-        let err = Candle::new(10.0, 11.0, 10.5, 10.5, 1.0, 0).unwrap_err();
+-        assert!(matches!(err, Error::InvalidCandle { .. }));
+-    }
+-
+-    #[test]
+-    fn candle_new_rejects_negative_volume() {
+-        let err = Candle::new(10.0, 11.0, 9.0, 10.5, -1.0, 0).unwrap_err();
+-        assert!(matches!(err, Error::InvalidCandle { .. }));
+-    }
+-
+-    #[test]
+-    fn candle_new_rejects_nan_price() {
+-        let err = Candle::new(f64::NAN, 11.0, 9.0, 10.5, 1.0, 0).unwrap_err();
+-        assert!(matches!(err, Error::InvalidCandle { .. }));
+-    }
+-
+-    /// Cover the unchecked constructor `Candle::new_unchecked` (lines 86-102).
+-    /// Every existing test routes through the validating `Candle::new`, so the
+-    /// unchecked path is dead.
+-    ///
+-    /// The first assertion shows that a valid set of fields round-trips
+-    /// verbatim. The second feeds `high < low` (which `Candle::new` would
+-    /// reject with `Error::InvalidCandle`) and asserts the unchecked
+-    /// constructor still produces the struct as-is — documenting and
+-    /// enforcing the API contract that the unchecked variant performs no
+-    /// validation and is the caller's responsibility.
+-    #[test]
+-    fn candle_new_unchecked_preserves_fields_verbatim() {
+-        let c = Candle::new_unchecked(1.0, 2.0, 0.5, 1.5, 100.0, 42);
+-        assert_eq!(c.open, 1.0);
+-        assert_eq!(c.high, 2.0);
+-        assert_eq!(c.low, 0.5);
+-        assert_eq!(c.close, 1.5);
+-        assert_eq!(c.volume, 100.0);
+-        assert_eq!(c.timestamp, 42);
+-
+-        // Skip-validation contract: an OHLC combination that the checked
+-        // constructor rejects (high < low) is still built without error.
+-        assert!(Candle::new(10.0, 9.0, 10.0, 10.0, 1.0, 0).is_err());
+-        let unchecked = Candle::new_unchecked(10.0, 9.0, 10.0, 10.0, 1.0, 0);
+-        assert_eq!(unchecked.high, 9.0);
+-        assert_eq!(unchecked.low, 10.0);
+-    }
+-
+-    #[test]
+-    fn candle_typical_price() {
+-        let c = Candle::new(10.0, 12.0, 9.0, 11.0, 1.0, 0).unwrap();
+-        assert_eq!(c.typical_price(), (12.0 + 9.0 + 11.0) / 3.0);
+-    }
+-
+-    #[test]
+-    fn candle_median_price() {
+-        let c = Candle::new(10.0, 12.0, 8.0, 11.0, 1.0, 0).unwrap();
+-        assert_eq!(c.median_price(), 10.0);
+-    }
+-
+-    #[test]
+-    fn candle_weighted_close() {
+-        let c = Candle::new(10.0, 12.0, 8.0, 11.0, 1.0, 0).unwrap();
+-        assert_eq!(c.weighted_close(), (12.0 + 8.0 + 22.0) / 4.0);
+-    }
+-
+-    #[test]
+-    fn candle_true_range_without_prev() {
+-        let c = Candle::new(10.0, 12.0, 8.0, 11.0, 1.0, 0).unwrap();
+-        assert_eq!(c.true_range(None), 4.0);
+-    }
+-
+-    #[test]
+-    fn candle_true_range_with_gap_up() {
+-        // Previous close 6, today's range 8-12: gap covered by |H-prev|=6
+-        let c = Candle::new(10.0, 12.0, 8.0, 11.0, 1.0, 0).unwrap();
+-        assert_eq!(c.true_range(Some(6.0)), 6.0);
+-    }
+-
+-    #[test]
+-    fn candle_true_range_with_gap_down() {
+-        // Previous close 14, today's range 8-12: gap covered by |L-prev|=6
+-        let c = Candle::new(10.0, 12.0, 8.0, 11.0, 1.0, 0).unwrap();
+-        assert_eq!(c.true_range(Some(14.0)), 6.0);
+-    }
+-
+-    #[test]
+-    fn tick_new_accepts_valid() {
+-        let t = Tick::new(100.5, 0.5, 42).unwrap();
+-        assert_eq!(t.price, 100.5);
+-        assert_eq!(t.volume, 0.5);
+-        assert_eq!(t.timestamp, 42);
+-    }
+-
+-    #[test]
+-    fn tick_new_rejects_nan() {
+-        assert!(matches!(
+-            Tick::new(f64::NAN, 1.0, 0),
+-            Err(Error::NonFiniteInput)
+-        ));
+-    }
+-
+-    #[test]
+-    fn tick_new_rejects_inf() {
+-        assert!(matches!(
+-            Tick::new(f64::INFINITY, 1.0, 0),
+-            Err(Error::NonFiniteInput)
+-        ));
+-    }
+-
+-    #[test]
+-    fn tick_new_rejects_negative_volume() {
+-        // Audit R14: the variant is `InvalidTick`, not `InvalidCandle` — a tick
+-        // is not a candle, and downstream pipelines should be able to match on
+-        // the correct semantic.
+-        let err = Tick::new(100.0, -1.0, 0).unwrap_err();
+-        assert!(matches!(err, Error::InvalidTick { .. }));
+-        assert!(
+-            err.to_string().contains("tick volume"),
+-            "expected the InvalidTick message in the formatted error, got {err}"
+-        );
+-    }
+-}

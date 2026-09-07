@@ -1,0 +1,40 @@
+# One rule for the whole tree: every text file is stored with LF in the index and
+# checked out with LF everywhere, whatever the committer's core.autocrlf happens
+# to be.
+#
+# This replaced 41 lines that named file types one at a time (*.sh, *.cs, *.go,
+# *.java, *.R, a handful of individual paths). That list covered six languages
+# and was silent about the rest -- .rs, .py, .js, .ts, .md, .toml, .json, .yml
+# were all at the mercy of whoever committed them. It held only because the
+# people committing happened to be configured consistently, which is a property
+# of their machines rather than of this repository.
+#
+# It matters most for the generated files that CI checks for drift by
+# regenerating them and diffing: bindings/node/index.js and index.d.ts come back
+# from napi with CRLF on Windows, and neither was covered by the old list. A
+# CRLF-normalising commit there makes the drift check fail for a reason that has
+# nothing to do with the generator.
+* text=auto eol=lf
+
+# Binary files are stored byte for byte: never normalised, never diffed as text.
+# Git detects most of these itself; naming them makes the guarantee explicit
+# rather than dependent on content sniffing.
+*.png  binary
+*.rda  binary
+*.jpg  binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+
+# Build outputs of this project. They are not committed, but a stray one must be
+# stored intact rather than mangled by line-ending normalisation.
+*.node   binary
+*.wasm   binary
+*.so     binary
+*.dylib  binary
+*.dll    binary
+*.jar    binary
+*.nupkg  binary
+*.whl    binary
+*.gz     binary
+*.zip    binary

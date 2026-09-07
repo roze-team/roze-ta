@@ -12,6 +12,10 @@ pub mod catalog;
 pub mod engine;
 pub mod error;
 pub mod fingerprint;
+pub mod reference_all;
+pub mod wickra;
+pub mod wickra_all;
+pub mod wickra_data;
 
 pub mod core;
 pub mod helpers;

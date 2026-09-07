@@ -1,0 +1,14 @@
+# Build artifacts and the configure-staged C ABI header / library / downloads.
+*.o
+*.so
+*.dll
+*.dll.a
+*.dylib
+wickra.h
+wickra_abi.def
+dlltool.log
+symbols.rds
+wickra-c.tar.gz
+wickra-c/
+# configure generates Makevars from Makevars.in (Makevars.in + Makevars.win stay tracked).
+/Makevars

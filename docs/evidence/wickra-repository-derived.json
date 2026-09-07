@@ -1,0 +1,21 @@
+{
+  "commit": "7ed1504c805cb45fff7a317a659eb3ad559a80a7",
+  "patch_sha256": "66d974b43fed58560d9628a5956606c1c1f130390168ba9d9d0f70d8e9753832",
+  "files": [
+    {
+      "original": "crates/wickra-data/src/aggregator.rs",
+      "derived": "crates/roze-ta/src/wickra_data/aggregator.rs",
+      "sha256": "44dbb14a6c080e314c7748a87bc8a2c3856f6a62e3352e3a411a34c3bbff1bfd"
+    },
+    {
+      "original": "crates/wickra-data/src/resample.rs",
+      "derived": "crates/roze-ta/src/wickra_data/resample.rs",
+      "sha256": "6bfdcc8c2b5497253e6bb91863c85e0c3f53e84c2b6e14cdd471a6bc65b0bdf8"
+    },
+    {
+      "original": "crates/wickra-core/tests/invariants.rs",
+      "derived": "crates/roze-ta/tests/wickra_invariants.rs",
+      "sha256": "653e1bdaf7e46bf6b076e6136a1e57d97856ff1d096b157b865b19f7f9b087b0"
+    }
+  ]
+}

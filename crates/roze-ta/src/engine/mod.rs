@@ -2,6 +2,7 @@
 //! See docs/contracts/engine-v2.md for compatibility and hash contracts.
 mod extensions;
 mod kernel;
+mod reference;
 use crate::{
     catalog::{self, Candle, Profile},
     error::{ErrorCode, TaError},

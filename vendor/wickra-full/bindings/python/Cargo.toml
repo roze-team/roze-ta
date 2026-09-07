@@ -1,0 +1,38 @@
+[package]
+name = "wickra-python"
+description = "Python bindings for the Wickra streaming-first technical indicators library."
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+publish = false
+
+[lib]
+name = "_wickra"
+crate-type = ["cdylib"]
+
+[features]
+# Build the bundled data layer against a statically compiled OpenSSL. The
+# release workflow (and the manylinux/musllinux CI smoke job) enable this so the
+# Linux wheels do not depend on system OpenSSL at build time. See the
+# `vendored-tls` feature in wickra-data for the rationale.
+vendored-tls = ["wickra-data/vendored-tls"]
+
+[lints]
+workspace = true
+
+[dependencies]
+wickra-core = { workspace = true }
+wickra-data = { workspace = true, features = ["live-binance"] }
+pyo3 = { workspace = true }
+# Reinterprets `&[f64]` as bytes when building stdlib `array.array('d')` results,
+# keeping the binding free of any NumPy runtime dependency.
+bytemuck = "1"
+# Drives the async Binance feed behind the blocking, GIL-releasing poll.
+tokio = { version = "1", features = ["rt", "net", "time"] }

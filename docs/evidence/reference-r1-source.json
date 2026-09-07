@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-09-07",
+  "repository": "https://github.com/wickra-lib/wickra",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 kingchenc and the Wickra contributors",
+  "scope": "Selected original files; not the complete Wickra repository. Git blob SHA pins each original; derived SHA-256 and patches are separate.",
+  "files": [
+    {
+      "name": "alma",
+      "path": "crates/wickra-core/src/indicators/alma.rs",
+      "git_blob_sha": "283501c7adb3988074931778718afaf26ecd53f4",
+      "original": "vendor/wickra-r1/alma.rs",
+      "derived": "crates/roze-ta/src/wickra/alma.rs"
+    },
+    {
+      "name": "super_trend",
+      "path": "crates/wickra-core/src/indicators/super_trend.rs",
+      "git_blob_sha": "4a20456abacf4c928fdbe7fca18e8d5c23dcf785",
+      "original": "vendor/wickra-r1/super_trend.rs",
+      "derived": "crates/roze-ta/src/wickra/super_trend.rs"
+    },
+    {
+      "name": "stoch_rsi",
+      "path": "crates/wickra-core/src/indicators/stoch_rsi.rs",
+      "git_blob_sha": "5e18b48186a04cdb5f09ab9721d0a8d44450d5ba",
+      "original": "vendor/wickra-r1/stoch_rsi.rs",
+      "derived": "crates/roze-ta/src/wickra/stoch_rsi.rs"
+    },
+    {
+      "name": "vortex",
+      "path": "crates/wickra-core/src/indicators/vortex.rs",
+      "git_blob_sha": "95d843b7fda588cf1b2aa71d762e2431d6a352c6",
+      "original": "vendor/wickra-r1/vortex.rs",
+      "derived": "crates/roze-ta/src/wickra/vortex.rs"
+    },
+    {
+      "name": "ulcer_index",
+      "path": "crates/wickra-core/src/indicators/ulcer_index.rs",
+      "git_blob_sha": "43a5120cf6173d5695f6a00f07063748b9f3fe48",
+      "original": "vendor/wickra-r1/ulcer_index.rs",
+      "derived": "crates/roze-ta/src/wickra/ulcer_index.rs"
+    },
+    {
+      "name": "atr",
+      "path": "crates/wickra-core/src/indicators/atr.rs",
+      "git_blob_sha": "2fc3bdb534439549c37403b46744e06e5f73ac69",
+      "original": "vendor/wickra-r1/atr.rs",
+      "derived": "crates/roze-ta/src/wickra/atr.rs"
+    },
+    {
+      "name": "rsi",
+      "path": "crates/wickra-core/src/indicators/rsi.rs",
+      "git_blob_sha": "6bfe5d6ddf44df2e996d7b0ea3818884db88f5ad",
+      "original": "vendor/wickra-r1/rsi.rs",
+      "derived": "crates/roze-ta/src/wickra/rsi.rs"
+    },
+    {
+      "name": "rolling_moments",
+      "path": "crates/wickra-core/src/indicators/rolling_moments.rs",
+      "git_blob_sha": "1681b6b4add883dc868c3fbbfbb2c6568ea8cee4",
+      "original": "vendor/wickra-r1/rolling_moments.rs",
+      "derived": "crates/roze-ta/src/wickra/rolling_moments.rs"
+    },
+    {
+      "name": "ohlcv",
+      "path": "crates/wickra-core/src/ohlcv.rs",
+      "git_blob_sha": "02db6af1583633f6e34f4c2f4853e50d162b74a6",
+      "original": "vendor/wickra-r1/ohlcv.rs",
+      "derived": "crates/roze-ta/src/wickra/ohlcv.rs"
+    }
+  ],
+  "license_file": {
+    "path": "vendor/wickra-r1/LICENSE-MIT",
+    "git_blob_sha": "ab12f88eca783ed4c9cfb7ac1062c31bdd916ff5"
+  }
+}

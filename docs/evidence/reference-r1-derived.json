@@ -1,0 +1,68 @@
+{
+    "schema_version":  1,
+    "files":  [
+                  {
+                      "path":  "crates/roze-ta/src/wickra/alma.rs",
+                      "sha256":  "bf15e32fd66b73bfec8863e629d9634276c2e12829e3bcbee0d786d76ee63ace",
+                      "original":  "vendor/wickra-r1/alma.rs",
+                      "patch":  "docs/patches/wickra-r1/alma.patch",
+                      "patch_sha256":  "af0c4ea06e79f8e8520e4f67041779da18aefeedfeafc67eccca1ee281d3a402"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/super_trend.rs",
+                      "sha256":  "050f39cbfb75c22941bf2cba96857851de92587b2ad097db946db49ba8455305",
+                      "original":  "vendor/wickra-r1/super_trend.rs",
+                      "patch":  "docs/patches/wickra-r1/super_trend.patch",
+                      "patch_sha256":  "cb3d32eed9499fe4e08adb634bf15cb2c1acb731771624bb3d047112b2e43a05"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/stoch_rsi.rs",
+                      "sha256":  "d964c8a1f66168725fce8e6ea75fd309adaa1447c92576a83d28d8793f04f486",
+                      "original":  "vendor/wickra-r1/stoch_rsi.rs",
+                      "patch":  "docs/patches/wickra-r1/stoch_rsi.patch",
+                      "patch_sha256":  "21ab67fdf19d101cd5d8bccca7dda1930dd27ce76d7c285df2ee77b573fb532b"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/vortex.rs",
+                      "sha256":  "87db39b6f8a02ccae7205f728370b181a27a4e84dae33a1f39cabfe3ef711a8f",
+                      "original":  "vendor/wickra-r1/vortex.rs",
+                      "patch":  "docs/patches/wickra-r1/vortex.patch",
+                      "patch_sha256":  "4828fe22db43c748f3619670319445d93e404434b7d1549f95baea408befdca4"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/ulcer_index.rs",
+                      "sha256":  "6de9d03ec15fefd4b4d3d73034dd4afbedb9d13d66b93b61d820c8fb01f27f51",
+                      "original":  "vendor/wickra-r1/ulcer_index.rs",
+                      "patch":  "docs/patches/wickra-r1/ulcer_index.patch",
+                      "patch_sha256":  "1ffa0afbb31c192b8b0ec24f8e6fcb18c1d17df1ecca5fc99214c29939cbf632"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/atr.rs",
+                      "sha256":  "0e2d2f19cb6dc8c4c743f8c2298c62ae853e6d2f98f80722ca861a3065cad139",
+                      "original":  "vendor/wickra-r1/atr.rs",
+                      "patch":  "docs/patches/wickra-r1/atr.patch",
+                      "patch_sha256":  "22b9300103b5738b06f83c828f65408ffa4b5005bab21608533ed89771cf3db3"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/rsi.rs",
+                      "sha256":  "078c662db3ab672f405fbd8bb9c378b474f4f92b7d9714fec36935e91e67a850",
+                      "original":  "vendor/wickra-r1/rsi.rs",
+                      "patch":  "docs/patches/wickra-r1/rsi.patch",
+                      "patch_sha256":  "69d41e68a69c10827a51c8ea33a4637753b8189de4bd31d9a4118eedf01c781d"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/rolling_moments.rs",
+                      "sha256":  "66d6b1c7e01487c64c0e7f529ac8e49fddeb56531cc9ae6e4a890e9092098524",
+                      "original":  "vendor/wickra-r1/rolling_moments.rs",
+                      "patch":  "docs/patches/wickra-r1/rolling_moments.patch",
+                      "patch_sha256":  "4492d403a293246c2b8d3a2523648687ba9de8ac1e974bbb88ca68bda679b1ee"
+                  },
+                  {
+                      "path":  "crates/roze-ta/src/wickra/ohlcv.rs",
+                      "sha256":  "b3c6ea2d0611e8888351ec6f4a6453d0dcd0de0ccb077606ae1da35fe0b178c1",
+                      "original":  "vendor/wickra-r1/ohlcv.rs",
+                      "patch":  "docs/patches/wickra-r1/ohlcv.patch",
+                      "patch_sha256":  "4d66a1a798b5c11a80bdda3fdb9f0840fcde6da2bea966bf32ee4468a4ad2666"
+                  }
+              ]
+}

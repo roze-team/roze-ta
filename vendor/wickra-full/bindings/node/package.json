@@ -1,0 +1,67 @@
+{
+  "name": "wickra",
+  "version": "1.0.4",
+  "description": "Streaming-first technical indicators: incremental, fast, install-free. Node bindings powered by Rust.",
+  "author": "kingchenc <support@wickra.org>",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT OR Apache-2.0",
+  "keywords": [
+    "trading",
+    "indicators",
+    "technical-analysis",
+    "ta-lib",
+    "finance",
+    "streaming",
+    "rust"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wickra-lib/wickra"
+  },
+  "bugs": {
+    "url": "https://github.com/wickra-lib/wickra/issues"
+  },
+  "homepage": "https://github.com/wickra-lib/wickra",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "napi": {
+    "binaryName": "wickra",
+    "dtsHeaderFile": "dts-header.d.ts",
+    "targets": [
+      "x86_64-unknown-linux-gnu",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "aarch64-pc-windows-msvc"
+    ]
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "optionalDependencies": {
+    "wickra-linux-x64-gnu": "1.0.4",
+    "wickra-linux-arm64-gnu": "1.0.4",
+    "wickra-darwin-x64": "1.0.4",
+    "wickra-darwin-arm64": "1.0.4",
+    "wickra-win32-x64-msvc": "1.0.4",
+    "wickra-win32-arm64-msvc": "1.0.4"
+  },
+  "scripts": {
+    "build": "napi build --platform --release && node scripts/prune-type-only-exports.mjs",
+    "build:debug": "napi build --platform && node scripts/prune-type-only-exports.mjs",
+    "artifacts": "napi artifacts",
+    "universal": "napi universal",
+    "version": "napi version",
+    "test": "node --test",
+    "bench": "node benchmarks/throughput.js"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.7.2"
+  }
+}

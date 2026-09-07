@@ -38,7 +38,12 @@ fn native_engine_preserves_all_pre_migration_snapshots_and_outputs() {
     assert_eq!(fixtures.len(), 45);
     assert_eq!(
         fixtures.iter().map(|f| &f.profile_id).collect::<Vec<_>>(),
-        catalog().iter().map(|p| &p.id).collect::<Vec<_>>()
+        // New profiles append after the immutable pre-migration catalog.
+        catalog()
+            .iter()
+            .take(fixtures.len())
+            .map(|p| &p.id)
+            .collect::<Vec<_>>()
     );
     for f in fixtures {
         let mut native = Stream::new(f.identity.clone(), &f.profile_id).unwrap();

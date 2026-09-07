@@ -1,0 +1,26 @@
+{
+  "name": "wickra-darwin-arm64",
+  "version": "1.0.4",
+  "description": "Native binding for wickra (macOS Apple Silicon). Installed automatically as an optional dependency of wickra on matching platforms.",
+  "main": "wickra.darwin-arm64.node",
+  "files": [
+    "wickra.darwin-arm64.node",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "license": "MIT OR Apache-2.0",
+  "engines": {
+    "node": ">= 22"
+  },
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wickra-lib/wickra"
+  },
+  "homepage": "https://github.com/wickra-lib/wickra"
+}

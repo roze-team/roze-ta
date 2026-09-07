@@ -1,0 +1,6204 @@
+[
+  {
+    "source": "wickra",
+    "name": "AbandonedBaby",
+    "candidate": "wickra.AbandonedBaby",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Abcd",
+    "candidate": "wickra.Abcd",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AbsoluteBreadthIndex",
+    "candidate": "wickra.AbsoluteBreadthIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AccelerationBands",
+    "candidate": "wickra.AccelerationBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AcceleratorOscillator",
+    "candidate": "wickra.AcceleratorOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdOscillator",
+    "candidate": "wickra.AdOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdVolumeLine",
+    "candidate": "wickra.AdVolumeLine",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdaptiveCci",
+    "candidate": "wickra.AdaptiveCci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdaptiveCycle",
+    "candidate": "wickra.AdaptiveCycle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdaptiveLaguerreFilter",
+    "candidate": "wickra.AdaptiveLaguerreFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdaptiveRsi",
+    "candidate": "wickra.AdaptiveRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Adl",
+    "candidate": "wickra.Adl",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdvanceBlock",
+    "candidate": "wickra.AdvanceBlock",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdvanceDecline",
+    "candidate": "wickra.AdvanceDecline",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AdvanceDeclineRatio",
+    "candidate": "wickra.AdvanceDeclineRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Adx",
+    "candidate": "wickra.Adx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Adxr",
+    "candidate": "wickra.Adxr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Alligator",
+    "candidate": "wickra.Alligator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Alma",
+    "candidate": "wickra.Alma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Alpha",
+    "candidate": "wickra.Alpha",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AmihudIlliquidity",
+    "candidate": "wickra.AmihudIlliquidity",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AnchoredRsi",
+    "candidate": "wickra.AnchoredRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AnchoredVwap",
+    "candidate": "wickra.AnchoredVwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AndrewsPitchfork",
+    "candidate": "wickra.AndrewsPitchfork",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Apo",
+    "candidate": "wickra.Apo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Aroon",
+    "candidate": "wickra.Aroon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AroonOscillator",
+    "candidate": "wickra.AroonOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Atr",
+    "candidate": "wickra.Atr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AtrBands",
+    "candidate": "wickra.AtrBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AtrRatchet",
+    "candidate": "wickra.AtrRatchet",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AtrTrailingStop",
+    "candidate": "wickra.AtrTrailingStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AutoFib",
+    "candidate": "wickra.AutoFib",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Autocorrelation",
+    "candidate": "wickra.Autocorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AutocorrelationPeriodogram",
+    "candidate": "wickra.AutocorrelationPeriodogram",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AverageDailyRange",
+    "candidate": "wickra.AverageDailyRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AverageDrawdown",
+    "candidate": "wickra.AverageDrawdown",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AvgPrice",
+    "candidate": "wickra.AvgPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AwesomeOscillator",
+    "candidate": "wickra.AwesomeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "AwesomeOscillatorHistogram",
+    "candidate": "wickra.AwesomeOscillatorHistogram",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BalanceOfPower",
+    "candidate": "wickra.BalanceOfPower",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BandpassFilter",
+    "candidate": "wickra.BandpassFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Bat",
+    "candidate": "wickra.Bat",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BeltHold",
+    "candidate": "wickra.BeltHold",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Beta",
+    "candidate": "wickra.Beta",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BetaNeutralSpread",
+    "candidate": "wickra.BetaNeutralSpread",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BetterVolume",
+    "candidate": "wickra.BetterVolume",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BipowerVariation",
+    "candidate": "wickra.BipowerVariation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BodySizePct",
+    "candidate": "wickra.BodySizePct",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BollingerBands",
+    "candidate": "wickra.BollingerBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BollingerBandwidth",
+    "candidate": "wickra.BollingerBandwidth",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BomarBands",
+    "candidate": "wickra.BomarBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BreadthThrust",
+    "candidate": "wickra.BreadthThrust",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Breakaway",
+    "candidate": "wickra.Breakaway",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BullishPercentIndex",
+    "candidate": "wickra.BullishPercentIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "BurkeRatio",
+    "candidate": "wickra.BurkeRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Butterfly",
+    "candidate": "wickra.Butterfly",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CalendarSpread",
+    "candidate": "wickra.CalendarSpread",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CalmarRatio",
+    "candidate": "wickra.CalmarRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Camarilla",
+    "candidate": "wickra.Camarilla",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CandleVolume",
+    "candidate": "wickra.CandleVolume",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Cci",
+    "candidate": "wickra.Cci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CenterOfGravity",
+    "candidate": "wickra.CenterOfGravity",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CentralPivotRange",
+    "candidate": "wickra.CentralPivotRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Cfo",
+    "candidate": "wickra.Cfo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ChaikinMoneyFlow",
+    "candidate": "wickra.ChaikinMoneyFlow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ChaikinOscillator",
+    "candidate": "wickra.ChaikinOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ChaikinVolatility",
+    "candidate": "wickra.ChaikinVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ChandeKrollStop",
+    "candidate": "wickra.ChandeKrollStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ChandelierExit",
+    "candidate": "wickra.ChandelierExit",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ChoppinessIndex",
+    "candidate": "wickra.ChoppinessIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ClassicPivots",
+    "candidate": "wickra.ClassicPivots",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CloseVsOpen",
+    "candidate": "wickra.CloseVsOpen",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ClosingMarubozu",
+    "candidate": "wickra.ClosingMarubozu",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Cmo",
+    "candidate": "wickra.Cmo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CoefficientOfVariation",
+    "candidate": "wickra.CoefficientOfVariation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Cointegration",
+    "candidate": "wickra.Cointegration",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CommonSenseRatio",
+    "candidate": "wickra.CommonSenseRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CompositeProfile",
+    "candidate": "wickra.CompositeProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ConcealingBabySwallow",
+    "candidate": "wickra.ConcealingBabySwallow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ConditionalValueAtRisk",
+    "candidate": "wickra.ConditionalValueAtRisk",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ConnorsRsi",
+    "candidate": "wickra.ConnorsRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Coppock",
+    "candidate": "wickra.Coppock",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CorrelationTrendIndicator",
+    "candidate": "wickra.CorrelationTrendIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Counterattack",
+    "candidate": "wickra.Counterattack",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Crab",
+    "candidate": "wickra.Crab",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CumulativeVolumeDelta",
+    "candidate": "wickra.CumulativeVolumeDelta",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CumulativeVolumeIndex",
+    "candidate": "wickra.CumulativeVolumeIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CupAndHandle",
+    "candidate": "wickra.CupAndHandle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "CyberneticCycle",
+    "candidate": "wickra.CyberneticCycle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Cypher",
+    "candidate": "wickra.Cypher",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DayOfWeekProfile",
+    "candidate": "wickra.DayOfWeekProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Decycler",
+    "candidate": "wickra.Decycler",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DecyclerOscillator",
+    "candidate": "wickra.DecyclerOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Dema",
+    "candidate": "wickra.Dema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DemandIndex",
+    "candidate": "wickra.DemandIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DemarkPivots",
+    "candidate": "wickra.DemarkPivots",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DepthSlope",
+    "candidate": "wickra.DepthSlope",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DerivativeOscillator",
+    "candidate": "wickra.DerivativeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DetrendedStdDev",
+    "candidate": "wickra.DetrendedStdDev",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DisparityIndex",
+    "candidate": "wickra.DisparityIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DistanceSsd",
+    "candidate": "wickra.DistanceSsd",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Doji",
+    "candidate": "wickra.Doji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DojiStar",
+    "candidate": "wickra.DojiStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DollarBars",
+    "candidate": "wickra.DollarBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Donchian",
+    "candidate": "wickra.Donchian",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DonchianStop",
+    "candidate": "wickra.DonchianStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DoubleBollinger",
+    "candidate": "wickra.DoubleBollinger",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DoubleTopBottom",
+    "candidate": "wickra.DoubleTopBottom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DownsideGapThreeMethods",
+    "candidate": "wickra.DownsideGapThreeMethods",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Dpo",
+    "candidate": "wickra.Dpo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DragonflyDoji",
+    "candidate": "wickra.DragonflyDoji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DrawdownDuration",
+    "candidate": "wickra.DrawdownDuration",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DumplingTop",
+    "candidate": "wickra.DumplingTop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Dx",
+    "candidate": "wickra.Dx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "DynamicMomentumIndex",
+    "candidate": "wickra.DynamicMomentumIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EaseOfMovement",
+    "candidate": "wickra.EaseOfMovement",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EffectiveSpread",
+    "candidate": "wickra.EffectiveSpread",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EhlersStochastic",
+    "candidate": "wickra.EhlersStochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Ehma",
+    "candidate": "wickra.Ehma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ElderImpulse",
+    "candidate": "wickra.ElderImpulse",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ElderRay",
+    "candidate": "wickra.ElderRay",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ElderSafeZone",
+    "candidate": "wickra.ElderSafeZone",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Ema",
+    "candidate": "wickra.Ema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EmpiricalModeDecomposition",
+    "candidate": "wickra.EmpiricalModeDecomposition",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Engulfing",
+    "candidate": "wickra.Engulfing",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Equivolume",
+    "candidate": "wickra.Equivolume",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EstimatedLeverageRatio",
+    "candidate": "wickra.EstimatedLeverageRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EvenBetterSinewave",
+    "candidate": "wickra.EvenBetterSinewave",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EveningDojiStar",
+    "candidate": "wickra.EveningDojiStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Evwma",
+    "candidate": "wickra.Evwma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "EwmaVolatility",
+    "candidate": "wickra.EwmaVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Expectancy",
+    "candidate": "wickra.Expectancy",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FallingThreeMethods",
+    "candidate": "wickra.FallingThreeMethods",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Fama",
+    "candidate": "wickra.Fama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibArcs",
+    "candidate": "wickra.FibArcs",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibChannel",
+    "candidate": "wickra.FibChannel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibConfluence",
+    "candidate": "wickra.FibConfluence",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibExtension",
+    "candidate": "wickra.FibExtension",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibFan",
+    "candidate": "wickra.FibFan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibProjection",
+    "candidate": "wickra.FibProjection",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibRetracement",
+    "candidate": "wickra.FibRetracement",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibTimeZones",
+    "candidate": "wickra.FibTimeZones",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FibonacciPivots",
+    "candidate": "wickra.FibonacciPivots",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FisherRsi",
+    "candidate": "wickra.FisherRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FisherTransform",
+    "candidate": "wickra.FisherTransform",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FlagPennant",
+    "candidate": "wickra.FlagPennant",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Footprint",
+    "candidate": "wickra.Footprint",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ForceIndex",
+    "candidate": "wickra.ForceIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FractalChaosBands",
+    "candidate": "wickra.FractalChaosBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Frama",
+    "candidate": "wickra.Frama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FryPanBottom",
+    "candidate": "wickra.FryPanBottom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FundingBasis",
+    "candidate": "wickra.FundingBasis",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FundingImpliedApr",
+    "candidate": "wickra.FundingImpliedApr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FundingRate",
+    "candidate": "wickra.FundingRate",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FundingRateMean",
+    "candidate": "wickra.FundingRateMean",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "FundingRateZScore",
+    "candidate": "wickra.FundingRateZScore",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GainLossRatio",
+    "candidate": "wickra.GainLossRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GainToPainRatio",
+    "candidate": "wickra.GainToPainRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GapSideBySideWhite",
+    "candidate": "wickra.GapSideBySideWhite",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Garch11",
+    "candidate": "wickra.Garch11",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GarmanKlassVolatility",
+    "candidate": "wickra.GarmanKlassVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Gartley",
+    "candidate": "wickra.Gartley",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GatorOscillator",
+    "candidate": "wickra.GatorOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GeneralizedDema",
+    "candidate": "wickra.GeneralizedDema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GeometricMa",
+    "candidate": "wickra.GeometricMa",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GoldenPocket",
+    "candidate": "wickra.GoldenPocket",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GrangerCausality",
+    "candidate": "wickra.GrangerCausality",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "GravestoneDoji",
+    "candidate": "wickra.GravestoneDoji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Hammer",
+    "candidate": "wickra.Hammer",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HangingMan",
+    "candidate": "wickra.HangingMan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Harami",
+    "candidate": "wickra.Harami",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HaramiCross",
+    "candidate": "wickra.HaramiCross",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HasbrouckInformationShare",
+    "candidate": "wickra.HasbrouckInformationShare",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HeadAndShoulders",
+    "candidate": "wickra.HeadAndShoulders",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HeikinAshi",
+    "candidate": "wickra.HeikinAshi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HeikinAshiOscillator",
+    "candidate": "wickra.HeikinAshiOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HiLoActivator",
+    "candidate": "wickra.HiLoActivator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HighLowIndex",
+    "candidate": "wickra.HighLowIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HighLowRange",
+    "candidate": "wickra.HighLowRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HighLowVolumeNodes",
+    "candidate": "wickra.HighLowVolumeNodes",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HighWave",
+    "candidate": "wickra.HighWave",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HighpassFilter",
+    "candidate": "wickra.HighpassFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Hikkake",
+    "candidate": "wickra.Hikkake",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HikkakeModified",
+    "candidate": "wickra.HikkakeModified",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HilbertDominantCycle",
+    "candidate": "wickra.HilbertDominantCycle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HistoricalVolatility",
+    "candidate": "wickra.HistoricalVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Hma",
+    "candidate": "wickra.Hma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HoltWinters",
+    "candidate": "wickra.HoltWinters",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HomingPigeon",
+    "candidate": "wickra.HomingPigeon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HtDcPhase",
+    "candidate": "wickra.HtDcPhase",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HtPhasor",
+    "candidate": "wickra.HtPhasor",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HtTrendMode",
+    "candidate": "wickra.HtTrendMode",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HurstChannel",
+    "candidate": "wickra.HurstChannel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "HurstExponent",
+    "candidate": "wickra.HurstExponent",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Ichimoku",
+    "candidate": "wickra.Ichimoku",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "IdenticalThreeCrows",
+    "candidate": "wickra.IdenticalThreeCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ImbalanceBars",
+    "candidate": "wickra.ImbalanceBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "InNeck",
+    "candidate": "wickra.InNeck",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Inertia",
+    "candidate": "wickra.Inertia",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "InformationRatio",
+    "candidate": "wickra.InformationRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "InitialBalance",
+    "candidate": "wickra.InitialBalance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "InstantaneousTrendline",
+    "candidate": "wickra.InstantaneousTrendline",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "IntradayIntensity",
+    "candidate": "wickra.IntradayIntensity",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "IntradayMomentumIndex",
+    "candidate": "wickra.IntradayMomentumIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "IntradayVolatilityProfile",
+    "candidate": "wickra.IntradayVolatilityProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "InverseFisherTransform",
+    "candidate": "wickra.InverseFisherTransform",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "InvertedHammer",
+    "candidate": "wickra.InvertedHammer",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "JarqueBera",
+    "candidate": "wickra.JarqueBera",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Jma",
+    "candidate": "wickra.Jma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "JumpIndicator",
+    "candidate": "wickra.JumpIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KRatio",
+    "candidate": "wickra.KRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KagiBars",
+    "candidate": "wickra.KagiBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KalmanHedgeRatio",
+    "candidate": "wickra.KalmanHedgeRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Kama",
+    "candidate": "wickra.Kama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KaseDevStop",
+    "candidate": "wickra.KaseDevStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KasePermissionStochastic",
+    "candidate": "wickra.KasePermissionStochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KellyCriterion",
+    "candidate": "wickra.KellyCriterion",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Keltner",
+    "candidate": "wickra.Keltner",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KendallTau",
+    "candidate": "wickra.KendallTau",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Kicking",
+    "candidate": "wickra.Kicking",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KickingByLength",
+    "candidate": "wickra.KickingByLength",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Kst",
+    "candidate": "wickra.Kst",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Kurtosis",
+    "candidate": "wickra.Kurtosis",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Kvo",
+    "candidate": "wickra.Kvo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "KylesLambda",
+    "candidate": "wickra.KylesLambda",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LadderBottom",
+    "candidate": "wickra.LadderBottom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LaguerreRsi",
+    "candidate": "wickra.LaguerreRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LeadLagCrossCorrelation",
+    "candidate": "wickra.LeadLagCrossCorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LinRegAngle",
+    "candidate": "wickra.LinRegAngle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LinRegChannel",
+    "candidate": "wickra.LinRegChannel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LinRegIntercept",
+    "candidate": "wickra.LinRegIntercept",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LinRegSlope",
+    "candidate": "wickra.LinRegSlope",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LinearRegression",
+    "candidate": "wickra.LinearRegression",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LiquidationFeatures",
+    "candidate": "wickra.LiquidationFeatures",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LogReturn",
+    "candidate": "wickra.LogReturn",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LongLeggedDoji",
+    "candidate": "wickra.LongLeggedDoji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LongLine",
+    "candidate": "wickra.LongLine",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "LongShortRatio",
+    "candidate": "wickra.LongShortRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "M2Measure",
+    "candidate": "wickra.M2Measure",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MaEnvelope",
+    "candidate": "wickra.MaEnvelope",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MacdExt",
+    "candidate": "wickra.MacdExt",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MacdFix",
+    "candidate": "wickra.MacdFix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MacdHistogram",
+    "candidate": "wickra.MacdHistogram",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MacdIndicator",
+    "candidate": "wickra.MacdIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Mama",
+    "candidate": "wickra.Mama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MarketFacilitationIndex",
+    "candidate": "wickra.MarketFacilitationIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MartinRatio",
+    "candidate": "wickra.MartinRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Marubozu",
+    "candidate": "wickra.Marubozu",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MassIndex",
+    "candidate": "wickra.MassIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MatHold",
+    "candidate": "wickra.MatHold",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MatchingLow",
+    "candidate": "wickra.MatchingLow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MaxDrawdown",
+    "candidate": "wickra.MaxDrawdown",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "McClellanOscillator",
+    "candidate": "wickra.McClellanOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "McClellanSummationIndex",
+    "candidate": "wickra.McClellanSummationIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "McGinleyDynamic",
+    "candidate": "wickra.McGinleyDynamic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MedianAbsoluteDeviation",
+    "candidate": "wickra.MedianAbsoluteDeviation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MedianChannel",
+    "candidate": "wickra.MedianChannel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MedianMa",
+    "candidate": "wickra.MedianMa",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MedianPrice",
+    "candidate": "wickra.MedianPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Mfi",
+    "candidate": "wickra.Mfi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Microprice",
+    "candidate": "wickra.Microprice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MidPoint",
+    "candidate": "wickra.MidPoint",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MidPrice",
+    "candidate": "wickra.MidPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MinusDi",
+    "candidate": "wickra.MinusDi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MinusDm",
+    "candidate": "wickra.MinusDm",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ModifiedMaStop",
+    "candidate": "wickra.ModifiedMaStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Mom",
+    "candidate": "wickra.Mom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MorningDojiStar",
+    "candidate": "wickra.MorningDojiStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MorningEveningStar",
+    "candidate": "wickra.MorningEveningStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "MurreyMathLines",
+    "candidate": "wickra.MurreyMathLines",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "NakedPoc",
+    "candidate": "wickra.NakedPoc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Natr",
+    "candidate": "wickra.Natr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "NewHighsNewLows",
+    "candidate": "wickra.NewHighsNewLows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "NewPriceLines",
+    "candidate": "wickra.NewPriceLines",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Nrtr",
+    "candidate": "wickra.Nrtr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Nvi",
+    "candidate": "wickra.Nvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OIPriceDivergence",
+    "candidate": "wickra.OIPriceDivergence",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OIWeighted",
+    "candidate": "wickra.OIWeighted",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Obv",
+    "candidate": "wickra.Obv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OiToVolumeRatio",
+    "candidate": "wickra.OiToVolumeRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OmegaRatio",
+    "candidate": "wickra.OmegaRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OnNeck",
+    "candidate": "wickra.OnNeck",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OpenInterestDelta",
+    "candidate": "wickra.OpenInterestDelta",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OpenInterestMomentum",
+    "candidate": "wickra.OpenInterestMomentum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OpeningMarubozu",
+    "candidate": "wickra.OpeningMarubozu",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OpeningRange",
+    "candidate": "wickra.OpeningRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OrderBookImbalanceFull",
+    "candidate": "wickra.OrderBookImbalanceFull",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OrderBookImbalanceTop1",
+    "candidate": "wickra.OrderBookImbalanceTop1",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OrderBookImbalanceTopN",
+    "candidate": "wickra.OrderBookImbalanceTopN",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OrderFlowImbalance",
+    "candidate": "wickra.OrderFlowImbalance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OuHalfLife",
+    "candidate": "wickra.OuHalfLife",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OvernightGap",
+    "candidate": "wickra.OvernightGap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "OvernightIntradayReturn",
+    "candidate": "wickra.OvernightIntradayReturn",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PainIndex",
+    "candidate": "wickra.PainIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PairSpreadZScore",
+    "candidate": "wickra.PairSpreadZScore",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PairwiseBeta",
+    "candidate": "wickra.PairwiseBeta",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ParkinsonVolatility",
+    "candidate": "wickra.ParkinsonVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PearsonCorrelation",
+    "candidate": "wickra.PearsonCorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PercentAboveMa",
+    "candidate": "wickra.PercentAboveMa",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PercentB",
+    "candidate": "wickra.PercentB",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PercentageTrailingStop",
+    "candidate": "wickra.PercentageTrailingStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PerpetualPremiumIndex",
+    "candidate": "wickra.PerpetualPremiumIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Pgo",
+    "candidate": "wickra.Pgo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PiercingDarkCloud",
+    "candidate": "wickra.PiercingDarkCloud",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Pin",
+    "candidate": "wickra.Pin",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PivotReversal",
+    "candidate": "wickra.PivotReversal",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PlusDi",
+    "candidate": "wickra.PlusDi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PlusDm",
+    "candidate": "wickra.PlusDm",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Pmo",
+    "candidate": "wickra.Pmo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PointAndFigureBars",
+    "candidate": "wickra.PointAndFigureBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PolarizedFractalEfficiency",
+    "candidate": "wickra.PolarizedFractalEfficiency",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Ppo",
+    "candidate": "wickra.Ppo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "PpoHistogram",
+    "candidate": "wickra.PpoHistogram",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ProfileShape",
+    "candidate": "wickra.ProfileShape",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ProfitFactor",
+    "candidate": "wickra.ProfitFactor",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ProjectionBands",
+    "candidate": "wickra.ProjectionBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ProjectionOscillator",
+    "candidate": "wickra.ProjectionOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Psar",
+    "candidate": "wickra.Psar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Pvi",
+    "candidate": "wickra.Pvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Qqe",
+    "candidate": "wickra.Qqe",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Qstick",
+    "candidate": "wickra.Qstick",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "QuartileBands",
+    "candidate": "wickra.QuartileBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "QuotedSpread",
+    "candidate": "wickra.QuotedSpread",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RSquared",
+    "candidate": "wickra.RSquared",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RangeBars",
+    "candidate": "wickra.RangeBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RealizedSpread",
+    "candidate": "wickra.RealizedSpread",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RealizedVolatility",
+    "candidate": "wickra.RealizedVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RecoveryFactor",
+    "candidate": "wickra.RecoveryFactor",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RectangleRange",
+    "candidate": "wickra.RectangleRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Reflex",
+    "candidate": "wickra.Reflex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RegimeLabel",
+    "candidate": "wickra.RegimeLabel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RelativeStrengthAB",
+    "candidate": "wickra.RelativeStrengthAB",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RenkoBars",
+    "candidate": "wickra.RenkoBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RenkoTrailingStop",
+    "candidate": "wickra.RenkoTrailingStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RickshawMan",
+    "candidate": "wickra.RickshawMan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RisingThreeMethods",
+    "candidate": "wickra.RisingThreeMethods",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rmi",
+    "candidate": "wickra.Rmi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Roc",
+    "candidate": "wickra.Roc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rocp",
+    "candidate": "wickra.Rocp",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rocr",
+    "candidate": "wickra.Rocr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rocr100",
+    "candidate": "wickra.Rocr100",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RogersSatchellVolatility",
+    "candidate": "wickra.RogersSatchellVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollMeasure",
+    "candidate": "wickra.RollMeasure",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingCorrelation",
+    "candidate": "wickra.RollingCorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingCovariance",
+    "candidate": "wickra.RollingCovariance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingIqr",
+    "candidate": "wickra.RollingIqr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingMinMaxScaler",
+    "candidate": "wickra.RollingMinMaxScaler",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingPercentileRank",
+    "candidate": "wickra.RollingPercentileRank",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingQuantile",
+    "candidate": "wickra.RollingQuantile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RollingVwap",
+    "candidate": "wickra.RollingVwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RoofingFilter",
+    "candidate": "wickra.RoofingFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rsi",
+    "candidate": "wickra.Rsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rsx",
+    "candidate": "wickra.Rsx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RunBars",
+    "candidate": "wickra.RunBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rvi",
+    "candidate": "wickra.Rvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "RviVolatility",
+    "candidate": "wickra.RviVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Rwi",
+    "candidate": "wickra.Rwi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SampleEntropy",
+    "candidate": "wickra.SampleEntropy",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SarExt",
+    "candidate": "wickra.SarExt",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SeasonalZScore",
+    "candidate": "wickra.SeasonalZScore",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SeparatingLines",
+    "candidate": "wickra.SeparatingLines",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SessionHighLow",
+    "candidate": "wickra.SessionHighLow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SessionRange",
+    "candidate": "wickra.SessionRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SessionVwap",
+    "candidate": "wickra.SessionVwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ShannonEntropy",
+    "candidate": "wickra.ShannonEntropy",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Shark",
+    "candidate": "wickra.Shark",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SharpeRatio",
+    "candidate": "wickra.SharpeRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ShootingStar",
+    "candidate": "wickra.ShootingStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ShortLine",
+    "candidate": "wickra.ShortLine",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SignedVolume",
+    "candidate": "wickra.SignedVolume",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SineWave",
+    "candidate": "wickra.SineWave",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SineWeightedMa",
+    "candidate": "wickra.SineWeightedMa",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SinglePrints",
+    "candidate": "wickra.SinglePrints",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Skewness",
+    "candidate": "wickra.Skewness",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Sma",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Smi",
+    "candidate": "wickra.Smi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Smma",
+    "candidate": "wickra.Smma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SmoothedHeikinAshi",
+    "candidate": "wickra.SmoothedHeikinAshi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SortinoRatio",
+    "candidate": "wickra.SortinoRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SpearmanCorrelation",
+    "candidate": "wickra.SpearmanCorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SpinningTop",
+    "candidate": "wickra.SpinningTop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SpreadAr1Coefficient",
+    "candidate": "wickra.SpreadAr1Coefficient",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SpreadBollingerBands",
+    "candidate": "wickra.SpreadBollingerBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SpreadHurst",
+    "candidate": "wickra.SpreadHurst",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StalledPattern",
+    "candidate": "wickra.StalledPattern",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StandardError",
+    "candidate": "wickra.StandardError",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StandardErrorBands",
+    "candidate": "wickra.StandardErrorBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StarcBands",
+    "candidate": "wickra.StarcBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Stc",
+    "candidate": "wickra.Stc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StdDev",
+    "candidate": "wickra.StdDev",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StepTrailingStop",
+    "candidate": "wickra.StepTrailingStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SterlingRatio",
+    "candidate": "wickra.SterlingRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StickSandwich",
+    "candidate": "wickra.StickSandwich",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StochRsi",
+    "candidate": "wickra.StochRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Stochastic",
+    "candidate": "wickra.Stochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "StochasticCci",
+    "candidate": "wickra.StochasticCci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SuperSmoother",
+    "candidate": "wickra.SuperSmoother",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "SuperTrend",
+    "candidate": "wickra.SuperTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "T3",
+    "candidate": "wickra.T3",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TailRatio",
+    "candidate": "wickra.TailRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TakerBuySellRatio",
+    "candidate": "wickra.TakerBuySellRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Takuri",
+    "candidate": "wickra.Takuri",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TasukiGap",
+    "candidate": "wickra.TasukiGap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdCamouflage",
+    "candidate": "wickra.TdCamouflage",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdClop",
+    "candidate": "wickra.TdClop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdClopwin",
+    "candidate": "wickra.TdClopwin",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdCombo",
+    "candidate": "wickra.TdCombo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdCountdown",
+    "candidate": "wickra.TdCountdown",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdDWave",
+    "candidate": "wickra.TdDWave",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdDeMarker",
+    "candidate": "wickra.TdDeMarker",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdDifferential",
+    "candidate": "wickra.TdDifferential",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdLines",
+    "candidate": "wickra.TdLines",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdMovingAverage",
+    "candidate": "wickra.TdMovingAverage",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdOpen",
+    "candidate": "wickra.TdOpen",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdPressure",
+    "candidate": "wickra.TdPressure",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdPropulsion",
+    "candidate": "wickra.TdPropulsion",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdRangeProjection",
+    "candidate": "wickra.TdRangeProjection",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdRei",
+    "candidate": "wickra.TdRei",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdRiskLevel",
+    "candidate": "wickra.TdRiskLevel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdSequential",
+    "candidate": "wickra.TdSequential",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdSetup",
+    "candidate": "wickra.TdSetup",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TdTrap",
+    "candidate": "wickra.TdTrap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tema",
+    "candidate": "wickra.Tema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TermStructureBasis",
+    "candidate": "wickra.TermStructureBasis",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeDrives",
+    "candidate": "wickra.ThreeDrives",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeInside",
+    "candidate": "wickra.ThreeInside",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeLineBreak",
+    "candidate": "wickra.ThreeLineBreak",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeLineBreakBars",
+    "candidate": "wickra.ThreeLineBreakBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeLineStrike",
+    "candidate": "wickra.ThreeLineStrike",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeOutside",
+    "candidate": "wickra.ThreeOutside",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeSoldiersOrCrows",
+    "candidate": "wickra.ThreeSoldiersOrCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ThreeStarsInSouth",
+    "candidate": "wickra.ThreeStarsInSouth",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Thrusting",
+    "candidate": "wickra.Thrusting",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TickBars",
+    "candidate": "wickra.TickBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TickIndex",
+    "candidate": "wickra.TickIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tii",
+    "candidate": "wickra.Tii",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TimeBasedStop",
+    "candidate": "wickra.TimeBasedStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TimeOfDayReturnProfile",
+    "candidate": "wickra.TimeOfDayReturnProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TowerTopBottom",
+    "candidate": "wickra.TowerTopBottom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TpoProfile",
+    "candidate": "wickra.TpoProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TradeImbalance",
+    "candidate": "wickra.TradeImbalance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TradeSignAutocorrelation",
+    "candidate": "wickra.TradeSignAutocorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TradeVolumeIndex",
+    "candidate": "wickra.TradeVolumeIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TrendLabel",
+    "candidate": "wickra.TrendLabel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TrendStrengthIndex",
+    "candidate": "wickra.TrendStrengthIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Trendflex",
+    "candidate": "wickra.Trendflex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TreynorRatio",
+    "candidate": "wickra.TreynorRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Triangle",
+    "candidate": "wickra.Triangle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Trima",
+    "candidate": "wickra.Trima",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Trin",
+    "candidate": "wickra.Trin",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TripleTopBottom",
+    "candidate": "wickra.TripleTopBottom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tristar",
+    "candidate": "wickra.Tristar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Trix",
+    "candidate": "wickra.Trix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TrueRange",
+    "candidate": "wickra.TrueRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tsf",
+    "candidate": "wickra.Tsf",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TsfOscillator",
+    "candidate": "wickra.TsfOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tsi",
+    "candidate": "wickra.Tsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tsv",
+    "candidate": "wickra.Tsv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TtmSqueeze",
+    "candidate": "wickra.TtmSqueeze",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TtmTrend",
+    "candidate": "wickra.TtmTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TurnOfMonth",
+    "candidate": "wickra.TurnOfMonth",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Tweezer",
+    "candidate": "wickra.Tweezer",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TwiggsMoneyFlow",
+    "candidate": "wickra.TwiggsMoneyFlow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TwoCrows",
+    "candidate": "wickra.TwoCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "TypicalPrice",
+    "candidate": "wickra.TypicalPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UlcerIndex",
+    "candidate": "wickra.UlcerIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UltimateOscillator",
+    "candidate": "wickra.UltimateOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UniqueThreeRiver",
+    "candidate": "wickra.UniqueThreeRiver",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UniversalOscillator",
+    "candidate": "wickra.UniversalOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UpDownVolumeRatio",
+    "candidate": "wickra.UpDownVolumeRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UpsideGapThreeMethods",
+    "candidate": "wickra.UpsideGapThreeMethods",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UpsideGapTwoCrows",
+    "candidate": "wickra.UpsideGapTwoCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "UpsidePotentialRatio",
+    "candidate": "wickra.UpsidePotentialRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ValueArea",
+    "candidate": "wickra.ValueArea",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ValueAtRisk",
+    "candidate": "wickra.ValueAtRisk",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Variance",
+    "candidate": "wickra.Variance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VarianceRatio",
+    "candidate": "wickra.VarianceRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VerticalHorizontalFilter",
+    "candidate": "wickra.VerticalHorizontalFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Vidya",
+    "candidate": "wickra.Vidya",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolatilityCone",
+    "candidate": "wickra.VolatilityCone",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolatilityOfVolatility",
+    "candidate": "wickra.VolatilityOfVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolatilityRatio",
+    "candidate": "wickra.VolatilityRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VoltyStop",
+    "candidate": "wickra.VoltyStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeBars",
+    "candidate": "wickra.VolumeBars",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeByTimeProfile",
+    "candidate": "wickra.VolumeByTimeProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeOscillator",
+    "candidate": "wickra.VolumeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumePriceTrend",
+    "candidate": "wickra.VolumePriceTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeProfile",
+    "candidate": "wickra.VolumeProfile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeRsi",
+    "candidate": "wickra.VolumeRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeWeightedMacd",
+    "candidate": "wickra.VolumeWeightedMacd",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VolumeWeightedSr",
+    "candidate": "wickra.VolumeWeightedSr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Vortex",
+    "candidate": "wickra.Vortex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Vpin",
+    "candidate": "wickra.Vpin",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Vwap",
+    "candidate": "wickra.Vwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "VwapStdDevBands",
+    "candidate": "wickra.VwapStdDevBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Vwma",
+    "candidate": "wickra.Vwma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Vzo",
+    "candidate": "wickra.Vzo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Wad",
+    "candidate": "wickra.Wad",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WavePm",
+    "candidate": "wickra.WavePm",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WaveTrend",
+    "candidate": "wickra.WaveTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Wedge",
+    "candidate": "wickra.Wedge",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WeightedClose",
+    "candidate": "wickra.WeightedClose",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WickRatio",
+    "candidate": "wickra.WickRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WilliamsFractals",
+    "candidate": "wickra.WilliamsFractals",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WilliamsR",
+    "candidate": "wickra.WilliamsR",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WinRate",
+    "candidate": "wickra.WinRate",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Wma",
+    "candidate": "wickra.Wma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "WoodiePivots",
+    "candidate": "wickra.WoodiePivots",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "YangZhangVolatility",
+    "candidate": "wickra.YangZhangVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "YoyoExit",
+    "candidate": "wickra.YoyoExit",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ZScore",
+    "candidate": "wickra.ZScore",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ZeroLagMacd",
+    "candidate": "wickra.ZeroLagMacd",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "ZigZag",
+    "candidate": "wickra.ZigZag",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "wickra",
+    "name": "Zlema",
+    "candidate": "wickra.Zlema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ADX",
+    "candidate": "wickra.Adx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ALMA",
+    "candidate": "wickra.Alma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "AO",
+    "candidate": "wickra.AwesomeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ATR",
+    "candidate": "wickra.Atr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "AccuDist",
+    "candidate": "wickra.Adl",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "Aroon",
+    "candidate": "wickra.Aroon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "BB",
+    "candidate": "wickra.BollingerBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "BOP",
+    "candidate": "wickra.BalanceOfPower",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "CCI",
+    "candidate": "wickra.Cci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "CHOP",
+    "candidate": "wickra.ChoppinessIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ChaikinOsc",
+    "candidate": "wickra.ChaikinOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ChandeKrollStop",
+    "candidate": "wickra.ChandeKrollStop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "CoppockCurve",
+    "candidate": "wickra.Coppock",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "DEMA",
+    "candidate": "wickra.Dema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "DPO",
+    "candidate": "wickra.Dpo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "DonchianChannels",
+    "candidate": "wickra.Donchian",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "EMA",
+    "candidate": "wickra.Ema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "EMV",
+    "candidate": "wickra.EaseOfMovement",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "FibonacciRetracement",
+    "candidate": "wickra.FibRetracement",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ForceIndex",
+    "candidate": "wickra.ForceIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "HMA",
+    "candidate": "wickra.Hma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "IBS",
+    "candidate": "extra.InternalBarStrength",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "Ichimoku",
+    "candidate": "wickra.Ichimoku",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "KAMA",
+    "candidate": "wickra.Kama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "KST",
+    "candidate": "wickra.Kst",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "KVO",
+    "candidate": "wickra.Kvo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "KeltnerChannels",
+    "candidate": "wickra.Keltner",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "MACD",
+    "candidate": "wickra.MacdIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "MassIndex",
+    "candidate": "wickra.MassIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "McGinleyDynamic",
+    "candidate": "wickra.McGinleyDynamic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "MeanDev",
+    "candidate": "extra.MeanDeviation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "NATR",
+    "candidate": "wickra.Natr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "OBV",
+    "candidate": "wickra.Obv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ParabolicSAR",
+    "candidate": "wickra.Psar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "PivotsHL",
+    "candidate": "extra.PivotsHL",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ROC",
+    "candidate": "wickra.Roc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "RSI",
+    "candidate": "wickra.Rsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "RogersSatchell",
+    "candidate": "wickra.RogersSatchellVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "SFX",
+    "candidate": "extra.Sfx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "SMA",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "SMMA",
+    "candidate": "wickra.Smma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "SOBV",
+    "candidate": "extra.SmoothedObv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "STC",
+    "candidate": "wickra.Stc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "StdDev",
+    "candidate": "wickra.StdDev",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "Stoch",
+    "candidate": "wickra.Stochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "StochRSI",
+    "candidate": "wickra.StochRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "SuperTrend",
+    "candidate": "wickra.SuperTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "T3",
+    "candidate": "wickra.T3",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "TEMA",
+    "candidate": "wickra.Tema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "TRIX",
+    "candidate": "wickra.Trix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "TSI",
+    "candidate": "wickra.Tsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "TTM",
+    "candidate": "wickra.TtmSqueeze",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "UO",
+    "candidate": "wickra.UltimateOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "VTX",
+    "candidate": "wickra.Vortex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "VWAP",
+    "candidate": "wickra.Vwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "VWMA",
+    "candidate": "wickra.Vwma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "WMA",
+    "candidate": "wickra.Wma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "Williams",
+    "candidate": "wickra.WilliamsR",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ZLEMA",
+    "candidate": "wickra.Zlema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "talipp",
+    "name": "ZigZag",
+    "candidate": "wickra.ZigZag",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "ADXIndicator",
+    "candidate": "wickra.Adx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "AccDistIndexIndicator",
+    "candidate": "wickra.Adl",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "AroonIndicator",
+    "candidate": "wickra.Aroon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "AverageTrueRange",
+    "candidate": "wickra.Atr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "AwesomeOscillatorIndicator",
+    "candidate": "wickra.AwesomeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "BollingerBands",
+    "candidate": "wickra.BollingerBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "CCIIndicator",
+    "candidate": "wickra.Cci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "ChaikinMoneyFlowIndicator",
+    "candidate": "wickra.ChaikinMoneyFlow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "CumulativeReturnIndicator",
+    "candidate": "extra.CumulativeReturn",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "DPOIndicator",
+    "candidate": "wickra.Dpo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "DailyLogReturnIndicator",
+    "candidate": "wickra.LogReturn",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "DailyReturnIndicator",
+    "candidate": "wickra.Roc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "DonchianChannel",
+    "candidate": "wickra.Donchian",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "EMAIndicator",
+    "candidate": "wickra.Ema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "EaseOfMovementIndicator",
+    "candidate": "wickra.EaseOfMovement",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "ForceIndexIndicator",
+    "candidate": "wickra.ForceIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "IchimokuIndicator",
+    "candidate": "wickra.Ichimoku",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "KAMAIndicator",
+    "candidate": "wickra.Kama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "KSTIndicator",
+    "candidate": "wickra.Kst",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "KeltnerChannel",
+    "candidate": "wickra.Keltner",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "MACD",
+    "candidate": "wickra.MacdIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "MFIIndicator",
+    "candidate": "wickra.Mfi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "MassIndex",
+    "candidate": "wickra.MassIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "NegativeVolumeIndexIndicator",
+    "candidate": "wickra.Nvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "OnBalanceVolumeIndicator",
+    "candidate": "wickra.Obv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "PSARIndicator",
+    "candidate": "wickra.Psar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "PercentagePriceOscillator",
+    "candidate": "wickra.Ppo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "PercentageVolumeOscillator",
+    "candidate": "extra.PercentageVolumeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "ROCIndicator",
+    "candidate": "wickra.Roc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "RSIIndicator",
+    "candidate": "wickra.Rsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "SMAIndicator",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "STCIndicator",
+    "candidate": "wickra.Stc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "StochRSIIndicator",
+    "candidate": "wickra.StochRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "StochasticOscillator",
+    "candidate": "wickra.Stochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "TRIXIndicator",
+    "candidate": "wickra.Trix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "TSIIndicator",
+    "candidate": "wickra.Tsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "UlcerIndex",
+    "candidate": "wickra.UlcerIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "UltimateOscillator",
+    "candidate": "wickra.UltimateOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "VolumePriceTrendIndicator",
+    "candidate": "wickra.VolumePriceTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "VolumeWeightedAveragePrice",
+    "candidate": "wickra.RollingVwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "VortexIndicator",
+    "candidate": "wickra.Vortex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "WMAIndicator",
+    "candidate": "wickra.Wma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta",
+    "name": "WilliamsRIndicator",
+    "candidate": "wickra.WilliamsR",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AC",
+    "candidate": "wickra.AcceleratorOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ACCBANDS",
+    "candidate": "wickra.AccelerationBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ACOS",
+    "candidate": "extra.Acos",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AD",
+    "candidate": "wickra.Adl",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ADD",
+    "candidate": "extra.Add",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ADOSC",
+    "candidate": "wickra.ChaikinOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ADR",
+    "candidate": "extra.AverageBarRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ADX",
+    "candidate": "wickra.Adx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ADXR",
+    "candidate": "wickra.Adxr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AO",
+    "candidate": "wickra.AwesomeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "APO",
+    "candidate": "wickra.Apo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AROON",
+    "candidate": "wickra.Aroon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AROONOSC",
+    "candidate": "wickra.AroonOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ASIN",
+    "candidate": "extra.Asin",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ATAN",
+    "candidate": "extra.Atan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ATR",
+    "candidate": "wickra.Atr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AVGDEV",
+    "candidate": "extra.MeanDeviation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "AVGPRICE",
+    "candidate": "wickra.AvgPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "BBANDS",
+    "candidate": "wickra.BollingerBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "BETA",
+    "candidate": "wickra.Beta",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "BOP",
+    "candidate": "wickra.BalanceOfPower",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CCI",
+    "candidate": "wickra.Cci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL2CROWS",
+    "candidate": "wickra.TwoCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL3BLACKCROWS",
+    "candidate": "extra.BlackCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL3INSIDE",
+    "candidate": "wickra.ThreeInside",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL3LINESTRIKE",
+    "candidate": "wickra.ThreeLineStrike",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL3OUTSIDE",
+    "candidate": "wickra.ThreeOutside",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL3STARSINSOUTH",
+    "candidate": "wickra.ThreeStarsInSouth",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDL3WHITESOLDIERS",
+    "candidate": "extra.WhiteSoldiers",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLABANDONEDBABY",
+    "candidate": "wickra.AbandonedBaby",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLADVANCEBLOCK",
+    "candidate": "wickra.AdvanceBlock",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLBELTHOLD",
+    "candidate": "wickra.BeltHold",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLBREAKAWAY",
+    "candidate": "wickra.Breakaway",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLCLOSINGMARUBOZU",
+    "candidate": "wickra.ClosingMarubozu",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLCONCEALBABYSWALL",
+    "candidate": "wickra.ConcealingBabySwallow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLCOUNTERATTACK",
+    "candidate": "wickra.Counterattack",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLDARKCLOUDCOVER",
+    "candidate": "extra.DarkCloudCover",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLDOJI",
+    "candidate": "wickra.Doji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLDOJISTAR",
+    "candidate": "wickra.DojiStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLDRAGONFLYDOJI",
+    "candidate": "wickra.DragonflyDoji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLENGULFING",
+    "candidate": "wickra.Engulfing",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLEVENINGDOJISTAR",
+    "candidate": "wickra.EveningDojiStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLEVENINGSTAR",
+    "candidate": "extra.EveningStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLGAPSIDESIDEWHITE",
+    "candidate": "wickra.GapSideBySideWhite",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLGRAVESTONEDOJI",
+    "candidate": "wickra.GravestoneDoji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHAMMER",
+    "candidate": "wickra.Hammer",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHANGINGMAN",
+    "candidate": "wickra.HangingMan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHARAMI",
+    "candidate": "wickra.Harami",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHARAMICROSS",
+    "candidate": "wickra.HaramiCross",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHIGHWAVE",
+    "candidate": "wickra.HighWave",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHIKKAKE",
+    "candidate": "wickra.Hikkake",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHIKKAKEMOD",
+    "candidate": "wickra.HikkakeModified",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLHOMINGPIGEON",
+    "candidate": "wickra.HomingPigeon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLIDENTICAL3CROWS",
+    "candidate": "wickra.IdenticalThreeCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLINNECK",
+    "candidate": "wickra.InNeck",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLINVERTEDHAMMER",
+    "candidate": "wickra.InvertedHammer",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLKICKING",
+    "candidate": "wickra.Kicking",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLKICKINGBYLENGTH",
+    "candidate": "wickra.KickingByLength",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLLADDERBOTTOM",
+    "candidate": "wickra.LadderBottom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLLONGLEGGEDDOJI",
+    "candidate": "wickra.LongLeggedDoji",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLLONGLINE",
+    "candidate": "wickra.LongLine",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLMARUBOZU",
+    "candidate": "wickra.Marubozu",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLMATCHINGLOW",
+    "candidate": "wickra.MatchingLow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLMATHOLD",
+    "candidate": "wickra.MatHold",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLMORNINGDOJISTAR",
+    "candidate": "wickra.MorningDojiStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLMORNINGSTAR",
+    "candidate": "extra.MorningStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLONNECK",
+    "candidate": "wickra.OnNeck",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLPIERCING",
+    "candidate": "extra.Piercing",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLRICKSHAWMAN",
+    "candidate": "wickra.RickshawMan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLRISEFALL3METHODS",
+    "candidate": "extra.RiseFallThreeMethods",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLSEPARATINGLINES",
+    "candidate": "wickra.SeparatingLines",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLSHOOTINGSTAR",
+    "candidate": "wickra.ShootingStar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLSHORTLINE",
+    "candidate": "wickra.ShortLine",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLSPINNINGTOP",
+    "candidate": "wickra.SpinningTop",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLSTALLEDPATTERN",
+    "candidate": "wickra.StalledPattern",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLSTICKSANDWICH",
+    "candidate": "wickra.StickSandwich",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLTAKURI",
+    "candidate": "wickra.Takuri",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLTASUKIGAP",
+    "candidate": "wickra.TasukiGap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLTHRUSTING",
+    "candidate": "wickra.Thrusting",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLTRISTAR",
+    "candidate": "wickra.Tristar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLUNIQUE3RIVER",
+    "candidate": "wickra.UniqueThreeRiver",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLUPSIDEGAP2CROWS",
+    "candidate": "wickra.UpsideGapTwoCrows",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CDLXSIDEGAP3METHODS",
+    "candidate": "extra.SideGapThreeMethods",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CEIL",
+    "candidate": "extra.Ceil",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CMF",
+    "candidate": "wickra.ChaikinMoneyFlow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CMO",
+    "candidate": "extra.SmoothedCmo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CMOU",
+    "candidate": "wickra.Cmo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "COPPOCK",
+    "candidate": "wickra.Coppock",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CORREL",
+    "candidate": "wickra.PearsonCorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "COS",
+    "candidate": "extra.Cos",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "COSH",
+    "candidate": "extra.Cosh",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CUMSUM",
+    "candidate": "extra.CumulativeSum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "CVI",
+    "candidate": "wickra.ChaikinVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "DEMA",
+    "candidate": "wickra.Dema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "DIV",
+    "candidate": "extra.Divide",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "DONCHIAN",
+    "candidate": "wickra.Donchian",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "DPO",
+    "candidate": "wickra.Dpo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "DX",
+    "candidate": "wickra.Dx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "EFI",
+    "candidate": "wickra.ForceIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "EMA",
+    "candidate": "wickra.Ema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ER",
+    "candidate": "extra.EfficiencyRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ERI",
+    "candidate": "wickra.ElderRay",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "EXP",
+    "candidate": "extra.Exp",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "FLOOR",
+    "candidate": "extra.Floor",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "FOSC",
+    "candidate": "wickra.TsfOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "FRACTAL",
+    "candidate": "wickra.WilliamsFractals",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HA",
+    "candidate": "wickra.HeikinAshi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HMA",
+    "candidate": "wickra.Hma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HT_DCPERIOD",
+    "candidate": "wickra.HilbertDominantCycle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HT_DCPHASE",
+    "candidate": "wickra.HtDcPhase",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HT_PHASOR",
+    "candidate": "wickra.HtPhasor",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HT_SINE",
+    "candidate": "wickra.SineWave",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HT_TRENDLINE",
+    "candidate": "wickra.InstantaneousTrendline",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "HT_TRENDMODE",
+    "candidate": "wickra.HtTrendMode",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "IMI",
+    "candidate": "wickra.IntradayMomentumIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "KAMA",
+    "candidate": "wickra.Kama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "KC",
+    "candidate": "wickra.Keltner",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "KDJ",
+    "candidate": "extra.Kdj",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "LINEARREG",
+    "candidate": "wickra.LinearRegression",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "LINEARREG_ANGLE",
+    "candidate": "wickra.LinRegAngle",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "LINEARREG_INTERCEPT",
+    "candidate": "wickra.LinRegIntercept",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "LINEARREG_SLOPE",
+    "candidate": "wickra.LinRegSlope",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "LN",
+    "candidate": "extra.Ln",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "LOG10",
+    "candidate": "extra.Log10",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MA",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MACD",
+    "candidate": "wickra.MacdIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MACDEXT",
+    "candidate": "wickra.MacdExt",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MACDFIX",
+    "candidate": "wickra.MacdFix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MAMA",
+    "candidate": "wickra.Mama",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MARKETFI",
+    "candidate": "wickra.MarketFacilitationIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MASSI",
+    "candidate": "wickra.MassIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MAVP",
+    "candidate": "extra.VariableSma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MAX",
+    "candidate": "extra.Maximum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MAXINDEX",
+    "candidate": "extra.MaxIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MEDPRICE",
+    "candidate": "wickra.MedianPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MFI",
+    "candidate": "wickra.Mfi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MIDPOINT",
+    "candidate": "wickra.MidPoint",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MIDPRICE",
+    "candidate": "wickra.MidPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MIN",
+    "candidate": "extra.Minimum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MININDEX",
+    "candidate": "extra.MinIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MINMAX",
+    "candidate": "extra.MinMax",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MINMAXINDEX",
+    "candidate": "extra.MinMaxIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MINUS_DI",
+    "candidate": "wickra.MinusDi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MINUS_DM",
+    "candidate": "wickra.MinusDm",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MOM",
+    "candidate": "wickra.Mom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "MULT",
+    "candidate": "extra.Multiply",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "NATR",
+    "candidate": "wickra.Natr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "NVI",
+    "candidate": "wickra.Nvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "OBV",
+    "candidate": "wickra.Obv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PERCENTILE",
+    "candidate": "wickra.RollingQuantile",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PERCENTRANK",
+    "candidate": "wickra.RollingPercentileRank",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PLUS_DI",
+    "candidate": "wickra.PlusDi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PLUS_DM",
+    "candidate": "wickra.PlusDm",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PPO",
+    "candidate": "wickra.Ppo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PVI",
+    "candidate": "wickra.Pvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PVO",
+    "candidate": "extra.PercentageVolumeOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "PVT",
+    "candidate": "wickra.VolumePriceTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "QSTICK",
+    "candidate": "wickra.Qstick",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "RMA",
+    "candidate": "wickra.Smma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ROC",
+    "candidate": "wickra.Roc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ROCP",
+    "candidate": "wickra.Rocp",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ROCR",
+    "candidate": "wickra.Rocr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ROCR100",
+    "candidate": "wickra.Rocr100",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "RSI",
+    "candidate": "wickra.Rsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "RVI",
+    "candidate": "extra.RelativeVolatilityIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "RVOL",
+    "candidate": "extra.RelativeVolume",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SAR",
+    "candidate": "wickra.Psar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SAREXT",
+    "candidate": "wickra.SarExt",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SIN",
+    "candidate": "extra.Sin",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SINH",
+    "candidate": "extra.Sinh",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SMA",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SMI",
+    "candidate": "wickra.Smi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SQRT",
+    "candidate": "extra.Sqrt",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "STDDEV",
+    "candidate": "wickra.StdDev",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "STOCH",
+    "candidate": "extra.SlowStochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "STOCHF",
+    "candidate": "wickra.Stochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "STOCHRSI",
+    "candidate": "wickra.StochRsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SUB",
+    "candidate": "extra.Subtract",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SUM",
+    "candidate": "extra.Sum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "SUPERTREND",
+    "candidate": "wickra.SuperTrend",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "T3",
+    "candidate": "wickra.T3",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TAN",
+    "candidate": "extra.Tan",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TANH",
+    "candidate": "extra.Tanh",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TEMA",
+    "candidate": "wickra.Tema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TRANGE",
+    "candidate": "wickra.TrueRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TRIMA",
+    "candidate": "wickra.Trima",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TRIX",
+    "candidate": "wickra.Trix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TSF",
+    "candidate": "wickra.Tsf",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TSI",
+    "candidate": "wickra.Tsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "TYPPRICE",
+    "candidate": "wickra.TypicalPrice",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ULTOSC",
+    "candidate": "wickra.UltimateOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "VAR",
+    "candidate": "wickra.Variance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "VHF",
+    "candidate": "wickra.VerticalHorizontalFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "VORTEX",
+    "candidate": "wickra.Vortex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "VWAP",
+    "candidate": "wickra.Vwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "VWMA",
+    "candidate": "wickra.Vwma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "WAD",
+    "candidate": "wickra.Wad",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "WCLPRICE",
+    "candidate": "wickra.WeightedClose",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "WILLR",
+    "candidate": "wickra.WilliamsR",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "WMA",
+    "candidate": "wickra.Wma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ta-lib",
+    "name": "ZLEMA",
+    "candidate": "wickra.Zlema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "ADX",
+    "candidate": "wickra.Adx",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "ALMA",
+    "candidate": "wickra.Alma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "ATR",
+    "candidate": "wickra.Atr",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "BBands",
+    "candidate": "wickra.BollingerBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "CCI",
+    "candidate": "wickra.Cci",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "CLV",
+    "candidate": "extra.CloseLocationValue",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "CMF",
+    "candidate": "wickra.ChaikinMoneyFlow",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "CMO",
+    "candidate": "wickra.Cmo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "CTI",
+    "candidate": "wickra.CorrelationTrendIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "DEMA",
+    "candidate": "wickra.Dema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "DPO",
+    "candidate": "wickra.Dpo",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "DVI",
+    "candidate": "extra.Dvi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "DonchianChannel",
+    "candidate": "wickra.Donchian",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "EMA",
+    "candidate": "wickra.Ema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "EMV",
+    "candidate": "wickra.EaseOfMovement",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "EVWMA",
+    "candidate": "wickra.Evwma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "GMMA",
+    "candidate": "extra.Guppy",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "HMA",
+    "candidate": "wickra.Hma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "KST",
+    "candidate": "wickra.Kst",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "MACD",
+    "candidate": "wickra.MacdIndicator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "MFI",
+    "candidate": "wickra.Mfi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "OBV",
+    "candidate": "wickra.Obv",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "PBands",
+    "candidate": "extra.PriceBands",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "ROC",
+    "candidate": "wickra.Roc",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "RSI",
+    "candidate": "wickra.Rsi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "SAR",
+    "candidate": "wickra.Psar",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "SMA",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "SMI",
+    "candidate": "wickra.Smi",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "SNR",
+    "candidate": "extra.SignalNoiseRatio",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "TDI",
+    "candidate": "extra.TrendDetectionIndex",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "TR",
+    "candidate": "wickra.TrueRange",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "TRIX",
+    "candidate": "wickra.Trix",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "VHF",
+    "candidate": "wickra.VerticalHorizontalFilter",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "VWAP",
+    "candidate": "wickra.Vwap",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "VWMA",
+    "candidate": "wickra.Vwma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "WMA",
+    "candidate": "wickra.Wma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "WPR",
+    "candidate": "wickra.WilliamsR",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "ZLEMA",
+    "candidate": "wickra.Zlema",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "ZigZag",
+    "candidate": "wickra.ZigZag",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "adjRatios",
+    "candidate": null,
+    "classification": "non_indicator",
+    "reason": "corporate-action adjustment factors, a preprocessing contract rather than an indicator"
+  },
+  {
+    "source": "ttr",
+    "name": "aroon",
+    "candidate": "wickra.Aroon",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "chaikinAD",
+    "candidate": "wickra.Adl",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "chaikinVolatility",
+    "candidate": "wickra.ChaikinVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "getYahooData",
+    "candidate": null,
+    "classification": "non_indicator",
+    "reason": "network data acquisition"
+  },
+  {
+    "source": "ttr",
+    "name": "growth",
+    "candidate": "extra.Growth",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "keltnerChannels",
+    "candidate": "wickra.Keltner",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "lags",
+    "candidate": "extra.Lags",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "momentum",
+    "candidate": "wickra.Mom",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "naCheck",
+    "candidate": null,
+    "classification": "non_indicator",
+    "reason": "missing-data validation helper"
+  },
+  {
+    "source": "ttr",
+    "name": "rollSFM",
+    "candidate": "extra.SingleFactorModel",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runCor",
+    "candidate": "wickra.RollingCorrelation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runCov",
+    "candidate": "wickra.RollingCovariance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runMAD",
+    "candidate": "wickra.MedianAbsoluteDeviation",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runMax",
+    "candidate": "extra.Maximum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runMean",
+    "candidate": "wickra.Sma",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runMedian",
+    "candidate": "wickra.MedianMa",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runMin",
+    "candidate": "extra.Minimum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runPercentRank",
+    "candidate": "wickra.RollingPercentileRank",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runRange",
+    "candidate": "extra.MinMax",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runSD",
+    "candidate": "wickra.StdDev",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runSum",
+    "candidate": "extra.Sum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "runVar",
+    "candidate": "wickra.Variance",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "stoch",
+    "candidate": "wickra.Stochastic",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "stockSymbols",
+    "candidate": null,
+    "classification": "non_indicator",
+    "reason": "network symbol discovery"
+  },
+  {
+    "source": "ttr",
+    "name": "ultimateOscillator",
+    "candidate": "wickra.UltimateOscillator",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "volatility",
+    "candidate": "wickra.HistoricalVolatility",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "wilderSum",
+    "candidate": "extra.WilderSum",
+    "classification": "formula_review",
+    "reason": null
+  },
+  {
+    "source": "ttr",
+    "name": "williamsAD",
+    "candidate": "wickra.Wad",
+    "classification": "formula_review",
+    "reason": null
+  }
+]

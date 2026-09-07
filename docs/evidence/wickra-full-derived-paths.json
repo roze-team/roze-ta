@@ -1,0 +1,2098 @@
+[
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/lib.rs",
+    "derived": "crates/roze-ta/src/wickra_all/mod.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/calendar.rs",
+    "derived": "crates/roze-ta/src/wickra_all/calendar.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/cross_section.rs",
+    "derived": "crates/roze-ta/src/wickra_all/cross_section.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/derivatives.rs",
+    "derived": "crates/roze-ta/src/wickra_all/derivatives.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/error.rs",
+    "derived": "crates/roze-ta/src/wickra_all/error.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/microstructure.rs",
+    "derived": "crates/roze-ta/src/wickra_all/microstructure.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/ohlcv.rs",
+    "derived": "crates/roze-ta/src/wickra_all/ohlcv.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/traits.rs",
+    "derived": "crates/roze-ta/src/wickra_all/traits.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mod.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mod.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pattern_swing.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pattern_swing.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_moments.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_moments.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/abandoned_baby.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/abandoned_baby.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/abcd.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/abcd.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/absolute_breadth_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/absolute_breadth_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/acceleration_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/acceleration_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/accelerator_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/accelerator_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ad_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ad_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ad_volume_line.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ad_volume_line.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adaptive_cci.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adaptive_cci.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adaptive_cycle.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adaptive_cycle.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adaptive_laguerre_filter.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adaptive_laguerre_filter.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adaptive_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adaptive_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adl.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adl.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/advance_block.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/advance_block.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/advance_decline.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/advance_decline.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/advance_decline_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/advance_decline_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adx.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adx.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/adxr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/adxr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/alligator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/alligator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/alma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/alma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/alpha.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/alpha.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/amihud_illiquidity.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/amihud_illiquidity.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/anchored_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/anchored_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/anchored_vwap.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/anchored_vwap.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/andrews_pitchfork.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/andrews_pitchfork.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/apo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/apo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/aroon.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/aroon.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/aroon_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/aroon_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/atr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/atr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/atr_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/atr_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/atr_ratchet.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/atr_ratchet.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/atr_trailing_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/atr_trailing_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/auto_fib.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/auto_fib.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/autocorrelation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/autocorrelation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/autocorrelation_periodogram.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/autocorrelation_periodogram.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/average_daily_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/average_daily_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/average_drawdown.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/average_drawdown.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/avg_price.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/avg_price.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/awesome_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/awesome_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/awesome_oscillator_histogram.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/awesome_oscillator_histogram.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/balance_of_power.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/balance_of_power.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bandpass_filter.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bandpass_filter.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bat.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bat.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/belt_hold.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/belt_hold.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/beta.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/beta.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/beta_neutral_spread.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/beta_neutral_spread.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/better_volume.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/better_volume.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bipower_variation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bipower_variation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/body_size_pct.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/body_size_pct.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bollinger.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bollinger.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bollinger_bandwidth.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bollinger_bandwidth.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bomar_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bomar_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/breadth_thrust.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/breadth_thrust.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/breakaway.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/breakaway.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/bullish_percent_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/bullish_percent_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/burke_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/burke_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/butterfly.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/butterfly.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/calendar_spread.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/calendar_spread.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/calmar_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/calmar_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/camarilla_pivots.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/camarilla_pivots.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/candle_volume.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/candle_volume.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cci.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cci.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/center_of_gravity.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/center_of_gravity.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/central_pivot_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/central_pivot_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cfo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cfo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/chaikin_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/chaikin_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/chaikin_volatility.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/chaikin_volatility.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/chande_kroll_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/chande_kroll_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/chandelier_exit.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/chandelier_exit.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/choppiness_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/choppiness_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/classic_pivots.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/classic_pivots.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/close_vs_open.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/close_vs_open.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/closing_marubozu.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/closing_marubozu.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cmf.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cmf.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cmo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cmo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/coefficient_of_variation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/coefficient_of_variation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cointegration.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cointegration.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/common_sense_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/common_sense_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/composite_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/composite_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/concealing_baby_swallow.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/concealing_baby_swallow.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/conditional_value_at_risk.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/conditional_value_at_risk.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/connors_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/connors_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/coppock.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/coppock.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/correlation_trend_indicator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/correlation_trend_indicator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/counterattack.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/counterattack.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/crab.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/crab.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cumulative_volume_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cumulative_volume_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cup_and_handle.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cup_and_handle.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cvd.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cvd.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cybernetic_cycle.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cybernetic_cycle.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/cypher.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/cypher.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/day_of_week_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/day_of_week_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/decycler.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/decycler.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/decycler_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/decycler_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dema.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dema.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/demand_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/demand_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/demark_pivots.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/demark_pivots.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/depth_slope.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/depth_slope.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/derivative_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/derivative_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/detrended_std_dev.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/detrended_std_dev.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/disparity_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/disparity_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/distance_ssd.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/distance_ssd.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/doji.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/doji.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/doji_star.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/doji_star.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dollar_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dollar_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/donchian.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/donchian.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/donchian_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/donchian_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/double_bollinger.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/double_bollinger.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/double_top_bottom.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/double_top_bottom.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/downside_gap_three_methods.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/downside_gap_three_methods.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dpo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dpo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dragonfly_doji.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dragonfly_doji.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/drawdown_duration.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/drawdown_duration.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dumpling_top.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dumpling_top.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dx.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dx.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/dynamic_momentum_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/dynamic_momentum_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ease_of_movement.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ease_of_movement.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/effective_spread.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/effective_spread.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ehlers_stochastic.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ehlers_stochastic.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ehma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ehma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/elder_impulse.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/elder_impulse.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/elder_ray.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/elder_ray.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/elder_safezone.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/elder_safezone.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ema.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ema.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/empirical_mode_decomposition.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/empirical_mode_decomposition.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/engulfing.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/engulfing.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/equivolume.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/equivolume.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/estimated_leverage_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/estimated_leverage_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/even_better_sinewave.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/even_better_sinewave.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/evening_doji_star.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/evening_doji_star.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/evwma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/evwma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ewma_volatility.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ewma_volatility.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/expectancy.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/expectancy.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/falling_three_methods.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/falling_three_methods.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fama.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fama.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_arcs.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_arcs.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_channel.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_channel.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_confluence.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_confluence.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_extension.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_extension.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_fan.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_fan.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_projection.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_projection.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_retracement.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_retracement.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fib_time_zones.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fib_time_zones.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fibonacci_pivots.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fibonacci_pivots.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fisher_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fisher_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fisher_transform.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fisher_transform.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/flag_pennant.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/flag_pennant.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/footprint.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/footprint.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/force_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/force_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fractal_chaos_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fractal_chaos_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/frama.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/frama.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/fry_pan_bottom.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/fry_pan_bottom.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/funding_basis.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/funding_basis.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/funding_implied_apr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/funding_implied_apr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/funding_rate.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/funding_rate.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/funding_rate_mean.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/funding_rate_mean.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/funding_rate_zscore.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/funding_rate_zscore.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/gain_loss_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/gain_loss_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/gain_to_pain_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/gain_to_pain_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/gap_side_by_side_white.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/gap_side_by_side_white.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/garch11.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/garch11.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/garman_klass.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/garman_klass.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/gartley.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/gartley.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/gator_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/gator_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/generalized_dema.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/generalized_dema.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/geometric_ma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/geometric_ma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/golden_pocket.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/golden_pocket.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/granger_causality.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/granger_causality.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/gravestone_doji.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/gravestone_doji.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hammer.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hammer.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hanging_man.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hanging_man.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/harami.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/harami.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/harami_cross.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/harami_cross.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hasbrouck_information_share.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hasbrouck_information_share.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/head_and_shoulders.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/head_and_shoulders.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/heikin_ashi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/heikin_ashi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/heikin_ashi_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/heikin_ashi_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/high_low_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/high_low_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/high_low_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/high_low_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/high_low_volume_nodes.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/high_low_volume_nodes.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/high_wave.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/high_wave.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/highpass_filter.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/highpass_filter.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hikkake.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hikkake.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hikkake_modified.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hikkake_modified.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hilbert_dominant_cycle.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hilbert_dominant_cycle.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hilo_activator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hilo_activator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/historical_volatility.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/historical_volatility.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/holt_winters.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/holt_winters.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/homing_pigeon.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/homing_pigeon.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ht_dcphase.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ht_dcphase.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ht_phasor.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ht_phasor.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ht_trendmode.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ht_trendmode.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hurst_channel.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hurst_channel.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/hurst_exponent.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/hurst_exponent.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ichimoku.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ichimoku.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/identical_three_crows.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/identical_three_crows.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/imbalance_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/imbalance_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/in_neck.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/in_neck.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/inertia.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/inertia.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/information_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/information_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/initial_balance.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/initial_balance.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/instantaneous_trendline.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/instantaneous_trendline.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/intraday_intensity.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/intraday_intensity.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/intraday_momentum_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/intraday_momentum_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/intraday_volatility_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/intraday_volatility_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/inverse_fisher_transform.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/inverse_fisher_transform.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/inverted_hammer.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/inverted_hammer.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/jarque_bera.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/jarque_bera.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/jma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/jma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/jump_indicator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/jump_indicator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/k_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/k_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kagi_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kagi_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kalman_hedge_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kalman_hedge_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kama.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kama.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kase_devstop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kase_devstop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kase_permission_stochastic.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kase_permission_stochastic.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kelly_criterion.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kelly_criterion.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/keltner.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/keltner.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kendall_tau.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kendall_tau.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kicking.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kicking.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kicking_by_length.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kicking_by_length.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kst.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kst.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kurtosis.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kurtosis.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kvo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kvo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/kyles_lambda.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/kyles_lambda.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ladder_bottom.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ladder_bottom.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/laguerre_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/laguerre_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/lead_lag_cross_correlation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/lead_lag_cross_correlation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/linreg.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/linreg.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/linreg_angle.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/linreg_angle.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/linreg_channel.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/linreg_channel.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/linreg_intercept.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/linreg_intercept.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/linreg_slope.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/linreg_slope.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/liquidation_features.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/liquidation_features.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/log_return.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/log_return.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/long_legged_doji.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/long_legged_doji.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/long_line.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/long_line.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/long_short_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/long_short_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/m2_measure.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/m2_measure.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ma_envelope.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ma_envelope.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/macd.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/macd.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/macd_ext.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/macd_ext.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/macd_fix.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/macd_fix.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/macd_histogram.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/macd_histogram.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mama.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mama.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/market_facilitation_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/market_facilitation_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/martin_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/martin_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/marubozu.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/marubozu.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mass_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mass_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mat_hold.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mat_hold.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/matching_low.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/matching_low.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/max_drawdown.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/max_drawdown.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mcclellan_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mcclellan_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mcclellan_summation_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mcclellan_summation_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mcginley_dynamic.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mcginley_dynamic.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/median_absolute_deviation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/median_absolute_deviation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/median_channel.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/median_channel.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/median_ma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/median_ma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/median_price.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/median_price.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mfi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mfi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/microprice.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/microprice.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mid_point.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mid_point.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mid_price.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mid_price.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/minus_di.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/minus_di.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/minus_dm.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/minus_dm.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/modified_ma_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/modified_ma_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/mom.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/mom.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/morning_doji_star.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/morning_doji_star.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/morning_evening_star.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/morning_evening_star.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/murrey_math_lines.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/murrey_math_lines.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/naked_poc.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/naked_poc.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/natr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/natr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/new_highs_new_lows.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/new_highs_new_lows.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/new_price_lines.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/new_price_lines.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/nrtr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/nrtr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/nvi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/nvi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ob_imbalance_full.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ob_imbalance_full.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ob_imbalance_top1.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ob_imbalance_top1.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ob_imbalance_topn.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ob_imbalance_topn.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/obv.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/obv.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/oi_delta.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/oi_delta.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/oi_price_divergence.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/oi_price_divergence.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/oi_to_volume_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/oi_to_volume_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/oi_weighted.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/oi_weighted.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/omega_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/omega_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/on_neck.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/on_neck.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/open_interest_momentum.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/open_interest_momentum.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/opening_marubozu.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/opening_marubozu.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/opening_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/opening_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/order_flow_imbalance.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/order_flow_imbalance.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ou_half_life.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ou_half_life.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/overnight_gap.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/overnight_gap.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/overnight_intraday_return.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/overnight_intraday_return.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pain_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pain_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pair_spread_zscore.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pair_spread_zscore.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pairwise_beta.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pairwise_beta.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/parkinson.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/parkinson.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pearson_correlation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pearson_correlation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/percent_above_ma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/percent_above_ma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/percent_b.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/percent_b.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/percentage_trailing_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/percentage_trailing_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/perpetual_premium_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/perpetual_premium_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pgo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pgo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/piercing_dark_cloud.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/piercing_dark_cloud.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pin.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pin.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pivot_reversal.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pivot_reversal.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/plus_di.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/plus_di.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/plus_dm.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/plus_dm.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pmo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pmo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/point_and_figure_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/point_and_figure_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/polarized_fractal_efficiency.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/polarized_fractal_efficiency.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ppo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ppo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ppo_histogram.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ppo_histogram.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/profile_shape.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/profile_shape.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/profit_factor.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/profit_factor.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/projection_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/projection_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/projection_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/projection_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/psar.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/psar.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/pvi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/pvi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/qqe.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/qqe.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/qstick.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/qstick.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/quartile_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/quartile_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/quoted_spread.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/quoted_spread.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/r_squared.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/r_squared.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/range_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/range_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/realized_spread.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/realized_spread.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/realized_volatility.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/realized_volatility.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/recovery_factor.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/recovery_factor.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rectangle_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rectangle_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/reflex.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/reflex.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/regime_label.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/regime_label.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/relative_strength_ab.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/relative_strength_ab.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/renko_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/renko_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/renko_trailing_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/renko_trailing_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rickshaw_man.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rickshaw_man.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rising_three_methods.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rising_three_methods.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rmi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rmi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/roc.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/roc.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rocp.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rocp.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rocr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rocr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rocr100.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rocr100.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rogers_satchell.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rogers_satchell.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/roll_measure.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/roll_measure.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_correlation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_correlation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_covariance.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_covariance.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_iqr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_iqr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_min_max_scaler.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_min_max_scaler.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_percentile_rank.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_percentile_rank.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rolling_quantile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rolling_quantile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/roofing_filter.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/roofing_filter.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rsx.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rsx.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/run_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/run_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rvi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rvi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rvi_volatility.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rvi_volatility.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/rwi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/rwi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sample_entropy.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sample_entropy.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sar_ext.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sar_ext.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/seasonal_z_score.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/seasonal_z_score.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/separating_lines.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/separating_lines.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/session_high_low.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/session_high_low.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/session_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/session_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/session_vwap.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/session_vwap.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/shannon_entropy.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/shannon_entropy.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/shark.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/shark.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sharpe_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sharpe_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/shooting_star.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/shooting_star.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/short_line.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/short_line.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/signed_volume.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/signed_volume.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sine_wave.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sine_wave.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sine_weighted_ma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sine_weighted_ma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/single_prints.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/single_prints.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/skewness.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/skewness.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/smi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/smi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/smma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/smma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/smoothed_heikin_ashi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/smoothed_heikin_ashi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sortino_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sortino_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/spearman_correlation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/spearman_correlation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/spinning_top.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/spinning_top.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/spread_ar1_coefficient.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/spread_ar1_coefficient.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/spread_bollinger_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/spread_bollinger_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/spread_hurst.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/spread_hurst.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/stalled_pattern.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/stalled_pattern.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/standard_error.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/standard_error.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/standard_error_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/standard_error_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/starc_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/starc_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/stc.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/stc.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/std_dev.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/std_dev.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/step_trailing_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/step_trailing_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/sterling_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/sterling_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/stick_sandwich.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/stick_sandwich.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/stoch_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/stoch_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/stochastic.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/stochastic.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/stochastic_cci.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/stochastic_cci.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/super_smoother.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/super_smoother.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/super_trend.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/super_trend.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/t3.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/t3.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tail_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tail_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/taker_buy_sell_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/taker_buy_sell_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/takuri.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/takuri.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tasuki_gap.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tasuki_gap.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_camouflage.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_camouflage.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_clop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_clop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_clopwin.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_clopwin.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_combo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_combo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_countdown.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_countdown.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_demarker.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_demarker.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_differential.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_differential.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_dwave.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_dwave.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_lines.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_lines.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_moving_average.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_moving_average.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_open.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_open.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_pressure.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_pressure.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_propulsion.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_propulsion.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_range_projection.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_range_projection.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_rei.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_rei.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_risk_level.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_risk_level.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_sequential.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_sequential.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_setup.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_setup.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/td_trap.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/td_trap.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tema.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tema.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/term_structure_basis.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/term_structure_basis.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_drives.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_drives.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_inside.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_inside.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_line_break.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_line_break.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_line_break_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_line_break_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_line_strike.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_line_strike.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_outside.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_outside.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_soldiers_or_crows.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_soldiers_or_crows.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/three_stars_in_south.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/three_stars_in_south.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/thrusting.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/thrusting.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tick_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tick_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tick_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tick_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tii.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tii.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/time_based_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/time_based_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/time_of_day_return_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/time_of_day_return_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tower_top_bottom.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tower_top_bottom.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tpo_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tpo_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trade_imbalance.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trade_imbalance.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trade_sign_autocorrelation.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trade_sign_autocorrelation.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trade_volume_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trade_volume_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trend_label.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trend_label.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trend_strength_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trend_strength_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trendflex.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trendflex.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/treynor_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/treynor_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/triangle.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/triangle.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trima.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trima.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trin.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trin.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/triple_top_bottom.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/triple_top_bottom.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tristar.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tristar.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/trix.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/trix.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/true_range.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/true_range.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tsf.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tsf.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tsf_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tsf_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tsv.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tsv.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ttm_squeeze.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ttm_squeeze.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ttm_trend.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ttm_trend.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/turn_of_month.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/turn_of_month.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/tweezer.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/tweezer.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/twiggs_money_flow.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/twiggs_money_flow.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/two_crows.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/two_crows.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/typical_price.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/typical_price.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ulcer_index.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ulcer_index.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/ultimate_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/ultimate_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/unique_three_river.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/unique_three_river.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/universal_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/universal_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/up_down_volume_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/up_down_volume_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/upside_gap_three_methods.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/upside_gap_three_methods.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/upside_gap_two_crows.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/upside_gap_two_crows.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/upside_potential_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/upside_potential_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/value_area.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/value_area.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/value_at_risk.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/value_at_risk.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/variance.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/variance.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/variance_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/variance_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vertical_horizontal_filter.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vertical_horizontal_filter.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vidya.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vidya.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volatility_cone.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volatility_cone.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volatility_of_volatility.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volatility_of_volatility.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volatility_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volatility_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volty_stop.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volty_stop.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_bars.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_bars.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_by_time_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_by_time_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_oscillator.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_oscillator.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_profile.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_profile.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_rsi.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_rsi.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_weighted_macd.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_weighted_macd.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/volume_weighted_sr.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/volume_weighted_sr.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vortex.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vortex.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vpin.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vpin.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vpt.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vpt.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vwap.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vwap.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vwap_stddev_bands.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vwap_stddev_bands.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vwma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vwma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/vzo.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/vzo.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/wad.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/wad.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/wave_pm.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/wave_pm.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/wave_trend.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/wave_trend.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/wedge.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/wedge.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/weighted_close.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/weighted_close.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/wick_ratio.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/wick_ratio.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/williams_fractals.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/williams_fractals.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/williams_r.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/williams_r.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/win_rate.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/win_rate.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/wma.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/wma.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/woodie_pivots.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/woodie_pivots.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/yang_zhang.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/yang_zhang.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/yoyo_exit.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/yoyo_exit.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/z_score.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/z_score.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/zero_lag_macd.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/zero_lag_macd.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/zig_zag.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/zig_zag.rs"
+  },
+  {
+    "original": "vendor/wickra-full/crates/wickra-core/src/indicators/zlema.rs",
+    "derived": "crates/roze-ta/src/wickra_all/indicators/zlema.rs"
+  }
+]

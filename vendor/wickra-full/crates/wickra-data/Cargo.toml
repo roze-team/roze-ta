@@ -1,0 +1,69 @@
+[package]
+name = "wickra-data"
+description = "Data sources for Wickra: CSV readers, tick-to-candle aggregator, and live exchange feeds."
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+documentation = "https://docs.rs/wickra-data"
+
+# Render the docs on docs.rs with every feature enabled so the optional
+# live-binance feed is documented (otherwise it is hidden behind its feature).
+[package.metadata.docs.rs]
+all-features = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# Direct path+version (not the workspace inheritance) so `default-features = false`
+# is honoured: depending on wickra-data must NOT force wickra-core's `parallel`
+# (rayon) feature on — the WASM binding needs a rayon-free build and the data
+# layer never uses the parallel batch path. Native bindings re-enable `parallel`
+# through their own wickra-core dependency (cargo unifies the features).
+wickra-core = { path = "../wickra-core", version = "1.0.4", default-features = false }
+thiserror = { workspace = true }
+csv = "1.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Async / live feeds are opt-in: only pulled when a `live-*` feature is requested.
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "net", "time", "io-util"], optional = true }
+tokio-tungstenite = { version = "0.30", optional = true, features = ["native-tls"] }
+futures-util = { version = "0.3", optional = true }
+url = { version = "2", optional = true }
+# Blocking HTTP client for the historical REST kline fetcher. ureq 2.x with
+# native-tls verifies against the OS trust store (SChannel / Security.framework /
+# OpenSSL) — the same backend tokio-tungstenite uses above — so it ships no
+# bundled CA roots. (ureq 3.x hard-depends on `webpki-root-certs` regardless of
+# TLS backend, which is CDLA-Permissive-2.0 and dead weight under native-tls.)
+ureq = { version = "2", default-features = false, features = ["native-tls"], optional = true }
+# Direct dependency so the agent can be built with a native-tls connector (ureq
+# 2.x does not auto-configure native-tls). Already in the tree via tokio-tungstenite.
+native-tls = { version = "0.2", optional = true }
+
+[features]
+default = []
+# Each exchange is gated so users only pay for the WS/REST stack they actually
+# want. `live-binance` covers both the live WebSocket feed and the historical
+# REST kline fetcher.
+live-binance = ["dep:tokio", "dep:tokio-tungstenite", "dep:futures-util", "dep:url", "dep:ureq", "dep:native-tls"]
+# `live-binance` with a statically built OpenSSL instead of the system one. The
+# native-tls stack (tokio-tungstenite + ureq, unified on the same `native-tls`
+# crate) links `openssl-sys`, which needs OpenSSL at build time. The manylinux
+# and musllinux wheel containers do not provide it — manylinux lacks the headers
+# and the musllinux build cross-compiles against a musl sysroot that has no
+# OpenSSL at all — so the Linux wheels are built with this feature, which
+# compiles OpenSSL from source and links it statically. No-op on macOS/Windows,
+# where native-tls uses Security.framework / SChannel and never pulls openssl-sys.
+vendored-tls = ["live-binance", "native-tls/vendored"]
+
+[dev-dependencies]
+approx = { workspace = true }
+tempfile = "3"

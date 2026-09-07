@@ -64,9 +64,9 @@ fn near(actual: f64, expected: f64, id: &str, i: usize) {
 #[test]
 fn ten_families_have_explicit_versions_and_warmups() {
     let profiles = catalog();
-    assert_eq!(profiles.len(), 45);
+    assert_eq!(profiles.len(), 50);
     let families: std::collections::BTreeSet<_> = profiles.iter().map(|p| &p.family_id).collect();
-    assert_eq!(families.len(), 33);
+    assert_eq!(families.len(), 38);
     for (id, minimum) in IDS.into_iter().zip([14, 14, 27, 40, 14, 15, 15, 1, 2, 14]) {
         let p = profiles.iter().find(|p| p.id == id).unwrap();
         assert_eq!(p.minimum_bars, minimum);

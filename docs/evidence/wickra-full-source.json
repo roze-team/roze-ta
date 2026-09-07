@@ -1,0 +1,2115 @@
+{
+  "repository": "wickra-lib/wickra",
+  "commit": "7ed1504c805cb45fff7a317a659eb3ad559a80a7",
+  "expected_files": 527,
+  "files": [
+    {
+      "path": "LICENSE-MIT",
+      "git_blob_sha": "ab12f88eca783ed4c9cfb7ac1062c31bdd916ff5"
+    },
+    {
+      "path": "Cargo.toml",
+      "git_blob_sha": "84d7aaced57fa1f3aeda2ef07e528e8c07547196"
+    },
+    {
+      "path": "crates/wickra-core/Cargo.toml",
+      "git_blob_sha": "c47038705939d69c251ef8cfcbbaf854c9096302"
+    },
+    {
+      "path": "crates/wickra-core/src/lib.rs",
+      "git_blob_sha": "98d15690195bd4bcb591893918dfa59ebd7acd42"
+    },
+    {
+      "path": "crates/wickra-core/src/calendar.rs",
+      "git_blob_sha": "fe25de213f5d16fc33618e925d6ad90615218ddc"
+    },
+    {
+      "path": "crates/wickra-core/src/cross_section.rs",
+      "git_blob_sha": "d26b2231c5b46fb506c07e61213832e75dcb318f"
+    },
+    {
+      "path": "crates/wickra-core/src/derivatives.rs",
+      "git_blob_sha": "d1c1c54ed61725d6fbbce9ddada91b8be4702845"
+    },
+    {
+      "path": "crates/wickra-core/src/error.rs",
+      "git_blob_sha": "e552f437a7cf7e5a7e18baeab9f50168f2281189"
+    },
+    {
+      "path": "crates/wickra-core/src/microstructure.rs",
+      "git_blob_sha": "9470eb473d5ec0a9816810010ad59768a0467ca3"
+    },
+    {
+      "path": "crates/wickra-core/src/ohlcv.rs",
+      "git_blob_sha": "02db6af1583633f6e34f4c2f4853e50d162b74a6"
+    },
+    {
+      "path": "crates/wickra-core/src/traits.rs",
+      "git_blob_sha": "01c39eb8f1b851a8c5e7e307de2b8b9102265067"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mod.rs",
+      "git_blob_sha": "29480f18652d301008e44b2824daa299013d68fd"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pattern_swing.rs",
+      "git_blob_sha": "07091361436579b5b5b2b7abf2922f9706dda6e8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_moments.rs",
+      "git_blob_sha": "1681b6b4add883dc868c3fbbfbb2c6568ea8cee4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/abandoned_baby.rs",
+      "git_blob_sha": "598747a6a38ab09a0a34212032eed3cfba57f88c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/abcd.rs",
+      "git_blob_sha": "e45a40ae3e862797bcc5e7321c6b69ec4af392ff"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/absolute_breadth_index.rs",
+      "git_blob_sha": "0a99707f92dd6f06b0055e9950aa2dc1e599eb47"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/acceleration_bands.rs",
+      "git_blob_sha": "0d767da27ad36d2337227bfd46c9677aefb4b978"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/accelerator_oscillator.rs",
+      "git_blob_sha": "4961453b0fc794d3c9ad5c617eba7529ee033143"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ad_oscillator.rs",
+      "git_blob_sha": "b150607e8b9d8d4f2786375e1e8d9c1db4791fbb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ad_volume_line.rs",
+      "git_blob_sha": "575b1898e1a404c78aa5ed7da5f9e06c2b099092"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adaptive_cci.rs",
+      "git_blob_sha": "8dc63d3c08164d986f09de93e467afe34a2fb1d4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adaptive_cycle.rs",
+      "git_blob_sha": "83968418cbb85eec4ee39c3f779f4a6acfdf5d2a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adaptive_laguerre_filter.rs",
+      "git_blob_sha": "2717b7103081b98452ef924213828e40dbe15213"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adaptive_rsi.rs",
+      "git_blob_sha": "39d0423a14a105465e4fac105eaef079a2c2a577"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adl.rs",
+      "git_blob_sha": "ded3fbfefee30436084b4ed85c87047f6310fc56"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/advance_block.rs",
+      "git_blob_sha": "817420d69e72a018b83acc8653b9f96fc80f0cd8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/advance_decline.rs",
+      "git_blob_sha": "f245f57eb48ee8e9f63a696d4f8bb925adae2de2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/advance_decline_ratio.rs",
+      "git_blob_sha": "a30a87a592fa56cca440f9b473fe2353da800896"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adx.rs",
+      "git_blob_sha": "efe9b21400400cb29bc7bec234ebe102d9d631d9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/adxr.rs",
+      "git_blob_sha": "88ec03e0ecb2d43b0b19128a3e0eaabb0c86d410"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/alligator.rs",
+      "git_blob_sha": "2481c42ac9cd3c9c44f368564ea2c9314c0e21bf"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/alma.rs",
+      "git_blob_sha": "283501c7adb3988074931778718afaf26ecd53f4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/alpha.rs",
+      "git_blob_sha": "94c73627277ab30e76f72b7e753b5069ff8ae437"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/amihud_illiquidity.rs",
+      "git_blob_sha": "dfc96a9bb4c9f9e3b445cf850d7154e259017f24"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/anchored_rsi.rs",
+      "git_blob_sha": "74b4a0de8ba73fbe22508b636a127fc273e07893"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/anchored_vwap.rs",
+      "git_blob_sha": "5d16bf7cdb1f4176dd875da2fa1fddd3f206ce9f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/andrews_pitchfork.rs",
+      "git_blob_sha": "e6e21bd115649e35d777aa9715402749e307c3a8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/apo.rs",
+      "git_blob_sha": "3c31118beddf828a99d7ff9dc2f4f70d220b2382"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/aroon.rs",
+      "git_blob_sha": "d7bfb7db454a8401844995952104eca7ab492d12"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/aroon_oscillator.rs",
+      "git_blob_sha": "7a70071ab54a5adf9a521a08478d2addbf4b3c28"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/atr.rs",
+      "git_blob_sha": "2fc3bdb534439549c37403b46744e06e5f73ac69"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/atr_bands.rs",
+      "git_blob_sha": "46545ed7c81dcebe3efbee2ffcf09016f026fe9e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/atr_ratchet.rs",
+      "git_blob_sha": "de84989767c5a6074e368017af86666c9f7e83cf"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/atr_trailing_stop.rs",
+      "git_blob_sha": "20ba4605cd6ee73c07e7467fd4bdcbae9d2726c6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/auto_fib.rs",
+      "git_blob_sha": "0fba1c1d36517452f6234bc7ddf8b207d4ff3801"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/autocorrelation.rs",
+      "git_blob_sha": "b5e97b6cf4c25f063f5db97a806623c3beaece52"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/autocorrelation_periodogram.rs",
+      "git_blob_sha": "fb4d68c20385aef1da518f31e4b5651598b794db"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/average_daily_range.rs",
+      "git_blob_sha": "e92543cbd59487afedbb28f3bbfe4921804ee2e6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/average_drawdown.rs",
+      "git_blob_sha": "64f57e3e1760b0e332010daf5764ac2a37bf7bb7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/avg_price.rs",
+      "git_blob_sha": "6e2effcb5d23b55beac7f0148bf53baea5fd8be0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/awesome_oscillator.rs",
+      "git_blob_sha": "d192a503ea5783626d7b2d888ac951bf4443d10d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/awesome_oscillator_histogram.rs",
+      "git_blob_sha": "0a2b9103f68e68b403c48dee7c146daef6095e1d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/balance_of_power.rs",
+      "git_blob_sha": "9785129f8193e83d53a086bdf6e7404b64c47782"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bandpass_filter.rs",
+      "git_blob_sha": "cad9a0b9f3c855f25f931ddbfca205793d5ffd49"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bat.rs",
+      "git_blob_sha": "157153c601c0c1de95ccaad81d737d4d5ad36d4d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/belt_hold.rs",
+      "git_blob_sha": "caeece26a9b7fb2b57f538e3c6ec18b2d9ad125b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/beta.rs",
+      "git_blob_sha": "d7804812e717fa3a17ae8c74ea43b83fbb8b538b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/beta_neutral_spread.rs",
+      "git_blob_sha": "9f6e623416d790777beb3933d50b1f6ca2cf66de"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/better_volume.rs",
+      "git_blob_sha": "6e43d9c705a69652684adb72d46887d28e3421aa"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bipower_variation.rs",
+      "git_blob_sha": "687e4e09a4bef715443b9a950fe2baf22e3cbceb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/body_size_pct.rs",
+      "git_blob_sha": "bf7302776583156f17ccdf5d32a2133a6908cd1f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bollinger.rs",
+      "git_blob_sha": "553466908258d4e5e7024468bbd1fcacee4bc670"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bollinger_bandwidth.rs",
+      "git_blob_sha": "fe66cf29b10a1bbbeffe569a2fe7ad9b1af78fb2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bomar_bands.rs",
+      "git_blob_sha": "c78f0cf11695588b05389e4abfce06fca2745b55"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/breadth_thrust.rs",
+      "git_blob_sha": "2d33ac6cda96f925c1bd5025e6b6257821064d90"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/breakaway.rs",
+      "git_blob_sha": "4b1a61efcc05daae89d57ca7df7eec95afe521ee"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/bullish_percent_index.rs",
+      "git_blob_sha": "6d075680d1aa647383b4fffb9d2fbdee24f5d368"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/burke_ratio.rs",
+      "git_blob_sha": "8799d2b2cf56508f5e2f4174a5f90f31eeade8ac"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/butterfly.rs",
+      "git_blob_sha": "9affafe79f742a7c769b1ef38664a10a70363aad"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/calendar_spread.rs",
+      "git_blob_sha": "a86ace31539957a7f391e0e26478897fbb5d5213"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/calmar_ratio.rs",
+      "git_blob_sha": "9dd871c6f5aae4a6e806919a2f93a7875d3e0a3a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/camarilla_pivots.rs",
+      "git_blob_sha": "d07ce1cdd3f6460c3266d29dc07f7c7596248ee2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/candle_volume.rs",
+      "git_blob_sha": "04d3bbfdeaabb041c7f27bd80920fd6443f43c9d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cci.rs",
+      "git_blob_sha": "4a1ecc0f0c6f4ad849f95a0d0a43f49d0323e029"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/center_of_gravity.rs",
+      "git_blob_sha": "54336ede580f37475d977eae192fcba11b77afde"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/central_pivot_range.rs",
+      "git_blob_sha": "418019ea8c8ac56154afd7374f0851d8115b9670"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cfo.rs",
+      "git_blob_sha": "187d6c46809fa480b396b847b82c345ec373940c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/chaikin_oscillator.rs",
+      "git_blob_sha": "e68d865c6edfba495edea8d052b839ae0ab9fb78"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/chaikin_volatility.rs",
+      "git_blob_sha": "afca5267c378b6159a0250c56b385e7cd912b731"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/chande_kroll_stop.rs",
+      "git_blob_sha": "2ce1f6af2c2efc3e815e1cc4dddf5d9c94fdebee"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/chandelier_exit.rs",
+      "git_blob_sha": "ae1035b9911a832422843c49b670c07ea7066222"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/choppiness_index.rs",
+      "git_blob_sha": "37f9a831ef083a1d3299331fe1d7ac20cd74b68a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/classic_pivots.rs",
+      "git_blob_sha": "3b578279253ba5c6049772fc79a93dcfaf179a4e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/close_vs_open.rs",
+      "git_blob_sha": "b28b3bcbb963330bb638750cbcf26df2d507caa9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/closing_marubozu.rs",
+      "git_blob_sha": "d75929e9a72dc8dcb2ae284c9c302a55019ad483"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cmf.rs",
+      "git_blob_sha": "975e5666e6f5a094a9a3630dd05895b90e0c76f2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cmo.rs",
+      "git_blob_sha": "1b7faba75185ab4b47bb29c07f7b01468189baca"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/coefficient_of_variation.rs",
+      "git_blob_sha": "4d1ef775fa3d4d06401e8441c760a9563416fb02"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cointegration.rs",
+      "git_blob_sha": "4b7a1c39f1fd5542df078264f0d0e63b63a7ec35"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/common_sense_ratio.rs",
+      "git_blob_sha": "1b38ec2ead270a89c817f7ab72d3f87422a5ac7c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/composite_profile.rs",
+      "git_blob_sha": "c9e5031009dbebceb4fbab60290ffdf4c3575b88"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/concealing_baby_swallow.rs",
+      "git_blob_sha": "44f11eb8eaf5f0f8d16264b001005118c976e6f9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/conditional_value_at_risk.rs",
+      "git_blob_sha": "053890ba0e0f519cc7ca2706b750f73bdbfeafec"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/connors_rsi.rs",
+      "git_blob_sha": "1baa203d5d5fbb85f3d65ab9e30eb36734c86382"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/coppock.rs",
+      "git_blob_sha": "7d6d515f51afd2609c9dd9a4cf797e377b2fca57"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/correlation_trend_indicator.rs",
+      "git_blob_sha": "15efe1c26f47e5e063bf7dc573e248675155e3f0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/counterattack.rs",
+      "git_blob_sha": "fa4ab7b0118739197deec59ccbe80ac252bec455"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/crab.rs",
+      "git_blob_sha": "4b932274232fbd71fdaa9dbbc18f2dd87d40e771"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cumulative_volume_index.rs",
+      "git_blob_sha": "cb0cc5b5a94241b343fd44678bb33e45d427a670"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cup_and_handle.rs",
+      "git_blob_sha": "fc4759a92cfa50a9378017d96f7c86986c71c29b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cvd.rs",
+      "git_blob_sha": "8e884567262f956e9d00d607437c08131abd2c10"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cybernetic_cycle.rs",
+      "git_blob_sha": "304ce9f186c9646e940e14d3a8335609102503a1"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/cypher.rs",
+      "git_blob_sha": "ccc5a083bb479586eb11e724d081d0de55baeda3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/day_of_week_profile.rs",
+      "git_blob_sha": "3eac69a70c371b45400b66b8f8d7c2259a1eeeb7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/decycler.rs",
+      "git_blob_sha": "e4219bf50debd7b8fd7d02243e9604d3fe9a1105"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/decycler_oscillator.rs",
+      "git_blob_sha": "1fad3a55683bc8e9e0de5ba15cb5d64b580d3c44"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dema.rs",
+      "git_blob_sha": "4baed346a16f2016c25b38c052d97569e54832be"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/demand_index.rs",
+      "git_blob_sha": "e4c6a95e6866e08fbe5221f2fc65f2315d1932c6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/demark_pivots.rs",
+      "git_blob_sha": "0babaf8ebc964366135bdbedec5c5d48666f222e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/depth_slope.rs",
+      "git_blob_sha": "987035d3784fcbf034fad9a3f3a81de2daabb6e0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/derivative_oscillator.rs",
+      "git_blob_sha": "dff263fc41a74280c7b7464ffeeac868782cf2eb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/detrended_std_dev.rs",
+      "git_blob_sha": "ff0c5d80c78157e3b0303ae541220869cb12d958"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/disparity_index.rs",
+      "git_blob_sha": "1b4da3f440c4d5dd35ba305c5231dd599f07c142"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/distance_ssd.rs",
+      "git_blob_sha": "3eb953a9266efb3eaf9fd2cafb298794cae53123"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/doji.rs",
+      "git_blob_sha": "0650bd74fda8a0b63d0695953b0dd96a85ae5beb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/doji_star.rs",
+      "git_blob_sha": "6a4faac278a802957e10db67c1ecd17f37876dc3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dollar_bars.rs",
+      "git_blob_sha": "ca248c7e77a27a2993de682d39944a3d29f5f8ab"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/donchian.rs",
+      "git_blob_sha": "b7ab6a4743a0b025d7cabd13575c7f69fb24c11b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/donchian_stop.rs",
+      "git_blob_sha": "311dfaed0e72586fc502c161d62d49a2852f46b0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/double_bollinger.rs",
+      "git_blob_sha": "551f503d5556e1dea20ffbb762aac38d36af9501"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/double_top_bottom.rs",
+      "git_blob_sha": "71b5ae17fcce9c6ba54d478d99d36462ef6e8740"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/downside_gap_three_methods.rs",
+      "git_blob_sha": "dd44f40f26bb7327a610e0ffde08908470a49400"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dpo.rs",
+      "git_blob_sha": "5d1633ae492531b538e4185f50a9c11f45862bc7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dragonfly_doji.rs",
+      "git_blob_sha": "6bb0af0bb9304cdc65e2aaccd0dda51cd843e5d1"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/drawdown_duration.rs",
+      "git_blob_sha": "26776b0d7d6faf58d4ffdb390bc6d7efba90433d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dumpling_top.rs",
+      "git_blob_sha": "b39f8028496e80761b0fa72aeb5a4b7a2e8cb98b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dx.rs",
+      "git_blob_sha": "9d4afd83d8b396e34093bd77b15f62af9426147f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/dynamic_momentum_index.rs",
+      "git_blob_sha": "826f5577e9e26827b75a3b269614f0cef0d26918"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ease_of_movement.rs",
+      "git_blob_sha": "600649bd08630d41436e1daecbe6a781218a6348"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/effective_spread.rs",
+      "git_blob_sha": "359dae8f3918fc3778ad34b0f60085651f7eae44"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ehlers_stochastic.rs",
+      "git_blob_sha": "addcadda0065ddfd67d84fdf96acf0da3d441dc4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ehma.rs",
+      "git_blob_sha": "b8d06ddbeebfe756169243bcf63048c5d2473221"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/elder_impulse.rs",
+      "git_blob_sha": "92181f44e25d55390dee3effe567a0e752aef6d3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/elder_ray.rs",
+      "git_blob_sha": "5a1e3d9935a536bcfe8a85e772f9e1b7c5646c94"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/elder_safezone.rs",
+      "git_blob_sha": "48cbe36af85b70c4009b9e555998d05162424851"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ema.rs",
+      "git_blob_sha": "36e74aa579ead980b232bba63b81cf1696bbd216"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/empirical_mode_decomposition.rs",
+      "git_blob_sha": "89af3755508ff3ef1b88e4b00ab173b645a8de65"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/engulfing.rs",
+      "git_blob_sha": "507c44e5ee6e077bf3f54a7e016cfa67b8163b14"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/equivolume.rs",
+      "git_blob_sha": "52592c98909dbc012bd61069caa9ee6bd25a3569"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/estimated_leverage_ratio.rs",
+      "git_blob_sha": "3a1ef6b6490ac2d0ae65652ec29d0c2779b05939"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/even_better_sinewave.rs",
+      "git_blob_sha": "b16d65c0b8701adfa38df8c98783fc5f0d50d8e2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/evening_doji_star.rs",
+      "git_blob_sha": "2664b2381d55c931b2717635ced73e285d53c994"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/evwma.rs",
+      "git_blob_sha": "7a4f9fa6750eedf20f5d79397e69a2940133d951"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ewma_volatility.rs",
+      "git_blob_sha": "8bd59eb579dbbcb3f2382abb95a23c6403a57ebe"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/expectancy.rs",
+      "git_blob_sha": "ff178164f1158b3c4dacc4d9230ab7ebbf3ed1fa"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/falling_three_methods.rs",
+      "git_blob_sha": "34f35e3d96653b768788f571aac3e5cf25759987"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fama.rs",
+      "git_blob_sha": "e091e649d3d63efa19b9920a742e1f6c4143903b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_arcs.rs",
+      "git_blob_sha": "7b165bab63875baf7c55cbc1f542bb8d9e8a81e5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_channel.rs",
+      "git_blob_sha": "058757cb4d4cfb35ee92784fd81a2b866b787820"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_confluence.rs",
+      "git_blob_sha": "248082d154304c5a9dc84950907ebe077bc45a54"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_extension.rs",
+      "git_blob_sha": "4a5a54f192bf1d47b73c279b0b558404b86e1265"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_fan.rs",
+      "git_blob_sha": "1398849213aea2444c759adbe706ba37e3ae30e3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_projection.rs",
+      "git_blob_sha": "91afc51943396bf2a2e3c530744dcf23e798236d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_retracement.rs",
+      "git_blob_sha": "3e556d167d1979903b198e79481abc07146eb7ec"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fib_time_zones.rs",
+      "git_blob_sha": "0255ba039539598fb789e5452d54a5092144e42d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fibonacci_pivots.rs",
+      "git_blob_sha": "4322b9d8816a616cd9e664bf3cd55d244698a5ff"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fisher_rsi.rs",
+      "git_blob_sha": "41c875d66cc742ab2c92ee7aff64ff06d0588750"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fisher_transform.rs",
+      "git_blob_sha": "96a59fee79076d54b40792ab178cab7bb6504584"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/flag_pennant.rs",
+      "git_blob_sha": "955b4e2d8117bb3dc484de973761d7d6d508a42c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/footprint.rs",
+      "git_blob_sha": "d185970524fb887d7e0b8d29c64929ea2d2bb110"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/force_index.rs",
+      "git_blob_sha": "f9bebcc6a1eba7fbbe1d6e21e1d9b75a35e17833"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fractal_chaos_bands.rs",
+      "git_blob_sha": "f27bfced80ec9474d553d109cfaf825328b97b29"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/frama.rs",
+      "git_blob_sha": "3889559ab9514d24921696c41f016216ac542d20"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/fry_pan_bottom.rs",
+      "git_blob_sha": "5d3d799bbace0ffb80d439327397d7d592047e00"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/funding_basis.rs",
+      "git_blob_sha": "6e16a65308169d67e3adc6b08d2170ca6db6d37f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/funding_implied_apr.rs",
+      "git_blob_sha": "0bec90ff6beacb9760a2b9ee18074c1d7bcfd6b8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/funding_rate.rs",
+      "git_blob_sha": "e636993c697e27ee12bdc8caf8b072affcbe26ca"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/funding_rate_mean.rs",
+      "git_blob_sha": "371e2e5b555a74001cbed6146e9079e5c3b2421d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/funding_rate_zscore.rs",
+      "git_blob_sha": "8f03ddc6ee06c0d4f753f8835471eaf6e7e4ba07"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/gain_loss_ratio.rs",
+      "git_blob_sha": "cbcfac2fa3076989ee7df9425c3937d9eb78114e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/gain_to_pain_ratio.rs",
+      "git_blob_sha": "da76f01147bd2406539d800b4b9d978a33ff95ee"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/gap_side_by_side_white.rs",
+      "git_blob_sha": "ac5222cf62bd702e3fa4e75f96f6a7c16cfd3eff"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/garch11.rs",
+      "git_blob_sha": "8214b7f2cdee16aa700bdbee5e157d109394dfa8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/garman_klass.rs",
+      "git_blob_sha": "55df7d5364d30d712a537d6162ad8bf1d96c9a5c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/gartley.rs",
+      "git_blob_sha": "99c1d0ce4e1695881d7e93a2b9a752263e64a602"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/gator_oscillator.rs",
+      "git_blob_sha": "64cbf85a03d50b9a12a14a468bf8f02d515e9e2c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/generalized_dema.rs",
+      "git_blob_sha": "9beab1574ec65e69e1e051fcab0fee082ef7edb2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/geometric_ma.rs",
+      "git_blob_sha": "025883f30788f8659d09115df4ff29d35ee54378"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/golden_pocket.rs",
+      "git_blob_sha": "437786c06a02c36d8f2531d793b3bbe604f49c97"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/granger_causality.rs",
+      "git_blob_sha": "a93e88f83e7c2e438599639e18afa74c27566e6a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/gravestone_doji.rs",
+      "git_blob_sha": "f5e7f52abd538948c30b521c591fb0a79ed9d7e2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hammer.rs",
+      "git_blob_sha": "a97127d732e63dc88b5e905c28e414a3219a2ed3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hanging_man.rs",
+      "git_blob_sha": "dbe77a082b388d6f390f983309c738d88e51650a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/harami.rs",
+      "git_blob_sha": "dbff7bdf8074c168a997cdd9598ccd3e6959bce5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/harami_cross.rs",
+      "git_blob_sha": "8957afb1c0a3801fd3390a8e640c0b3029f7f109"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hasbrouck_information_share.rs",
+      "git_blob_sha": "335eac3559016fd4d6c2aea2743efc5f24562621"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/head_and_shoulders.rs",
+      "git_blob_sha": "01efa51bafd4c366818689b49c3fb9c0b85f00cd"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/heikin_ashi.rs",
+      "git_blob_sha": "45b051d51c5cdb9360c1272482d18ee34af16dfe"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/heikin_ashi_oscillator.rs",
+      "git_blob_sha": "16b4653dbecbf5234fc397881cfbaafaa69bcac3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/high_low_index.rs",
+      "git_blob_sha": "2e3d615a195326d8e04b5590ad607b564d722056"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/high_low_range.rs",
+      "git_blob_sha": "aa2f3ef28db40119cf1cf40562c78b0ef4242645"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/high_low_volume_nodes.rs",
+      "git_blob_sha": "a9cb9fb6dc7b67d049d4bc6fa79cbd2b4c052c37"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/high_wave.rs",
+      "git_blob_sha": "469b0f6a3c71233430124413432e2ec67d2ee27b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/highpass_filter.rs",
+      "git_blob_sha": "e89d9f96933473e0c75c3061c727d89a954c7a30"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hikkake.rs",
+      "git_blob_sha": "e5c88b64d06c3bd6b264565257259fdb271bbc81"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hikkake_modified.rs",
+      "git_blob_sha": "f52ca3ba8d31d06e51c688a730e606885b6fed55"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hilbert_dominant_cycle.rs",
+      "git_blob_sha": "b0b0e81d7adcbeeab5779f44608ef94737d2dc3e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hilo_activator.rs",
+      "git_blob_sha": "b3425d52ee25d9eac140b5620914825b4c8fd728"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/historical_volatility.rs",
+      "git_blob_sha": "1f1e440511a1cd9d1a5257499a1f570d33590b89"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hma.rs",
+      "git_blob_sha": "65a849ce7f3ebb61feab29b1d1ba9ad43577fa19"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/holt_winters.rs",
+      "git_blob_sha": "6981d456183a99b11234917e25e1cbb5c50214ae"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/homing_pigeon.rs",
+      "git_blob_sha": "8fbdb0ec879e512c9f09f8495b43deecc30e78b3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ht_dcphase.rs",
+      "git_blob_sha": "9288b3a314bcfd8ced69b5a63bd26e608b999a78"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ht_phasor.rs",
+      "git_blob_sha": "f1acf342b82b3ca21adf19f8a0abf7d3dfd3e97e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ht_trendmode.rs",
+      "git_blob_sha": "998c0f503602e758d75ca7b1e433c85096beb8ba"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hurst_channel.rs",
+      "git_blob_sha": "df95735fb5351fbaaeb4ee05b674855582c52e7d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/hurst_exponent.rs",
+      "git_blob_sha": "18795da4fb53f5ba4fcf9d5210436de7c8eca6f0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ichimoku.rs",
+      "git_blob_sha": "d047b5625d1e24d816d3a2a390859e065f583ce6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/identical_three_crows.rs",
+      "git_blob_sha": "84cb388c4e1736e9a0c5ce65166e415b64617a34"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/imbalance_bars.rs",
+      "git_blob_sha": "d04691d39e207ca6d0a8fe674dd5e9b6105b2f7f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/in_neck.rs",
+      "git_blob_sha": "d4f00106c1f0df5f2d8031eba4a466564a81e769"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/inertia.rs",
+      "git_blob_sha": "2af26521b9cb62541fe6188b042afa95393df83a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/information_ratio.rs",
+      "git_blob_sha": "fa61407e9f317a13d8e1ebfd6b835719bf8577d6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/initial_balance.rs",
+      "git_blob_sha": "bcd4a1795390dd4615947a6dc0b8e75a5fd28909"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/instantaneous_trendline.rs",
+      "git_blob_sha": "57f58c32780076a1928d81a596af95407bae0d48"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/intraday_intensity.rs",
+      "git_blob_sha": "ee23bdaa73d8d2d13d2cb99fa7b2fa4363debb77"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/intraday_momentum_index.rs",
+      "git_blob_sha": "e0cf6762a012d3407127a0ad898c1648a278b7d5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/intraday_volatility_profile.rs",
+      "git_blob_sha": "d632e85ec906c4d4d42342a1533a61ed37acf5eb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/inverse_fisher_transform.rs",
+      "git_blob_sha": "02c4671aa86c7cd6071644d18c25de72d74bb7ba"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/inverted_hammer.rs",
+      "git_blob_sha": "553a7b280491b6c923cf9380474717927757c90e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/jarque_bera.rs",
+      "git_blob_sha": "6a6c9dec61dd55872ad03a28bc902282fb9ed084"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/jma.rs",
+      "git_blob_sha": "40696361667c519f9e146536110dbe52cddb1fd2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/jump_indicator.rs",
+      "git_blob_sha": "b28e0a0923e04d942cb9214a59dc5a2b0e8f576d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/k_ratio.rs",
+      "git_blob_sha": "842a8195662737dee574afcf260876a4c5b61352"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kagi_bars.rs",
+      "git_blob_sha": "2e26685cff78b956b317840339147839692d7a3a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kalman_hedge_ratio.rs",
+      "git_blob_sha": "5343be2b1e6cc653e5d35a7c2dcf947aa53eb700"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kama.rs",
+      "git_blob_sha": "47995636e258d4ea17846e218995f38b244ccf19"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kase_devstop.rs",
+      "git_blob_sha": "9e257df3418aac0f536343cd6c35d240ce6b8938"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kase_permission_stochastic.rs",
+      "git_blob_sha": "a00bc930550df16aa7cd0e6a4b4c8df085fa3a18"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kelly_criterion.rs",
+      "git_blob_sha": "8f31183300fd755a53529d68826fa8db8fbcfce9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/keltner.rs",
+      "git_blob_sha": "e55720b944f55b1501770ef48f82cf2b1603524e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kendall_tau.rs",
+      "git_blob_sha": "8f98d40eedaeff72a5d8ce27ad5668d23e15cc5f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kicking.rs",
+      "git_blob_sha": "a5075559fc747fc0920cba803e5c245f5027e383"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kicking_by_length.rs",
+      "git_blob_sha": "f5bf4708939a104e7bad74b9e8372f6f539955ce"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kst.rs",
+      "git_blob_sha": "a92ceab13355afbae1e8e4d35739f6b014999354"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kurtosis.rs",
+      "git_blob_sha": "e22d8813321bdb9d5ef2bd4b3ef33e85e7966b0e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kvo.rs",
+      "git_blob_sha": "bcfaf3ddda59ef2e9ae7a1edc539a5325d5ea2a3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/kyles_lambda.rs",
+      "git_blob_sha": "5a6fd7c5f6db7474e6c0797c8a4bc161c338bafb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ladder_bottom.rs",
+      "git_blob_sha": "058482af70ed47862f5a7af538ef77b65dd1f656"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/laguerre_rsi.rs",
+      "git_blob_sha": "17de9f0ece3816e0726fb6254dcd0ebff1c600ae"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/lead_lag_cross_correlation.rs",
+      "git_blob_sha": "c90d8254db51fa2d03b5a7fa1276e6c2fa31901b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/linreg.rs",
+      "git_blob_sha": "79c1b5a904cc89c9a20f90055880fff54e946f12"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/linreg_angle.rs",
+      "git_blob_sha": "dc0984b65a62d62e7d6eaf7c435ea700ec54cbf7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/linreg_channel.rs",
+      "git_blob_sha": "b730f2bcbc4b458fcf29b54a0984598f1b04ac32"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/linreg_intercept.rs",
+      "git_blob_sha": "9b46e70367a58b5c28d7e76263d65d731b2d321a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/linreg_slope.rs",
+      "git_blob_sha": "0972b379c19546425de6762448609e823de9c93a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/liquidation_features.rs",
+      "git_blob_sha": "7227afd7b59662fd9d4222df5b53fd40690a5eef"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/log_return.rs",
+      "git_blob_sha": "04c6f70bf361b676ad25fcfa120438748927c5f5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/long_legged_doji.rs",
+      "git_blob_sha": "b32d196fdbfe5b8ce544ddd48ed0d859407553f6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/long_line.rs",
+      "git_blob_sha": "82f5af77eaddeb097560de459e16a2242a695586"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/long_short_ratio.rs",
+      "git_blob_sha": "5859a681776d86c35dacfa88c6e4eb1b6f9bcec7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/m2_measure.rs",
+      "git_blob_sha": "14dd85a7620df7f96e23a925fe8b33cc3be04526"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ma_envelope.rs",
+      "git_blob_sha": "57774ec1a5d7a340be9ac90dc9a64e5b646707d7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/macd.rs",
+      "git_blob_sha": "0b371c77dec4c5070e1f9ab78e46126646e6e61e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/macd_ext.rs",
+      "git_blob_sha": "e4809494b84fe0c8d984d87a69ecc862230429ca"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/macd_fix.rs",
+      "git_blob_sha": "8536cbdc12784e21a6e2caf3276a6fb85f945a67"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/macd_histogram.rs",
+      "git_blob_sha": "d7b90454603250381cfa1b193fd6d1e199a7c174"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mama.rs",
+      "git_blob_sha": "d216992e4ff63b046f8b757497a36459f2c2cfca"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/market_facilitation_index.rs",
+      "git_blob_sha": "a1b294da7f03fcd6dd8508312f423ef06a70d35f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/martin_ratio.rs",
+      "git_blob_sha": "94f7372ab97507bc8911f73e8a0af8653bfccc5f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/marubozu.rs",
+      "git_blob_sha": "0e931ea76a6459b3917493f112b84b3f4ad70c6d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mass_index.rs",
+      "git_blob_sha": "2a08c0056a7f27892957f8691c05d7772c5618e3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mat_hold.rs",
+      "git_blob_sha": "cb5052654f378537be82f266536269afacbe2706"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/matching_low.rs",
+      "git_blob_sha": "c49fb98486f24277758cb0faf7e3414cb0bd40d5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/max_drawdown.rs",
+      "git_blob_sha": "daf387423abf0d5b6f728644a896f9eb667e3db3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mcclellan_oscillator.rs",
+      "git_blob_sha": "670c6e8b6d25771179539e0f4f13e62076bb1435"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mcclellan_summation_index.rs",
+      "git_blob_sha": "d2bdc8887df023e30ae13a45a0bf8e0f02e4761b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mcginley_dynamic.rs",
+      "git_blob_sha": "bae2d566da42b8f6ac574b2140964cd5175e951f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/median_absolute_deviation.rs",
+      "git_blob_sha": "5daec6902a7b8bf7c18931b42fd3c8f95a0405f7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/median_channel.rs",
+      "git_blob_sha": "9f702edb0a8dd56f54de3fab489a9350d16f0c67"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/median_ma.rs",
+      "git_blob_sha": "1e86e831b1a1a5fd85a363df13b2d860f8ea1abd"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/median_price.rs",
+      "git_blob_sha": "fcc922cfd16275adf53fc6c41b359efc3297359c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mfi.rs",
+      "git_blob_sha": "1b97ce607e03e8eca93b4947291a508e5353e49b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/microprice.rs",
+      "git_blob_sha": "34860814b526f1e712b8634a22b22f892e046814"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mid_point.rs",
+      "git_blob_sha": "3cb4e0c46b82d9a9682fa0e37ae70ef26db5d8be"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mid_price.rs",
+      "git_blob_sha": "03ed9cda26f539b6298d7e7e84997f41259521f9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/minus_di.rs",
+      "git_blob_sha": "007775987cb80908aefa1f470ac846a42294ccac"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/minus_dm.rs",
+      "git_blob_sha": "9639d696a77142ae1a013e4c6e8ba035435f095d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/modified_ma_stop.rs",
+      "git_blob_sha": "35c66f5753d2c7d5e8ae596759169cbf011e5d32"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/mom.rs",
+      "git_blob_sha": "679a3fbfbde8fb2135d99dd494dd6e4d72381024"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/morning_doji_star.rs",
+      "git_blob_sha": "60ad5cebac31ab48823cf346d7aa794d745391e5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/morning_evening_star.rs",
+      "git_blob_sha": "aa61254ef105b65228d49fc2c4f54cb09d278d8d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/murrey_math_lines.rs",
+      "git_blob_sha": "6b6feb76431d3a986407e26af4318d383f2a9f2e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/naked_poc.rs",
+      "git_blob_sha": "95c5db13b9bd84e773f53eb89e9258049e620448"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/natr.rs",
+      "git_blob_sha": "36ebc2179bbb26261832a8cc3199323dc28148c0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/new_highs_new_lows.rs",
+      "git_blob_sha": "a55d1998ee5df3ae912aefdded91520f4756d4b8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/new_price_lines.rs",
+      "git_blob_sha": "8afb51f810425b7cd896b4cb55a28c630dd1ba99"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/nrtr.rs",
+      "git_blob_sha": "3d431495d57538563ef73e4cad49f541aa003814"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/nvi.rs",
+      "git_blob_sha": "31893dbdc532c20014550df87cb374b4b5d49fcc"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ob_imbalance_full.rs",
+      "git_blob_sha": "fd0e4a9188a133d9c0e5591e74200bc682ff5b90"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ob_imbalance_top1.rs",
+      "git_blob_sha": "6bb998a2a13cd16f792c5c3f25d45c389be8e886"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ob_imbalance_topn.rs",
+      "git_blob_sha": "54c5fe4e6d5a39a0043bc05b4dcfae4df2e931dd"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/obv.rs",
+      "git_blob_sha": "76f446345dcb427ef46650a0ac1756d475b2a33f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/oi_delta.rs",
+      "git_blob_sha": "a26b48aa6e3d77cc80414aef871234696d3d51f5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/oi_price_divergence.rs",
+      "git_blob_sha": "7274d9d354b907738caf62352c5ee6b95b78964b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/oi_to_volume_ratio.rs",
+      "git_blob_sha": "2d8042d7b71d8b59913cf39f52fac56404fad7ea"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/oi_weighted.rs",
+      "git_blob_sha": "8a95b3a0a38e55afcbc08ac07e921a4b2d5bbd1a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/omega_ratio.rs",
+      "git_blob_sha": "dc1b31c70737f4850671c504671e053ca857a55b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/on_neck.rs",
+      "git_blob_sha": "f1ebc059bce699d14a8124b778a727892bd07e57"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/open_interest_momentum.rs",
+      "git_blob_sha": "761c6d8fe43f38c93a9c58d60c5f007a8bc578e8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/opening_marubozu.rs",
+      "git_blob_sha": "1cc320df5550c64a5b7d3e7cbce093188049c28f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/opening_range.rs",
+      "git_blob_sha": "b6133cc2ca7d011c4d46efbe50b5ba29d6312651"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/order_flow_imbalance.rs",
+      "git_blob_sha": "dbba59904e32c02ca8664f2046fc2b1da02489f7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ou_half_life.rs",
+      "git_blob_sha": "0278126095f400e2c6b2f95f40e6d3fc58c4bec3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/overnight_gap.rs",
+      "git_blob_sha": "387940b2255437db6628a7e6d9a93512074c2623"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/overnight_intraday_return.rs",
+      "git_blob_sha": "345dba0375040154d53206c3cdb853758ce63555"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pain_index.rs",
+      "git_blob_sha": "66f908ae5fd273dab49eacb78006969fc46ed46f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pair_spread_zscore.rs",
+      "git_blob_sha": "684e431348538a802fb7a4e2904a5e2b18f3a125"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pairwise_beta.rs",
+      "git_blob_sha": "936f5c9bee5e28080d36743b661db255fd710721"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/parkinson.rs",
+      "git_blob_sha": "8bade2556111f60c6a4762d4ec98295c30d10a46"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pearson_correlation.rs",
+      "git_blob_sha": "d376837b19cf379d6c0f13b1a0d6194c3bafa0ed"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/percent_above_ma.rs",
+      "git_blob_sha": "5a802548836e08005d93a418184755183f9559d4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/percent_b.rs",
+      "git_blob_sha": "a22e382fd0b298201a64ab903b3ca7b0a36d1f65"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/percentage_trailing_stop.rs",
+      "git_blob_sha": "be797c4d91ec9dca66112f5ac65884cb4fe43601"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/perpetual_premium_index.rs",
+      "git_blob_sha": "90b16ee8a8692afbe7def66ae48a965ff8ae6fb7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pgo.rs",
+      "git_blob_sha": "b55e7af3833937b8a0be6408365b4db3c263a75e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/piercing_dark_cloud.rs",
+      "git_blob_sha": "29b0555977630dc25586e0881a0c6d4d12682f4a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pin.rs",
+      "git_blob_sha": "036672fd54fc13b68b8af2435d5478ceefa8429b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pivot_reversal.rs",
+      "git_blob_sha": "125b078c0a768ebcdf1dc4bbbc0c1d512fa266b2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/plus_di.rs",
+      "git_blob_sha": "b6797df161f9b4e46805c7e2d271feac7bf57af0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/plus_dm.rs",
+      "git_blob_sha": "38b5b5663981790d26775a33668a94e6a6f22462"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pmo.rs",
+      "git_blob_sha": "9c3468311bb0e9a97477c594c7584cb9225b7b30"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/point_and_figure_bars.rs",
+      "git_blob_sha": "d11d47e411837761bd8bceebc2f1ce4d61fc9a1f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/polarized_fractal_efficiency.rs",
+      "git_blob_sha": "cf89fb44d83eb0c916efe2d87449561778711244"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ppo.rs",
+      "git_blob_sha": "88368f7f5e7b5ec05568a61ac9b59cdcf26362bc"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ppo_histogram.rs",
+      "git_blob_sha": "9ed8a75b11038bb5eb730b42f4ac6aa228cb563b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/profile_shape.rs",
+      "git_blob_sha": "9b6a3e7385782741ef4ad0779e6677b91c2c7c83"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/profit_factor.rs",
+      "git_blob_sha": "52c0c79735678dd778dc9750e67a45a7e539da61"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/projection_bands.rs",
+      "git_blob_sha": "1e81eb4c5dceec018b64cc9742acd0e025bc3a13"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/projection_oscillator.rs",
+      "git_blob_sha": "0c0cb0ca97071bd02c8f5f9ce12766da1696673e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/psar.rs",
+      "git_blob_sha": "241d6016782c04800d99ef8062afe6525c4a9f2d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/pvi.rs",
+      "git_blob_sha": "3d2d0d659349a4e88dbfa518b8218e4297ba65be"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/qqe.rs",
+      "git_blob_sha": "76ddd6b0098ef54ad7980fa4e03dd30a2ebe9731"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/qstick.rs",
+      "git_blob_sha": "98967162731455c86c302f6a5532c8d13c5bd08b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/quartile_bands.rs",
+      "git_blob_sha": "15ffbaa87b6dedd0bc941138839ed568f8955c16"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/quoted_spread.rs",
+      "git_blob_sha": "e60ee6357c42ed0b9777e19e2dec6fdfe64a24ab"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/r_squared.rs",
+      "git_blob_sha": "76d93b1e1f1b3f95f4d66a9e8f443a14b6570537"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/range_bars.rs",
+      "git_blob_sha": "7c63b8a5b810cccdf657ed9e3fa3b636b78579fb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/realized_spread.rs",
+      "git_blob_sha": "8687af8127b9a705c6dc6945de3a8b4a25a40b3d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/realized_volatility.rs",
+      "git_blob_sha": "5e334a65015fbc7a4d84b08fa968cf808b14f75f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/recovery_factor.rs",
+      "git_blob_sha": "243852275b3843d7805adbccbaf5a46701d0fe1b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rectangle_range.rs",
+      "git_blob_sha": "a312b20bc0d17c6531e2f89d9dbeba7ee17e57e8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/reflex.rs",
+      "git_blob_sha": "49f05ed423d6c4859b196b94120bb33425e346c5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/regime_label.rs",
+      "git_blob_sha": "8e5f4e4cbc85d87f45744753134c9d971908e1f6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/relative_strength_ab.rs",
+      "git_blob_sha": "77040638def88e4be572e5b77464e2ee62619f68"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/renko_bars.rs",
+      "git_blob_sha": "8874f93e186b42266b0ad9d6c0c129db809fea2b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/renko_trailing_stop.rs",
+      "git_blob_sha": "03659f9f494a7305da7c65eeca3a349e0fe1d8ae"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rickshaw_man.rs",
+      "git_blob_sha": "22051e71dfa5cfd8e1b37d614e71378c71cc1e66"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rising_three_methods.rs",
+      "git_blob_sha": "534aa65be5e13044c6a3d5e2a2977eb556adeefa"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rmi.rs",
+      "git_blob_sha": "8cc95ff2a59d326bbe6bd1b62686682864def0ec"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/roc.rs",
+      "git_blob_sha": "25ae73ab85a3d54b9e3e57dae2eabe1246be523e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rocp.rs",
+      "git_blob_sha": "5686d1cf48a36da098abfdd6173e97789af9e55b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rocr.rs",
+      "git_blob_sha": "e1329752548870de6de374c0343611877f8a7c44"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rocr100.rs",
+      "git_blob_sha": "fecef4ec74ff0d487ba3600902c1deb3bd975252"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rogers_satchell.rs",
+      "git_blob_sha": "2577ecacd5bedc50e18154d7fb96d231ad2fbc79"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/roll_measure.rs",
+      "git_blob_sha": "23ff4aaed15e4eea1113e7c33afc7819ad9195d8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_correlation.rs",
+      "git_blob_sha": "90d39b7b144f15eec24f8acb5a6041c14b255e8d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_covariance.rs",
+      "git_blob_sha": "b59a925d7556cd781bcdd482fd1ac4c62016380b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_iqr.rs",
+      "git_blob_sha": "e39f903fdf322a3556bc6f2b94e5fee5e36bc46e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_min_max_scaler.rs",
+      "git_blob_sha": "5bf7577877178105322298e9b4d2acffd784083b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_percentile_rank.rs",
+      "git_blob_sha": "21682689acdec241c9c85902a7abd48e1a042d65"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rolling_quantile.rs",
+      "git_blob_sha": "0b3891399de8b559daca93d5e4a479c6c59e0f25"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/roofing_filter.rs",
+      "git_blob_sha": "e9d6c7a45e4105a4dd372cb47bedd6e316a16cb6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rsi.rs",
+      "git_blob_sha": "6bfe5d6ddf44df2e996d7b0ea3818884db88f5ad"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rsx.rs",
+      "git_blob_sha": "68e66d24badda743611b211e6abf83d3246ddca5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/run_bars.rs",
+      "git_blob_sha": "16cc1819e987ca997e70a13f1ad67932b159c60b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rvi.rs",
+      "git_blob_sha": "c77c438955809b7688afefbdea0aea404ce235a3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rvi_volatility.rs",
+      "git_blob_sha": "9bd5f27e53584045e6aa69cb5a9dab468b09866b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/rwi.rs",
+      "git_blob_sha": "a4b6fa8c787d0b12d76e9025ccd0bd2d2be23f1e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sample_entropy.rs",
+      "git_blob_sha": "2a6ff76dce3a78d7a701ac60d1a940ed4db9dce2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sar_ext.rs",
+      "git_blob_sha": "3b1db754b1211489d7f474614545cc03f949f360"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/seasonal_z_score.rs",
+      "git_blob_sha": "5a6d16bf7d5beb705adb10f38f806fd7eea57af6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/separating_lines.rs",
+      "git_blob_sha": "ee4bd9d25a23e08beedf7f272ad4109c4ea4aab9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/session_high_low.rs",
+      "git_blob_sha": "1a668d54e40f7b2d7f730149b5e3925794cdefa2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/session_range.rs",
+      "git_blob_sha": "863e556a827874944570398c9b79acc90a309f3f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/session_vwap.rs",
+      "git_blob_sha": "7777d6d5e125523ef9ea4471b40c0d97b51b39b0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/shannon_entropy.rs",
+      "git_blob_sha": "db4b7b12c264de358f164a00fb1fb20353cdc4cd"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/shark.rs",
+      "git_blob_sha": "174ae55c9717699248d422cc2f384433678d9aab"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sharpe_ratio.rs",
+      "git_blob_sha": "234e7db07d410d25bc9c73d2feb539fb50594ef5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/shooting_star.rs",
+      "git_blob_sha": "26acc821543c509216dcae0f1b8b23cc28700de8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/short_line.rs",
+      "git_blob_sha": "0410399c2a9c53f6b160e2f95bcd10d213745e1a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/signed_volume.rs",
+      "git_blob_sha": "4d1f57e0df1e1a2a3d002447a79d7de9f10e34be"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sine_wave.rs",
+      "git_blob_sha": "bf8207053e5d45b034c42075fcca9476511d4824"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sine_weighted_ma.rs",
+      "git_blob_sha": "2a195147cc87bbed32b4fc580cf3a6968e4966cc"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/single_prints.rs",
+      "git_blob_sha": "7fbe6faa8ff93a69507149a374787e792138cb2e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/skewness.rs",
+      "git_blob_sha": "e449915d66ce86410701945d581010dbef5e89cb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sma.rs",
+      "git_blob_sha": "b78e1987772c54fd905a1b41e86ea14622703281"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/smi.rs",
+      "git_blob_sha": "984e0578ada478f4b01ad52083a63bbe01c89f7d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/smma.rs",
+      "git_blob_sha": "ae719ed7aa0ce554fc249fa169a092278b203231"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/smoothed_heikin_ashi.rs",
+      "git_blob_sha": "80e1b37ef7ef78a5e3dc84f4db277886729b0bdf"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sortino_ratio.rs",
+      "git_blob_sha": "836426a26c649591474ac881f01079e167e692a3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/spearman_correlation.rs",
+      "git_blob_sha": "e9b968a58c0ad84c0821b075a71e7ef4dbab070e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/spinning_top.rs",
+      "git_blob_sha": "f8a9413a9f8685176bf8dfed3c93f6c87d8f4eac"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/spread_ar1_coefficient.rs",
+      "git_blob_sha": "1c16b068dbf183f8a1414f15259739b57938e7e6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/spread_bollinger_bands.rs",
+      "git_blob_sha": "fc9322c3d2a1e9a81b25b19d4537aee97a8eb24a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/spread_hurst.rs",
+      "git_blob_sha": "ca46d06f24a11d5ba2e4bb8753c0f3cf9ced2b59"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/stalled_pattern.rs",
+      "git_blob_sha": "d03dc88574e1030722be3e4e8769392e2b29e832"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/standard_error.rs",
+      "git_blob_sha": "b4de59afb7bcdc3b27fce3367ace5e73305805fa"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/standard_error_bands.rs",
+      "git_blob_sha": "6b0f531d256f91b4b06eeda7b0165a32a00ae639"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/starc_bands.rs",
+      "git_blob_sha": "2b8d2927f29795b72a25e0713ec05becd8959a15"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/stc.rs",
+      "git_blob_sha": "1d541f17d712276980d7cb896a6ce185b32ba6cb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/std_dev.rs",
+      "git_blob_sha": "561b5a12c74d3e0131188d8274f4ab660aa176e5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/step_trailing_stop.rs",
+      "git_blob_sha": "236754b2a29b5c9572b8dae2a5ddfd34c348c833"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/sterling_ratio.rs",
+      "git_blob_sha": "331ae300b5e09c7d7a2db6c19623092316f3d531"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/stick_sandwich.rs",
+      "git_blob_sha": "b55fd41ad76b1904a41f17f072475fe15e51d620"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/stoch_rsi.rs",
+      "git_blob_sha": "5e18b48186a04cdb5f09ab9721d0a8d44450d5ba"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/stochastic.rs",
+      "git_blob_sha": "42584505d244cee72545c83d1120aeae05a5cc97"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/stochastic_cci.rs",
+      "git_blob_sha": "a0f23788142302e58c81f2802b9ca3ff9c0b10e0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/super_smoother.rs",
+      "git_blob_sha": "153b9d19d6180311c0769016a7577287ef9d2eba"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/super_trend.rs",
+      "git_blob_sha": "4a20456abacf4c928fdbe7fca18e8d5c23dcf785"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/t3.rs",
+      "git_blob_sha": "5ca7f857610fe085062c86666af1c20ce99a48a6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tail_ratio.rs",
+      "git_blob_sha": "a43dcded0d4f58d618f61f73801b216c738a083c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/taker_buy_sell_ratio.rs",
+      "git_blob_sha": "efc77378c6cb8b0d377135b938eb6a541e7e43b9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/takuri.rs",
+      "git_blob_sha": "642d7fd99103451726d9af29e7a9c4c27929fb09"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tasuki_gap.rs",
+      "git_blob_sha": "b2493ab84e5da1a536282b67b660b6c3623d9cd7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_camouflage.rs",
+      "git_blob_sha": "0bf67b1a4b568192962cb49c7ce0e926ed16d3ae"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_clop.rs",
+      "git_blob_sha": "b3eafa949237ca1a241ed88bee57b5410b2e87c9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_clopwin.rs",
+      "git_blob_sha": "a9b1f41d748f4c92cad014578f87ed75c53590a6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_combo.rs",
+      "git_blob_sha": "aef38ce3e821bf21fd5b1ec8898b42ac9d5b6200"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_countdown.rs",
+      "git_blob_sha": "2663caf482dc2dbc037a5af88d51ba64aa9a3ea5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_demarker.rs",
+      "git_blob_sha": "fba300ee8425ec2a9a3f567fdd25dd4f1804f79e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_differential.rs",
+      "git_blob_sha": "c04ee49f2c584aa24eb7f5686d4c108b5375d06b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_dwave.rs",
+      "git_blob_sha": "b76c5d760ca57a643b547919a2f7d790c28ba6db"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_lines.rs",
+      "git_blob_sha": "05f9716d9d509c17871d0d9e5e877185b76ff679"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_moving_average.rs",
+      "git_blob_sha": "9adc7a8d8c2ba52297912f718ffb590f133d3c39"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_open.rs",
+      "git_blob_sha": "f181ab8414ec53f38f49695fa76a10d12489645a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_pressure.rs",
+      "git_blob_sha": "d2196b35b746782f7c023353255ec47087eb7df8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_propulsion.rs",
+      "git_blob_sha": "cb03e86b6ae72de891ed689200d3d5e88edb1d77"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_range_projection.rs",
+      "git_blob_sha": "2401bb44f540f7ae7624d2ed551e09166cf549b1"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_rei.rs",
+      "git_blob_sha": "a9dd0d5bbc61daffd3710504c98031784c1be232"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_risk_level.rs",
+      "git_blob_sha": "0b610149d393a618abd2ca2e153117f394e6e99a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_sequential.rs",
+      "git_blob_sha": "e645d744e89c38eca4e79eb94e3110e8e36c51d8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_setup.rs",
+      "git_blob_sha": "36c9a5e3def57b084d3cf4467fe84e95f52410b6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/td_trap.rs",
+      "git_blob_sha": "08bfa1ff2052e1b349f02c067be9c7398653c08e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tema.rs",
+      "git_blob_sha": "04923bad8e5ed2df3aaeba80d909b8765fa8f535"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/term_structure_basis.rs",
+      "git_blob_sha": "afa938e13c885fcc3a6aa5270ac1d7bab1431a27"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_drives.rs",
+      "git_blob_sha": "51b8c2278cb8003eb1923ab18368c0438607273a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_inside.rs",
+      "git_blob_sha": "a82e13ab1bde4313eb5402690f60eba5f927140a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_line_break.rs",
+      "git_blob_sha": "3a7dfff691a7e9d6a61904a686c8b736e12d74e7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_line_break_bars.rs",
+      "git_blob_sha": "92d1abeedfb016ae6bed59b97fb38623c2e82fc5"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_line_strike.rs",
+      "git_blob_sha": "78e5b3d28f2b796f1f0e533533694dec70d25ce2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_outside.rs",
+      "git_blob_sha": "fe2be719918e50969201e93525ee4854688b130c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_soldiers_or_crows.rs",
+      "git_blob_sha": "b10942b385700a3e3e5283ab0312ac90698af56b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/three_stars_in_south.rs",
+      "git_blob_sha": "6bdc242fad94036fd95ec77a4843f17ce0ce0642"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/thrusting.rs",
+      "git_blob_sha": "8c53d70717f9c5bf978f534db93b2ebb5e39802b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tick_bars.rs",
+      "git_blob_sha": "85d7a2017b81f75b45b9f9f3e08616825c99e33d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tick_index.rs",
+      "git_blob_sha": "376e629640cd72e038a33238cf5c90f59617a4bf"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tii.rs",
+      "git_blob_sha": "6f979cdf8641a22c080fe8460b03779774e4ef8b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/time_based_stop.rs",
+      "git_blob_sha": "9e3e2d461aae6b20e0939a89040290e806155c41"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/time_of_day_return_profile.rs",
+      "git_blob_sha": "c8647c0497bd348dee5699020ee2e9c556b44afa"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tower_top_bottom.rs",
+      "git_blob_sha": "77d1dfc1e8b586a980877514f284e806688b58c1"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tpo_profile.rs",
+      "git_blob_sha": "41be0050acc3f04111e7d318125e0a7ed450973c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trade_imbalance.rs",
+      "git_blob_sha": "de9536ac9f1d3450f39fa5bcf0096f61501babf7"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trade_sign_autocorrelation.rs",
+      "git_blob_sha": "a449abc71d2202d201d7720b68fafde76117d928"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trade_volume_index.rs",
+      "git_blob_sha": "f653b56da9535894233dc787ab56feb6e8cbd64d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trend_label.rs",
+      "git_blob_sha": "b1b128a2ced717f73a6428cbd764ae623c9b79e4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trend_strength_index.rs",
+      "git_blob_sha": "c9dd3a17832f2f8e5b68734e95c01dadb26fa64a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trendflex.rs",
+      "git_blob_sha": "66d5924d0cfa444274a103ab879ce5c8fb446251"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/treynor_ratio.rs",
+      "git_blob_sha": "a45a4eefa1cb2fd48483f12d24678236ac158d33"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/triangle.rs",
+      "git_blob_sha": "d7bf5bc46b0f3d9b6016c8d01fb54e558e680495"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trima.rs",
+      "git_blob_sha": "63db8313534ca04d0b009539b0db38d663aa9778"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trin.rs",
+      "git_blob_sha": "eb14c9a47e7f2f3eed8dfd747c0477cfb3581937"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/triple_top_bottom.rs",
+      "git_blob_sha": "483e7823e8bcdaa37e04801da227dd05a00416b4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tristar.rs",
+      "git_blob_sha": "efe5ececd18ace0c1728816d668fa5afac622f84"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/trix.rs",
+      "git_blob_sha": "99d463817c3e5b029e2631c325b7a2cb5d9d645a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/true_range.rs",
+      "git_blob_sha": "0eef3f3305fbb86078e3d8d80898f806445d63bf"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tsf.rs",
+      "git_blob_sha": "7e63c59e8e358f162f4f917f8f5ca9faa4fa6425"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tsf_oscillator.rs",
+      "git_blob_sha": "7c727cccf48c0691c38fb0fb217663f7699c7e2c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tsi.rs",
+      "git_blob_sha": "f1e39221d5ce2c7a40458f377e4e9778ef5281f9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tsv.rs",
+      "git_blob_sha": "f08ef60eae8bf6f80ea034ec5f93233743e3cf88"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ttm_squeeze.rs",
+      "git_blob_sha": "3a73f022f3ecbf050b0ca97f00c4e9691a3ada05"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ttm_trend.rs",
+      "git_blob_sha": "f00928e8b5b181fe7d8f1ea89ee8ac6c94b40671"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/turn_of_month.rs",
+      "git_blob_sha": "b1810e44a72827137195048e5fd434949f2db0e2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/tweezer.rs",
+      "git_blob_sha": "1f024525d06f1c391aeec9ca91b8efa3d3a30ee9"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/twiggs_money_flow.rs",
+      "git_blob_sha": "26e1e38d00de8f081055a26b8c44b3d845a70b64"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/two_crows.rs",
+      "git_blob_sha": "a732af347ad9fc4f093bf4ce9794871d09359d99"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/typical_price.rs",
+      "git_blob_sha": "f7196bb47088767a0ef028110aa89cf18e066fed"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ulcer_index.rs",
+      "git_blob_sha": "43a5120cf6173d5695f6a00f07063748b9f3fe48"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/ultimate_oscillator.rs",
+      "git_blob_sha": "2749603e37e3c8805ffc5a6787ff7a518f764a9a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/unique_three_river.rs",
+      "git_blob_sha": "3e66be36b7977fcb188a885c7a663516939c2c5e"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/universal_oscillator.rs",
+      "git_blob_sha": "a7a68241b27d57f1bec4f2cf2f9be888c53ee7b6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/up_down_volume_ratio.rs",
+      "git_blob_sha": "61a5f518cc75cfbbe0319cc9618d265458c9cde3"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/upside_gap_three_methods.rs",
+      "git_blob_sha": "35b5ed5b0a08336c860c55af29702f431e16ec4a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/upside_gap_two_crows.rs",
+      "git_blob_sha": "f6453a6f5dc2569a772b78a064a48b241cc2fc3f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/upside_potential_ratio.rs",
+      "git_blob_sha": "2e0079f9079aac1b4d0a9668fdaf8d9512cf7f89"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/value_area.rs",
+      "git_blob_sha": "c1a8c32e730e1e839971079f2b95f38faa7e00fb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/value_at_risk.rs",
+      "git_blob_sha": "71f11f2111200331ebed5ca1539277653bec257a"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/variance.rs",
+      "git_blob_sha": "ec5bc317e1e2a89f3f59ae08a57edc1a14545402"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/variance_ratio.rs",
+      "git_blob_sha": "9d9ca80f90389ca925693615933ad861f96df2d0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vertical_horizontal_filter.rs",
+      "git_blob_sha": "20a03699f6bae3e88bdd12d8a3e6a964db488cbc"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vidya.rs",
+      "git_blob_sha": "ee189600942e1488bfc9f55264a70b00e8230b9b"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volatility_cone.rs",
+      "git_blob_sha": "3098de3d23213af148b553ec2b38be2ee236d169"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volatility_of_volatility.rs",
+      "git_blob_sha": "701790e3408c7efc438385d4b80183dbaabf6276"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volatility_ratio.rs",
+      "git_blob_sha": "8150ccf04421098cd24bfc5f92b968d717713a2f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volty_stop.rs",
+      "git_blob_sha": "f525e8118b963ad5c9edb90e34e392b511bca6cb"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_bars.rs",
+      "git_blob_sha": "8ceea74ab3c5e716b6807c6e6b872a756ed22e83"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_by_time_profile.rs",
+      "git_blob_sha": "e4c0849e12cedb6c6edd43e6f22d490ee04218de"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_oscillator.rs",
+      "git_blob_sha": "d2c1b7dca28302cd175392ae297b3c6de5c21040"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_profile.rs",
+      "git_blob_sha": "31a2982f0e7bb26a7a1d1912aa431d07ebcc1a5c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_rsi.rs",
+      "git_blob_sha": "62db7aaa3cd342cf42f0633a160691826895e551"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_weighted_macd.rs",
+      "git_blob_sha": "b61e49c3ecbfbab306c326c42561a1bac7b261b8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/volume_weighted_sr.rs",
+      "git_blob_sha": "f50472b901238ed3388ee2ae33e2be93562fcbe1"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vortex.rs",
+      "git_blob_sha": "95d843b7fda588cf1b2aa71d762e2431d6a352c6"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vpin.rs",
+      "git_blob_sha": "c04bfec4c62764fb4f51082e07f679934914f637"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vpt.rs",
+      "git_blob_sha": "7c40871f79b55c8a6e9419d9a0edea6494845340"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vwap.rs",
+      "git_blob_sha": "ec04ac544a2debeaa1c4ea65001779728ab8e015"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vwap_stddev_bands.rs",
+      "git_blob_sha": "74c2c74d4e9a616fdfeb1f321a3d632e9bf3eabd"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vwma.rs",
+      "git_blob_sha": "3b670d89c6ed7bfbe7e2b482800051cfe2a58ced"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/vzo.rs",
+      "git_blob_sha": "c5c169c81c8b621d30b8e764464e5282bee56aba"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/wad.rs",
+      "git_blob_sha": "9781fbd695da2db5c45c4d472292d95bbdaf2948"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/wave_pm.rs",
+      "git_blob_sha": "c0f69a29cadb82e59000ff148b405d158408959d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/wave_trend.rs",
+      "git_blob_sha": "2c175b03ccf60960100b1846aa0c40e8cef152f4"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/wedge.rs",
+      "git_blob_sha": "cd64849b4598727d1fec1ee51fe40849cd801f1d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/weighted_close.rs",
+      "git_blob_sha": "f825c8f61a2ca045d4b34f1e7f216212a28f624c"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/wick_ratio.rs",
+      "git_blob_sha": "98a07606a2a99bf99048527dd0446b98604bd3a8"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/williams_fractals.rs",
+      "git_blob_sha": "c830c4643de1bda7e853219062023d8974b47d0f"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/williams_r.rs",
+      "git_blob_sha": "f7a3c43f2a234740e4707661b9f05fb14d1022cf"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/win_rate.rs",
+      "git_blob_sha": "c3926951fe06829ace7046904c89e214a945bd89"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/wma.rs",
+      "git_blob_sha": "ab38d119d2323b49f409ab1fae80f56229683649"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/woodie_pivots.rs",
+      "git_blob_sha": "f8a4d862587995de698b1abc42f460b976bb27a0"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/yang_zhang.rs",
+      "git_blob_sha": "89196b4e322ad73cee00938c1e0c7dc73447a659"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/yoyo_exit.rs",
+      "git_blob_sha": "61355a37391168b6a8c141c1dd2bc042b4cc8a03"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/z_score.rs",
+      "git_blob_sha": "24b149f273e73a6966196f312723543fc0e2efb2"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/zero_lag_macd.rs",
+      "git_blob_sha": "7f51f026b6a544a256102c18116839cd4662c78d"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/zig_zag.rs",
+      "git_blob_sha": "cc154d1f3bb3ba0678838cade01f916586a51f74"
+    },
+    {
+      "path": "crates/wickra-core/src/indicators/zlema.rs",
+      "git_blob_sha": "502587095ad4b0bad11c51fdf81889cf570a611d"
+    }
+  ]
+}

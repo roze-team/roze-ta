@@ -63,7 +63,7 @@ async fn every_profile_batch_stream_restore_inspect_reset_matches_native() -> an
         "indicator_stream"
     );
     let profiles: Vec<_> = catalog::catalog().into_iter().map(|p| p.id).collect();
-    assert_eq!(profiles.len(), 45);
+    assert_eq!(profiles.len(), 50);
     let bars = bars();
     let batch_args = json!({"schema_version":2,"snapshot_id":"all-profiles","identity":identity(),
         "as_of_ms":1000,"bars":bars,"profiles":profiles,"output":"latest"});

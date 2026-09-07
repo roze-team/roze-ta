@@ -1,0 +1,396 @@
+diff --git a/crates/roze-ta/src/wickra/atr.rs b/crates/roze-ta/src/wickra/atr.rs
+index 2fc3bdb..f74fc06 100644
+--- a/crates/roze-ta/src/wickra/atr.rs
++++ b/crates/roze-ta/src/wickra/atr.rs
+@@ -1,8 +1,13 @@
++// SPDX-License-Identifier: MIT
++// Copyright (c) 2026 kingchenc and the Wickra contributors
++// Derived from wickra-lib/wickra; original files, license and Git blob IDs:
++// vendor/wickra-r1/ and docs/evidence/reference-r1-source.json.
++// Local changes: module paths, serde state, bounded parameters, selected API subset.
+ //! Average True Range (Wilder).
+ 
+-use crate::error::{Error, Result};
+-use crate::ohlcv::Candle;
+-use crate::traits::Indicator;
++use crate::wickra::error::{Error, Result};
++use crate::wickra::ohlcv::Candle;
++use crate::wickra::traits::Indicator;
+ 
+ /// Average True Range with Wilder smoothing.
+ ///
+@@ -13,7 +18,7 @@ use crate::traits::Indicator;
+ /// # Example
+ ///
+ /// ```
+-/// use wickra_core::{Candle, Indicator, Atr};
++/// use roze_ta::wickra::{Candle, Indicator, Atr};
+ ///
+ /// let mut indicator = Atr::new(5).unwrap();
+ /// let mut last = None;
+@@ -25,20 +30,20 @@ use crate::traits::Indicator;
+ /// }
+ /// assert!(last.is_some());
+ /// ```
+-#[derive(Debug, Clone)]
++#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+ pub struct Atr {
+-    period: usize,
++    pub(crate) period: usize,
+     /// `period - 1` as `f64`, precomputed for the Wilder smoothing step.
+-    n_minus_1: f64,
++    pub(crate) n_minus_1: f64,
+     /// `1 / period`, precomputed so the per-tick smoothing multiplies instead of
+     /// divides.
+-    inv_period: f64,
+-    prev_close: Option<f64>,
+-    seed_buf: Vec<f64>,
++    pub(crate) inv_period: f64,
++    pub(crate) prev_close: Option<f64>,
++    pub(crate) seed_buf: Vec<f64>,
+     /// Smoothed ATR, valid once `seeded` is set. Bare `f64` + flag rather than
+     /// `Option<f64>` so the hot recurrence avoids an enum-tag read per tick.
+-    avg: f64,
+-    seeded: bool,
++    pub(crate) avg: f64,
++    pub(crate) seeded: bool,
+ }
+ 
+ impl Atr {
+@@ -51,9 +56,9 @@ impl Atr {
+         if period == 0 {
+             return Err(Error::PeriodZero);
+         }
+-        if period > crate::error::MAX_PERIOD {
++        if period > crate::wickra::error::MAX_PERIOD {
+             return Err(Error::InvalidPeriod {
+-                message: crate::error::PERIOD_ABOVE_MAX,
++                message: crate::wickra::error::PERIOD_ABOVE_MAX,
+             });
+         }
+         Ok(Self {
+@@ -80,67 +85,6 @@ impl Atr {
+             None
+         }
+     }
+-
+-    /// Vectorized batch over raw high/low/close columns: one `f64` per bar
+-    /// (`NaN` during warmup). The caller guarantees the three slices are equal
+-    /// length and finite with valid OHLC ordering (the binding validates once up
+-    /// front); ATR only reads high, low and the previous close.
+-    ///
+-    /// For a fresh indicator long enough to seed (`n >= period`) it runs the
+-    /// true-range seed once and then the bare Wilder recurrence in a tight loop —
+-    /// no per-bar `Candle` construction/validation, no `Option`, identical
+-    /// division at the seed and `mul_add` afterwards, so the result is
+-    /// *bit-for-bit* equal to replaying `update` over the same candles. Shorter
+-    /// or non-fresh inputs defer to an exact `update` replay.
+-    pub fn batch_atr(&mut self, high: &[f64], low: &[f64], close: &[f64]) -> Vec<f64> {
+-        let p = self.period;
+-        let n = high.len();
+-        if self.seeded || !self.seed_buf.is_empty() || self.prev_close.is_some() || n < p {
+-            let mut out = vec![f64::NAN; n];
+-            for i in 0..n {
+-                let candle = Candle::new_unchecked(close[i], high[i], low[i], close[i], 0.0, 0);
+-                if let Some(v) = self.update(candle) {
+-                    out[i] = v;
+-                }
+-            }
+-            return out;
+-        }
+-
+-        // Warmup `[0, p-1)` is `NaN`; the first ATR is emitted at index `p - 1`.
+-        let mut out = vec![f64::NAN; p - 1];
+-        out.reserve(n - (p - 1));
+-        // Seed: mean of the first `period` true ranges. TR₀ has no previous close.
+-        let mut prev_close = close[0];
+-        let mut sum_tr = high[0] - low[0];
+-        self.seed_buf.push(sum_tr);
+-        for i in 1..p {
+-            let (h, l) = (high[i], low[i]);
+-            let tr = (h - l)
+-                .max((h - prev_close).abs())
+-                .max((l - prev_close).abs());
+-            prev_close = close[i];
+-            self.seed_buf.push(tr);
+-            sum_tr += tr;
+-        }
+-        let mut avg = sum_tr / p as f64;
+-        out.push(avg);
+-        // Steady state: Wilder smoothing, reciprocal hoisted out of the loop.
+-        for i in p..n {
+-            let (h, l) = (high[i], low[i]);
+-            let tr = (h - l)
+-                .max((h - prev_close).abs())
+-                .max((l - prev_close).abs());
+-            prev_close = close[i];
+-            avg = avg.mul_add(self.n_minus_1, tr) * self.inv_period;
+-            out.push(avg);
+-        }
+-
+-        // Leave state where a full `update` replay would (seeded; seed_buf retained).
+-        self.prev_close = Some(prev_close);
+-        self.avg = avg;
+-        self.seeded = true;
+-        out
+-    }
+ }
+ 
+ impl Indicator for Atr {
+@@ -191,256 +135,3 @@ impl Indicator for Atr {
+         "ATR"
+     }
+ }
+-
+-#[cfg(test)]
+-mod tests {
+-    use super::*;
+-    use crate::traits::BatchExt;
+-    use approx::assert_relative_eq;
+-
+-    fn c(h: f64, l: f64, cl: f64) -> Candle {
+-        // ts/open/volume don't affect ATR; use safe placeholders.
+-        Candle::new(cl, h, l, cl, 1.0, 0).unwrap()
+-    }
+-
+-    /// Independent reference: Wilder ATR computed straight from the definition.
+-    fn atr_naive(hlc: &[(f64, f64, f64)], period: usize) -> Vec<Option<f64>> {
+-        let n = period as f64;
+-        let mut out = Vec::with_capacity(hlc.len());
+-        let mut trs: Vec<f64> = Vec::new();
+-        let mut avg: Option<f64> = None;
+-        let mut prev_close: Option<f64> = None;
+-        for &(h, l, cl) in hlc {
+-            let tr = match prev_close {
+-                None => h - l,
+-                Some(pc) => (h - l).max((h - pc).abs()).max((l - pc).abs()),
+-            };
+-            prev_close = Some(cl);
+-            if let Some(a) = avg {
+-                let na = (a * (n - 1.0) + tr) / n;
+-                avg = Some(na);
+-                out.push(Some(na));
+-            } else {
+-                trs.push(tr);
+-                if trs.len() == period {
+-                    avg = Some(trs.iter().sum::<f64>() / n);
+-                    out.push(avg);
+-                } else {
+-                    out.push(None);
+-                }
+-            }
+-        }
+-        out
+-    }
+-
+-    #[test]
+-    fn rejects_zero_period() {
+-        assert!(matches!(Atr::new(0), Err(Error::PeriodZero)));
+-    }
+-
+-    /// Cover the const accessors `period` / `value` (54-62) and the
+-    /// Indicator-impl `name` body (103-105). Existing tests inspect
+-    /// numeric ATR output but never query the metadata.
+-    #[test]
+-    fn accessors_and_metadata() {
+-        let mut atr = Atr::new(14).unwrap();
+-        assert_eq!(atr.period(), 14);
+-        assert_eq!(atr.name(), "ATR");
+-        assert_eq!(atr.value(), None);
+-        for _ in 0..14 {
+-            atr.update(c(11.0, 9.0, 10.0));
+-        }
+-        assert!(atr.value().is_some());
+-    }
+-
+-    #[test]
+-    fn warmup_emits_on_period_th_candle() {
+-        let candles = vec![
+-            c(2.0, 1.0, 1.5),
+-            c(3.0, 2.0, 2.5),
+-            c(4.0, 3.0, 3.5),
+-            c(5.0, 4.0, 4.5),
+-            c(6.0, 5.0, 5.5),
+-        ];
+-        let mut atr = Atr::new(3).unwrap();
+-        let out = atr.batch(&candles);
+-        assert!(out[0].is_none());
+-        assert!(out[1].is_none());
+-        assert!(out[2].is_some());
+-        assert!(out[3].is_some());
+-    }
+-
+-    #[test]
+-    fn constant_range_yields_constant_atr() {
+-        // Every candle has H=11, L=9, C=10 -> TR=2 (no gaps).
+-        let candles: Vec<Candle> = (0..30).map(|_| c(11.0, 9.0, 10.0)).collect();
+-        let mut atr = Atr::new(14).unwrap();
+-        let out = atr.batch(&candles);
+-        for v in out.iter().skip(13).flatten() {
+-            assert_relative_eq!(*v, 2.0, epsilon = 1e-12);
+-        }
+-    }
+-
+-    #[test]
+-    fn gap_up_uses_high_minus_prev_close() {
+-        // Previous close 5, current candle H=10 L=9 C=9.5 -> TR = max(1, 5, 4) = 5.
+-        let candles = vec![
+-            c(6.0, 4.0, 5.0),  // prev close = 5
+-            c(10.0, 9.0, 9.5), // TR = 5
+-        ];
+-        let mut atr = Atr::new(2).unwrap();
+-        let out = atr.batch(&candles);
+-        // Seed window covers TR_1 and TR_2. TR_1 = H1-L1 = 2 (no prev close). TR_2 = 5.
+-        // Seed = (2+5)/2 = 3.5
+-        assert_relative_eq!(out[1].unwrap(), 3.5, epsilon = 1e-12);
+-    }
+-
+-    #[test]
+-    fn batch_equals_streaming() {
+-        let candles: Vec<Candle> = (0..40)
+-            .map(|i| {
+-                let mid = f64::from(i) + 10.0;
+-                c(mid + 0.5, mid - 0.5, mid)
+-            })
+-            .collect();
+-        let mut a = Atr::new(14).unwrap();
+-        let mut b = Atr::new(14).unwrap();
+-        assert_eq!(
+-            a.batch(&candles),
+-            candles.iter().map(|x| b.update(*x)).collect::<Vec<_>>()
+-        );
+-    }
+-
+-    #[test]
+-    fn reset_clears_state() {
+-        let candles: Vec<Candle> = (0..20).map(|_| c(11.0, 9.0, 10.0)).collect();
+-        let mut atr = Atr::new(5).unwrap();
+-        atr.batch(&candles);
+-        assert!(atr.is_ready());
+-        atr.reset();
+-        assert!(!atr.is_ready());
+-        assert_eq!(atr.update(candles[0]), None);
+-    }
+-
+-    #[test]
+-    fn never_negative() {
+-        let candles: Vec<Candle> = (0..200)
+-            .map(|i| {
+-                let base = 100.0 + (f64::from(i) * 0.3).sin() * 5.0;
+-                c(base + 1.0, base - 1.0, base)
+-            })
+-            .collect();
+-        let mut atr = Atr::new(14).unwrap();
+-        for v in atr.batch(&candles).into_iter().flatten() {
+-            assert!(v >= 0.0, "ATR must be non-negative: {v}");
+-        }
+-    }
+-
+-    fn bits_eq(a: &[f64], b: &[f64]) -> bool {
+-        a.len() == b.len()
+-            && a.iter()
+-                .zip(b)
+-                .all(|(x, y)| x == y || (x.is_nan() && y.is_nan()))
+-    }
+-
+-    fn atr_replay(period: usize, high: &[f64], low: &[f64], close: &[f64]) -> Vec<f64> {
+-        let mut a = Atr::new(period).unwrap();
+-        (0..high.len())
+-            .map(|i| {
+-                let candle = Candle::new_unchecked(close[i], high[i], low[i], close[i], 0.0, 0);
+-                a.update(candle).unwrap_or(f64::NAN)
+-            })
+-            .collect()
+-    }
+-
+-    /// Valid OHLC columns from a wandering base price.
+-    fn columns(n: usize) -> (Vec<f64>, Vec<f64>, Vec<f64>) {
+-        let base: Vec<f64> = (0..n)
+-            .map(|i| (f64::from(u32::try_from(i).unwrap()) * 0.3).sin() * 5.0 + 100.0)
+-            .collect();
+-        let high = base.iter().map(|b| b + 1.0).collect();
+-        let low = base.iter().map(|b| b - 1.0).collect();
+-        (high, low, base)
+-    }
+-
+-    #[test]
+-    fn batch_atr_fast_path_is_bit_identical() {
+-        let (high, low, close) = columns(300);
+-        let mut atr = Atr::new(14).unwrap();
+-        let got = atr.batch_atr(&high, &low, &close);
+-        assert!(bits_eq(&got, &atr_replay(14, &high, &low, &close)));
+-        let mut ref_atr = Atr::new(14).unwrap();
+-        for i in 0..high.len() {
+-            ref_atr.update(Candle::new_unchecked(
+-                close[i], high[i], low[i], close[i], 0.0, 0,
+-            ));
+-        }
+-        let next = Candle::new_unchecked(101.0, 102.0, 100.0, 101.0, 0.0, 0);
+-        assert_eq!(atr.update(next), ref_atr.update(next));
+-    }
+-
+-    #[test]
+-    fn batch_atr_falls_back_when_not_fresh() {
+-        let (high, low, close) = columns(40);
+-        let mut atr = Atr::new(14).unwrap();
+-        atr.update(Candle::new_unchecked(
+-            close[0], high[0], low[0], close[0], 0.0, 0,
+-        ));
+-        let mut ref_atr = Atr::new(14).unwrap();
+-        ref_atr.update(Candle::new_unchecked(
+-            close[0], high[0], low[0], close[0], 0.0, 0,
+-        ));
+-        let want: Vec<f64> = (0..high.len())
+-            .map(|i| {
+-                ref_atr
+-                    .update(Candle::new_unchecked(
+-                        close[i], high[i], low[i], close[i], 0.0, 0,
+-                    ))
+-                    .unwrap_or(f64::NAN)
+-            })
+-            .collect();
+-        assert!(bits_eq(&atr.batch_atr(&high, &low, &close), &want));
+-    }
+-
+-    #[test]
+-    fn batch_atr_sub_period_slice_falls_back() {
+-        let (high, low, close) = columns(5);
+-        let mut atr = Atr::new(14).unwrap();
+-        let got = atr.batch_atr(&high, &low, &close);
+-        assert!(bits_eq(&got, &atr_replay(14, &high, &low, &close)));
+-        assert!(got.iter().all(|x| x.is_nan()));
+-    }
+-
+-    proptest::proptest! {
+-        #![proptest_config(proptest::test_runner::Config::with_cases(48))]
+-        #[test]
+-        fn atr_matches_naive(
+-            period in 1usize..15,
+-            bars in proptest::collection::vec(
+-                (10.0_f64..1000.0, 0.0_f64..50.0, 0.0_f64..1.0),
+-                0..120,
+-            ),
+-        ) {
+-            // bars: (low, range, close_fraction) -> a valid OHLC candle.
+-            let hlc: Vec<(f64, f64, f64)> = bars
+-                .iter()
+-                .map(|&(low, range, frac)| (low + range, low, low + range * frac))
+-                .collect();
+-            let candles: Vec<Candle> = hlc.iter().map(|&(h, l, cl)| c(h, l, cl)).collect();
+-            let mut atr = Atr::new(period).unwrap();
+-            let got = atr.batch(&candles);
+-            let want = atr_naive(&hlc, period);
+-            proptest::prop_assert_eq!(got.len(), want.len());
+-            for (g, w) in got.iter().zip(want.iter()) {
+-                match (g, w) {
+-                    (None, None) => {}
+-                    (Some(a), Some(b)) => proptest::prop_assert!(
+-                        (a - b).abs() <= 1e-9 * a.abs().max(1.0),
+-                        "got={a} want={b}"
+-                    ),
+-                    _ => proptest::prop_assert!(false, "warmup mismatch"),
+-                }
+-            }
+-        }
+-    }
+-}

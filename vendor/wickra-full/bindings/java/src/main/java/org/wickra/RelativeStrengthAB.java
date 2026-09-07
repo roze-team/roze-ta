@@ -1,0 +1,149 @@
+// Generated from bindings/c/include/wickra.h. Do not edit by hand.
+package org.wickra;
+
+import org.wickra.internal.NativeMethods;
+import org.wickra.internal.WickraNative;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
+import java.lang.ref.Cleaner;
+import java.lang.ref.Reference;
+import static java.lang.foreign.ValueLayout.*;
+
+/** Streaming RelativeStrengthAB indicator over the Wickra C ABI. Not thread-safe; close when done. */
+public final class RelativeStrengthAB implements AutoCloseable {
+    private final MemorySegment handle;
+    private final Cleaner.Cleanable cleanable;
+    private boolean closed;
+
+    public RelativeStrengthAB(int maPeriod, int rsiPeriod) {
+        if (maPeriod < 0) {
+            throw new IllegalArgumentException("maPeriod must be non-negative");
+        }
+        if (rsiPeriod < 0) {
+            throw new IllegalArgumentException("rsiPeriod must be non-negative");
+        }
+        MemorySegment h;
+        try {
+            h = (MemorySegment) NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_NEW.invokeExact((long) maPeriod, (long) rsiPeriod);
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        }
+        if (h.address() == 0L) {
+            throw new IllegalArgumentException("invalid RelativeStrengthAB parameters");
+        }
+        this.handle = h;
+        this.cleanable = WickraNative.register(this, h, NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_FREE);
+    }
+
+    /** Push one observation; returns the result, or null during warmup. */
+    public RelativeStrengthOutput update(double x, double y) {
+        try (Arena a = Arena.ofConfined()) {
+            MemorySegment out = a.allocate(24L);
+            byte ok = (byte) NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_UPDATE.invokeExact(handle(), x, y, out);
+            if (ok == 0) {
+                return null;
+            }
+            return new RelativeStrengthOutput(
+                out.get(JAVA_DOUBLE, 0L),
+                out.get(JAVA_DOUBLE, 8L),
+                out.get(JAVA_DOUBLE, 16L));
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        } finally {
+            Reference.reachabilityFence(this);
+        }
+    }
+
+    /**
+     * Vectorized update over whole series, one output per input. A row the
+     * indicator did not produce -- warmup, or an input it rejected -- carries
+     * NaN in every floating-point field.
+     */
+    public RelativeStrengthOutput[] batch(double[] x, double[] y) {
+        int n = x.length;
+        if (y.length != n) {
+            throw new IllegalArgumentException("all input arrays must have the same length");
+        }
+        try (Arena a = Arena.ofConfined()) {
+            MemorySegment xSeg = a.allocateFrom(JAVA_DOUBLE, x);
+            MemorySegment ySeg = a.allocateFrom(JAVA_DOUBLE, y);
+            MemorySegment outSeg = a.allocate(24L * n);
+            NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_BATCH.invokeExact(handle(), xSeg, ySeg, outSeg, (long) n);
+            RelativeStrengthOutput[] out = new RelativeStrengthOutput[n];
+            for (int i = 0; i < n; i++) {
+                out[i] = new RelativeStrengthOutput(
+                        outSeg.get(JAVA_DOUBLE, i * 24L + 0L),
+                        outSeg.get(JAVA_DOUBLE, i * 24L + 8L),
+                        outSeg.get(JAVA_DOUBLE, i * 24L + 16L));
+            }
+            return out;
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        } finally {
+            Reference.reachabilityFence(this);
+        }
+    }
+
+    /** Number of updates required before update() yields a value. */
+    public int warmupPeriod() {
+        try {
+            long n = (long) NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_WARMUP_PERIOD.invokeExact(handle());
+            return (int) n;
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        } finally {
+            Reference.reachabilityFence(this);
+        }
+    }
+
+    /** Whether the indicator has consumed enough input to emit a value. */
+    public boolean isReady() {
+        try {
+            byte r = (byte) NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_IS_READY.invokeExact(handle());
+            return r != 0;
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        } finally {
+            Reference.reachabilityFence(this);
+        }
+    }
+
+    /** The indicator's canonical name. */
+    public String name() {
+        try {
+            MemorySegment s = (MemorySegment) NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_NAME.invokeExact(handle());
+            return s.address() == 0 ? "" : s.reinterpret(Long.MAX_VALUE).getString(0);
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        } finally {
+            Reference.reachabilityFence(this);
+        }
+    }
+
+    /** Reset to the just-constructed state. */
+    public void reset() {
+        try {
+            NativeMethods.WICKRA_RELATIVE_STRENGTH_AB_RESET.invokeExact(handle());
+        } catch (Throwable t) {
+            throw WickraNative.rethrow(t);
+        } finally {
+            Reference.reachabilityFence(this);
+        }
+    }
+
+    /** The native handle, refusing to hand out one that has been released. */
+    private MemorySegment handle() {
+        if (closed) {
+            throw new IllegalStateException("RelativeStrengthAB has been closed");
+        }
+        return handle;
+    }
+
+    @Override public void close() {
+        if (closed) {
+            return;
+        }
+        closed = true;
+        cleanable.clean();
+    }
+}

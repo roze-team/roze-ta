@@ -18,6 +18,9 @@ mod bounded;
 mod coverage_tests;
 #[cfg(test)]
 mod native_tests;
+mod reference;
+#[cfg(test)]
+mod reference_tests;
 mod stream;
 
 const MAX_RESPONSE_BYTES: usize = 8 * 1024 * 1024;
@@ -52,6 +55,53 @@ fn tool_result(value: Result<serde_json::Value, TaError>) -> CallToolResult {
 
 #[tool_router(server_handler)]
 impl IndicatorGateway {
+    #[tool(
+        description = "Discover maintained reference algorithm variants, explicit constructor parameter schemas and rich input types. Includes OHLCV, scalar, paired, order-book, trade, derivatives and cross-section inputs. Source neutral values are documented variants, not TA-Lib compatibility.",
+        annotations(
+            read_only_hint = true,
+            destructive_hint = false,
+            idempotent_hint = true,
+            open_world_hint = false
+        )
+    )]
+    fn reference_catalog(&self) -> CallToolResult {
+        tool_result(roze_ta::reference_all::catalog())
+    }
+
+    #[tool(
+        description = "Calculate a reference algorithm selected from reference_catalog on timed, typed caller data. Parameters are explicit; no data acquisition or trading. Supports bounded full-series output and source formula variants.",
+        annotations(
+            read_only_hint = true,
+            destructive_hint = false,
+            idempotent_hint = true,
+            open_world_hint = false
+        )
+    )]
+    async fn reference_batch_calculate(
+        &self,
+        request: Parameters<roze_ta::reference_all::Request>,
+        context: RequestContext<RoleServer>,
+    ) -> CallToolResult {
+        reference::calculate(self, request, context).await
+    }
+
+    #[tool(
+        description = "Create, advance, inspect or reset reference algorithm streams using caller-owned bounded replay snapshots. Restore validates identity, configuration, checksum, inputs and timestamps. No server persistence or trading.",
+        annotations(
+            read_only_hint = true,
+            destructive_hint = false,
+            idempotent_hint = true,
+            open_world_hint = false
+        )
+    )]
+    async fn reference_stream(
+        &self,
+        request: Parameters<reference::Request>,
+        context: RequestContext<RoleServer>,
+    ) -> CallToolResult {
+        reference::streaming(self, request, context).await
+    }
+
     #[tool(
         description = "List registered read-only indicator profiles, resolved parameters, units and minimum completed-bar requirements.",
         annotations(
@@ -389,7 +439,7 @@ mod tests {
         });
         let client = ().serve(client_transport).await?;
         let tools = client.list_all_tools().await?;
-        assert_eq!(tools.len(), 7);
+        assert_eq!(tools.len(), 10);
         assert!(tools
             .iter()
             .all(|t| t.annotations.as_ref().and_then(|a| a.read_only_hint) == Some(true)));
@@ -401,7 +451,7 @@ mod tests {
                 .as_array()
                 .unwrap()
                 .len(),
-            45
+            50
         );
         let args = serde_json::json!({"snapshot_id":"s1","symbol":"TEST","timeframe":"1m","as_of_ms":10000,"profiles":["sma.5"],"bars":(1..=5).map(|i|serde_json::json!({"closed_at_ms":i*1000,"open":100+i,"high":102+i,"low":99+i,"close":101+i,"volume":100})).collect::<Vec<_>>()});
         let result = client

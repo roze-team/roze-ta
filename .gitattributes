@@ -1,12 +1,17 @@
 * text=auto
 /vendor/yata/** -text
+/vendor/wickra-r1/** -text
+/vendor/wickra-full/** -text
 /UPSTREAM.json -text
 /crates/roze-ta/src/** text eol=lf
 /crates/roze-ta/tests/fixtures/pre-native-* text eol=lf
 /crates/roze-ta/tests/fixtures/pre-native-generator.rs.txt -text
+/crates/roze-ta/tests/wickra_invariants.rs text eol=lf
 /crates/roze-ta/LICENSE-APACHE -text
 /crates/roze-ta/LICENSE-MIT text eol=lf
 /crates/roze-ta/THIRD-PARTY-NOTICES.md text eol=lf
 /THIRD-PARTY-NOTICES.md text eol=lf
 /docs/patches/** text eol=lf
 /docs/evidence/native-migration-baseline.json text eol=lf
+/docs/evidence/reference-*.json text eol=lf
+/docs/evidence/wickra-*.json text eol=lf

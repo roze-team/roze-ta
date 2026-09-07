@@ -1,0 +1,29 @@
+name: Link check
+
+# External link rot is non-deterministic (third-party sites go down, rate-limit,
+# or move), so the authoritative check runs on a weekly schedule and on demand
+# rather than gating PRs or releases. ci.yml additionally runs a non-blocking
+# lychee job on PRs for an early heads-up (continue-on-error), and release.yml is
+# deliberately NOT gated on it — a transient external outage must never block an
+# irreversible publish.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: External links (lychee)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20  # backstop against a hung job, not a budget
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml --no-progress --root-dir "${{ github.workspace }}" "*.md" "bindings/*/README.md"
+          fail: true

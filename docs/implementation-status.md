@@ -1,5 +1,26 @@
 # 实施状态
 
+## 2026-09-07 Wickra 完整仓库
+
+已补齐固定版本的完整2639个原始文件并核验Git blob，包含全部语言绑定、数据层、样本、基准、示例和文档。
+全部514个核心指标仍原生编译并开放MCP，另接入纯内存TickAggregator/Resampler、原始515项全目录属性测试和可选rayon并行接口。
+整仓原始源码保留与各语言发行构建区分记录，见[本次交付证据](evidence/2026-09-07-wickra-repository.md)。
+
+## 2026-09-07 全量 Wickra 与 Reference API
+
+514个Wickra导出算法、66个补充运算已接入核心批量/流式/恢复与MCP，共580个Reference入口，MCP总计10个工具。
+527个原始文件、524个Rust维护文件、MIT许可及可重放补丁分别保留。既有50个Profile与旧快照保持兼容。
+886条来源映射为514直接迁移、368跨库候选、4辅助功能。368条候选尚未完成跨库数值兼容验收，完整AC-IND-009仍开放。
+见[契约](contracts/reference-all-v1.md)、[使用说明](usage/reference-mcp.md)、[验证与剩余边界](evidence/2026-09-07-reference-full.md)。以下记录保留各批次当时状态。
+
+## 2026-09-07 外部指标 R1 Rust 源码迁移
+
+按 FR-IND-009 / AC-IND-009 建立五个参考库的 886 个来源条目映射；条目含重复指标与辅助函数，不代表独立指标数。
+首批迁入 Wickra 的 ALMA、SuperTrend、StochRSI、Vortex、Ulcer Index 及必要辅助代码，保留 MIT 版权、原始 blob 和可重放补丁。
+当前固定 Profile 为 50 个、指标族为 38 类；新增五项接入批量、流式、快照恢复与 MCP。
+其余 881 个来源条目仍为 review_pending，不能据此认定本项目已有同名实现缺失或已兼容；全部外部指标覆盖尚未完成。
+规格、变体差异和验证见 [R1 契约](contracts/reference-r1.md)、[验收证据](evidence/2026-09-07-reference-r1.md)。以下保留历史批次计数。
+
 ## 2026-09-04 论文公式计算层
 
 新增七类分析操作和 69 个任务变体，另增 Bernoulli、Poisson、Exponential、LogNormal；当前 21 类分析操作、九类分布、七个 MCP 工具。

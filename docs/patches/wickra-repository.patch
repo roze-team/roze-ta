@@ -1,0 +1,153 @@
+--- a/crates/roze-ta/src/wickra_data/aggregator.rs
++++ b/crates/roze-ta/src/wickra_data/aggregator.rs
+@@ -1,7 +1,11 @@
++// Copyright (c) 2026 kingchenc and Wickra contributors.
++// SPDX-License-Identifier: MIT
++// Derived from Wickra 7ed1504; see docs/patches/wickra-repository-migration.md.
++
+ //! Roll trade ticks up into candles of an arbitrary timeframe.
+ 
+-use crate::error::{Error, Result};
+-use wickra_core::{Candle, Tick};
++use crate::wickra_all::{Candle, Tick};
++use crate::wickra_data::error::{Error, Result};
+ 
+ /// Hard cap on the number of placeholder candles a single
+ /// [`TickAggregator::push`] call may emit when gap-fill is enabled. One
+@@ -63,9 +67,9 @@
+     /// `n * 60` overflows `i64`.
+     ///
+     /// ```
+-    /// use wickra_data::aggregator::Timeframe;
++    /// use roze_ta::wickra_data::aggregator::Timeframe;
+     /// assert_eq!(Timeframe::minutes(5)?.bucket(), 300);
+-    /// # Ok::<(), wickra_data::Error>(())
++    /// # Ok::<(), roze_ta::wickra_data::Error>(())
+     /// ```
+     pub fn minutes(n: i64) -> Result<Self> {
+         let bucket = n
+@@ -82,9 +86,9 @@
+     /// `n * 3_600` overflows `i64`.
+     ///
+     /// ```
+-    /// use wickra_data::aggregator::Timeframe;
++    /// use roze_ta::wickra_data::aggregator::Timeframe;
+     /// assert_eq!(Timeframe::hours(2)?.bucket(), 7_200);
+-    /// # Ok::<(), wickra_data::Error>(())
++    /// # Ok::<(), roze_ta::wickra_data::Error>(())
+     /// ```
+     pub fn hours(n: i64) -> Result<Self> {
+         let bucket = n
+@@ -101,9 +105,9 @@
+     /// `n * 86_400` overflows `i64`.
+     ///
+     /// ```
+-    /// use wickra_data::aggregator::Timeframe;
++    /// use roze_ta::wickra_data::aggregator::Timeframe;
+     /// assert_eq!(Timeframe::days(1)?.bucket(), 86_400);
+-    /// # Ok::<(), wickra_data::Error>(())
++    /// # Ok::<(), roze_ta::wickra_data::Error>(())
+     /// ```
+     pub fn days(n: i64) -> Result<Self> {
+         let bucket = n
+@@ -317,7 +321,7 @@
+ 
+ /// Emit one flat candle per bucket skipped between `prev` and `next_bucket`.
+ ///
+-/// Shared by [`TickAggregator`] and [`crate::resample::Resampler`] so the two
++/// Shared by [`TickAggregator`] and [`crate::wickra_data::resample::Resampler`] so the two
+ /// cannot drift apart: the placeholder price, the zero volume and the cap are
+ /// one implementation rather than two that happen to agree today.
+ ///
+--- a/crates/roze-ta/src/wickra_data/resample.rs
++++ b/crates/roze-ta/src/wickra_data/resample.rs
+@@ -1,8 +1,12 @@
++// Copyright (c) 2026 kingchenc and Wickra contributors.
++// SPDX-License-Identifier: MIT
++// Derived from Wickra 7ed1504; see docs/patches/wickra-repository-migration.md.
++
+ //! Resample an existing candle stream from a finer timeframe to a coarser one.
+ 
+-use crate::aggregator::{fill_flat_candles, Timeframe};
+-use crate::error::{Error, Result};
+-use wickra_core::Candle;
++use crate::wickra_all::Candle;
++use crate::wickra_data::aggregator::{fill_flat_candles, Timeframe};
++use crate::wickra_data::error::{Error, Result};
+ 
+ /// Roll a stream of candles up to a coarser timeframe.
+ ///
+@@ -15,7 +19,7 @@
+ /// that receives no candle is simply not emitted. Enable
+ /// [`with_gap_fill`](Self::with_gap_fill) to emit a flat placeholder for every
+ /// skipped bucket instead, exactly as
+-/// [`TickAggregator`](crate::aggregator::TickAggregator) does.
++/// [`TickAggregator`](crate::wickra_data::aggregator::TickAggregator) does.
+ #[derive(Debug, Clone)]
+ pub struct Resampler {
+     timeframe: Timeframe,
+@@ -94,7 +98,7 @@
+     /// that no input candle fell into. The flat candle's price is the close of
+     /// the bar that preceded the gap, so the series stays continuous. This is
+     /// the same behaviour, and the same implementation, as
+-    /// [`TickAggregator::with_gap_fill`](crate::aggregator::TickAggregator::with_gap_fill).
++    /// [`TickAggregator::with_gap_fill`](crate::wickra_data::aggregator::TickAggregator::with_gap_fill).
+     #[must_use]
+     pub fn with_gap_fill(mut self, fill: bool) -> Self {
+         self.fill_gaps = fill;
+@@ -114,9 +118,9 @@
+     /// # Errors
+     /// Returns [`Error::Malformed`] if `candle.timestamp` falls into a bucket
+     /// strictly before the currently open bar — out-of-order candles are not
+-    /// supported, matching [`crate::aggregator::TickAggregator::push`] — or if
++    /// supported, matching [`crate::wickra_data::aggregator::TickAggregator::push`] — or if
+     /// gap filling would exceed
+-    /// [`MAX_GAP_FILL_CANDLES`](crate::aggregator::MAX_GAP_FILL_CANDLES).
++    /// [`MAX_GAP_FILL_CANDLES`](crate::wickra_data::aggregator::MAX_GAP_FILL_CANDLES).
+     pub fn push(&mut self, candle: Candle) -> Result<Vec<Candle>> {
+         let bucket = self.timeframe.floor(candle.timestamp);
+         match self.open {
+@@ -329,11 +333,12 @@
+         let out = r.push(c(16, 20.0, 21.0, 19.0, 20.5, 1.0)).unwrap();
+ 
+         let mut agg =
+-            crate::aggregator::TickAggregator::new(Timeframe::new(5).unwrap()).with_gap_fill(true);
+-        agg.push(wickra_core::Tick::new(11.0, 1.0, 0).unwrap())
++            crate::wickra_data::aggregator::TickAggregator::new(Timeframe::new(5).unwrap())
++                .with_gap_fill(true);
++        agg.push(crate::wickra_all::Tick::new(11.0, 1.0, 0).unwrap())
+             .unwrap();
+         let agg_out = agg
+-            .push(wickra_core::Tick::new(20.5, 1.0, 16).unwrap())
++            .push(crate::wickra_all::Tick::new(20.5, 1.0, 16).unwrap())
+             .unwrap();
+ 
+         let fillers: Vec<_> = out[1..].iter().map(|c| (c.timestamp, c.close)).collect();
+--- a/crates/roze-ta/tests/wickra_invariants.rs
++++ b/crates/roze-ta/tests/wickra_invariants.rs
+@@ -1,3 +1,7 @@
++// Copyright (c) 2026 kingchenc and Wickra contributors.
++// SPDX-License-Identifier: MIT
++// Derived from Wickra 7ed1504; see docs/patches/wickra-repository-migration.md.
++
+ //! Property-based invariants every indicator must uphold.
+ //!
+ //! Three properties are checked against random input sequences, rolled out over
+@@ -13,7 +17,7 @@
+ //!    caught the pairwise non-finite bug (#251).
+ 
+ use proptest::prelude::*;
+-use wickra_core::*;
++use roze_ta::wickra_all::*;
+ 
+ // --- generic invariant bodies ------------------------------------------------
+ 
+@@ -1208,7 +1212,7 @@
+ // without a build script.
+ #[test]
+ fn every_catalogued_indicator_has_an_invariant_test() {
+-    const SOURCE: &str = include_str!("invariants.rs");
++    const SOURCE: &str = include_str!("wickra_invariants.rs");
+ 
+     // One catalogued name can be the suffix of another -- `Vwap` and
+     // `RollingVwap` -- so a plain `contains` would let the shorter one ride on

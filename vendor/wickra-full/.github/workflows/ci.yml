@@ -1,0 +1,1399 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# One run per branch. A push that supersedes an in-flight run cancels it rather
+# than letting both finish: this matrix expands to sixty-odd jobs across three
+# operating systems, so a superseded run holds runners hostage for a result
+# nobody will read. main is exempt -- its runs feed the badge and the coverage
+# baseline, and cancelling those loses history.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+# Least-privilege default for the auto-injected GITHUB_TOKEN. None of the CI
+# jobs write back to the repo — coverage uploads via CODECOV_TOKEN, everything
+# else is build/test/lint — so a read-only token is sufficient (OpenSSF
+# Scorecard: Token-Permissions).
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: "-D warnings"
+  # Network-flake resilience: retry transient registry/DNS failures at the tool
+  # level so a blip fetching crates.io / npm / PyPI inside any build step (cargo,
+  # napi, maturin, wasm-pack, npm ci, pip) retries automatically instead of
+  # failing the job and needing a manual re-run. Cargo treats "couldn't resolve
+  # host" / connect / timeout as spurious and retries with backoff; 10 attempts
+  # ride out a transient DNS blip on a runner. Complements the setup-action /
+  # cache retries (which only covered toolchain download + cache restore).
+  CARGO_NET_RETRY: "10"
+  CARGO_NET_GIT_FETCH_WITH_CLI: "true"
+  npm_config_fetch_retries: "5"
+  npm_config_fetch_retry_maxtimeout: "120000"
+  PIP_RETRIES: "5"
+  PIP_DEFAULT_TIMEOUT: "120"
+
+jobs:
+  rust:
+    name: Rust ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+        with:
+          components: rustfmt, clippy
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      - name: Warm cargo registry (retry transient DNS/registry flakes)
+        shell: bash
+        # CARGO_NET_RETRY rides out short blips, but a longer runner DNS outage
+        # outlasts cargo's rapid in-process retries: the crates.io index fetch
+        # the first cargo step does ("Could not resolve host: index.crates.io")
+        # then fails the whole job. Pre-fetch the dependency graph here with real
+        # backoff so clippy/build/test resolve from the warmed local cache.
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if cargo fetch; then exit 0; fi
+            echo "::warning::cargo fetch failed (attempt $attempt/5) — likely a registry/DNS flake; retrying in $((attempt * 20))s..."
+            sleep $((attempt * 20))
+          done
+          echo "::error::cargo fetch still failing after 5 attempts"
+          exit 1
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+      - name: Clippy (workspace, all targets)
+        run: cargo clippy -p wickra-core -p wickra -p wickra-data -p wickra-wasm --all-targets -- -D warnings
+
+      - name: Build
+        run: cargo build -p wickra-core -p wickra -p wickra-data --verbose
+
+      - name: Tests (default features)
+        run: cargo test -p wickra-core -p wickra -p wickra-data --verbose
+
+      - name: Tests (live-binance feature)
+        run: cargo test -p wickra-data --features live-binance --verbose
+
+      - name: Compile benches (smoke)
+        run: cargo build -p wickra --benches --verbose
+
+      - name: Compile examples
+        # All runnable examples now live in the dedicated wickra-examples crate
+        # (examples/rust/src/bin/*.rs) which enables the live-binance feature
+        # on its wickra-data dep, so a single --bins build covers backtest,
+        # live_binance, fetch_btcusdt, multi_timeframe, parallel_assets and
+        # streaming.
+        run: cargo build -p wickra-examples --bins
+
+  # Every binding is generated or written separately and tested separately, so a
+  # method that goes missing in one of them fails nowhere. This compares them to
+  # each other, against the shape the C ABI header declares. Pure Python over
+  # files already in the tree -- no toolchain, a few seconds.
+  binding-surface:
+    name: Binding surface parity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Compare every binding's surface with the C ABI
+        run: python3 scripts/check_binding_surface.py
+
+      # The version lives in twenty-odd declarations across six package managers.
+      # A bump that misses one ships a package pinning a binary that was never
+      # published, and that surfaces on a user's machine after the tag, which is
+      # irreversible. index.js is in the list because it once shipped 0.9.7
+      # inside the v0.9.9 tag.
+      - name: Every version declaration agrees
+        run: python3 scripts/check_version_sync.py
+
+      # Each bindings/*/README.md is, or is a workflow line away from being, a
+      # published package's long description: PyPI renders the Python one, NuGet
+      # the C# one, pkg.go.dev the Go one. A link that leaves the package is
+      # dead there while resolving fine on GitHub, so nothing says so.
+      - name: Binding READMEs link only to what travels with them
+        run: python3 scripts/check_readme_links.py
+
+      # An SPDX expression in a manifest is a reference to two documents, not
+      # the documents. cargo decides what to package from git, so the copies
+      # have to be committed -- and committed copies drift.
+      - name: Every published package carries its licence texts
+        run: python3 scripts/check_license_copies.py
+
+      # R is the one binding whose native half comes from a published release
+      # rather than from this tree (bindings/r/configure downloads the C ABI for
+      # DESCRIPTION's Version), so the pairing r-universe compiles is one our own
+      # R job never sees -- it builds against the header in the tree. This checks
+      # the generated wrapper against both.
+      - name: Check the R wrapper against the released C ABI
+        run: python3 scripts/check_r_abi_skew.py
+
+  # Syntax/parse smoke for the non-Rust examples. The Rust examples are built in
+  # the `rust` job above (`cargo build -p wickra-examples --bins`). Running an
+  # example needs the built native binding / wheel, which this job does not have,
+  # so the `node` and `python` jobs run the offline Node and Python examples
+  # after building theirs. What is left here is the browser-WASM demos, which
+  # need a browser and so can only be parsed.
+  examples-smoke:
+    name: Examples (syntax smoke)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        id: setup_node
+        continue-on-error: true
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Wait before Node retry
+        if: steps.setup_node.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-node failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Node (retry)
+        if: steps.setup_node.outcome == 'failure'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Set up Python
+        id: setup_python
+        continue-on-error: true
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Wait before Python retry
+        if: steps.setup_python.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-python failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Python (retry)
+        if: steps.setup_python.outcome == 'failure'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Node examples — syntax check
+        run: |
+          shopt -s nullglob
+          count=0
+          for f in examples/node/*.js examples/wasm/*.js; do
+            echo "node --check $f"
+            node --check "$f"
+            count=$((count + 1))
+          done
+          echo "checked $count Node/WASM .js files"
+
+      - name: WASM demo module scripts — syntax check
+        # The .html demos embed an ES module; extract it and parse-check so a
+        # broken edit to the in-page strategy logic fails CI.
+        run: |
+          shopt -s nullglob
+          count=0
+          for f in examples/wasm/*.html; do
+            node -e 'const fs=require("fs");const h=fs.readFileSync(process.argv[1],"utf8");const m=h.match(/<script type="module">([\s\S]*?)<\/script>/);if(!m){console.error("no <script type=module> in "+process.argv[1]);process.exit(1);}fs.writeFileSync("module-check.mjs",m[1]);' "$f"
+            echo "node --check (module of) $f"
+            node --check module-check.mjs
+            count=$((count + 1))
+          done
+          rm -f module-check.mjs
+          echo "checked $count WASM .html module scripts"
+
+      - name: Python examples — byte-compile
+        run: |
+          shopt -s nullglob
+          count=0
+          for f in examples/python/*.py; do
+            echo "py_compile $f"
+            python -m py_compile "$f"
+            count=$((count + 1))
+          done
+          echo "compiled $count Python files"
+
+  # Clippy for the Python and Node bindings. These are kept out of the main
+  # `rust` job because PyO3 / napi build scripts need a Python interpreter and
+  # a Node toolchain on PATH, which the 3-OS matrix job does not provision.
+  # Ubuntu-only is sufficient: the lints are platform-independent.
+  clippy-bindings:
+    name: Clippy bindings
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+        with:
+          components: clippy
+
+      - name: Set up Python
+        id: setup_python
+        continue-on-error: true
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Wait before Python retry
+        if: steps.setup_python.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-python failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Python (retry)
+        if: steps.setup_python.outcome == 'failure'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        id: setup_node
+        continue-on-error: true
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Wait before Node retry
+        if: steps.setup_node.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-node failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Node (retry)
+        if: steps.setup_node.outcome == 'failure'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      - name: Warm cargo registry (retry transient DNS/registry flakes)
+        shell: bash
+        # See the rust job: pre-fetch with backoff so the clippy index update
+        # can't fail the job on a transient "Could not resolve host" DNS blip.
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if cargo fetch; then exit 0; fi
+            echo "::warning::cargo fetch failed (attempt $attempt/5) — likely a registry/DNS flake; retrying in $((attempt * 20))s..."
+            sleep $((attempt * 20))
+          done
+          echo "::error::cargo fetch still failing after 5 attempts"
+          exit 1
+
+      - name: Clippy (bindings, all targets)
+        run: cargo clippy -p wickra-node -p wickra-python --all-targets -- -D warnings
+
+  # Verify the crates still build and test on their declared minimum supported
+  # Rust version. The workspace pins rust-version = "1.86" — that floor is
+  # set by criterion 0.8.2 (the bench dev-dep), which itself rolled past the
+  # clap_lex 1.1.0 / edition2024 / Rust 1.85 floor and now needs 1.86; the
+  # earlier rayon-core 1.13.0 (1.80) and clap_lex (1.85) requirements are
+  # subsumed. bindings/node pins rust-version = "1.88" because napi-build
+  # 2.3.2 requires it (and that subsumes the older 1.77 floor needed for
+  # `cargo::` directives). Without this job an accidental use of a newer
+  # API would only surface for downstream users.
+  msrv:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: MSRV workspace (Rust 1.86)
+            toolchain: "1.86"
+            packages: "-p wickra-core -p wickra -p wickra-data"
+          - name: MSRV node binding (Rust 1.88)
+            toolchain: "1.88"
+            packages: "-p wickra-node"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust ${{ matrix.toolchain }}
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ matrix.toolchain }}
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      - name: Warm cargo registry (retry transient DNS/registry flakes)
+        shell: bash
+        # See the rust job: pre-fetch with backoff so the first cargo step can't
+        # fail the job on a transient "Could not resolve host" DNS blip.
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if cargo fetch; then exit 0; fi
+            echo "::warning::cargo fetch failed (attempt $attempt/5) — likely a registry/DNS flake; retrying in $((attempt * 20))s..."
+            sleep $((attempt * 20))
+          done
+          echo "::error::cargo fetch still failing after 5 attempts"
+          exit 1
+
+      - name: Build on MSRV
+        run: cargo build ${{ matrix.packages }} --verbose
+
+      - name: Test on MSRV
+        run: cargo test ${{ matrix.packages }} --verbose
+
+  # Code coverage for the pure-Rust crates, uploaded to Codecov.
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+        with:
+          components: llvm-tools-preview
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      - name: Install cargo-llvm-cov
+        uses: taiki-e/install-action@742a3317eac7bd62f91cd888b4eead5e784ba833 # v2.87.1
+        timeout-minutes: 10 # fail fast on a stuck download instead of hanging the job
+        with:
+          tool: cargo-llvm-cov
+
+      - name: Generate coverage (lcov)
+        run: >
+          cargo llvm-cov
+          -p wickra-core -p wickra -p wickra-data
+          --features wickra-data/live-binance
+          --lcov --output-path lcov.info
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
+        with:
+          files: lcov.info
+          # An organization-level upload token carries no repository identity,
+          # so Codecov cannot route the upload without an explicit slug and
+          # falls back to a tokenless upload, which a protected branch rejects.
+          slug: ${{ github.repository }}
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  # Supply-chain audit: security advisories, license policy, banned crates,
+  # and source restrictions. Configured by deny.toml at the repo root.
+  supply-chain:
+    name: Supply-chain (cargo-deny + osv-scanner)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: cargo-deny
+        uses: EmbarkStudios/cargo-deny-action@3c6349835b2b7b196a839186cb8b78e02f7b5f25 # v2.1.1
+        with:
+          command: check
+
+  # The published API is a promise. wickra-core, wickra-data and wickra are on
+  # crates.io, and since 1.0.0 the version number says what may change: a patch
+  # release must not move the public surface. Nothing checked that, and the
+  # surface is 514 exported types that ten language bindings sit on top of --
+  # exactly the shape where a rename slips through review and out to six
+  # registries in one irreversible run.
+  #
+  # The baseline is the newest version already on crates.io, fetched by the tool
+  # itself. On a release that has not moved the API this finds nothing; the run
+  # that matters is the one where it does.
+
+      # osv-scanner.toml existed and nothing ran it. The file records two
+      # advisories assessed as not affecting this project, with the reasoning
+      # next to each -- and that assessment was load-bearing for nobody,
+      # because no workflow ever consulted it. It only had an effect if
+      # OpenSSF Scorecard happened to read it out of band.
+      #
+      # cargo-deny above covers the Rust graph only. This covers the other
+      # six ecosystems -- npm, PyPI, Maven, NuGet, Go modules, R -- which had
+      # no vulnerability scanning in CI at all.
+      #
+      # --no-resolve turns off transitive resolution of *manifests*. The default
+      # enricher resolves each pom.xml against Maven Central, and two of ours
+      # depend on org.wickra:wickra at the version in the tree -- which does not
+      # exist there until the release publishes it. So every version bump made
+      # this job fail on a lookup for the artefact the bump exists to create,
+      # with "0 packages affected by 0 known vulnerabilities" printed directly
+      # above the error. A check that goes red for a reason other than the one
+      # it checks teaches people to ignore it.
+      #
+      # The cost here is nil rather than merely small: every non-test dependency
+      # in all three of our poms is org.wickra:wickra itself, whose own
+      # dependencies are test-scoped, and test dependencies are outside the
+      # resolver's graph anyway. Everything pinned in a lockfile -- Cargo.lock,
+      # package-lock.json, go.mod -- is still scanned in full, transitively,
+      # because a lockfile needs no resolution. wickra-backtest reached the same
+      # flag by the same route.
+      - name: osv-scanner
+        uses: google/osv-scanner-action/osv-scanner-action@6e4298ebc4db23e847df9b2e2de2939d6f066c67 # v2.5.1
+        with:
+          scan-args: |-
+            --recursive
+            --no-resolve
+            --config=osv-scanner.toml
+            ./
+  semver:
+    name: Public API (cargo-semver-checks)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: it builds rustdoc JSON for each crate and its baseline
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+
+      - name: Install cargo-semver-checks
+        uses: taiki-e/install-action@742a3317eac7bd62f91cd888b4eead5e784ba833 # v2.87.1
+        timeout-minutes: 10 # fail fast on a stuck download instead of hanging the job
+        with:
+          tool: cargo-semver-checks
+
+      # Named explicitly rather than --workspace: wickra-bench and the binding
+      # crates are not published, so they have no baseline to compare against and
+      # nothing to promise.
+      - name: Check the published crates
+        run: |
+          cargo semver-checks check-release             -p wickra-core             -p wickra-data             -p wickra
+
+  # Time-boxed fuzz smoke. Each target runs for ~30 s with libfuzzer; any panic
+  # fails the job. The goal is to catch a regression in the harness (e.g. a
+  # newly added indicator that panics on a particular input shape), not to
+  # discover novel bugs — long fuzz campaigns should be run on dedicated
+  # infrastructure with persistent corpora.
+  fuzz-smoke:
+    name: Fuzz (smoke)
+    runs-on: ubuntu-latest
+    timeout-minutes: 40 # backstop: 13 targets at 30 s each plus the build of all of them; caps a wedged job instead of GitHub's 6h default
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install nightly Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          # Pinned to a fixed nightly: a rolling `nightly` regressed with a
+          # codegen ICE (rustc_codegen_ssa operand.rs) building tokio, which is
+          # unrelated to our code. Bump this date deliberately when needed.
+          toolchain: nightly-2026-07-01
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+        with:
+          workspaces: fuzz
+
+      - name: Install cargo-fuzz
+        # Use the prebuilt binary from taiki-e/install-action instead of
+        # `cargo install cargo-fuzz --locked`. The latter resolves the
+        # version graph from cargo-fuzz's own Cargo.lock, which pins to
+        # rustix 0.36.5 — a version that still uses internal `rustc_*`
+        # attributes the modern nightly compiler rejects, so the install
+        # never gets off the ground. The prebuilt binary avoids the entire
+        # transitive-dep compile.
+        uses: taiki-e/install-action@742a3317eac7bd62f91cd888b4eead5e784ba833 # v2.87.1
+        timeout-minutes: 10 # fail fast on a stuck download instead of hanging the job
+        with:
+          tool: cargo-fuzz
+
+      # `fuzz run <target>` builds only that target, so the targets not listed
+      # below were never compiled here and could drift out of sync with the core
+      # API unnoticed. Build them all first.
+      - name: Build every fuzz target
+        run: cargo +nightly-2026-07-01 fuzz build --target x86_64-unknown-linux-gnu
+        working-directory: fuzz
+
+      # Every target cargo-fuzz knows about, rather than a hand-kept list of
+      # steps. Six of the thirteen were listed and the other seven had never
+      # been run: `fuzz build` proves a target compiles, which is not the same
+      # as proving it survives input. Deriving the list means a new target is
+      # fuzzed the moment it exists.
+      - name: Fuzz every target (30 s each)
+        working-directory: fuzz
+        run: |
+          set -euo pipefail
+          targets=$(cargo +nightly-2026-07-01 fuzz list)
+          if [ -z "$targets" ]; then
+            echo "::error::cargo fuzz list returned nothing -- no target would be fuzzed"
+            exit 1
+          fi
+          while read -r target; do
+            [ -n "$target" ] || continue
+            echo "::group::$target"
+            cargo +nightly-2026-07-01 fuzz run --target x86_64-unknown-linux-gnu "$target" -- -max_total_time=30
+            echo "::endgroup::"
+          done <<< "$targets"
+
+  python:
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.9", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      # setup-python downloads the interpreter from the Actions tool cache /
+      # nodejs CDN and occasionally hangs or 5xx's on the Windows runners.
+      # Run it with continue-on-error, then retry once after a backoff so a
+      # single CDN flake does not fail the whole job (see also: GitHub
+      # Actions runner-images#7061).
+      - name: Set up Python
+        id: setup_python
+        continue-on-error: true
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: .github/requirements/ci-dev-*.txt
+
+      - name: Wait before Python retry
+        if: steps.setup_python.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-python failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Python (retry)
+        if: steps.setup_python.outcome == 'failure'
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: .github/requirements/ci-dev-*.txt
+
+      - name: Install Python dev dependencies
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          # Hash-locked dev tooling (OpenSSF Scorecard PinnedDependencies).
+          # Split by Python version: numpy ships no single release with wheels
+          # for both cp39 and cp313 (<=2.0.2 has cp39 only, >=2.1 drops cp39).
+          if [ "${{ matrix.python-version }}" = "3.9" ]; then
+            python -m pip install --require-hashes -r .github/requirements/ci-dev-py39.txt
+          else
+            python -m pip install --require-hashes -r .github/requirements/ci-dev-py3.txt
+          fi
+
+      - name: Build wheel
+        working-directory: bindings/python
+        run: maturin build --release --out dist
+
+      - name: Install wheel
+        shell: bash
+        working-directory: bindings/python
+        # --no-index forces pip to ignore PyPI; --no-deps skips re-resolving
+        # numpy (already installed in the previous step). Without --no-index
+        # pip prefers the PyPI 0.2.x wheel over our freshly built one when
+        # platform tags overlap (e.g. macOS arm64), so tests would run
+        # against the released package and miss any new symbols the PR adds.
+        run: python -m pip install --no-index --find-links dist --force-reinstall --no-deps wickra
+
+      - name: Run Python tests
+        working-directory: bindings/python
+        run: pytest -v
+
+      # Same gap as the Node examples: `backtest.py`, `multi_timeframe.py` and
+      # `parallel_assets.py` had all been raising TypeError since `batch` stopped
+      # returning NumPy arrays, and byte-compiling them could not tell.
+      # fetch_btcusdt and live_binance need the network; the rest are offline.
+      - name: Run the offline Python examples
+        shell: bash
+        run: |
+          python examples/python/streaming.py > /dev/null
+          python examples/python/backtest.py examples/data/btcusdt-1m.csv > /dev/null
+          python examples/python/multi_timeframe.py examples/data/btcusdt-1m.csv > /dev/null
+          python examples/python/parallel_assets.py --assets 8 --bars 500 > /dev/null
+          for f in strategy_rsi_mean_reversion strategy_macd_adx strategy_bollinger_squeeze; do
+            echo "python examples/python/$f.py"
+            python "examples/python/$f.py" > /dev/null
+          done
+
+  wasm:
+    name: WASM build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain (with wasm target)
+        uses: ./.github/actions/setup-rust
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      - name: Install wasm-pack
+        # jetli/wasm-pack-action@v0.4.0 with no `version:` input installs an
+        # old wasm-pack (~0.10.x) whose `build` subcommand does not yet accept
+        # `--features`, so `wasm-pack build … --features panic-hook` fails
+        # with "Found argument '--features' which wasn't expected". Use the
+        # same taiki-e prebuilt-binary installer we already use for
+        # cargo-llvm-cov and cargo-fuzz; it tracks the latest wasm-pack
+        # release, which has `--features` as a top-level flag (since 0.12).
+        uses: taiki-e/install-action@742a3317eac7bd62f91cd888b4eead5e784ba833 # v2.87.1
+        timeout-minutes: 10 # fail fast on a stuck download instead of hanging the job
+        with:
+          tool: wasm-pack
+
+      - name: Build WASM package
+        run: wasm-pack build bindings/wasm --target web --release --features panic-hook
+
+      - name: Run WASM tests
+        run: wasm-pack test --node bindings/wasm
+
+      - name: Verify generated artefacts
+        run: |
+          test -f bindings/wasm/pkg/wickra_wasm.js
+          test -f bindings/wasm/pkg/wickra_wasm_bg.wasm
+          test -f bindings/wasm/pkg/wickra_wasm.d.ts
+
+      - name: Build WASM package (nodejs target) for the golden suite
+        run: wasm-pack build bindings/wasm --target nodejs --release --out-dir pkg
+
+      # Every test file, not just golden.test.js: naming one file meant
+      # data_layer.test.js had never run in CI, which is how a resampler test
+      # that had been failing since the streaming change went unnoticed. The
+      # glob rather than the bare directory, because Node 22 resolves a
+      # directory argument as a module path and fails to load it, and because
+      # tests/harness.js is shared driving code rather than a suite.
+      - name: WASM suite — golden parity, batch parity, data layer, completeness
+        run: node --test bindings/wasm/tests/*.test.js
+
+  node:
+    name: Node ${{ matrix.node-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: ["22", "24"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      # setup-node downloads Node from nodejs.org and we've seen it fail on
+      # Windows runners with "Attempting to download 18..." followed by a
+      # silent hang or curl error. Retry once after a backoff so a single
+      # CDN flake does not fail the whole job.
+      - name: Set up Node
+        id: setup_node
+        continue-on-error: true
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: bindings/node/package-lock.json
+
+      - name: Wait before Node retry
+        if: steps.setup_node.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-node failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Node (retry)
+        if: steps.setup_node.outcome == 'failure'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: bindings/node/package-lock.json
+
+      # npm's own fetch-retry (npm_config_fetch_retries) rides out per-request
+      # blips; wrap the whole `npm ci` once more so a longer registry hiccup
+      # retries the install instead of failing the job.
+      - name: Install Node dependencies
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4.0.0
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 20
+          command: cd bindings/node && npm ci
+          shell: bash
+
+      - name: Build native module
+        working-directory: bindings/node
+        # --platform puts the target triple into the filename so the loader's
+        # `wickra.<target>.node` lookup finds the freshly built binary instead
+        # of falling back to the per-platform npm subpackage (which doesn't
+        # exist yet for win32-x64-msvc).
+        run: npx napi build --platform --release
+
+      # NAPI-RS re-exports its TypeScript-only aliases as runtime values, which
+      # resolve to `undefined` (see scripts/prune-type-only-exports.mjs). The
+      # committed `index.js` has them removed, so the freshly generated one has
+      # to be pruned the same way or `completeness.test.js` fails here.
+      - name: Prune type-only re-exports from the generated loader
+        working-directory: bindings/node
+        run: node scripts/prune-type-only-exports.mjs
+
+      # Both files are generated by napi and committed, and nothing compared
+      # the two. index.js drifted before -- it shipped 0.9.7 inside the v0.9.9
+      # tag -- because napi rewrites it only when somebody rebuilds, and a
+      # rebuild is not part of committing. One OS is enough: the output is
+      # platform-independent.
+      - name: Check the committed loader is in sync with napi
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet -- bindings/node/index.js bindings/node/index.d.ts; then
+            echo "::error::bindings/node/index.js or index.d.ts is out of sync -- run npm run build in bindings/node and commit the result"
+            git --no-pager diff -- bindings/node/index.js bindings/node/index.d.ts
+            exit 1
+          fi
+
+      # The Node test process has wedged on macOS runners (the step hung for
+      # 1h+ while the same tests passed in ~1.5 min elsewhere). Wrap it so a
+      # hung attempt is killed after 6 min and retried once, rather than
+      # running up to the job-level backstop. A normal run is under a minute.
+      - name: Run Node tests
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4.0.0
+        with:
+          timeout_minutes: 6
+          max_attempts: 2
+          command: cd bindings/node && node --test
+          shell: bash
+
+      # The examples are the only consumer of the binding that is shaped like
+      # user code, and nothing ran them: `multi_timeframe.js` had been dead since
+      # `Resampler.update` started returning a list, and the parse-only smoke
+      # could not see it. `examples/node` resolves wickra as `file:` against
+      # bindings/node, so this runs against the module built above.
+      - name: Install the Node example dependencies
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4.0.0
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 20
+          command: cd examples/node && npm ci
+          shell: bash
+
+      # fetch_btcusdt and live_binance need the network; the rest are offline.
+      - name: Run the offline Node examples
+        shell: bash
+        run: |
+          cd examples/node
+          for f in streaming backtest multi_timeframe parallel_assets \
+                   strategy_rsi_mean_reversion strategy_macd_adx strategy_bollinger_squeeze; do
+            echo "node $f.js"
+            node "$f.js" > /dev/null
+          done
+
+  c-abi:
+    name: C ABI on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      - name: Install cbindgen
+        uses: taiki-e/install-action@742a3317eac7bd62f91cd888b4eead5e784ba833 # v2.87.1
+        timeout-minutes: 10 # fail fast on a stuck download instead of hanging the job
+        with:
+          tool: cbindgen
+
+      - name: Build the C ABI library (cdylib + staticlib)
+        run: cargo build -p wickra-c --release
+
+      - name: Rust unit tests
+        run: cargo test -p wickra-c
+
+      # The generated header is platform-independent, so checking drift on one OS
+      # is enough — and avoids a spurious CRLF/LF diff on the Windows runner.
+      - name: Check the committed header is in sync with cbindgen
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          cbindgen --config bindings/c/cbindgen.toml --crate wickra-c --output bindings/c/include/wickra.h
+          if ! git diff --quiet -- bindings/c/include/wickra.h; then
+            echo "::error::bindings/c/include/wickra.h is out of sync — run cbindgen and commit the result"
+            git --no-pager diff -- bindings/c/include/wickra.h
+            exit 1
+          fi
+
+      # The real cross-language test: a foreign C consumer links the generated
+      # header + the compiled library and runs. If this passes on all three OSes,
+      # every C-capable language can link the same way.
+      - name: Build and run the C smoke example (CMake + ctest)
+        shell: bash
+        run: |
+          cmake -S examples/c -B examples/c/build
+          cmake --build examples/c/build --config Release
+          ctest --test-dir examples/c/build -C Release --output-on-failure
+
+  csharp:
+    name: C# on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      # Cache the restored NuGet packages so dotnet test/build resolve from the
+      # local store instead of hitting nuget.org every run. No packages.lock.json
+      # exists, so key on the project files; never block the job on a slow restore.
+      - name: Cache NuGet packages
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        continue-on-error: true
+        timeout-minutes: 6
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      # The binding links against the C ABI hub at runtime; build it first so the
+      # DllImportResolver finds target/release/wickra.{dll,so,dylib}. .NET 8 SDK is
+      # preinstalled on the GitHub runners, so no setup-dotnet step is needed.
+      - name: Build the C ABI library
+        run: cargo build -p wickra-c --release
+
+      - name: .NET info
+        run: dotnet --info
+
+      # dotnet test restores from nuget.org first; retry so a transient restore
+      # blip retries instead of failing the job (the cached packages above make
+      # the retry cheap).
+      - name: Test the C# binding
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4.0.0
+        with:
+          timeout_minutes: 15
+          max_attempts: 2
+          retry_wait_seconds: 20
+          command: dotnet test bindings/csharp/Wickra.Tests/Wickra.Tests.csproj -c Release
+          shell: bash
+
+      # GoldenAllTests.g.cs is written by gen_golden_test.py from the catalogue
+      # and committed, and nothing compared the two: a new indicator that never
+      # had the generator re-run simply has no golden test on the C# side, and
+      # the suite stays green while covering one entry less.
+      #
+      # Its two siblings under Wickra/Generated/ cannot be checked the same way:
+      # the generator that writes them is not in this repository.
+      - name: Check the generated C# golden tests are in sync
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python bindings/csharp/gen_golden_test.py
+          if ! git diff --quiet -- bindings/csharp/Wickra.Tests/GoldenAllTests.g.cs; then
+            echo "::error::GoldenAllTests.g.cs is out of sync -- run python bindings/csharp/gen_golden_test.py and commit the result"
+            git --no-pager diff --stat -- bindings/csharp/Wickra.Tests/GoldenAllTests.g.cs
+            exit 1
+          fi
+
+      - name: Build the C# examples
+        shell: bash
+        run: |
+          for d in streaming backtest multi_timeframe parallel_assets \
+                   strategy_rsi_mean_reversion strategy_macd_adx strategy_bollinger_squeeze \
+                   fetch_btcusdt live_binance; do
+            dotnet build "examples/csharp/$d" -c Release
+          done
+
+      # Run only the offline examples (fetch_btcusdt / live_binance need network).
+      - name: Run the offline C# examples
+        shell: bash
+        run: |
+          for d in streaming backtest multi_timeframe parallel_assets \
+                   strategy_rsi_mean_reversion strategy_macd_adx strategy_bollinger_squeeze; do
+            dotnet run --project "examples/csharp/$d" -c Release --no-build
+          done
+
+  go:
+    name: Go on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Go is not reliably on PATH on every runner image, so install it
+      # explicitly. cache: false — the cargo build dominates and the modules
+      # have no external Go deps worth caching.
+      - name: Set up Go
+        id: setup-go
+        continue-on-error: true
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "stable"
+          cache: false
+
+      - name: Retry Go setup (CDN flake)
+        if: steps.setup-go.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-go failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up Go (retry)
+        if: steps.setup-go.outcome == 'failure'
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: "stable"
+          cache: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      # The binding links against the C ABI hub via cgo; build it first and stage
+      # the platform library under bindings/go/lib so cgo's LDFLAGS find it. Go is
+      # preinstalled on the GitHub runners, so no setup-go step is needed.
+      - name: Build the C ABI library
+        run: cargo build -p wickra-c --release
+
+      - name: Vendored header in sync with the C ABI
+        shell: bash
+        # bindings/go/include/wickra.h is a committed copy of the cbindgen header
+        # (the parent ../c/include is outside the Go module, so it must be
+        # vendored). Fail if it drifts from the source of truth.
+        run: |
+          if ! diff -u bindings/c/include/wickra.h bindings/go/include/wickra.h; then
+            echo "::error::bindings/go/include/wickra.h is stale — copy bindings/c/include/wickra.h over it"
+            exit 1
+          fi
+
+      - name: Stage the native library
+        shell: bash
+        # Stage into lib/<goos>_<goarch>/ to match the per-platform cgo LDFLAGS.
+        # CI builds the host target, so RUNNER_OS/ARCH give the right directory
+        # (note macos-latest is arm64).
+        run: |
+          case "$RUNNER_ARCH" in
+            X64) arch=amd64 ;;
+            ARM64) arch=arm64 ;;
+            *) echo "::error::unsupported RUNNER_ARCH '$RUNNER_ARCH'"; exit 1 ;;
+          esac
+          case "$RUNNER_OS" in
+            Linux)   dir="linux_$arch";   lib=target/release/libwickra.so ;;
+            macOS)   dir="darwin_$arch";  lib=target/release/libwickra.dylib ;;
+            Windows) dir="windows_$arch"; lib=target/release/wickra.dll ;;
+          esac
+          mkdir -p "bindings/go/lib/$dir"
+          cp "$lib" "bindings/go/lib/$dir/"
+          echo "WICKRA_GO_LIBDIR=$PWD/bindings/go/lib/$dir" >> "$GITHUB_ENV"
+
+      - name: Go info
+        run: go version
+
+      - name: Check gofmt
+        shell: bash
+        run: |
+          unformatted="$(gofmt -l bindings/go examples/go)"
+          if [ -n "$unformatted" ]; then
+            echo "gofmt needed on:"; echo "$unformatted"; exit 1
+          fi
+
+      - name: Vet and test the Go binding
+        shell: bash
+        # On Windows there is no rpath; the loader resolves wickra.dll via PATH
+        # (WICKRA_GO_LIBDIR is the per-platform staged lib dir). Linux/macOS use
+        # the rpath baked by the per-platform cgo LDFLAGS.
+        run: |
+          export PATH="$WICKRA_GO_LIBDIR:$PATH"
+          cd bindings/go
+          go vet ./...
+          go test ./...
+
+      - name: Build the Go examples
+        shell: bash
+        run: |
+          export PATH="$WICKRA_GO_LIBDIR:$PATH"
+          cd examples/go
+          go build ./...
+
+      # Run only the offline examples (fetch_btcusdt / live_binance need network).
+      - name: Run the offline Go examples
+        shell: bash
+        run: |
+          export PATH="$WICKRA_GO_LIBDIR:$PATH"
+          cd examples/go
+          for d in streaming backtest multi_timeframe parallel_assets \
+                   strategy_rsi_mean_reversion strategy_macd_adx strategy_bollinger_squeeze; do
+            go run "./$d"
+          done
+
+  r:
+    name: R on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    env:
+      WICKRA_INCLUDE_DIR: ${{ github.workspace }}/bindings/c/include
+      WICKRA_LIB_DIR: ${{ github.workspace }}/target/release
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true
+        timeout-minutes: 6
+
+      # The binding compiles a thin .Call glue layer against the C ABI hub; build
+      # the library first. On Windows configure.win bundles a renamed copy
+      # (wickra_abi.dll) so the package's own wickra.dll does not collide with it.
+      - name: Build the C ABI library
+        run: cargo build -p wickra-c --release
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@465b7d8e732ca3921382b1674c59bada9cbf3399 # v2.13.0
+        with:
+          r-version: "release"
+          use-public-rspm: true
+
+      # Install the R dependencies via setup-r-dependencies: it restores a cached
+      # package library (actions/cache) and pulls RSPM *binaries* instead of
+      # compiling testthat / knitr and their deps from source — the slow, flaky
+      # path that previously blew past the job timeout on the ubuntu runner.
+      - name: Install R dependencies (cached binaries)
+        uses: r-lib/actions/setup-r-dependencies@465b7d8e732ca3921382b1674c59bada9cbf3399 # v2.13.0
+        with:
+          working-directory: bindings/r
+          extra-packages: |
+            any::testthat
+            any::knitr
+
+      - name: Install and test the R binding
+        shell: bash
+        # github.workspace is a backslash path on Windows; configure(.win) (sh) and
+        # mingw need forward slashes. WICKRA_*_DIR makes configure use the locally
+        # built C ABI (dev override) instead of downloading the release asset, so
+        # CI is version-independent. Deliberately do NOT set LD_LIBRARY_PATH /
+        # DYLD_LIBRARY_PATH: the lib is bundled into the package and must resolve
+        # via the rpath ($ORIGIN / @loader_path) baked by configure — that is the
+        # self-contained install path real users (and r-universe) get.
+        run: |
+          export WICKRA_INCLUDE_DIR="${WICKRA_INCLUDE_DIR//\\//}"
+          export WICKRA_LIB_DIR="${WICKRA_LIB_DIR//\\//}"
+          R CMD INSTALL bindings/r
+          Rscript -e 'library(testthat); library(wickra); test_dir("bindings/r/tests/testthat", stop_on_failure = TRUE)'
+
+      # Full R CMD check, gated on the documentation problems r-universe surfaces
+      # (undocumented exported objects, codoc mismatches) that R CMD INSTALL above
+      # does not catch — exactly what shipped stale to r-universe with the 0.9.3
+      # data layer. Ubuntu-only; these checks are platform-independent. Vignettes
+      # are skipped here (building them needs pandoc and the vignette is exercised
+      # in the next step), so the two --no-build-vignettes warnings are ignored.
+      - name: R CMD check (documentation & consistency, like r-universe)
+        if: matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          export WICKRA_INCLUDE_DIR="${WICKRA_INCLUDE_DIR//\\//}"
+          export WICKRA_LIB_DIR="${WICKRA_LIB_DIR//\\//}"
+          R CMD build bindings/r --no-build-vignettes --no-manual
+          R CMD check wickra_*.tar.gz --no-manual --no-vignettes --no-tests || true
+          log=$(find . -maxdepth 2 -name 00check.log | head -1)
+          echo "::group::00check.log"; cat "$log"; echo "::endgroup::"
+          problems=$(grep -E '\.\.\. (WARNING|ERROR)' "$log" \
+            | grep -vE "checking (files in .vignettes.|package vignettes)" || true)
+          if [ -n "$problems" ]; then
+            echo "::error::R CMD check found problems (run roxygen2::roxygenise() in bindings/r if the docs are stale):"
+            echo "$problems"
+            exit 1
+          fi
+          echo "R CMD check: documentation and consistency clean."
+
+      - name: Build the vignette code
+        shell: bash
+        # The getting-started vignette runs at R CMD check time on r-universe /
+        # CRAN (with pandoc); this job only INSTALLs, so execute the vignette's R
+        # chunks here (knit, no pandoc needed) to catch a broken example before it
+        # reaches the published build.
+        # knitr is installed by the cached setup-r-dependencies step above.
+        run: |
+          Rscript -e 'knitr::knit("bindings/r/vignettes/getting-started.Rmd", output = tempfile(fileext = ".md"), quiet = TRUE); cat("vignette code OK\n")'
+
+      - name: Run the offline R examples
+        shell: bash
+        # No loader-path exports: the installed package is self-contained (bundled
+        # lib + rpath), so the examples exercise exactly what end users run.
+        run: |
+          cd examples/r
+          for f in streaming backtest multi_timeframe parallel_assets \
+                   strategy_rsi_mean_reversion strategy_macd_adx strategy_bollinger_squeeze; do
+            Rscript "$f.R"
+          done
+
+      # fetch_btcusdt / live_binance need the network (and jsonlite / websocket);
+      # build-check that they parse without running them.
+      - name: Parse the network R examples
+        run: Rscript -e 'invisible(lapply(c("examples/r/fetch_btcusdt.R", "examples/r/live_binance.R"), parse)); cat("network R examples parse OK\n")'
+
+  java:
+    name: Java on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30 # backstop: cap a wedged job instead of GitHub's 6h default (headroom for slow registry/package installs)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: ./.github/actions/setup-rust
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        continue-on-error: true # cache is an optimisation; never block on a stuck/slow restore
+        timeout-minutes: 6
+
+      # The binding links the C ABI hub at runtime through the Java FFM API; build
+      # it first so WickraNative's development fallback finds
+      # target/release/wickra.{so,dylib,dll}. The FFM API is final since JDK 22; we
+      # build on the 25 LTS (22 is EOL; the pom pins bytecode to release 22 so the
+      # runtime floor stays Java 22). Installed explicitly (runners ship 17/21).
+      - name: Build the C ABI library
+        run: cargo build -p wickra-c --release
+
+      - name: Set up JDK 25
+        id: setup-java
+        continue-on-error: true
+        uses: actions/setup-java@dd06d9cba3e5552c54d9f8ea23572deb30010f7c # v6.0.0
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: maven
+
+      - name: Retry JDK setup (CDN flake)
+        if: steps.setup-java.outcome == 'failure'
+        shell: bash
+        run: |
+          echo "::warning::setup-java failed (likely CDN flake), waiting 30s before retry..."
+          sleep 30
+
+      - name: Set up JDK 25 (retry)
+        if: steps.setup-java.outcome == 'failure'
+        uses: actions/setup-java@dd06d9cba3e5552c54d9f8ea23572deb30010f7c # v6.0.0
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: maven
+
+      - name: Java info
+        run: java -version
+
+      # `install` runs the archetype test suite (the real FFI boundary check) and
+      # installs the binding to the local repo so the examples can resolve it.
+      # Maven resolves plugins/deps from the network on a cache miss; retry so a
+      # transient Central blip retries instead of failing the job.
+      - name: Test and install the Java binding
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4.0.0
+        with:
+          timeout_minutes: 20
+          max_attempts: 2
+          retry_wait_seconds: 20
+          command: mvn -B -f bindings/java install
+          shell: bash
+
+      - name: Build the Java examples
+        run: mvn -B -f examples/java compile
+
+      # Run only the offline examples (fetch_btcusdt / live_binance need network).
+      - name: Run the offline Java examples
+        shell: bash
+        run: |
+          for cls in Streaming Backtest MultiTimeframe ParallelAssets \
+                     StrategyRsiMeanReversion StrategyMacdAdx StrategyBollingerSqueeze; do
+            mvn -B -q -f examples/java exec:exec -Dexec.mainClass="org.wickra.examples.$cls"
+          done
+
+  # Build a Python wheel inside both the manylinux and the musllinux container,
+  # mirroring the Linux wheel build in release.yml. The 3-OS Python jobs build
+  # natively on the runner, which already ships system OpenSSL, so they cannot
+  # catch a build-time gap that only exists inside the slim release containers —
+  # exactly what broke the 0.9.3 Linux wheels (the live-binance data layer links
+  # native-tls -> openssl-sys, and the containers provide no OpenSSL: manylinux
+  # lacks the headers, musllinux cross-compiles against a musl sysroot without
+  # OpenSSL at all). The wheels are built with the `vendored-tls` feature, which
+  # statically compiles OpenSSL from source. This job exercises both container
+  # builds on every PR, so the same class of breakage now fails CI, not release.
+  python-wheel-container-smoke:
+    name: Python wheel (${{ matrix.manylinux }} smoke)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # backstop: vendored OpenSSL adds a from-source compile
+    strategy:
+      fail-fast: false
+      matrix:
+        manylinux: [auto, musllinux_1_2]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Sync root README into bindings/python so the build matches release
+        run: cp README.md bindings/python/README.md
+
+      - uses: PyO3/maturin-action@e83996d129638aa358a18fbd1dfb82f0b0fb5d3b # v1.51.0
+        with:
+          working-directory: bindings/python
+          target: x86_64
+          # Keep in sync with release.yml: vendored OpenSSL for the Linux wheels.
+          args: --release --out dist --features vendored-tls
+          manylinux: ${{ matrix.manylinux }}
+          # Building OpenSSL from source needs Perl modules (IPC::Cmd,
+          # Time::Piece, ...) the minimal manylinux (CentOS 7) image lacks.
+          # perl-core pulls the full distribution; the explicit names document
+          # the ones OpenSSL's Configure has required. The musllinux cross image
+          # ships a complete Perl and has no yum, so this is a no-op there.
+          before-script-linux: |
+            if command -v yum >/dev/null 2>&1; then yum install -y perl-core perl-IPC-Cmd perl-Data-Dumper perl-Time-Piece; fi
+
+  # The cross-library benchmark has moved to a dedicated scheduled workflow
+  # (.github/workflows/bench.yml) — see audit finding R10. It runs nightly
+  # at 03:00 UTC and on-demand via `workflow_dispatch`, and is no longer on
+  # the every-push / every-PR critical path.
+
+  # Non-blocking external-link heads-up on PRs. The authoritative check is the
+  # scheduled links.yml; here it only surfaces link rot early without ever
+  # gating a PR — external sites flake (rate limits, transient outages, moves),
+  # so `continue-on-error` keeps a third-party hiccup from blocking the merge.
+  # Redirects are reported as warnings (lychee only fails on hard errors).
+  links:
+    name: External links (non-blocking)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml --no-progress --root-dir "${{ github.workspace }}" "*.md" "bindings/*/README.md"
+          fail: true

@@ -1,0 +1,182 @@
+diff --git a/crates/roze-ta/src/wickra/stoch_rsi.rs b/crates/roze-ta/src/wickra/stoch_rsi.rs
+index 5e18b48..6961698 100644
+--- a/crates/roze-ta/src/wickra/stoch_rsi.rs
++++ b/crates/roze-ta/src/wickra/stoch_rsi.rs
+@@ -1,9 +1,14 @@
++// SPDX-License-Identifier: MIT
++// Copyright (c) 2026 kingchenc and the Wickra contributors
++// Derived from wickra-lib/wickra; original files, license and Git blob IDs:
++// vendor/wickra-r1/ and docs/evidence/reference-r1-source.json.
++// Local changes: module paths, serde state, bounded parameters, selected API subset.
+ //! Stochastic RSI.
+ 
+ use std::collections::VecDeque;
+ 
+-use crate::error::{Error, Result};
+-use crate::traits::Indicator;
++use crate::wickra::error::{Error, Result};
++use crate::wickra::traits::Indicator;
+ 
+ use super::Rsi;
+ 
+@@ -21,13 +26,13 @@ use super::Rsi;
+ /// ```
+ ///
+ /// The output is bounded in `[0, 100]`. A flat RSI window (zero range) is
+-/// reported as the neutral `50.0`, matching the [`Stochastic`](crate::Stochastic)
++/// reported as the neutral `50.0`, matching the [`Stochastic`](crate::wickra::StochRsi)
+ /// convention.
+ ///
+ /// # Example
+ ///
+ /// ```
+-/// use wickra_core::{Indicator, StochRsi};
++/// use roze_ta::wickra::{Indicator, StochRsi};
+ ///
+ /// let mut indicator = StochRsi::new(14, 14).unwrap();
+ /// let mut last = None;
+@@ -36,14 +41,14 @@ use super::Rsi;
+ /// }
+ /// assert!(last.is_some());
+ /// ```
+-#[derive(Debug, Clone)]
++#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+ pub struct StochRsi {
+-    rsi_period: usize,
+-    stoch_period: usize,
+-    rsi: Rsi,
++    pub(crate) rsi_period: usize,
++    pub(crate) stoch_period: usize,
++    pub(crate) rsi: Rsi,
+     /// Rolling window of the last `stoch_period` RSI values.
+-    window: VecDeque<f64>,
+-    last: Option<f64>,
++    pub(crate) window: VecDeque<f64>,
++    pub(crate) last: Option<f64>,
+ }
+ 
+ impl StochRsi {
+@@ -56,6 +61,11 @@ impl StochRsi {
+         if rsi_period == 0 || stoch_period == 0 {
+             return Err(Error::PeriodZero);
+         }
++        if stoch_period > crate::wickra::error::MAX_PERIOD {
++            return Err(Error::InvalidPeriod {
++                message: crate::wickra::error::PERIOD_ABOVE_MAX,
++            });
++        }
+         Ok(Self {
+             rsi_period,
+             stoch_period,
+@@ -136,111 +146,3 @@ impl Indicator for StochRsi {
+         "StochRSI"
+     }
+ }
+-
+-#[cfg(test)]
+-mod tests {
+-    use super::*;
+-    use crate::traits::BatchExt;
+-    use approx::assert_relative_eq;
+-
+-    #[test]
+-    fn new_rejects_zero_period() {
+-        assert!(matches!(StochRsi::new(0, 14), Err(Error::PeriodZero)));
+-        assert!(matches!(StochRsi::new(14, 0), Err(Error::PeriodZero)));
+-    }
+-
+-    /// Cover the const accessors `periods` / `value` (69-76) and the
+-    /// Indicator-impl `name` body (131-133). `warmup_period` is already
+-    /// covered by `first_emission_at_warmup_period`.
+-    #[test]
+-    fn accessors_and_metadata() {
+-        let mut sr = StochRsi::new(14, 14).unwrap();
+-        assert_eq!(sr.periods(), (14, 14));
+-        assert_eq!(sr.name(), "StochRSI");
+-        assert_eq!(sr.value(), None);
+-        for i in 1..=sr.warmup_period() {
+-            sr.update(100.0 + f64::from(u32::try_from(i).unwrap()));
+-        }
+-        assert!(sr.value().is_some());
+-    }
+-
+-    #[test]
+-    fn first_emission_at_warmup_period() {
+-        let mut sr = StochRsi::new(5, 4).unwrap();
+-        assert_eq!(sr.warmup_period(), 9);
+-        let prices: Vec<f64> = (1..=40)
+-            .map(|i| 100.0 + (f64::from(i) * 0.6).sin() * 8.0)
+-            .collect();
+-        let out = sr.batch(&prices);
+-        for v in out.iter().take(8) {
+-            assert!(v.is_none());
+-        }
+-        assert!(out[8].is_some());
+-    }
+-
+-    #[test]
+-    fn flat_rsi_window_yields_50() {
+-        // A constant price series gives a constant RSI (50.0), so the StochRSI
+-        // window has zero range and reports the neutral midpoint.
+-        let mut sr = StochRsi::new(5, 4).unwrap();
+-        let out = sr.batch(&[100.0; 40]);
+-        for v in out.iter().skip(9).flatten() {
+-            assert_relative_eq!(*v, 50.0, epsilon = 1e-12);
+-        }
+-    }
+-
+-    #[test]
+-    fn pure_uptrend_yields_50() {
+-        // A pure uptrend pins RSI at 100, so its window is again flat.
+-        let mut sr = StochRsi::new(5, 4).unwrap();
+-        let out = sr.batch(&(1..=40).map(f64::from).collect::<Vec<_>>());
+-        for v in out.iter().skip(9).flatten() {
+-            assert_relative_eq!(*v, 50.0, epsilon = 1e-12);
+-        }
+-    }
+-
+-    #[test]
+-    fn output_stays_within_0_100() {
+-        let mut sr = StochRsi::new(14, 14).unwrap();
+-        let prices: Vec<f64> = (1..=200)
+-            .map(|i| 100.0 + (f64::from(i) * 0.3).sin() * 15.0 + (f64::from(i) * 0.07).cos() * 6.0)
+-            .collect();
+-        for v in sr.batch(&prices).into_iter().flatten() {
+-            assert!((0.0..=100.0).contains(&v), "StochRSI out of range: {v}");
+-        }
+-    }
+-
+-    #[test]
+-    fn ignores_non_finite_input() {
+-        let mut sr = StochRsi::new(5, 4).unwrap();
+-        let prices: Vec<f64> = (1..=40)
+-            .map(|i| 100.0 + (f64::from(i) * 0.6).sin() * 8.0)
+-            .collect();
+-        let out = sr.batch(&prices);
+-        let last = *out.last().unwrap();
+-        assert!(last.is_some());
+-        assert_eq!(sr.update(f64::NAN), None);
+-        assert_eq!(sr.update(f64::INFINITY), None);
+-    }
+-
+-    #[test]
+-    fn reset_clears_state() {
+-        let mut sr = StochRsi::new(5, 4).unwrap();
+-        sr.batch(&(1..=40).map(f64::from).collect::<Vec<_>>());
+-        assert!(sr.is_ready());
+-        sr.reset();
+-        assert!(!sr.is_ready());
+-        assert_eq!(sr.update(1.0), None);
+-    }
+-
+-    #[test]
+-    fn batch_equals_streaming() {
+-        let prices: Vec<f64> = (1..=120)
+-            .map(|i| 100.0 + (f64::from(i) * 0.25).sin() * 12.0)
+-            .collect();
+-        let batch = StochRsi::new(14, 14).unwrap().batch(&prices);
+-        let mut b = StochRsi::new(14, 14).unwrap();
+-        let streamed: Vec<_> = prices.iter().map(|p| b.update(*p)).collect();
+-        assert_eq!(batch, streamed);
+-    }
+-}

@@ -1,0 +1,72 @@
+[package]
+name = "wickra-c"
+description = "C ABI (cdylib + staticlib) for the Wickra streaming-first technical indicators library — the hub every C-capable language (C, C++, Go, C#, Java, R) links against."
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme = "README.md"
+keywords.workspace = true
+categories.workspace = true
+publish = false
+
+[lib]
+name = "wickra"
+crate-type = ["cdylib", "staticlib"]
+
+# The C ABI inherently needs `unsafe` (raw pointers across the FFI boundary,
+# `#[export_name]` symbol control). The workspace forbids `unsafe_code`, so this
+# crate cannot inherit `workspace = true`; it mirrors every workspace lint and
+# only relaxes `unsafe_code` to `allow` (parity with how the proc-macro bindings
+# emit their unsafe). The Rust core stays `unsafe`-forbidden — this is the one
+# crate where the boundary lives.
+[lints.rust]
+unsafe_code = "allow"
+missing_debug_implementations = "warn"
+unreachable_pub = "warn"
+unused_must_use = "deny"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+must_use_candidate = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+cast_precision_loss = "allow"
+cast_possible_truncation = "allow"
+cast_sign_loss = "allow"
+similar_names = "allow"
+float_cmp = "allow"
+
+[features]
+# `parallel` (rayon-backed batch in wickra-core) is on by default for native
+# builds. The wasm32-unknown-emscripten target has no threads, so the R
+# package's wasm build (r-universe / webR) compiles this crate with
+# --no-default-features to drop rayon; wickra-core falls back to its serial
+# batch path, which is cfg-gated behind the same feature.
+#
+# `live-binance` is on by default too so the published C ABI ships the native
+# Binance kline feed (tokio + TLS WebSocket) — the six C-ABI languages with no
+# native WebSocket (C, C++, Go, R, plus Node/Python via their own bindings) get
+# it without a third-party client. The wasm build drops it via
+# --no-default-features (a browser has no raw TCP/TLS sockets; WASM users use the
+# host `WebSocket`), exactly like rayon.
+default = ["parallel", "live-binance"]
+parallel = ["wickra-core/parallel"]
+live-binance = ["wickra-data/live-binance", "dep:tokio"]
+
+[dependencies]
+# Direct path dep rather than `workspace = true`: a member-level
+# `default-features = false` is ignored when inheriting a workspace dep that
+# does not set it, which would leave rayon in the wasm build. wickra-c is
+# `publish = false`, so no version pin is needed (and none to keep in sync).
+wickra-core = { path = "../../crates/wickra-core", default-features = false }
+wickra-data = { path = "../../crates/wickra-data" }
+# Only pulled in by `live-binance`: a single-thread runtime drives the async
+# Binance feed behind the blocking C-ABI poll. The feed's own I/O features come
+# transitively from wickra-data; this just needs the runtime + timeout.
+tokio = { version = "1", features = ["rt", "net", "time"], optional = true }

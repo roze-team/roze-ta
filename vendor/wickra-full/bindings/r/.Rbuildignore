@@ -1,0 +1,14 @@
+^src/wickra_abi\.dll$
+^src/wickra_abi\.def$
+^src/libwickra_abi\.dll\.a$
+^src/.*\.o$
+^src/wickra\.dll$
+^src/wickra\.so$
+^src/symbols\.rds$
+^src/wickra\.h$
+^src/libwickra\.(so|dylib)$
+^src/wickra-c\.tar\.gz$
+^src/wickra-c$
+^src/Makevars$
+^\.gitignore$
+^data-raw$

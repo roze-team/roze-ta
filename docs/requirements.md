@@ -7,6 +7,10 @@
 扩展规格：[指标扩展清单](indicator-expansion.md)、[机器可读任务表](indicator-backlog.csv)、
 [概率与统计分析需求](probability-statistics.md)。
 
+数学背景与公式说明见[金融数据分析的数学基础](mathematical-foundations.md)，不作为新增能力已实现的声明。
+
+FR-IND-009 与 AC-IND-009：[外部指标逐项覆盖需求](reference-indicator-parity.md)。外部库已有指标逐项核对与实现，原 84 项清单不再作为覆盖上限；完成状态以逐项映射及验收证据为准。
+
 本文描述目标需求和验收条件，不表示所有功能已经实现，也不授权部署、发布或真实交易。
 
 ## 1. 项目定位
